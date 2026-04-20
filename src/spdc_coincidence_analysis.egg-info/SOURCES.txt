@@ -1,0 +1,8 @@
+README.md
+pyproject.toml
+src/spdc-coincidence-analysis/__init__.py
+src/spdc_coincidence_analysis.egg-info/PKG-INFO
+src/spdc_coincidence_analysis.egg-info/SOURCES.txt
+src/spdc_coincidence_analysis.egg-info/dependency_links.txt
+src/spdc_coincidence_analysis.egg-info/requires.txt
+src/spdc_coincidence_analysis.egg-info/top_level.txt

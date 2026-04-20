@@ -1,0 +1,22 @@
+Metadata-Version: 2.4
+Name: spdc-coincidence-analysis
+Version: 0.1.0
+Summary: Analytical and numerical tools for SPDC coincidence calculations
+Author: Nico Sieber
+Requires-Python: >=3.14
+Description-Content-Type: text/markdown
+Requires-Dist: ipykernel
+Requires-Dist: numpy
+Requires-Dist: scipy
+Requires-Dist: matplotlib
+Provides-Extra: docs
+Requires-Dist: mkdocs; extra == "docs"
+Requires-Dist: mkdocs-material; extra == "docs"
+Requires-Dist: mkdocstrings[python]; extra == "docs"
+Requires-Dist: pymdown-extensions; extra == "docs"
+Provides-Extra: dev
+Requires-Dist: ipykernel; extra == "dev"
+Requires-Dist: black; extra == "dev"
+Requires-Dist: ruff; extra == "dev"
+
+# SPDC coincidence analysis

@@ -1,0 +1,60 @@
+site_name: SPDC Coincidence Analysis
+site_description: Analytical derivation of coincidence probabilities for TMSV states with bucket detectors
+site_author: Nico Sieber
+repo_url: https://github.com/yourusername/spdc-coincidence-analysis
+
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - content.code.copy
+  palette:
+    scheme: slate
+    primary: deep purple
+    accent: deep orange
+
+nav:
+  - Home: index.md
+  - Theory: 
+    - Overview: theory/overview.md
+  #     - TMSV: theory/tmsv.md
+  #     - POVM: theory/povm.md
+  #     - Coincidence: theory/coincidence.md
+  # - Derivations:
+  #     - Setup: derivations/setup.md
+  #     - Gaussian Integral: derivations/gaussian.md
+  #     - Matrix Factorization: derivations/matrix.md
+  # - Notebooks:
+  #     - Intro: notebooks/index.md
+  # - API:
+  #     - Reference: api/index.md
+
+markdown_extensions:
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - admonition
+  - toc:
+      permalink: true
+
+extra_css:
+  - css/home.css
+
+extra_javascript:
+  #- https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  - js/home.js
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: [src]
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/yourusername
