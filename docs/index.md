@@ -1,19 +1,16 @@
 <div class="home-hero">
   <div class="home-hero__content">
     <p class="home-hero__eyebrow">SPDC Coincidence Analysis</p>
-    <h1>Analytical derivation of coincidence probabilities</h1>
     <p class="home-hero__subtitle">
-      Documentation for analytical derivations of coincidence probabilities
-      for TMSV states with bucket detectors.
+      Photon-pair sources based on type-II spontaneous parametric down-conversion (SPDC) are a standard platform for studying nonclassical light and polarization interference. In the degenerate regime, and under appropriate phase-matching and mode-overlap conditions, the emitted state is well described as a two-mode squeezed vacuum (TMSV) in the horizontal and vertical polarization modes. When this state is sent through polarization optics and measured with non-photon-number-resolving detectors, the experimentally relevant quantities are typically coincidence probabilities rather than resolved photon-number statistics.
+      In many practical analyses, coincidence probabilities for such setups are estimated by truncating the TMSV expansion to the lowest few photon-number terms. While this can be sufficient in the weak-pumping regime, it does not provide an exact description of the full state. This limitation becomes especially relevant when higher-order pair contributions are non-negligible or when one wishes to retain a fully analytical treatment in the presence of loss.
+      Here I present the derivation of an exact analytical expression for the coincidence probability of a type-II SPDC-generated TMSV state after a half-wave plate (HWP) and subsequent polarization-resolved detection with bucket detectors. 
+      My approach adds the Positive Operator-Valued Measure (POVM) description of lossy bucket detectors to the TMSV state transformed by the HWP. This way, all photon-number contributions are included exactly, and detector loss can be incorporated through mode-dependent efficiencies. The resulting formalism yields compact expressions for the vacuum probabilities entering the coincidence signal and therefore for the coincidence probability itself.
     </p>
 
     <div class="home-hero__actions">
-      <a class="md-button md-button--primary" href="theory/overview/">
-        Start reading
-      </a>
-      <a class="md-button" href="https://github.com/nicosieber/spdc-coincidence-analysis">
-        GitHub
-      </a>
+      <a class="md-button md-button--primary" href="theory/experimental_setup/">Read the theory</a>
+      <a class="md-button" href="https://github.com/nicosieber/spdc-coincidence-analysis">GitHub</a>
     </div>
   </div>
 </div>
@@ -21,35 +18,21 @@
 ## Sections
 
 <div class="tile-grid">
-
-  <a class="tile" href="theory/overview/">
+  <a class="tile" href="theory/experimental_setup/">
     <div class="tile__icon">📘</div>
     <h3>Theory Overview</h3>
-    <p>
-      Introduction to the framework, notation, and analytical structure of the derivation.
-    </p>
+    <p>Introduction, notation, physical setup, and the structure of the derivation.</p>
   </a>
 
   <a class="tile tile--disabled" href="javascript:void(0);" aria-disabled="true">
     <div class="tile__icon">🧮</div>
     <h3>Derivations</h3>
-    <p>
-      Step-by-step derivation pages for setup, Gaussian integrals, and matrix methods.
-      Coming soon.
-    </p>
+    <p>Detailed derivation pages for the full analytical treatment. Coming soon.</p>
   </a>
 
   <a class="tile tile--disabled" href="javascript:void(0);" aria-disabled="true">
     <div class="tile__icon">📓</div>
     <h3>Notebooks</h3>
-    <p>
-      Interactive notebook-based demonstrations and computational checks.
-      Coming soon.
-    </p>
+    <p>Numerical checks, examples, and interactive computational support. Coming soon.</p>
   </a>
-
 </div>
-
-## Quick summary
-
-This site collects the theory and derivations behind coincidence probabilities in SPDC/TMSV systems with bucket detectors. Use the overview page to begin, then expand into detailed derivations and computational examples as they are added.

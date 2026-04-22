@@ -1,28 +1,63 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const tiles = document.querySelectorAll(".tile");
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const tiles = document.querySelectorAll(".tile:not(.tile--disabled)");
 
-  tiles.forEach((tile, index) => {
-    tile.style.opacity = "0";
-    tile.style.transform = "translateY(12px)";
+  if (!tiles.length) return;
 
-    setTimeout(() => {
-      tile.style.transition =
-        "opacity 300ms ease, transform 300ms ease, border-color 180ms ease, box-shadow 180ms ease, background 180ms ease";
-      tile.style.opacity = "1";
-      tile.style.transform = "translateY(0)";
-    }, 80 * index);
-  });
+  // -------------------------
+  // 1. Lightweight stagger-in
+  // -------------------------
+  if (!prefersReducedMotion) {
+    tiles.forEach((tile, index) => {
+      tile.animate(
+        [
+          { opacity: 0, transform: "translateY(10px)" },
+          { opacity: 1, transform: "translateY(0)" }
+        ],
+        {
+          duration: 320,
+          delay: index * 70,
+          easing: "ease-out",
+          fill: "both"
+        }
+      );
+    });
+  }
 
+  // -------------------------
+  // 2. Cursor-follow glow
+  // Uses requestAnimationFrame
+  // to avoid too many updates
+  // -------------------------
   tiles.forEach((tile) => {
-    tile.addEventListener("mousemove", (e) => {
-      const rect = tile.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      tile.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(64,81,181,0.12), rgba(64,81,181,0.03) 40%, transparent 70%)`;
-    });
+    let rafId = null;
+    let pendingX = null;
+    let pendingY = null;
 
-    tile.addEventListener("mouseleave", () => {
-      tile.style.background = "rgba(255, 255, 255, 0.03)";
-    });
+    const updateGlow = () => {
+      tile.style.setProperty("--tile-glow-x", `${pendingX}px`);
+      tile.style.setProperty("--tile-glow-y", `${pendingY}px`);
+      rafId = null;
+    };
+
+    const onMouseMove = (event) => {
+      if (prefersReducedMotion) return;
+
+      const rect = tile.getBoundingClientRect();
+      pendingX = event.clientX - rect.left;
+      pendingY = event.clientY - rect.top;
+
+      if (rafId === null) {
+        rafId = window.requestAnimationFrame(updateGlow);
+      }
+    };
+
+    const onMouseLeave = () => {
+      tile.style.setProperty("--tile-glow-x", "50%");
+      tile.style.setProperty("--tile-glow-y", "50%");
+    };
+
+    tile.addEventListener("mousemove", onMouseMove, { passive: true });
+    tile.addEventListener("mouseleave", onMouseLeave, { passive: true });
   });
 });

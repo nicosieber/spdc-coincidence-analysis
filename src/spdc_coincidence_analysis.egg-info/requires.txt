@@ -2,6 +2,8 @@ ipykernel
 numpy
 scipy
 matplotlib
+mkdocs
+mkdocs-bibtex
 
 [dev]
 ipykernel

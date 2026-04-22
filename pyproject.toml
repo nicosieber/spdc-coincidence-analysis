@@ -11,6 +11,8 @@ dependencies = [
     "numpy",
     "scipy",
     "matplotlib",
+    "mkdocs",
+    "mkdocs-bibtex"
 ]
 
 [project.optional-dependencies]

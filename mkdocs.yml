@@ -1,7 +1,7 @@
 site_name: SPDC Coincidence Analysis
 site_description: Analytical derivation of coincidence probabilities for TMSV states with bucket detectors
 site_author: Nico Sieber
-repo_url: https://github.com/yourusername/spdc-coincidence-analysis
+repo_url: https://github.com/nicosieber/spdc-coincidence-analysis
 
 theme:
   name: material
@@ -13,14 +13,17 @@ theme:
   palette:
     scheme: slate
     primary: deep purple
-    accent: deep orange
+    accent: lime
 
 nav:
   - Home: index.md
   - Theory: 
-    - Overview: theory/overview.md
-  #     - TMSV: theory/tmsv.md
-  #     - POVM: theory/povm.md
+    - Experimental setup: theory/experimental_setup.md
+    - Simplified example: theory/simplified_example.md
+    - POVM: theory/povm.md
+    - POVM of bucket detectors: theory/povm_bucket_detectors.md
+    - Inclusion of loss: theory/inclusion_loss.md
+    - TMSV: theory/tmsv.md
   #     - Coincidence: theory/coincidence.md
   # - Derivations:
   #     - Setup: derivations/setup.md
@@ -32,6 +35,7 @@ nav:
   #     - Reference: api/index.md
 
 markdown_extensions:
+  - footnotes
   - pymdownx.arithmatex:
       generic: true
   - pymdownx.highlight
@@ -44,7 +48,8 @@ extra_css:
   - css/home.css
 
 extra_javascript:
-  #- https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  - js/mathjax.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
   - js/home.js
 
 plugins:
@@ -53,6 +58,9 @@ plugins:
       handlers:
         python:
           paths: [src]
+  - bibtex:
+      bib_file: "refs.bib"
+      cite_style: pandoc
 
 extra:
   social:
