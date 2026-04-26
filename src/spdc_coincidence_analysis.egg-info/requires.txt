@@ -2,9 +2,7 @@ ipykernel
 numpy
 scipy
 matplotlib
-mkdocs
-mkdocs-bibtex
-mkdocs-pandoc
+zensical
 
 [dev]
 ipykernel
@@ -12,7 +10,4 @@ black
 ruff
 
 [docs]
-mkdocs
-mkdocs-material
-mkdocstrings[python]
-pymdown-extensions
+zensical

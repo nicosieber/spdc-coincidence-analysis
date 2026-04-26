@@ -1,6 +1,6 @@
 # Matrix properties
 
-Here I provide a detailed justification that the matrix $B = \Re(A)$ introduced in Eq.~(112) is real symmetric and positive definite under physically relevant conditions. This property is essential for the convergence of the Gaussian integral in Sec.~IV D and for the existence of the factorization in Eq.~(119).
+Here I provide a detailed justification that the matrix $B = \Re(A)$ introduced in equation (36) during the [derivation of the coincidence probability](../theory/cc_derivation.md#ABiC) is real symmetric and positive definite under physically relevant conditions. This property is essential for the convergence of the Gaussian integral in Sec.~IV D and for the existence of the factorization in Eq.~(119).
 
 ## Structure of B
 

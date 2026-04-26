@@ -49,8 +49,8 @@ toc = { permalink = true }
 
 [project.plugins.search]
 
-[project.plugins.mkdocstrings.handlers.python]
-paths = ["src"]
+#[project.plugins.mkdocstrings.handlers.python]
+#paths = ["src"]
 
 # NOTE:
 # Your mkdocs-bibtex config below is probably not supported reliably by Zensical yet.

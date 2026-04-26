@@ -988,7 +988,7 @@ e^{\frac{\lambda}{2} (\mathbf{\hat a^{\dagger}})^T L \mathbf{\hat a^{\dagger}}}\
 <p>Following that we can see how the exponential of <span class="arithmatex">\(\eqref{eq:tmsv_coherent_identity}\)</span> evaluates by writing it as an infinite sum:</p>
 <div class="arithmatex">\[\begin{equation}
 \begin{aligned}
-\langle 0 \rvert \phi \rangle e^{\frac{\lambda}{2}\mathbf{\hat a}^T M\mathbf{\hat a}}\lvert \alpha \rangle&amp;=\sum_{n=0}^\infty\dfrac{(\frac{\lambda}{2}\mathbf{\hat a}^T M\mathbf{\hat a})^n}{n!}\langle 0 \rvert \alpha \rangle\\
+\langle 0 \rvert e^{\frac{\lambda}{2}\mathbf{\hat a}^T M\mathbf{\hat a}}\lvert \alpha \rangle&amp;=\sum_{n=0}^\infty\dfrac{(\frac{\lambda}{2}\mathbf{\hat a}^T M\mathbf{\hat a})^n}{n!}\langle 0 \rvert \alpha \rangle\\
 &amp;=\sum_{n=0}^\infty\dfrac{(\frac{\lambda}{2}\alpha^TM\alpha)^n}{n!}\langle 0 \rvert \alpha \rangle\\
 &amp;=e^{\frac{\lambda}{2}\alpha^TM\alpha}\langle 0 \rvert \alpha \rangle
 \end{aligned}
@@ -1132,6 +1132,7 @@ I
 A=W^T Q W.
 \end{equation}\]</div>
 <p>Evaluating <span class="arithmatex">\(A\)</span> explicitly gives</p>
+<p><span id="ABiC"></span></p>
 <div class="arithmatex">\[\begin{equation}
 \begin{aligned}
 A&amp;=
@@ -1194,7 +1195,7 @@ I
 =
 \exp\!\left(-\frac12\,\xi^T B\xi\right).
 \end{equation}\]</div>
-<p>Because <span class="arithmatex">\(B\)</span> is real symmetric and positive definite, it possesses a real symmetric square root <span class="arithmatex">\(B^{1/2}\)</span> with inverse <span class="arithmatex">\(B^{-1/2}\)</span>. We may therefore factorize <span class="arithmatex">\(A\)</span> as</p>
+<p><a href="../../concepts_and_foundations/matrix_properties/">Because <span class="arithmatex">\(B\)</span> is real symmetric and positive definite</a>, it possesses a real symmetric square root <span class="arithmatex">\(B^{1/2}\)</span> with inverse <span class="arithmatex">\(B^{-1/2}\)</span>. We may therefore factorize <span class="arithmatex">\(A\)</span> as</p>
 <p><span id="A_factorization"></span></p>
 <div class="arithmatex">\[\begin{equation}
 A
@@ -1415,10 +1416,7 @@ s^2-c^2=-\cos(4\vartheta),
 <div class="arithmatex">\[\begin{equation}
 \begin{aligned}
 \det Q
-=
-&amp;1\\
--&amp;\lambda^2\left((t_H^2+t_V^2)\sin^2(4\vartheta)+2t_Ht_V\cos^2(4\vartheta)\right)\notag\\
-+&amp;\lambda^4 t_H^2t_V^2.
+=1-\lambda^2\left((t_H^2+t_V^2)\sin^2(4\vartheta)+2t_Ht_V\cos^2(4\vartheta)\right)+\lambda^4 t_H^2t_V^2.
 \end{aligned}
 \end{equation}\]</div>
 <p>Equivalently,</p>
@@ -1431,10 +1429,8 @@ s^2-c^2=-\cos(4\vartheta),
 <p>or with <span class="arithmatex">\(\eqref{eq:t_eta}\)</span></p>
 <div class="arithmatex">\[\begin{equation}
 \begin{aligned}
-\det Q
-&amp;=
-\left(1-\lambda^2(1-\eta_H)(1-\eta_V)\right)^2\\
-&amp;-\lambda^2(\eta_H-\eta_V)^2\sin^2(4\vartheta).
+\det Q=
+\left(1-\lambda^2(1-\eta_H)(1-\eta_V)\right)^2-\lambda^2(\eta_H-\eta_V)^2\sin^2(4\vartheta).
 \end{aligned}
 \end{equation}\]</div>
 <p>Finally, we can write <span class="arithmatex">\(P^{(\eta_H,\eta_V)}(0,0)\)</span> from equation <span class="arithmatex">\(\eqref{formula:last_term1}\)</span> as</p>
@@ -1447,15 +1443,13 @@ s^2-c^2=-\cos(4\vartheta),
 <p>In order to calculate <span class="arithmatex">\(P^{(\eta_{H})}_{H}(0)\)</span> or <span class="arithmatex">\(P^{(\eta_{V})}_{V}(0)\)</span>, we can set <span class="arithmatex">\(\eta_{V}=0\)</span> or <span class="arithmatex">\(\eta_{H}=0\)</span>. For <span class="arithmatex">\(P^{(\eta_{H})}_{H}(0)\)</span> we therefore get</p>
 <div class="arithmatex">\[\begin{equation}
 \begin{aligned}
-P^{(\eta_{H})}_{H}(0)&amp;=P^{(\eta_H,\eta_V=0)}(0,0)\\
-&amp;=\dfrac{(1-\lambda^2)}{\sqrt{\left(1-\lambda^2(1-\eta_H)\right)^2-\lambda^2\eta_H^2\sin^2(4\vartheta)}},
+P^{(\eta_{H})}_{H}(0)=P^{(\eta_H,\eta_V=0)}(0,0)=\dfrac{(1-\lambda^2)}{\sqrt{\left(1-\lambda^2(1-\eta_H)\right)^2-\lambda^2\eta_H^2\sin^2(4\vartheta)}},
 \end{aligned}
 \end{equation}\]</div>
 <p>and <span class="arithmatex">\(P^{(\eta_{V})}_{V}(0)\)</span> we get</p>
 <div class="arithmatex">\[\begin{equation}
 \begin{aligned}
-P^{(\eta_{V})}_{V}(0)&amp;=P^{(\eta_H=0,\eta_V)}(0,0)\\
-&amp;=\dfrac{(1-\lambda^2)}{\sqrt{\left(1-\lambda^2(1-\eta_V)\right)^2-\lambda^2\eta_V^2\sin^2(4\vartheta)}}.
+P^{(\eta_{V})}_{V}(0)=P^{(\eta_H=0,\eta_V)}(0,0)=\dfrac{(1-\lambda^2)}{\sqrt{\left(1-\lambda^2(1-\eta_V)\right)^2-\lambda^2\eta_V^2\sin^2(4\vartheta)}}.
 \end{aligned}
 \end{equation}\]</div>
 <h2 id="interpretation-of-the-no-click-and-coincidence-probabilities">Interpretation of the no-click and coincidence probabilities<a class="headerlink" href="#interpretation-of-the-no-click-and-coincidence-probabilities" title="Permanent link">&para;</a></h2>
@@ -1524,14 +1518,14 @@ P_{\mathrm{coinc}}
 =
 P_{\mathrm{cc}}.
 \end{equation}\]</div>
-<p>Using equations~\eqref{eq:PH_meaning}--\eqref{eq:P00_meaning}, it follows that</p>
+<p>Using equations <span class="arithmatex">\(\eqref{eq:PH_meaning}\)</span>-<span class="arithmatex">\(\eqref{eq:P00_meaning}\)</span>, it follows that</p>
 <div class="arithmatex">\[\begin{equation}
 P_{\mathrm{coinc}}
 =
 1 - P_H^{(\eta_H)}(0) - P_V^{(\eta_V)}(0) + P^{(\eta_H,\eta_V)}(0,0),
 \label{eq:Pcoinc_inclusion_exclusion}
 \end{equation}\]</div>
-<p>which is just the inclusion--exclusion formula for the event that both detectors click.</p>
+<p>which is just the inclusion-exclusion formula for the event that both detectors click.</p>
 <h2 id="connection-to-the-lossless-notation">Connection to the lossless notation<a class="headerlink" href="#connection-to-the-lossless-notation" title="Permanent link">&para;</a></h2>
 <p>In the lossless discussion, one often groups the four elementary outcomes into only three classes:</p>
 <div class="arithmatex">\[\begin{equation}

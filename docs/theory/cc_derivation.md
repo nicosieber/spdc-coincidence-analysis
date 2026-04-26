@@ -172,7 +172,7 @@ Following that we can see how the exponential of \(\eqref{eq:tmsv_coherent_ident
 
 \begin{equation}
 \begin{aligned}
-\langle 0 \rvert \phi \rangle e^{\frac{\lambda}{2}\mathbf{\hat a}^T M\mathbf{\hat a}}\lvert \alpha \rangle&=\sum_{n=0}^\infty\dfrac{(\frac{\lambda}{2}\mathbf{\hat a}^T M\mathbf{\hat a})^n}{n!}\langle 0 \rvert \alpha \rangle\\
+\langle 0 \rvert e^{\frac{\lambda}{2}\mathbf{\hat a}^T M\mathbf{\hat a}}\lvert \alpha \rangle&=\sum_{n=0}^\infty\dfrac{(\frac{\lambda}{2}\mathbf{\hat a}^T M\mathbf{\hat a})^n}{n!}\langle 0 \rvert \alpha \rangle\\
 &=\sum_{n=0}^\infty\dfrac{(\frac{\lambda}{2}\alpha^TM\alpha)^n}{n!}\langle 0 \rvert \alpha \rangle\\
 &=e^{\frac{\lambda}{2}\alpha^TM\alpha}\langle 0 \rvert \alpha \rangle
 \end{aligned}
@@ -348,6 +348,8 @@ A=W^T Q W.
 
 Evaluating \(A\) explicitly gives
 
+<span id="ABiC"></span>
+
 \begin{equation}
 \begin{aligned}
 A&=
@@ -424,7 +426,7 @@ As long as $B$ is positive definite, the integral converges absolutely, since
 \exp\!\left(-\frac12\,\xi^T B\xi\right).
 \end{equation}
 
-Because $B$ is real symmetric and positive definite, it possesses a real symmetric square root $B^{1/2}$ with inverse $B^{-1/2}$. We may therefore factorize $A$ as
+[Because $B$ is real symmetric and positive definite](../concepts_and_foundations/matrix_properties.md), it possesses a real symmetric square root $B^{1/2}$ with inverse $B^{-1/2}$. We may therefore factorize $A$ as
 
 <span id="A_factorization"></span>
 
@@ -702,10 +704,7 @@ this becomes
 \begin{equation}
 \begin{aligned}
 \det Q
-=
-&1\\
--&\lambda^2\left((t_H^2+t_V^2)\sin^2(4\vartheta)+2t_Ht_V\cos^2(4\vartheta)\right)\notag\\
-+&\lambda^4 t_H^2t_V^2.
+=1-\lambda^2\left((t_H^2+t_V^2)\sin^2(4\vartheta)+2t_Ht_V\cos^2(4\vartheta)\right)+\lambda^4 t_H^2t_V^2.
 \end{aligned}
 \end{equation}
 
@@ -722,10 +721,8 @@ or with \(\eqref{eq:t_eta}\)
 
 \begin{equation}
 \begin{aligned}
-\det Q
-&=
-\left(1-\lambda^2(1-\eta_H)(1-\eta_V)\right)^2\\
-&-\lambda^2(\eta_H-\eta_V)^2\sin^2(4\vartheta).
+\det Q=
+\left(1-\lambda^2(1-\eta_H)(1-\eta_V)\right)^2-\lambda^2(\eta_H-\eta_V)^2\sin^2(4\vartheta).
 \end{aligned}
 \end{equation}
 
@@ -742,8 +739,7 @@ In order to calculate $P^{(\eta_{H})}_{H}(0)$ or $P^{(\eta_{V})}_{V}(0)$, we can
 
 \begin{equation}
 \begin{aligned}
-P^{(\eta_{H})}_{H}(0)&=P^{(\eta_H,\eta_V=0)}(0,0)\\
-&=\dfrac{(1-\lambda^2)}{\sqrt{\left(1-\lambda^2(1-\eta_H)\right)^2-\lambda^2\eta_H^2\sin^2(4\vartheta)}},
+P^{(\eta_{H})}_{H}(0)=P^{(\eta_H,\eta_V=0)}(0,0)=\dfrac{(1-\lambda^2)}{\sqrt{\left(1-\lambda^2(1-\eta_H)\right)^2-\lambda^2\eta_H^2\sin^2(4\vartheta)}},
 \end{aligned}
 \end{equation}
 
@@ -751,8 +747,7 @@ and $P^{(\eta_{V})}_{V}(0)$ we get
 
 \begin{equation}
 \begin{aligned}
-P^{(\eta_{V})}_{V}(0)&=P^{(\eta_H=0,\eta_V)}(0,0)\\
-&=\dfrac{(1-\lambda^2)}{\sqrt{\left(1-\lambda^2(1-\eta_V)\right)^2-\lambda^2\eta_V^2\sin^2(4\vartheta)}}.
+P^{(\eta_{V})}_{V}(0)=P^{(\eta_H=0,\eta_V)}(0,0)=\dfrac{(1-\lambda^2)}{\sqrt{\left(1-\lambda^2(1-\eta_V)\right)^2-\lambda^2\eta_V^2\sin^2(4\vartheta)}}.
 \end{aligned}
 \end{equation}
 
@@ -846,7 +841,7 @@ P_{\mathrm{coinc}}
 P_{\mathrm{cc}}.
 \end{equation}
 
-Using equations~\eqref{eq:PH_meaning}--\eqref{eq:P00_meaning}, it follows that
+Using equations \(\eqref{eq:PH_meaning}\)-\(\eqref{eq:P00_meaning}\), it follows that
 
 \begin{equation}
 P_{\mathrm{coinc}}
@@ -855,7 +850,7 @@ P_{\mathrm{coinc}}
 \label{eq:Pcoinc_inclusion_exclusion}
 \end{equation}
 
-which is just the inclusion--exclusion formula for the event that both detectors click.
+which is just the inclusion-exclusion formula for the event that both detectors click.
 
 ## Connection to the lossless notation
 

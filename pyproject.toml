@@ -11,17 +11,12 @@ dependencies = [
     "numpy",
     "scipy",
     "matplotlib",
-    "mkdocs",
-    "mkdocs-bibtex",
-    "mkdocs-pandoc"
+    "zensical",
 ]
 
 [project.optional-dependencies]
 docs = [
-    "mkdocs",
-    "mkdocs-material",
-    "mkdocstrings[python]",
-    "pymdown-extensions",
+    "zensical",
 ]
 
 dev = [
@@ -30,8 +25,6 @@ dev = [
     "ruff",
 ]
 
-[tool.mkdocs]
-config-file = "mkdocs.yml"
 
 [tool.black]
 line-length = 88
