@@ -100,11 +100,11 @@ Consequently, for $\vartheta=\pi/8$, the sum of terms in \(\eqref{Transformation
 
 
 <div class="nav-footer">
-  <a class="nav-prev" href="../overview">
+  <a class="nav-prev" href="overview.md">
     ← Previous
   </a>
 
-  <a class="nav-next" href="../povm">
+  <a class="nav-next" href="povm.md">
     Next →
   </a>
 </div>

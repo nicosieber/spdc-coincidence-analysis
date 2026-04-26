@@ -1,8 +1,9 @@
 # Two-Mode Squeezed Vacuum
+## Mathematical description of the quantum state
 
-The next step is to do the same steps which we did for the state in equation (1) of the [simplified example](../simplified_example/#initial_state)  for the two-mode squeezed vacuum (TMSV). In this section, we first will look at the mathematical formulation of the TMSV, how it behaves when transformed by the HWP, and how relevant detection probabilities can be derived using the POVM for lossy bucket detectors.
+The next step is to do the same steps which we did for the state in equation (1) of the [simplified example](simplified_example.md#initial_state)  for the two-mode squeezed vacuum (TMSV). In this section, we first will look at the mathematical formulation of the TMSV, how it behaves when transformed by the HWP, and how relevant detection probabilities can be derived using the POVM for lossy bucket detectors.
 
-For the correct phase-matching conditions the previously mentioned conditions of spatial overlap and indistinguishability are met. Mathematically, the TMSV state can be expressed as
+For the correct phase-matching conditions the previously mentioned conditions of spatial overlap and indistinguishability are met. Mathematically, the TMSV state can be expressed as[@Lvovsky2014]
 
 \begin{equation}
 \label{tmsv}
@@ -21,6 +22,8 @@ with $n$ as the photon number and
 \end{equation}
 
 where $r$ is the squeezing parameter. 
+
+## TMSV rotated by a HWP
 
 Sending the TMSV through a HWP results in
 
@@ -54,6 +57,8 @@ s:=\sin(2\vartheta),
 |0,0\rangle.
 \end{aligned}
 \end{equation}
+
+## TMSV written as an exponential
 
 We now define the operator
 
@@ -191,6 +196,8 @@ one may write
 
 With
 
+<span id="eq:alpha_vec"></span>
+
 \begin{equation}
 \label{eq:alpha_vec}
 \begin{aligned}
@@ -209,6 +216,8 @@ With
 
 equation \(\eqref{formula:tmsv_as_exp}\) becomes:
 
+<span id="formula:tmsv_as_exp_2"></span>
+
 \begin{equation}
 \label{formula:tmsv_as_exp_2}
 \begin{aligned}
@@ -219,11 +228,11 @@ equation \(\eqref{formula:tmsv_as_exp}\) becomes:
 \end{equation}
 
 <div class="nav-footer">
-  <a class="nav-prev" href="../inclusion_loss">
+  <a class="nav-prev" href="povm.md">
     ← Previous
   </a>
 
-  <a class="nav-next" href="../tmsv">
+  <a class="nav-next" href="cc_derivation.md">
     Next →
   </a>
 </div>

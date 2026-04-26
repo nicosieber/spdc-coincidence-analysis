@@ -12,7 +12,8 @@ dependencies = [
     "scipy",
     "matplotlib",
     "mkdocs",
-    "mkdocs-bibtex"
+    "mkdocs-bibtex",
+    "mkdocs-pandoc"
 ]
 
 [project.optional-dependencies]
@@ -42,3 +43,8 @@ select = ["E", "F", "I"]
 [build-system]
 requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
+
+[dependency-groups]
+dev = [
+    "zensical>=0.0.36",
+]

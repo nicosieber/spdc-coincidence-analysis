@@ -1,0 +1,1651 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Analytical derivation of coincidence probabilities for TMSV states with bucket detectors">
+      
+      
+        <meta name="author" content="Nico Sieber">
+      
+      
+      
+        <link rel="prev" href="../tmsv/">
+      
+      
+        <link rel="next" href="../../concepts_and_foundations/overview/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="zensical-0.0.36">
+    
+    
+      
+        <title>Derivation of the coincidence probability - SPDC Coincidence Analysis</title>
+      
+    
+    
+      
+        
+      
+      <link rel="stylesheet" href="../../assets/stylesheets/classic/main.a2001754.min.css">
+      
+        
+          
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/classic/palette.7dc9a0ad.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,a=__md_scope)=>JSON.parse(t.getItem(a.pathname+"."+e)),__md_set=(e,t,a=localStorage,_=__md_scope)=>{try{a.setItem(_.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="lime" data-md-color-accent="lime">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer" aria-label="Navigation"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#derivation-of-the-coincidence-probability" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="SPDC Coincidence Analysis" class="md-header__button md-logo" aria-label="SPDC Coincidence Analysis" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer" aria-label="Navigation">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SPDC Coincidence Analysis
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Derivation of the coincidence probability
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="none" data-md-color-scheme="slate" data-md-color-primary="lime" data-md-color-accent="lime"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search" aria-label="Search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog" aria-label="Search">
+  <button type="button" class="md-search__button">
+    Search
+  </button>
+</div>
+      
+    
+    <div class="md-header__source">
+      
+        <a href="https://github.com/nicosieber/spdc-coincidence-analysis" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2026 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      
+    </div>
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../experimental_setup/" class="md-tabs__link">
+          
+  
+  Main derivation
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../concepts_and_foundations/overview/" class="md-tabs__link">
+          
+  
+  Additional concepts, identities and derivations
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="SPDC Coincidence Analysis" class="md-nav__button md-logo" aria-label="SPDC Coincidence Analysis" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    SPDC Coincidence Analysis
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/nicosieber/spdc-coincidence-analysis" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2026 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Main derivation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Main derivation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../experimental_setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Experimental setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../simplified_example/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Simplified example
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../povm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    POVM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tmsv/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TMSV
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      
+        <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Derivation of the coincidence probabiliy
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="././" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Derivation of the coincidence probabiliy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#evaluation-of-the-complex-gaussian-integral" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Evaluation of the complex Gaussian integral
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evaluation-of-the-determinant" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Evaluation of the determinant
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interpretation-of-the-no-click-and-coincidence-probabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Interpretation of the no-click and coincidence probabilities
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connection-to-the-notation-p_heta0-p_veta0-and-peta_heta_v00" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Connection to the notation <span class="arithmatex">\(P_H^{(\eta)}(0)\)</span>, <span class="arithmatex">\(P_V^{(\eta)}(0)\)</span>, and <span class="arithmatex">\(P^{(\eta_H,\eta_V)}(0,0)\)</span>
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connection-to-the-coincidence-probability" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Connection to the coincidence probability
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connection-to-the-lossless-notation" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Connection to the lossless notation
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        References
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Additional concepts, identities and derivations
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Additional concepts, identities and derivations
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts_and_foundations/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#evaluation-of-the-complex-gaussian-integral" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Evaluation of the complex Gaussian integral
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evaluation-of-the-determinant" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Evaluation of the determinant
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interpretation-of-the-no-click-and-coincidence-probabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Interpretation of the no-click and coincidence probabilities
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connection-to-the-notation-p_heta0-p_veta0-and-peta_heta_v00" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Connection to the notation <span class="arithmatex">\(P_H^{(\eta)}(0)\)</span>, <span class="arithmatex">\(P_V^{(\eta)}(0)\)</span>, and <span class="arithmatex">\(P^{(\eta_H,\eta_V)}(0,0)\)</span>
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connection-to-the-coincidence-probability" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Connection to the coincidence probability
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connection-to-the-lossless-notation" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Connection to the lossless notation
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        References
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+  
+  
+
+
+<h1 id="derivation-of-the-coincidence-probability">Derivation of the coincidence probability<a class="headerlink" href="#derivation-of-the-coincidence-probability" title="Permanent link">&para;</a></h1>
+<p>To derive the analytical expression for the coincidence probability, equation (16) of <a href="../povm/#formula_P_cc_loss">POVM</a> will be evaluated using the TMSV of the form depicted in equation (18) of <a href="../tmsv/#formula:tmsv_as_exp_2">TMSV</a>. For now, the focus now shall only be the evaluation of the term</p>
+<div class="arithmatex">\[\begin{equation}
+\label{formula:last_term1}
+\begin{aligned}
+P^{(\eta_H,\eta_V)}(0,0)=&amp;\langle \Psi \rvert\left(1-\eta_H\right)^{\hat{n}_H}\otimes \left(1-\eta_V\right)^{\hat{n}_V}\lvert \Psi \rangle\\
+=&amp;\Lambda^2 \langle 0 \rvert e^{\frac{\lambda}{2} \mathbf{\hat a}^T M\mathbf{\hat a}} t_H^{\hat{n}_H} t_V^{\hat{n}_V} e^{\frac{\lambda}{2} (\mathbf{\hat a^{\dagger}})^T M \mathbf{\hat a^{\dagger}}} \lvert 0 \rangle
+\end{aligned}
+\end{equation}\]</div>
+<p>where the abbreviations</p>
+<div class="arithmatex">\[\begin{equation}
+    \label{eq:t_eta}
+    t_{H,V}=1-\eta_{H,V}
+\end{equation}\]</div>
+<p>are used and the <span class="arithmatex">\(\otimes\)</span> was omitted for readability. Further,</p>
+<div class="arithmatex">\[\begin{equation}
+S=t_H^{\hat{n}_H} t_V^{\hat{n}_V}
+\end{equation}\]</div>
+<p>and</p>
+<div class="arithmatex">\[\begin{equation}
+\begin{aligned}
+D=
+\begin{pmatrix}
+    t_H &amp; 0 \\
+    0 &amp; t_V 
+    \end{pmatrix}
+\end{aligned}
+\end{equation}\]</div>
+<p>are introduced. It follows that</p>
+<div class="arithmatex">\[\begin{equation}
+\label{formula:SaS_Da}
+S\mathbf{\hat a^{\dagger}}S^{-1}=D\mathbf{\hat a^{\dagger}},
+\end{equation}\]</div>
+<p>and since <span class="arithmatex">\(D\)</span> is diagonal:</p>
+<div class="arithmatex">\[\begin{equation}
+\left(D\mathbf{\hat a^{\dagger}}\right)^T=(\mathbf{\hat a^{\dagger}})^T D
+\end{equation}\]</div>
+<p>Due to the relations in equations (6) and (7) of <a href="../../concepts_and_foundations/conjugation_operators/#eq:xpownadagger1">Conjugation of creation of operators</a> we get:</p>
+<div class="arithmatex">\[\begin{equation}
+S\hat a_{H,V}^{\dagger}S^{-1}=t_{H,V}\hat a_{H,V}^{\dagger}.
+\end{equation}\]</div>
+<p>Then <span class="arithmatex">\(\eqref{formula:last_term1}\)</span> becomes</p>
+<div class="arithmatex">\[\begin{equation}
+\begin{aligned}
+&amp;\Lambda^2 \langle 0 \rvert e^{\frac{\lambda}{2} \mathbf{\hat a}^T M\mathbf{\hat a}} t_H^{\hat{n}_H} t_V^{\hat{n}_V} e^{\frac{\lambda}{2} (\mathbf{\hat a^{\dagger}})^T M \mathbf{\hat a^{\dagger}}} \lvert 0 \rangle\\
+=&amp;\Lambda^2 \langle 0 \rvert e^{\frac{\lambda}{2} \mathbf{\hat a}^T M\mathbf{\hat a}} S e^{\frac{\lambda}{2} (\mathbf{\hat a^{\dagger}})^T M \mathbf{\hat a^{\dagger}}} \lvert 0 \rangle\\
+=&amp;\Lambda^2 \langle 0 \rvert e^{\frac{\lambda}{2} \mathbf{\hat a}^T M\mathbf{\hat a}} S e^{\frac{\lambda}{2} (\mathbf{\hat a^{\dagger}})^T M \mathbf{\hat a^{\dagger}}}S^{-1}S \lvert 0 \rangle\\
+=&amp;\Lambda^2 \langle 0 \rvert e^{\frac{\lambda}{2} \mathbf{\hat a}^T M\mathbf{\hat a}} e^{\frac{\lambda}{2} S (\mathbf{\hat a^{\dagger}})^T M \mathbf{\hat a^{\dagger}}S^{-1}}S \lvert 0 \rangle,
+\end{aligned}
+\end{equation}\]</div>
+<p>which is achieved by inserting <span class="arithmatex">\(S^{-1}S=\mathbf{1}\)</span> and usage of the relation (9) of <a href="../../concepts_and_foundations/operator_relations/#appendix:powerseries_final">Operator relations</a>. By inserting <span class="arithmatex">\(S^{-1}S=\mathbf{1}\)</span> into the exponent and using <span class="arithmatex">\(\eqref{formula:SaS_Da}\)</span> we get</p>
+<div class="arithmatex">\[\begin{equation}
+\label{formula:tmsv_DaMDa}
+\begin{aligned}
+&amp;\Lambda^2 \langle 0 \rvert e^{\frac{\lambda}{2} \mathbf{\hat a}^T M\mathbf{\hat a}} e^{\frac{\lambda}{2} S (\mathbf{\hat a^{\dagger}})^T M \mathbf{\hat a^{\dagger}}S^{-1}}S \lvert 0 \rangle\\
+=&amp;\Lambda^2\langle 0 \rvert e^{\frac{\lambda}{2} \mathbf{\hat a}^T M\mathbf{\hat a}} e^{\frac{\lambda}{2} (S (\mathbf{\hat a^{\dagger}})^T S^{-1}) M (S \mathbf{\hat a^{\dagger}}S^{-1})}S \lvert 0 \rangle\\
+=&amp;\Lambda^2\langle 0 \rvert e^{\frac{\lambda}{2} \mathbf{\hat a}^T M\mathbf{\hat a}} e^{\frac{\lambda}{2} (D\mathbf{\hat a^{\dagger}})^T M D\mathbf{\hat a^{\dagger}}}S \lvert 0 \rangle\\
+=&amp;\Lambda^2\langle 0 \rvert e^{\frac{\lambda}{2} \mathbf{\hat a}^T M\mathbf{\hat a}} e^{\frac{\lambda}{2} (\mathbf{\hat a^{\dagger}})^T D M D\mathbf{\hat a^{\dagger}}}S \lvert 0 \rangle.
+\end{aligned}
+\end{equation}\]</div>
+<p>Here, we made use of the fact that you can expand the indices of <span class="arithmatex">\((\mathbf{\hat a^{\dagger}})^T M \mathbf{\hat a^{\dagger}}\)</span> which results in:</p>
+<div class="arithmatex">\[\begin{equation}
+\begin{aligned}
+&amp;S\left((\mathbf{\hat a^{\dagger}})^T M \mathbf{\hat a^{\dagger}}\right)S^{-1}\\=&amp;S\left(\sum_{i,j}M_{i,j}\hat a_i^{\dagger}\hat a_j^{\dagger}\right)S^{-1}\\
+=&amp;\sum_{i,j}M_{i,j}S\hat a_i^{\dagger}\hat a_j^{\dagger}S^{-1}\\
+=&amp;\sum_{i,j}M_{i,j}\left(S\hat a_i^{\dagger}S^{-1}\right)\left(S\hat a_j^{\dagger}S^{-1}\right)\\
+=&amp;\left(S(\mathbf{\hat a^{\dagger}})^TS^{-1}\right)M\left(S\mathbf{\hat a^{\dagger}}S^{-1}\right)
+\end{aligned}
+\end{equation}\]</div>
+<p>By further using equation (2) of <a href="../../concepts_and_foundations/conjugation_operators/#eq:xpownm">Conjugation of creation operators</a> we can see that</p>
+<div class="arithmatex">\[\begin{equation}
+S \lvert 0 \rangle =\lvert 0 \rangle,
+\end{equation}\]</div>
+<p>which gives us</p>
+<div class="arithmatex">\[\begin{equation}
+\label{eq:tmsv_aDMDa}
+\begin{aligned}
+&amp;\Lambda^2 \langle 0 \rvert e^{\frac{\lambda}{2} \mathbf{\hat a}^T M\mathbf{\hat a}} t_H^{\hat{n}_H} t_V^{\hat{n}_V} e^{\frac{\lambda}{2} (\mathbf{\hat a^{\dagger}})^T M \mathbf{\hat a^{\dagger}}} \lvert 0 \rangle\\
+=&amp;\Lambda^2\langle 0 \rvert e^{\frac{\lambda}{2} \mathbf{\hat a}^T M\mathbf{\hat a}}  e^{\frac{\lambda}{2} (\mathbf{\hat a^{\dagger}})^T DMD \mathbf{\hat a^{\dagger}}} \lvert 0 \rangle
+\end{aligned}
+\end{equation}\]</div>
+<p>Using die identity from equation (11) of <a href="../../concepts_and_foundations/coherent_states/#eq:coherent_identity">Coherent states</a>, expression <span class="arithmatex">\(\eqref{eq:tmsv_aDMDa}\)</span> becomes</p>
+<div class="arithmatex">\[\begin{equation}
+\label{eq:tmsv_coherent_identity}
+\begin{aligned}
+&amp;\Lambda^2\langle 0 \rvert e^{\frac{\lambda}{2} \mathbf{\hat a}^T M\mathbf{\hat a}}
+e^{\frac{\lambda}{2} (\mathbf{\hat a^{\dagger}})^T L \mathbf{\hat a^{\dagger}}}\lvert 0 \rangle \\
+=&amp;\Lambda^2\int \dfrac{d^4\alpha}{\pi^2}   \langle 0 \rvert e^{\frac{\lambda}{2} \mathbf{\hat a}^T M\mathbf{\hat a}}\lvert \alpha \rangle \langle \alpha \rvert e^{\frac{\lambda}{2} (\mathbf{\hat a^{\dagger}})^T L \mathbf{\hat a^{\dagger}}} \lvert 0 \rangle,
+\end{aligned}
+\end{equation}\]</div>
+<p>with <span class="arithmatex">\(DMD=L\)</span> as an abbreviation. Also note that <span class="arithmatex">\(\pi\)</span> and <span class="arithmatex">\(d^2\alpha\)</span> are squared since we have a to modes:</p>
+<div class="arithmatex">\[\begin{equation}
+\lvert \alpha \rangle=\lvert \alpha_H,\alpha_V \rangle
+\end{equation}\]</div>
+<p>By inserting the coherent-state resolution of the identity, the operator expression is transformed into an integral over phase-space variables. This reformulation introduces classical field amplitudes as integration variables, while the underlying quantum correlations remain encoded in the resulting Gaussian weight. </p>
+<p>In order to evaluate the expression <span class="arithmatex">\(\eqref{eq:tmsv_coherent_identity}\)</span>, we first need to show how <span class="arithmatex">\(\mathbf{\hat a}^T M\mathbf{\hat a}\)</span> acts on <span class="arithmatex">\(\lvert \alpha \rangle\)</span> . We can write </p>
+<div class="arithmatex">\[\begin{equation}
+\begin{aligned}
+\hat a_{H}\lvert \alpha_H,\alpha_V \rangle&amp;=\alpha_{H}\lvert \alpha_H,\alpha_V \rangle,\\
+\hat a_{V}\lvert \alpha_H,\alpha_V \rangle&amp;=\alpha_{V}\lvert \alpha_H,\alpha_V \rangle.
+\end{aligned}
+\end{equation}\]</div>
+<p>Then we can write <span class="arithmatex">\(\mathbf{\hat a}^T M\mathbf{\hat a}\)</span> as</p>
+<div class="arithmatex">\[\begin{equation}
+\label{eq:ama_1}
+\begin{aligned}
+&amp;\mathbf{\hat a}^T M\mathbf{\hat a}\\
+&amp;=\sum_{i,j}\hat a_i M_{i,j}\hat a_j\\
+&amp;=2cs\hat a_H^2+(s^2-c^2)\hat a_H\hat a_V+(s^2-c^2)\hat a_V\hat a_H-2cs\hat a_V^2.
+\end{aligned}
+\end{equation}\]</div>
+<p>Since the annihilation operators commute</p>
+<div class="arithmatex">\[\begin{equation}
+\left[\hat a_H,\hat a_V\right]=0,
+\end{equation}\]</div>
+<p>we can shorten expression <span class="arithmatex">\(\eqref{eq:ama_1}\)</span> a little bit:</p>
+<div class="arithmatex">\[\begin{equation}
+\begin{aligned}
+&amp;\dfrac{1}{2}\mathbf{\hat a}^T M\mathbf{\hat a}\\
+=&amp;cs\hat a_H^2+(s^2-c^2)\hat a_H\hat a_V-cs\hat a_V^2
+\end{aligned}
+\end{equation}\]</div>
+<p>Consequently, we can write</p>
+<div class="arithmatex">\[\begin{equation}
+\begin{aligned}
+&amp;\mathbf{\hat a}^T M\mathbf{\hat a}\lvert \alpha \rangle\\
+=&amp;\left(cs\hat a_H^2+(s^2-c^2)\hat a_H\hat a_V-cs\hat a_V^2\right)\lvert \alpha_H,\alpha_V \rangle\\
+=&amp;\left(cs\alpha_H^2+(s^2-c^2)\alpha_H\alpha_V-cs\alpha_V^2\right)\lvert \alpha_H,\alpha_V \rangle\\
+=&amp;\alpha^TM\alpha \lvert \alpha \rangle
+\end{aligned}
+\end{equation}\]</div>
+<p>Following that we can see how the exponential of <span class="arithmatex">\(\eqref{eq:tmsv_coherent_identity}\)</span> evaluates by writing it as an infinite sum:</p>
+<div class="arithmatex">\[\begin{equation}
+\begin{aligned}
+\langle 0 \rvert \phi \rangle e^{\frac{\lambda}{2}\mathbf{\hat a}^T M\mathbf{\hat a}}\lvert \alpha \rangle&amp;=\sum_{n=0}^\infty\dfrac{(\frac{\lambda}{2}\mathbf{\hat a}^T M\mathbf{\hat a})^n}{n!}\langle 0 \rvert \alpha \rangle\\
+&amp;=\sum_{n=0}^\infty\dfrac{(\frac{\lambda}{2}\alpha^TM\alpha)^n}{n!}\langle 0 \rvert \alpha \rangle\\
+&amp;=e^{\frac{\lambda}{2}\alpha^TM\alpha}\langle 0 \rvert \alpha \rangle
+\end{aligned}
+\end{equation}\]</div>
+<p>For a normalized two-mode coherent state we can evaluate <span class="arithmatex">\(\langle 0 \rvert \alpha \rangle\)</span> (with the help of the equation (2) of <a href="../../concepts_and_foundations/coherent_states/#formula:coherent_state_matrix">Coherent states</a>  and equation (17) of <a href="../tmsv/#eq:alpha_vec">TMSV</a> to</p>
+<div class="arithmatex">\[\begin{equation}
+\langle 0 \rvert \alpha \rangle=e^{-\frac{|\alpha_H|^2}{2}}e^{-\frac{|\alpha_V|^2}{2}}=e^{-\frac{\alpha^{\dagger}\alpha}{2}}.
+\end{equation}\]</div>
+<p>Following, we can see that </p>
+<div class="arithmatex">\[\begin{equation}
+\begin{aligned}
+\langle 0 \rvert e^{\frac{\lambda}{2}\mathbf{\hat a}^T M\mathbf{\hat a}}\lvert \alpha \rangle
+=e^{\frac{\lambda}{2}\alpha^TM\alpha-\frac{\alpha^{\dagger}\alpha}{2}},
+\end{aligned}
+\end{equation}\]</div>
+<p>and following a similar logic, we can see that</p>
+<div class="arithmatex">\[\begin{equation}
+\begin{aligned}
+\langle \alpha \rvert e^{\frac{\lambda}{2} (\mathbf{\hat a^{\dagger}})^T L \mathbf{\hat a^{\dagger}}} \lvert 0 \rangle=e^{\frac{\lambda}{2}(\alpha^*)^TL\alpha^*-\frac{\alpha^{\dagger}\alpha}{2}}.
+\end{aligned}
+\end{equation}\]</div>
+<p>As an intermediate step, we now can rewrite <span class="arithmatex">\(\eqref{eq:tmsv_coherent_identity}\)</span> as</p>
+<div class="arithmatex">\[\begin{equation}
+\label{eq:intermediate}
+\begin{aligned}
+&amp;\Lambda^2 \langle 0 \rvert e^{\frac{\lambda}{2} \mathbf{\hat a}^T M\mathbf{\hat a}}
+e^{\frac{\lambda}{2} (\mathbf{\hat a^{\dagger}})^T L \mathbf{\hat a^{\dagger}}}\lvert 0 \rangle \\
+=&amp;\Lambda^2\int \dfrac{d^4\alpha}{\pi^2}   e^{\frac{\lambda}{2}(\alpha^*)^TL\alpha^* +\frac{\lambda}{2}\alpha^TM\alpha-\alpha^{\dagger}\alpha}
+\end{aligned}
+\end{equation}\]</div>
+<p>Introduce the real variables</p>
+<div class="arithmatex">\[\begin{equation}
+\begin{aligned}
+\alpha=\frac{x+iy}{\sqrt{2}},
+\qquad
+\alpha^*=\frac{x-iy}{\sqrt{2}},
+\qquad
+x,y\in\mathbb R^2,
+\end{aligned}
+\end{equation}\]</div>
+<p>and define</p>
+<div class="arithmatex">\[\begin{equation}
+\begin{aligned}
+\xi:=
+\begin{pmatrix}
+x\\
+y
+\end{pmatrix}
+=
+\begin{pmatrix}
+x_H\\
+x_V\\
+y_H\\
+y_V\\
+\end{pmatrix}
+\in\mathbb R^4.
+\end{aligned}
+\end{equation}\]</div>
+<p>Then</p>
+<div class="arithmatex">\[\begin{equation}
+\begin{aligned}
+\chi:=
+\begin{pmatrix}
+\alpha\\
+\alpha^*
+\end{pmatrix}
+=
+W\xi,
+\qquad
+W:=
+\frac{1}{\sqrt{2}}
+\begin{pmatrix}
+\mathbb{1} &amp; i\mathbb{1}\\
+\mathbb{1} &amp; -i\mathbb{1}
+\end{pmatrix}.
+\end{aligned}
+\end{equation}\]</div>
+<p>Moreover, the exponent can be written as</p>
+<div class="arithmatex">\[\begin{equation}
+\begin{aligned}
+\frac{\lambda}{2}(\alpha^*)^T L\,\alpha^*
++
+\frac{\lambda}{2}\alpha^T M\,\alpha
+-
+\alpha^\dagger \alpha
+=
+-\frac12\,\chi^T Q\,\chi,
+\end{aligned}
+\end{equation}\]</div>
+<p>with</p>
+<div class="arithmatex">\[\begin{equation}
+\label{eq:Q}
+\begin{aligned}
+Q=
+\begin{pmatrix}
+-\lambda M &amp; \mathbb{1}\\
+\mathbb{1} &amp; -\lambda L
+\end{pmatrix}.
+\end{aligned}
+\end{equation}\]</div>
+<p>Using <span class="arithmatex">\(\chi=W\xi\)</span>, this becomes</p>
+<div class="arithmatex">\[\begin{equation}
+-\frac12\,\chi^T Q\,\chi
+=
+-\frac12\,\xi^T W^T Q W\,\xi.
+\end{equation}\]</div>
+<p>Hence, defining</p>
+<div class="arithmatex">\[\begin{equation}
+A:=W^T Q W,
+\end{equation}\]</div>
+<p>we obtain</p>
+<div class="arithmatex">\[\begin{equation}
+I
+=
+\int \frac{d^2\alpha}{\pi^2}\,
+\exp\!\left(-\frac12\,\xi^T A\,\xi\right),
+\end{equation}\]</div>
+<p>with <span class="arithmatex">\(I\)</span> being only the integral of equation <span class="arithmatex">\(\eqref{eq:intermediate}\)</span>. Now the measure transforms as</p>
+<div class="arithmatex">\[\begin{equation}
+d^4\alpha
+=
+d^2\alpha_H\,d^2\alpha_V
+=
+\frac14\,dx_H\,dy_H\,dx_V\,dy_V
+=
+\frac14\,d^4\xi,
+\end{equation}\]</div>
+<p>so that</p>
+<div class="arithmatex">\[\begin{equation}
+\frac{d^4\alpha}{\pi^2}
+=
+\frac{d^4\xi}{(2\pi)^2}.
+\end{equation}\]</div>
+<p>Therefore,</p>
+<div class="arithmatex">\[\begin{equation}
+I
+=
+\int \frac{d^4\xi}{(2\pi)^2}
+\exp\!\left(-\frac12\,\xi^T A\,\xi\right),
+\qquad
+A=W^T Q W.
+\end{equation}\]</div>
+<p>Evaluating <span class="arithmatex">\(A\)</span> explicitly gives</p>
+<div class="arithmatex">\[\begin{equation}
+\begin{aligned}
+A&amp;=
+\begin{pmatrix}
+\mathbb{1}-\dfrac{\lambda}{2}(L+M) &amp; \dfrac{i\lambda}{2}(L-M)\\[2mm]
+\dfrac{i\lambda}{2}(L-M) &amp; \mathbb{1}+\dfrac{\lambda}{2}(L+M)
+\end{pmatrix}\\
+&amp;=
+\begin{pmatrix}
+\mathbb{1}-\dfrac{\lambda}{2}(L+M) &amp; 0\\[2mm]
+0 &amp; \mathbb{1}+\dfrac{\lambda}{2}(L+M)
+\end{pmatrix}\\
+&amp;+
+i\begin{pmatrix}
+0 &amp; \dfrac{\lambda}{2}(L-M)\\[2mm]
+\dfrac{\lambda}{2}(L-M) &amp; 0
+\end{pmatrix}\\
+&amp;=B+iC=\mathbb{R}(A)+i\mathbb{I}(A)
+\end{aligned}
+\end{equation}\]</div>
+<h2 id="evaluation-of-the-complex-gaussian-integral">Evaluation of the complex Gaussian integral<a class="headerlink" href="#evaluation-of-the-complex-gaussian-integral" title="Permanent link">&para;</a></h2>
+<p>We now evaluate</p>
+<div class="arithmatex">\[\begin{equation}
+\begin{aligned}
+I
+=
+\int \frac{d^4\xi}{(2\pi)^2}
+\exp\!\left(-\frac12\,\xi^T A\,\xi\right),
+\qquad
+A=W^TQW.
+\end{aligned}
+\end{equation}\]</div>
+<p>Since <span class="arithmatex">\(A\)</span> is not purely real, we write it as</p>
+<div class="arithmatex">\[\begin{equation}
+A=B+iC,
+\end{equation}\]</div>
+<p>where <span class="arithmatex">\(B=\mathbb{R}(A)\)</span> and <span class="arithmatex">\(C=\mathbb{I}(A)\)</span> are real <span class="arithmatex">\(4\times4\)</span> matrices. From the explicit form of <span class="arithmatex">\(A\)</span> we see that both <span class="arithmatex">\(B\)</span> and <span class="arithmatex">\(C\)</span> are symmetric, hence</p>
+<div class="arithmatex">\[\begin{equation}
+A^T=A,\qquad B^T=B,\qquad C^T=C.
+\end{equation}\]</div>
+<p>Therefore,</p>
+<div class="arithmatex">\[\begin{equation}
+\xi^T A\xi=\xi^T B\xi+i\,\xi^T C\xi.
+\end{equation}\]</div>
+<p>The integral thus becomes</p>
+<div class="arithmatex">\[\begin{equation}
+\begin{aligned}
+I
+=
+\int \frac{d^4\xi}{(2\pi)^2}
+\exp\!\left(-\frac12\,\xi^T B\xi\right)
+\exp\!\left(-\frac{i}{2}\,\xi^T C\xi\right).
+\end{aligned}
+\end{equation}\]</div>
+<p>As long as <span class="arithmatex">\(B\)</span> is positive definite, the integral converges absolutely, since</p>
+<div class="arithmatex">\[\begin{equation}
+\left|
+\exp\!\left(-\frac12\,\xi^T A\xi\right)
+\right|
+=
+\exp\!\left(-\frac12\,\xi^T B\xi\right).
+\end{equation}\]</div>
+<p>Because <span class="arithmatex">\(B\)</span> is real symmetric and positive definite, it possesses a real symmetric square root <span class="arithmatex">\(B^{1/2}\)</span> with inverse <span class="arithmatex">\(B^{-1/2}\)</span>. We may therefore factorize <span class="arithmatex">\(A\)</span> as</p>
+<p><span id="A_factorization"></span></p>
+<div class="arithmatex">\[\begin{equation}
+A
+=
+B^{1/2}\left(\mathbb{1}+iK\right)B^{1/2},
+\qquad
+K:=B^{-1/2}CB^{-1/2}.
+\end{equation}\]</div>
+<p>Since <span class="arithmatex">\(C\)</span> is real symmetric, <span class="arithmatex">\(K\)</span> is also real symmetric:</p>
+<div class="arithmatex">\[\begin{equation}
+K^T=K.
+\end{equation}\]</div>
+<p>Next, we perform the change of variables</p>
+<div class="arithmatex">\[\begin{equation}
+y=B^{1/2}\xi,
+\qquad
+\xi=B^{-1/2}y.
+\end{equation}\]</div>
+<p>The Jacobian of this transformation is</p>
+<div class="arithmatex">\[\begin{equation}
+d^4\xi=\frac{d^4y}{\sqrt{\det B}}.
+\end{equation}\]</div>
+<p>Moreover,</p>
+<div class="arithmatex">\[\begin{equation}
+\begin{aligned}
+\xi^T A\xi
+&amp;=\xi^T B^{1/2}\left(\mathbb{1}+iK\right)B^{1/2}\xi\\
+&amp;=y^T\left(\mathbb{1}+iK\right)y.
+\end{aligned}
+\end{equation}\]</div>
+<p>Hence the integral becomes</p>
+<div class="arithmatex">\[\begin{equation}
+I
+=
+\frac{1}{\sqrt{\det B}}
+\int \frac{d^4y}{(2\pi)^2}
+\exp\!\left[
+-\frac12\,y^T\left(\mathbb{1}+iK\right)y
+\right].
+\end{equation}\]</div>
+<p>Since <span class="arithmatex">\(K\)</span> is real symmetric, it can be diagonalized by an orthogonal matrix. Thus, there exists (see <a href="#ref-axler2024">[1]</a>) an orthogonal matrix <span class="arithmatex">\(O\)</span> such that</p>
+<div class="arithmatex">\[\begin{equation}
+K=O^T\Lambda O,
+\qquad
+\Lambda=\mathrm{diag}(\kappa_1,\kappa_2,\kappa_3,\kappa_4),
+\end{equation}\]</div>
+<p>with real eigenvalues <span class="arithmatex">\(\kappa_j\)</span>. We now define</p>
+<div class="arithmatex">\[\begin{equation}
+z=Oy.
+\end{equation}\]</div>
+<p>Because <span class="arithmatex">\(O\)</span> is orthogonal, we have</p>
+<div class="arithmatex">\[\begin{equation}
+d^4y=d^4z,
+\qquad
+y^Ty=z^Tz.
+\end{equation}\]</div>
+<p>Furthermore,</p>
+<div class="arithmatex">\[\begin{equation}
+\begin{aligned}
+y^T\left(\mathbb{1}+iK\right)y
+&amp;=
+y^Ty+i\,y^TKy\\
+&amp;=
+z^Tz+i\,z^T\Lambda z\\
+&amp;=
+\sum_{j=1}^4 (1+i\kappa_j)z_j^2.
+\end{aligned}
+\end{equation}\]</div>
+<p>Therefore, the integral factorizes into four one-dimensional Gaussian integrals:</p>
+<div class="arithmatex">\[\begin{equation}
+I
+=
+\frac{1}{\sqrt{\det B}}
+\prod_{j=1}^4
+\int \frac{dz_j}{\sqrt{2\pi}}
+\exp\!\left[
+-\frac12(1+i\kappa_j)z_j^2
+\right].
+\end{equation}\]</div>
+<p>Each factor is a convergent Gaussian integral because</p>
+<div class="arithmatex">\[\begin{equation}
+\mathbb{R}(1+i\kappa_j)=1&gt;0.
+\end{equation}\]</div>
+<p>Using the standard Gaussian formula</p>
+<div class="arithmatex">\[\begin{equation}
+\int_{-\infty}^{\infty}\frac{dz}{\sqrt{2\pi}}
+\exp\!\left(-\frac{a}{2}z^2\right)
+=
+\frac{1}{\sqrt{a}},
+\qquad
+\mathbb{R}(a)&gt;0,
+\end{equation}\]</div>
+<p>we obtain</p>
+<div class="arithmatex">\[\begin{equation}
+\int \frac{dz_j}{\sqrt{2\pi}}
+\exp\!\left[
+-\frac12(1+i\kappa_j)z_j^2
+\right]
+=
+\frac{1}{\sqrt{1+i\kappa_j}}.
+\end{equation}\]</div>
+<p>Thus,</p>
+<div class="arithmatex">\[\begin{equation}
+\begin{aligned}
+I
+&amp;=
+\frac{1}{\sqrt{\det B}}
+\prod_{j=1}^4 \frac{1}{\sqrt{1+i\kappa_j}}\\
+&amp;=
+\frac{1}{\sqrt{\det B}}
+\frac{1}{\sqrt{\prod_{j=1}^4 (1+i\kappa_j)}}.
+\end{aligned}
+\end{equation}\]</div>
+<p>Since</p>
+<div class="arithmatex">\[\begin{equation}
+\prod_{j=1}^4 (1+i\kappa_j)
+=
+\det(\mathbb{1}+iK),
+\end{equation}\]</div>
+<p>this becomes</p>
+<div class="arithmatex">\[\begin{equation}
+I
+=
+\frac{1}{\sqrt{\det B\,\det(\mathbb{1}+iK)}}.
+\end{equation}\]</div>
+<p>Finally, using</p>
+<div class="arithmatex">\[\begin{equation}
+A
+=
+B^{1/2}\left(\mathbb{1}+iK\right)B^{1/2},
+\end{equation}\]</div>
+<p>we get</p>
+<div class="arithmatex">\[\begin{equation}
+\begin{aligned}
+\det A
+&amp;=
+\det(B^{1/2})\det(\mathbb{1}+iK)\det(B^{1/2})\\
+&amp;=
+\det(B)\det(\mathbb{1}+iK).
+\end{aligned}
+\end{equation}\]</div>
+<p>Therefore,</p>
+<div class="arithmatex">\[\begin{equation}
+I
+=
+\int \frac{d^4\xi}{(2\pi)^2}
+\exp\!\left(-\frac12\,\xi^T A\,\xi\right)
+=
+\frac{1}{\sqrt{\det A}}.
+\end{equation}\]</div>
+<p>After transforming the expression into a real quadratic form, the problem reduces to a multivariate Gaussian integral. Expressions of this form are equivalent to those encountered in the phase-space description of Gaussian states via the Wigner function formalism, where the matrix <span class="arithmatex">\(A\)</span> can be interpreted as an effective inverse covariance matrix  (see <a href="#ref-ferraro2005">[2]</a>, <a href="#ref-brask2022">[3]</a>).</p>
+<p>While this connection provides useful conceptual insight, the following calculation is carried out within the present operator-based framework in order to maintain a direct and explicit derivation. In order to evaluate <span class="arithmatex">\(\det A\)</span>, we recall that <span class="arithmatex">\(A=W^TQW\)</span>. Consequently, the determinant of <span class="arithmatex">\(A\)</span> is</p>
+<div class="arithmatex">\[\begin{equation}
+\begin{aligned}
+\det A &amp;= \det(W^TQW)\\
+&amp;=\det (W)^2\det Q\\
+&amp;=\det Q,
+\end{aligned}
+\end{equation}\]</div>
+<p>with <span class="arithmatex">\(\det(W)^2=\mathbb 1\)</span>. Using (\ref{appendix:det_of_blockmatrix}) and (\ref{eq:Q}), we are able to rewrite <span class="arithmatex">\(\det A\)</span> as:</p>
+<div class="arithmatex">\[\begin{equation}
+\begin{aligned}
+\det A&amp;=\det(\lambda^2ML-\mathbb{1})\\
+&amp;=\det(\mathbb{1}-\lambda^2ML)\\
+&amp;=\det(\mathbb{1}-\lambda^2MDMD)
+\end{aligned}
+\end{equation}\]</div>
+<h2 id="evaluation-of-the-determinant">Evaluation of the determinant<a class="headerlink" href="#evaluation-of-the-determinant" title="Permanent link">&para;</a></h2>
+<div class="arithmatex">\[\begin{equation}
+\begin{aligned}
+MD&amp;=
+\begin{pmatrix}
+2cs\,t_H &amp; (s^2-c^2)t_V\\
+(s^2-c^2)t_H &amp; -2cs\,t_V
+\end{pmatrix},
+\end{aligned}
+\end{equation}\]</div>
+<p>and therefore</p>
+<div class="arithmatex">\[\begin{equation}
+\label{eq:mdmd_abbreviation}
+\begin{aligned}
+MDMD=
+\begin{pmatrix}
+a &amp;
+b
+\\
+c &amp;
+d
+\end{pmatrix},
+\end{aligned}
+\end{equation}\]</div>
+<p>with</p>
+<div class="arithmatex">\[\begin{equation}
+\begin{aligned}
+a&amp;=(2cs)^2t_H^2+(s^2-c^2)^2t_Ht_V\\
+b&amp;=2cs(s^2-c^2)t_V(t_H-t_V)\\
+c&amp;=2cs(s^2-c^2)t_H(t_H-t_V)\\
+d&amp;=(s^2-c^2)^2t_Ht_V+(2cs)^2t_V^2.
+\end{aligned}
+\end{equation}\]</div>
+<p>Using equation (9) of <a href="../../concepts_and_foundations/determinant_relations/#appendix:det_1minusl2X">Determinant relations</a> <span class="arithmatex">\(\det Q\)</span> becomes</p>
+<div class="arithmatex">\[\begin{equation}
+\begin{aligned}
+\det Q
+&amp;=\det\!\left(\mathbb{1}-\lambda^2MDMD\right)\\
+&amp;=
+1-\lambda^2\mathrm{Tr}(MDMD)
++\lambda^4 \det(MDMD).
+\end{aligned}
+\end{equation}\]</div>
+<p>Using</p>
+<div class="arithmatex">\[\begin{equation}
+2cs=\sin(4\vartheta),
+\qquad
+s^2-c^2=-\cos(4\vartheta),
+\end{equation}\]</div>
+<p>this becomes</p>
+<div class="arithmatex">\[\begin{equation}
+\begin{aligned}
+\det Q
+=
+&amp;1\\
+-&amp;\lambda^2\left((t_H^2+t_V^2)\sin^2(4\vartheta)+2t_Ht_V\cos^2(4\vartheta)\right)\notag\\
++&amp;\lambda^4 t_H^2t_V^2.
+\end{aligned}
+\end{equation}\]</div>
+<p>Equivalently,</p>
+<div class="arithmatex">\[\begin{equation}
+\det Q
+=
+(1-\lambda^2 t_Ht_V)^2
+-\lambda^2(t_H-t_V)^2\sin^2(4\vartheta),
+\end{equation}\]</div>
+<p>or with <span class="arithmatex">\(\eqref{eq:t_eta}\)</span></p>
+<div class="arithmatex">\[\begin{equation}
+\begin{aligned}
+\det Q
+&amp;=
+\left(1-\lambda^2(1-\eta_H)(1-\eta_V)\right)^2\\
+&amp;-\lambda^2(\eta_H-\eta_V)^2\sin^2(4\vartheta).
+\end{aligned}
+\end{equation}\]</div>
+<p>Finally, we can write <span class="arithmatex">\(P^{(\eta_H,\eta_V)}(0,0)\)</span> from equation <span class="arithmatex">\(\eqref{formula:last_term1}\)</span> as</p>
+<div class="arithmatex">\[\begin{equation}
+\begin{aligned}
+&amp;P^{(\eta_H,\eta_V)}(0,0)=\langle \Psi \rvert \left(1-\eta_H\right)^{\hat{n}_H}\otimes \left(1-\eta_V\right)^{\hat{n}_V}\lvert \Psi \rangle\\
+=&amp;\dfrac{(1-\lambda^2)}{\sqrt{\left(1-\lambda^2(1-\eta_H)(1-\eta_V)\right)^2-\lambda^2(\eta_H-\eta_V)^2\sin^2(4\vartheta)}}.
+\end{aligned}
+\end{equation}\]</div>
+<p>In order to calculate <span class="arithmatex">\(P^{(\eta_{H})}_{H}(0)\)</span> or <span class="arithmatex">\(P^{(\eta_{V})}_{V}(0)\)</span>, we can set <span class="arithmatex">\(\eta_{V}=0\)</span> or <span class="arithmatex">\(\eta_{H}=0\)</span>. For <span class="arithmatex">\(P^{(\eta_{H})}_{H}(0)\)</span> we therefore get</p>
+<div class="arithmatex">\[\begin{equation}
+\begin{aligned}
+P^{(\eta_{H})}_{H}(0)&amp;=P^{(\eta_H,\eta_V=0)}(0,0)\\
+&amp;=\dfrac{(1-\lambda^2)}{\sqrt{\left(1-\lambda^2(1-\eta_H)\right)^2-\lambda^2\eta_H^2\sin^2(4\vartheta)}},
+\end{aligned}
+\end{equation}\]</div>
+<p>and <span class="arithmatex">\(P^{(\eta_{V})}_{V}(0)\)</span> we get</p>
+<div class="arithmatex">\[\begin{equation}
+\begin{aligned}
+P^{(\eta_{V})}_{V}(0)&amp;=P^{(\eta_H=0,\eta_V)}(0,0)\\
+&amp;=\dfrac{(1-\lambda^2)}{\sqrt{\left(1-\lambda^2(1-\eta_V)\right)^2-\lambda^2\eta_V^2\sin^2(4\vartheta)}}.
+\end{aligned}
+\end{equation}\]</div>
+<h2 id="interpretation-of-the-no-click-and-coincidence-probabilities">Interpretation of the no-click and coincidence probabilities<a class="headerlink" href="#interpretation-of-the-no-click-and-coincidence-probabilities" title="Permanent link">&para;</a></h2>
+<p>For two bucket detectors measuring the <span class="arithmatex">\(H\)</span> and <span class="arithmatex">\(V\)</span> output modes, each detector has only two possible outcomes:
+click or no click. Therefore, in each trial there are four mutually exclusive joint outcomes:</p>
+<div class="arithmatex">\[\begin{equation}
+\begin{aligned}
+&amp;\text{(i) no click in either arm}, \nonumber\\
+&amp;\text{(ii) only the $H$ detector clicks}, \nonumber\\
+&amp;\text{(iii) only the $V$ detector clicks}, \nonumber\\
+&amp;\text{(iv) both detectors click (coincidence).} \nonumber
+\end{aligned}
+\end{equation}\]</div>
+<p>It is useful to assign probabilities to these four elementary outcomes:</p>
+<div class="arithmatex">\[\begin{equation}
+\begin{aligned}
+P_{00} &amp;:= \Pr(\text{no click in $H$ and no click in $V$}),\\
+P_{H\text{-only}} &amp;:= \Pr(\text{$H$ clicks and $V$ does not click}),\\
+P_{V\text{-only}} &amp;:= \Pr(\text{$V$ clicks and $H$ does not click}),\\
+P_{\mathrm{cc}} &amp;:= \Pr(\text{$H$ clicks and $V$ clicks}).
+\end{aligned}
+\end{equation}\]</div>
+<p>Since these four events are disjoint and exhaustive, their probabilities must sum to unity:</p>
+<div class="arithmatex">\[\begin{equation}
+1 = P_{00} + P_{H\text{-only}} + P_{V\text{-only}} + P_{\mathrm{cc}}.
+\label{eq:four_outcomes_sum}
+\end{equation}\]</div>
+<h2 id="connection-to-the-notation-p_heta0-p_veta0-and-peta_heta_v00">Connection to the notation <span class="arithmatex">\(P_H^{(\eta)}(0)\)</span>, <span class="arithmatex">\(P_V^{(\eta)}(0)\)</span>, and <span class="arithmatex">\(P^{(\eta_H,\eta_V)}(0,0)\)</span><a class="headerlink" href="#connection-to-the-notation-p_heta0-p_veta0-and-peta_heta_v00" title="Permanent link">&para;</a></h2>
+<p>The quantity</p>
+<div class="arithmatex">\[\begin{equation}
+P_H^{(\eta_H)}(0)
+=
+\langle \Psi | (1-\eta_H)^{\hat n_H}\otimes I |\Psi\rangle
+\end{equation}\]</div>
+<p>is the probability that the <span class="arithmatex">\(H\)</span> detector does not click, irrespective of what happens in the <span class="arithmatex">\(V\)</span> arm. Hence it contains two of the four elementary outcomes:</p>
+<div class="arithmatex">\[\begin{equation}
+P_H^{(\eta_H)}(0) = P_{00} + P_{V\text{-only}}.
+\label{eq:PH_meaning}
+\end{equation}\]</div>
+<p>Similarly,</p>
+<div class="arithmatex">\[\begin{equation}
+P_V^{(\eta_V)}(0)
+=
+\langle \Psi | I\otimes (1-\eta_V)^{\hat n_V} |\Psi\rangle
+\end{equation}\]</div>
+<p>is the probability that the <span class="arithmatex">\(V\)</span> detector does not click, regardless of what happens in the <span class="arithmatex">\(H\)</span> arm, so that</p>
+<div class="arithmatex">\[\begin{equation}
+P_V^{(\eta_V)}(0) = P_{00} + P_{H\text{-only}}.
+\label{eq:PV_meaning}
+\end{equation}\]</div>
+<p>Finally, the joint no-click probability is</p>
+<div class="arithmatex">\[\begin{equation}
+P^{(\eta_H,\eta_V)}(0,0)
+=
+\langle \Psi | (1-\eta_H)^{\hat n_H}\otimes (1-\eta_V)^{\hat n_V} |\Psi\rangle,
+\end{equation}\]</div>
+<p>which is precisely the probability that neither detector clicks:</p>
+<div class="arithmatex">\[\begin{equation}
+P^{(\eta_H,\eta_V)}(0,0)=P_{00}.
+\label{eq:P00_meaning}
+\end{equation}\]</div>
+<h2 id="connection-to-the-coincidence-probability">Connection to the coincidence probability<a class="headerlink" href="#connection-to-the-coincidence-probability" title="Permanent link">&para;</a></h2>
+<p>The coincidence probability is the probability that both detectors click:</p>
+<div class="arithmatex">\[\begin{equation}
+P_{\mathrm{coinc}}
+=
+P_{\mathrm{cc}}.
+\end{equation}\]</div>
+<p>Using equations~\eqref{eq:PH_meaning}--\eqref{eq:P00_meaning}, it follows that</p>
+<div class="arithmatex">\[\begin{equation}
+P_{\mathrm{coinc}}
+=
+1 - P_H^{(\eta_H)}(0) - P_V^{(\eta_V)}(0) + P^{(\eta_H,\eta_V)}(0,0),
+\label{eq:Pcoinc_inclusion_exclusion}
+\end{equation}\]</div>
+<p>which is just the inclusion--exclusion formula for the event that both detectors click.</p>
+<h2 id="connection-to-the-lossless-notation">Connection to the lossless notation<a class="headerlink" href="#connection-to-the-lossless-notation" title="Permanent link">&para;</a></h2>
+<p>In the lossless discussion, one often groups the four elementary outcomes into only three classes:</p>
+<div class="arithmatex">\[\begin{equation}
+\begin{aligned}
+P_{\text{no-click}} &amp;:= P_{00},\\
+P_{\text{1-click}} &amp;:= P_{H\text{-only}} + P_{V\text{-only}},\\
+P_{\text{coinc.}} &amp;:= P_{\mathrm{cc}}.
+\end{aligned}
+\end{equation}\]</div>
+<p>Equation~\eqref{eq:four_outcomes_sum} then becomes</p>
+<div class="arithmatex">\[\begin{equation}
+1 \overset{!}{=} P_{\text{no-click}} + P_{\text{1-click}} + P_{\text{coinc.}}.
+\label{eq:lossless_grouped}
+\end{equation}\]</div>
+<p>Thus, the quantities <span class="arithmatex">\(P_H^{(\eta_H)}(0)\)</span> and <span class="arithmatex">\(P_V^{(\eta_V)}(0)\)</span> are not additional detector outcomes by themselves. Rather, they are marginal no-click probabilities, i.e.\ partial sums over the four elementary outcomes:</p>
+<div class="arithmatex">\[\begin{equation}
+\begin{aligned}
+P_H^{(\eta_H)}(0) &amp;= P_{\text{no-click}} + P_{V\text{-only}},\\
+P_V^{(\eta_V)}(0) &amp;= P_{\text{no-click}} + P_{H\text{-only}}.
+\end{aligned}
+\end{equation}\]</div>
+<p>They appear naturally when expanding the POVM expression for the coincidence event.</p>
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<p id="ref-axler2024">
+[1] S. Axler, <em>Linear Algebra Done Right</em>, 4th ed., Springer, 2024. Available: https://linear.axler.net/LADR4e.pdf
+</p>
+
+<p id="ref-ferraro2005">
+[2] A. Ferraro, S. Olivares, and M. G. A. Paris, 
+<em>Gaussian states in continuous variable quantum information</em>, 2005. Available: https://arxiv.org/abs/quant-ph/0503237
+</p>
+
+<p id="ref-brask2022">
+[3] J. B. Brask, 
+<em>Gaussian states and operations -- a quick reference</em>, 2022. Available: https://arxiv.org/abs/2102.05748
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://zensical.org/" target="_blank" rel="noopener">
+      Zensical
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/nicosieber" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2026 Fonticons, Inc.--><path fill="currentColor" d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate":null,"base":"../..","features":["navigation.tabs","navigation.sections","navigation.expand","content.code.copy"],"search":"../../assets/javascripts/workers/search.e2d2d235.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.dbc0afdc.min.js"></script>
+      
+        <script src="../../js/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../js/home.js"></script>
+      
+    
+  </body>
+</html>
