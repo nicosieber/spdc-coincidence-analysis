@@ -634,30 +634,34 @@
 
 
 <h1 id="coherent-states">Coherent states<a class="headerlink" href="#coherent-states" title="Permanent link">&para;</a></h1>
+<p>The definition of coherent states in the Fock basis. These states are eigenstates of the annihilation operator and can be expanded in the number basis as:</p>
 <div class="arithmatex">\[\begin{equation}
 \begin{aligned}
 \lvert \alpha \rangle &amp; =e^{-\frac{|\alpha|²}{2}}\sum_{n=0}^\infty\dfrac{\alpha^n}{\sqrt{n!}}\lvert n \rangle\\
     \langle \alpha \rvert &amp; =e^{-\frac{|\alpha|²}{2}}\sum_{m=0}^\infty\dfrac{(\alpha^*)^m}{\sqrt{m!}}\langle m \rvert
 \end{aligned}
 \end{equation}\]</div>
+<p>Taking the outer product of the coherent state with itself gives the corresponding density operator:</p>
 <p><span id="formula:coherent_state_matrix"></span></p>
 <div class="arithmatex">\[\begin{equation}
 \label{formula:coherent_state matrix}
 \lvert \alpha \rangle\langle \alpha \rvert=e^{-|\alpha|²}\sum_{n,m=0}^\infty\dfrac{\alpha^n(\alpha^*)^m}{\sqrt{n!m!}}\lvert n \rangle \langle m \rvert
 \end{equation}\]</div>
+<p>Now, both sides of <span class="arithmatex">\(\eqref{formula:coherent_state matrix}\)</span> are integrated over the phase space with the measure <span class="arithmatex">\(d^2\alpha/\pi\)</span>. This is to show that coherent states form an overcomplete basis that resolves the identity.</p>
 <p>Integrating both sides of <span class="arithmatex">\(\eqref{formula:coherent_state matrix}\)</span> with <span class="arithmatex">\(d^2\alpha/\pi\)</span> gives:</p>
 <div class="arithmatex">\[\begin{equation}
 \label{formula:coherent_state matrix_integral}
 \int \dfrac{d^2\alpha}{\pi}\lvert \alpha \rangle\langle \alpha \rvert=\sum_{n,m=0}^\infty\dfrac{\lvert n \rangle \langle m \rvert}{\sqrt{n!m!}}\int\dfrac{d^2\alpha}{\pi}e^{-|\alpha|^2}\alpha^n(\alpha^*)^m
 \end{equation}\]</div>
-<p>Switching to polar coordinates with</p>
+<p>Thus, the problem reduces to evaluating the phase-space integral appearing on the right-hand side.</p>
+<p>To evaluate this integral, a switch to polar coordinates in the complex plane is done:</p>
 <div class="arithmatex">\[\begin{equation}
 \begin{aligned}
 \alpha &amp;=re^{i\phi},\\
 d^2\alpha &amp;=rdrd\phi,
 \end{aligned}
 \end{equation}\]</div>
-<p>transforms the integral of expression <span class="arithmatex">\(\eqref{formula:coherent_state matrix_integral}\)</span> into:</p>
+<p>This transformation separates the integral into radial and angular parts. Substituting into <span class="arithmatex">\(\eqref{formula:coherent_state matrix_integral}\)</span>, results in:</p>
 <div class="arithmatex">\[\begin{equation}
 \label{formula:coherent_state_integral}
 \begin{aligned}
@@ -666,7 +670,7 @@ d^2\alpha &amp;=rdrd\phi,
 &amp;=\int_{0}^{\infty}\dfrac{r^{n+m+1}e^{-r^2}}{\pi}dr\int_{0}^{2\pi}e^{i(n-m)\phi}d\phi
 \end{aligned}
 \end{equation}\]</div>
-<p>Since</p>
+<p>The angular integral enforces orthogonality between different number states:</p>
 <div class="arithmatex">\[\begin{equation}
 \begin{aligned}
 \int_{0}^{2\pi}e^{i(n-m)\phi}d\phi=
@@ -676,31 +680,33 @@ d^2\alpha &amp;=rdrd\phi,
 \end{cases}
 \end{aligned}
 \end{equation}\]</div>
-<p>equation <span class="arithmatex">\(\eqref{formula:coherent_state_integral}\)</span> transforms into</p>
+<p>This shows that only the diagonal terms with <span class="arithmatex">\(n=m\)</span> contribute to the integral. Therefore, equation <span class="arithmatex">\(\eqref{formula:coherent_state_integral}\)</span> simplifies to</p>
 <div class="arithmatex">\[\begin{equation}
 2\pi\int_{0}^{\infty}\dfrac{r^{2n+1}e^{-r^2}}{\pi}dr\
 \end{equation}\]</div>
-<p>for <span class="arithmatex">\(n=m\)</span>. Using the substitution</p>
+<p>for <span class="arithmatex">\(n=m\)</span>.</p>
+<p>To evaluate the remaining radial integral, the substitution following substitution is done:</p>
 <div class="arithmatex">\[\begin{equation}
 \begin{aligned}
 u&amp;=r^2,\\
-du&amp;=2rdr,
+du&amp;=2rdr.
 \end{aligned}
 \end{equation}\]</div>
-<p>the integral transforms into the Gamma-function:</p>
+<p>As a result the integral transforms into a standard Gamma-function:</p>
 <div class="arithmatex">\[\begin{equation}
 2\int_{0}^{\infty}r^{n2n+1}e^{-r^2}dr=\int_{0}^{\infty}u^ne^{-u}du=\Gamma(n+1)=n!
 \end{equation}\]</div>
-<p>So finally <span class="arithmatex">\(\eqref{formula:coherent_state_integral}\)</span> becomes</p>
+<p>Using this result, <span class="arithmatex">\(\eqref{formula:coherent_state_integral}\)</span> evaluates to</p>
 <div class="arithmatex">\[\begin{equation}
-\int \dfrac{d^2\alpha}{\pi}e^{-|\alpha^2|}\alpha^n(\alpha^*)=n!,
+\int \dfrac{d^2\alpha}{\pi}e^{-|\alpha^2|}\alpha^n(\alpha^*)=n!.
 \end{equation}\]</div>
-<p>and as a result <span class="arithmatex">\(\eqref{formula:coherent_state matrix_integral}\)</span> becomes:</p>
+<p>Finally, substituting this back into <span class="arithmatex">\(\eqref{formula:coherent_state matrix_integral}\)</span>, the following identity can be obtained:</p>
 <p><span id="eq:coherent_identity"></span></p>
 <div class="arithmatex">\[\begin{equation}
 \label{eq:coherent_identity}
 \int \dfrac{d^2\alpha}{\pi}\lvert \alpha \rangle \langle \alpha \rvert=\sum_{n=0}^\infty \lvert n \rangle \langle n \rvert=\mathbb{1}
 \end{equation}\]</div>
+<p>This shows that coherent states resolve the identity operator, demonstrating that they form an overcomplete basis in Hilbert space.</p>
 
 
 

@@ -638,7 +638,18 @@
   <a href="#action-of-a-on-number-states" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Action of A on number states
+        Action of <span class="arithmatex">\(A\)</span> on number states
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#identification-of-the-operators" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Identification of the operators
       </span>
     </span>
   </a>
@@ -664,28 +675,30 @@
 
 
 <h1 id="povm-as-a-function-of-the-number-operator">POVM as a function of the number operator<a class="headerlink" href="#povm-as-a-function-of-the-number-operator" title="Permanent link">&para;</a></h1>
-<p>Considering the operator</p>
+<p>Consider the operator</p>
 <div class="arithmatex">\[\begin{equation}
 A := \sum_{k=0}^{\infty} x^k \, |k\rangle\langle k|.
 \end{equation}\]</div>
-<p>The Fock states <span class="arithmatex">\(|k\rangle\)</span> are eigenstates of the number operator</p>
+<p>This operator is diagonal in the Fock basis. The states <span class="arithmatex">\(|k\rangle\)</span> are eigenstates of the number operator</p>
 <div class="arithmatex">\[\begin{equation}
 \hat{n} = \hat{a}^\dagger \hat{a}, 
 \qquad 
 \hat{n} |k\rangle = k |k\rangle.
 \end{equation}\]</div>
+<p>This property will be used to relate <span class="arithmatex">\(A\)</span> to a function of the number operator.</p>
+<hr />
 <h2 id="action-of-exponentials-of-the-number-operator">Action of exponentials of the number operator<a class="headerlink" href="#action-of-exponentials-of-the-number-operator" title="Permanent link">&para;</a></h2>
-<p>For any function <span class="arithmatex">\(f\)</span>, the operator <span class="arithmatex">\(f(\hat{n})\)</span> is defined via its power series. 
-In particular,</p>
+<p>For any function <span class="arithmatex">\(f\)</span>, the operator <span class="arithmatex">\(f(\hat{n})\)</span> can be defined via its power series expansion. 
+In particular, the operator <span class="arithmatex">\(x^{\hat{n}}\)</span> can be written as</p>
 <div class="arithmatex">\[\begin{equation}
 x^{\hat{n}} = e^{(\ln x)\hat{n}}
 = \sum_{j=0}^{\infty} \frac{(\ln x)^j}{j!} \, \hat{n}^{\,j}.
 \end{equation}\]</div>
-<p>Since <span class="arithmatex">\(|m\rangle\)</span> is an eigenstate of <span class="arithmatex">\(\hat{n}\)</span>, we have</p>
+<p>Since <span class="arithmatex">\(|m\rangle\)</span> is an eigenstate of <span class="arithmatex">\(\hat{n}\)</span>, repeated application of <span class="arithmatex">\(\hat{n}\)</span> gives</p>
 <div class="arithmatex">\[\begin{equation}
-\hat{n}^{\,j} |m\rangle = m^j |m\rangle,
+\hat{n}^{\,j} |m\rangle = m^j |m\rangle.
 \end{equation}\]</div>
-<p>and therefore</p>
+<p>Substituting this into the series expansion yields</p>
 <div class="arithmatex">\[\begin{equation}
 \begin{aligned}
 x^{\hat{n}} |m\rangle
@@ -695,8 +708,10 @@ x^{\hat{n}} |m\rangle
 &amp;= x^m |m\rangle.
 \end{aligned}
 \end{equation}\]</div>
-<h2 id="action-of-a-on-number-states">Action of A on number states<a class="headerlink" href="#action-of-a-on-number-states" title="Permanent link">&para;</a></h2>
-<p>Acting with <span class="arithmatex">\(A\)</span> on an arbitrary number state <span class="arithmatex">\(|m\rangle\)</span> yields</p>
+<p>Thus, the operator <span class="arithmatex">\(x^{\hat{n}}\)</span> acts diagonally in the Fock basis with eigenvalues <span class="arithmatex">\(x^m\)</span>.</p>
+<hr />
+<h2 id="action-of-a-on-number-states">Action of <span class="arithmatex">\(A\)</span> on number states<a class="headerlink" href="#action-of-a-on-number-states" title="Permanent link">&para;</a></h2>
+<p>The action of <span class="arithmatex">\(A\)</span> on an arbitrary number state <span class="arithmatex">\(|m\rangle\)</span> is given by</p>
 <div class="arithmatex">\[\begin{equation}
 \begin{aligned}
 A|m\rangle
@@ -705,11 +720,14 @@ A|m\rangle
 &amp;= x^m |m\rangle.
 \end{aligned}
 \end{equation}\]</div>
-<p>Since both operators act identically on all basis states, we conclude</p>
+<p>This shows that <span class="arithmatex">\(A\)</span> is also diagonal in the Fock basis and has the same eigenvalues <span class="arithmatex">\(x^m\)</span>.</p>
+<hr />
+<h2 id="identification-of-the-operators">Identification of the operators<a class="headerlink" href="#identification-of-the-operators" title="Permanent link">&para;</a></h2>
+<p>Since both <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(x^{\hat{n}}\)</span> act identically on all basis states <span class="arithmatex">\(|m\rangle\)</span>, they represent the same operator. Therefore,</p>
 <div class="arithmatex">\[\begin{equation}
 \sum_{k=0}^{\infty} x^k |k\rangle\langle k| = x^{\hat{n}}.
 \end{equation}\]</div>
-<p>In particular, for <span class="arithmatex">\(x = 1-\eta\)</span>,</p>
+<p>In particular, for <span class="arithmatex">\(x = 1-\eta\)</span>, this yields</p>
 <div class="arithmatex">\[\begin{equation}
 \Pi_0^{(\eta)} = (1-\eta)^{\hat{n}}.
 \end{equation}\]</div>

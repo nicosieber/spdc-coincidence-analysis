@@ -645,6 +645,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        References
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -665,7 +676,8 @@
 
 <h1 id="determinant-relations">Determinant relations<a class="headerlink" href="#determinant-relations" title="Permanent link">&para;</a></h1>
 <h2 id="determinant-of-a-2-by-2-block-matrix">Determinant of a 2 by 2 block matrix<a class="headerlink" href="#determinant-of-a-2-by-2-block-matrix" title="Permanent link">&para;</a></h2>
-<p>According to Powell[@powell2011blockdet], the determinant of a <span class="arithmatex">\(2\times2\)</span> block matrix </p>
+<p>The determinant of a <span class="arithmatex">\(2\times2\)</span> block matrix can be expressed in terms of its sub-blocks. This result is particularly useful when one of the blocks is invertible.</p>
+<p>Consider the matrix</p>
 <div class="arithmatex">\[\begin{equation}
 \begin{aligned}
 Q=
@@ -675,17 +687,20 @@ Q_{21} &amp; Q_{22}
 \end{pmatrix}
 \end{aligned}
 \end{equation}\]</div>
-<p>can be calculated by</p>
+<p>Under suitable conditions (in particular, assuming the required inverses exist), its determinant can be written as</p>
 <div class="arithmatex">\[\begin{equation}
 \label{appendix:det_of_blockmatrix}
 \det Q = \det(Q_{11}-Q_{12}Q_{22}^{-1}Q_{21})\det Q_{11}
 \end{equation}\]</div>
+<p>This expression allows the determinant of a block matrix to be reduced to determinants of smaller matrices (see <a href="#ref-powell2011">[1]</a>).</p>
+<hr />
 <h2 id="determinant-identity-for-scaled-matrices">Determinant identity for scaled matrices<a class="headerlink" href="#determinant-identity-for-scaled-matrices" title="Permanent link">&para;</a></h2>
-<p>Here I show the derivation of a useful identity for the determinant of a <span class="arithmatex">\(2\times 2\)</span> matrix of the form</p>
+<p>A useful identity for determinants of <span class="arithmatex">\(2\times2\)</span> matrices is derived in the following.</p>
+<p>Consider the expression</p>
 <div class="arithmatex">\[\begin{equation}
 \det(\mathbb{1}-\lambda^2 X),
 \end{equation}\]</div>
-<p>where <span class="arithmatex">\(X\)</span> is an arbitrary <span class="arithmatex">\(2\times2\)</span> matrix.</p>
+<p>where <span class="arithmatex">\(X\)</span> is an arbitrary <span class="arithmatex">\(2\times2\)</span> matrix. The goal is to express this determinant in terms of invariants of <span class="arithmatex">\(X\)</span>.</p>
 <p>Let</p>
 <div class="arithmatex">\[\begin{equation}
 \begin{aligned}
@@ -698,7 +713,7 @@ c &amp; d
 (X\in\mathbb{C}^{2\times2}).
 \end{aligned}
 \end{equation}\]</div>
-<p>Then</p>
+<p>Then the matrix <span class="arithmatex">\(\mathbb{1}-\lambda^2 X\)</span> takes the form</p>
 <div class="arithmatex">\[\begin{equation}
 \begin{aligned}
 \mathbb{1}-\lambda^2X
@@ -709,7 +724,7 @@ c &amp; d
 \end{pmatrix}.
 \end{aligned}
 \end{equation}\]</div>
-<p>Using the determinant formula for a <span class="arithmatex">\(2\times2\)</span> matrix,</p>
+<p>The determinant of a general <span class="arithmatex">\(2\times2\)</span> matrix is given by</p>
 <div class="arithmatex">\[\begin{equation}
 \begin{aligned}
 \det
@@ -720,7 +735,7 @@ r&amp;s
 =ps-qr,
 \end{aligned}
 \end{equation}\]</div>
-<p>one obtains</p>
+<p>which can now be applied directly:</p>
 <div class="arithmatex">\[\begin{equation}
 \begin{aligned}
 \det(\mathbb{1}-\lambda^2X)
@@ -732,7 +747,7 @@ r&amp;s
 1-\lambda^2(a+d)+\lambda^4(ad-bc).
 \end{aligned}
 \end{equation}\]</div>
-<p>Now recall that for the matrix <span class="arithmatex">\(X\)</span>,</p>
+<p>The result can be expressed more compactly by recalling the definitions</p>
 <div class="arithmatex">\[\begin{equation}
 \begin{aligned}
 \mathrm{Tr}(X)=a+d,
@@ -740,7 +755,7 @@ r&amp;s
 \det(X)=ad-bc.
 \end{aligned}
 \end{equation}\]</div>
-<p>Therefore:</p>
+<p>Substituting these into the previous expression yields</p>
 <p><span id="appendix:det_1minusl2X"></span></p>
 <div class="arithmatex">\[\begin{equation}
 \label{appendix:det_1minusl2X}
@@ -750,7 +765,12 @@ r&amp;s
 1-\lambda^2\mathrm{Tr}(X)+\lambda^4\det(X)
 \end{aligned}
 \end{equation}\]</div>
-<p>Thus, for any <span class="arithmatex">\(2\times2\)</span> matrix <span class="arithmatex">\(X\)</span>, the determinant of <span class="arithmatex">\(\mathbb{1}-\lambda^2X\)</span> can always be written in terms of the trace and determinant of <span class="arithmatex">\(X\)</span>.</p>
+<p>This shows that, for any <span class="arithmatex">\(2\times2\)</span> matrix <span class="arithmatex">\(X\)</span>, the determinant of <span class="arithmatex">\(\mathbb{1}-\lambda^2X\)</span> depends only on the trace and determinant of <span class="arithmatex">\(X\)</span>.</p>
+<hr />
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<p id="ref-powell2011">
+[1] P. D. Powell, <em>Calculating Determinants of Block Matrices</em>, 2011. Available: https://arxiv.org/abs/1112.4379
+</p>
 
 
 

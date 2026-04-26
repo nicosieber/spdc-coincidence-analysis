@@ -1,56 +1,63 @@
 # Operator relations
 
-In this section the relation
+In this section, the relation
 
 \begin{equation}
     Se^XS^{-1}=e^{SXS^{-1}}
 \end{equation}
 
-for operators $S$ and $X$ will be derived. First, recall that
+for operators $S$ and $X$ is derived. This identity expresses how operator exponentials transform under similarity transformations.
+
+First, recall the power series definition of the exponential of an operator:
 
 \begin{equation}
     e^X=\sum_{n=0}^\infty\dfrac{X^n}{n!}.
 \end{equation}
 
-Following that, we get
+Using this expansion, the left-hand side can be written as
 
 \begin{equation}
     Se^XS^{-1}=S\left(\sum_{n=0}^\infty\dfrac{X^n}{n!}\right)S^{-1}.
 \end{equation}
 
-With $S$ as a linear operator, we can move $S$ and $S^{-1}$ inside the sum:
+Since $S$ is a linear operator, it can be distributed over the sum, allowing $S$ and $S^{-1}$ to be moved inside:
 
 \begin{equation}
     \label{appendix:powerseries1}
     Se^XS^{-1}=\sum_{n=0}^\infty\dfrac{SX^nS^{-1}}{n!}
 \end{equation}
 
-Therefore, the next step is to understand how $SX^nS^{-1}$ is evaluated.
-Recall that
+The problem is thus reduced to evaluating the transformed powers $SX^nS^{-1}$.
+
+To proceed, recall the identity
 
 \begin{equation}
 S(AB)S^{-1}=\left(SAS^{-1}\right)\left(SBS^{-1}\right),
 \end{equation}
 
-so for $n=2$ we get
+which shows how products of operators transform under conjugation.
+
+Applying this relation to powers of $X$, for $n=2$ one obtains
 
 \begin{equation}
 SX^2S^{-1}=\left(SXS^{-1}\right)\left(SXS^{-1}\right),
 \end{equation}
 
-and for $n=3$ we get
+and for $n=3$
 
 \begin{equation}
 SX^3S^{-1}=\left(SXS^{-1}\right)\left(SXS^{-1}\right)\left(SXS^{-1}\right).
 \end{equation}
 
-In general we get
+This pattern generalizes to arbitrary $n$, yielding
 
 \begin{equation}
     SX^nS^{-1}=\left(SXS^{-1}\right)^n,
 \end{equation}
 
-which can be inserted back into \(\eqref{appendix:powerseries1}\) resulting in the relation which we wanted to prove at the beginning:
+so that each term in the series transforms into a corresponding power of the conjugated operator.
+
+Substituting this result back into \(\eqref{appendix:powerseries1}\) gives
 
 <span id="appendix:powerseries_final"></span>
 
@@ -60,3 +67,5 @@ which can be inserted back into \(\eqref{appendix:powerseries1}\) resulting in t
 Se^XS^{-1}&=\sum_{n=0}^\infty\dfrac{\left(SXS^{-1}\right)^n}{n!}=e^{SXS^{-1}}
 \end{aligned}
 \end{equation}
+
+This establishes the desired relation, showing that exponentiation and similarity transformation commute.

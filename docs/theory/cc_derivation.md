@@ -24,6 +24,9 @@ S=t_H^{\hat{n}_H} t_V^{\hat{n}_V}
 
 and
 
+
+<span id="MatrixD"></span>
+
 \begin{equation}
 \begin{aligned}
 D=
@@ -372,6 +375,8 @@ i\begin{pmatrix}
 \end{equation}
 
 ## Evaluation of the complex Gaussian integral
+
+<span id="GIntegral"></span>
 
 We now evaluate
 

@@ -141,7 +141,7 @@ The coincidence operator in the presence of loss is given by
 \end{aligned}
 \end{equation}
 
-Analogous to (\ref{formula:POVM_cc_probability}), the coincidence probability becomes
+Analogous to \(\eqref{formula:POVM_cc_probability}\), the coincidence probability becomes
 
 \begin{equation}
 \label{POVM:coinc_prob_loss}

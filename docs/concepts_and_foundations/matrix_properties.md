@@ -1,10 +1,10 @@
 # Matrix properties
 
-Here I provide a detailed justification that the matrix $B = \Re(A)$ introduced in equation (36) during the [derivation of the coincidence probability](../theory/cc_derivation.md#ABiC) is real symmetric and positive definite under physically relevant conditions. This property is essential for the convergence of the Gaussian integral in Sec.~IV D and for the existence of the factorization in Eq.~(119).
+Here I provide a detailed justification that the matrix $B = \Re(A)$ introduced in equation (36) during the [derivation of the coincidence probability](../theory/cc_derivation.md#ABiC) is real symmetric and positive definite under physically relevant conditions. This property is essential for the convergence of the [Gaussian integral](../theory/cc_derivation.md#GIntegral) and for the existence of the [factorization of $A$](../theory/cc_derivation.md#A_factorization).
 
 ## Structure of B
 
-From Eq.~(109)–(112), the matrix $A$ can be decomposed into its real and imaginary parts as
+[As we see in the derivation of the coincidence probability](../theory/cc_derivation.md#ABiC), the matrix $A$ can be decomposed into its real and imaginary parts as
 
 \begin{equation}
 A = B + iC.
@@ -20,9 +20,12 @@ I - \frac{\lambda}{2}(L + M) & 0 \\
 \end{pmatrix}.
 \end{equation}
 
-Here, $M$ is defined in Eq.~(50), $D = \mathrm{diag}(t_H, t_V)$ in Eq.~(56), and $L = DMD$.
+Link to the definitions of:
 
-We first observe that both $M$ and $D$ are real symmetric matrices. Since the product of symmetric matrices of the form $DMD$ preserves symmetry, it follows that $L$ is also real symmetric. Consequently, $B$ is real symmetric as it consists of symmetric blocks on the diagonal.
+- [Matrix $M$](../theory/tmsv.md#eq:alpha_vec)
+- [Matrix $D$](../theory/cc_derivation.md#MatrixD)
+
+The matrix $L = DMD$ is used as an abbreviation. First, observe that both $M$ and $D$ are real symmetric matrices. Since the product of symmetric matrices of the form $DMD$ preserves symmetry, it follows that $L$ is also real symmetric. Consequently, $B$ is real symmetric as it consists of symmetric blocks on the diagonal.
 
 ## Spectral properties of M
 
@@ -56,7 +59,7 @@ M^2 v = \lambda^2 v.
 
 Since $M^2 = \mathbb{1}$, it follows that $\lambda^2 = 1$, and therefore $\lambda = \pm 1$. Thus, all eigenvalues of $M$ lie in the set $\{-1,1\}$.
 
-Because $M$ is real symmetric, its operator norm is equal to the largest absolute value of its eigenvalues (see, e.g., \cite{GilbertIntroductionToLinearAlgebra2016}). Hence,
+Because $M$ is real symmetric, its operator norm is equal to the largest absolute value of its eigenvalues (see <a href="#GilbertIntroductionToLinearAlgebra2016">[1]</a>). Hence,
 
 \begin{equation}
 \|M\|_2 = 1.
@@ -165,7 +168,7 @@ Since all eigenvalues $\lambda_i$ are strictly positive, their square roots are 
 B^{-1/2} = Q \Lambda^{-1/2} Q^T.
 \end{equation}
 
-The square root constructed in this way is the unique real symmetric positive definite square root of $B$ (see \cite{GilbertIntroductionToLinearAlgebra2016}).
+The square root constructed in this way is the unique real symmetric positive definite square root of $B$ (see <a href="#GilbertIntroductionToLinearAlgebra2016">[1]</a>).
 
 ## Conclusion
 

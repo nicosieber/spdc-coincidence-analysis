@@ -634,24 +634,25 @@
 
 
 <h1 id="conjugation-of-creation-operators">Conjugation of creation operators<a class="headerlink" href="#conjugation-of-creation-operators" title="Permanent link">&para;</a></h1>
-<p>We prove the identity</p>
+<p>The identity</p>
 <div class="arithmatex">\[\begin{equation}
 x^{\hat n_H} a_H^\dagger x^{-\hat n_H} = x\, a_H^\dagger
 \end{equation}\]</div>
-<p>by acting on number states.</p>
-<p>First, note that</p>
+<p>is proven by evaluating the action of both sides on number states.</p>
+<p>To begin, recall how exponentials of the number operator act on Fock states:</p>
 <p><span id="eq:xpownm"></span></p>
 <div class="arithmatex">\[\begin{equation}
 \label{eq:x pow n m}
 x^{-\hat n_H} |m\rangle = x^{-m} |m\rangle.
 \end{equation}\]</div>
-<p>Applying the creation operator gives</p>
+<p>This follows directly from the fact that <span class="arithmatex">\(|m\rangle\)</span> is an eigenstate of <span class="arithmatex">\(\hat n_H\)</span>.</p>
+<p>Applying the creation operator to this result gives</p>
 <div class="arithmatex">\[\begin{equation}
 a_H^\dagger x^{-\hat n_H} |m\rangle
 = x^{-m} a_H^\dagger |m\rangle
 = x^{-m} \sqrt{m+1}\, |m+1\rangle.
 \end{equation}\]</div>
-<p>Now act with <span class="arithmatex">\(x^{\hat n_H}\)</span>:</p>
+<p>Next, the operator <span class="arithmatex">\(x^{\hat n_H}\)</span> is applied. Since <span class="arithmatex">\(|m+1\rangle\)</span> is also an eigenstate of <span class="arithmatex">\(\hat n_H\)</span>, its action is straightforward:</p>
 <div class="arithmatex">\[\begin{equation}
 \begin{aligned}
 x^{\hat n_H} a_H^\dagger x^{-\hat n_H} |m\rangle
@@ -659,16 +660,16 @@ x^{\hat n_H} a_H^\dagger x^{-\hat n_H} |m\rangle
 &amp;= x \sqrt{m+1} |m+1\rangle.
 \end{aligned}
 \end{equation}\]</div>
-<p>On the other hand,</p>
+<p>For comparison, the direct action of <span class="arithmatex">\(x\,a_H^\dagger\)</span> on the same state is</p>
 <div class="arithmatex">\[\begin{equation}
 x a_H^\dagger |m\rangle = x \sqrt{m+1} |m+1\rangle.
 \end{equation}\]</div>
-<p>Thus,</p>
+<p>Since both expressions produce the same result for arbitrary <span class="arithmatex">\(|m\rangle\)</span>, the operator identity follows:</p>
 <p><span id="eq:xpownadagger1"></span></p>
 <div class="arithmatex">\[\begin{equation}\label{eq:x pow n a dagger}
 x^{\hat n_H} a_H^\dagger x^{-\hat n_H} = x\, a_H^\dagger.
 \end{equation}\]</div>
-<p>For the <span class="arithmatex">\(V\)</span> mode, note that <span class="arithmatex">\([\hat n_H, a_V^\dagger]=0\)</span>. Therefore,</p>
+<p>For the <span class="arithmatex">\(V\)</span> mode, the commutation relation <span class="arithmatex">\([\hat n_H, a_V^\dagger]=0\)</span> implies that the operators commute. As a result, the conjugation has no effect:</p>
 <p><span id="eq:xpownadagger2"></span></p>
 <div class="arithmatex">\[\begin{equation}
 \label{eq:x pow n a dagger2}

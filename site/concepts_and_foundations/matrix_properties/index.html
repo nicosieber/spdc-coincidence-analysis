@@ -719,9 +719,9 @@
 
 
 <h1 id="matrix-properties">Matrix properties<a class="headerlink" href="#matrix-properties" title="Permanent link">&para;</a></h1>
-<p>Here I provide a detailed justification that the matrix <span class="arithmatex">\(B = \Re(A)\)</span> introduced in equation (36) during the <a href="../../theory/cc_derivation/#ABiC">derivation of the coincidence probability</a> is real symmetric and positive definite under physically relevant conditions. This property is essential for the convergence of the Gaussian integral in Sec.~IV D and for the existence of the factorization in Eq.~(119).</p>
+<p>Here I provide a detailed justification that the matrix <span class="arithmatex">\(B = \Re(A)\)</span> introduced in equation (36) during the <a href="../../theory/cc_derivation/#ABiC">derivation of the coincidence probability</a> is real symmetric and positive definite under physically relevant conditions. This property is essential for the convergence of the <a href="../../theory/cc_derivation/#GIntegral">Gaussian integral</a> and for the existence of the <a href="../../theory/cc_derivation/#A_factorization">factorization of <span class="arithmatex">\(A\)</span></a>.</p>
 <h2 id="structure-of-b">Structure of B<a class="headerlink" href="#structure-of-b" title="Permanent link">&para;</a></h2>
-<p>From Eq.~(109)–(112), the matrix <span class="arithmatex">\(A\)</span> can be decomposed into its real and imaginary parts as</p>
+<p><a href="../../theory/cc_derivation/#ABiC">As we see in the derivation of the coincidence probability</a>, the matrix <span class="arithmatex">\(A\)</span> can be decomposed into its real and imaginary parts as</p>
 <div class="arithmatex">\[\begin{equation}
 A = B + iC.
 \end{equation}\]</div>
@@ -733,8 +733,12 @@ I - \frac{\lambda}{2}(L + M) &amp; 0 \\
 0 &amp; I + \frac{\lambda}{2}(L + M)
 \end{pmatrix}.
 \end{equation}\]</div>
-<p>Here, <span class="arithmatex">\(M\)</span> is defined in Eq.~(50), <span class="arithmatex">\(D = \mathrm{diag}(t_H, t_V)\)</span> in Eq.~(56), and <span class="arithmatex">\(L = DMD\)</span>.</p>
-<p>We first observe that both <span class="arithmatex">\(M\)</span> and <span class="arithmatex">\(D\)</span> are real symmetric matrices. Since the product of symmetric matrices of the form <span class="arithmatex">\(DMD\)</span> preserves symmetry, it follows that <span class="arithmatex">\(L\)</span> is also real symmetric. Consequently, <span class="arithmatex">\(B\)</span> is real symmetric as it consists of symmetric blocks on the diagonal.</p>
+<p>Link to the definitions of:</p>
+<ul>
+<li><a href="../../theory/tmsv/#eq:alpha_vec">Matrix <span class="arithmatex">\(M\)</span></a></li>
+<li><a href="../../theory/cc_derivation/#MatrixD">Matrix <span class="arithmatex">\(D\)</span></a></li>
+</ul>
+<p>The matrix <span class="arithmatex">\(L = DMD\)</span> is used as an abbreviation. First, observe that both <span class="arithmatex">\(M\)</span> and <span class="arithmatex">\(D\)</span> are real symmetric matrices. Since the product of symmetric matrices of the form <span class="arithmatex">\(DMD\)</span> preserves symmetry, it follows that <span class="arithmatex">\(L\)</span> is also real symmetric. Consequently, <span class="arithmatex">\(B\)</span> is real symmetric as it consists of symmetric blocks on the diagonal.</p>
 <h2 id="spectral-properties-of-m">Spectral properties of M<a class="headerlink" href="#spectral-properties-of-m" title="Permanent link">&para;</a></h2>
 <p>The matrix <span class="arithmatex">\(M\)</span> has the explicit form</p>
 <div class="arithmatex">\[\begin{equation}
@@ -757,7 +761,7 @@ M^2 = \mathbb{1}.
 M^2 v = \lambda^2 v.
 \end{equation}\]</div>
 <p>Since <span class="arithmatex">\(M^2 = \mathbb{1}\)</span>, it follows that <span class="arithmatex">\(\lambda^2 = 1\)</span>, and therefore <span class="arithmatex">\(\lambda = \pm 1\)</span>. Thus, all eigenvalues of <span class="arithmatex">\(M\)</span> lie in the set <span class="arithmatex">\(\{-1,1\}\)</span>.</p>
-<p>Because <span class="arithmatex">\(M\)</span> is real symmetric, its operator norm is equal to the largest absolute value of its eigenvalues (see, e.g., \cite{GilbertIntroductionToLinearAlgebra2016}). Hence,</p>
+<p>Because <span class="arithmatex">\(M\)</span> is real symmetric, its operator norm is equal to the largest absolute value of its eigenvalues (see <a href="#GilbertIntroductionToLinearAlgebra2016">[1]</a>). Hence,</p>
 <div class="arithmatex">\[\begin{equation}
 \|M\|_2 = 1.
 \end{equation}\]</div>
@@ -828,7 +832,7 @@ B^{1/2} B^{1/2} = B.
 <div class="arithmatex">\[\begin{equation}
 B^{-1/2} = Q \Lambda^{-1/2} Q^T.
 \end{equation}\]</div>
-<p>The square root constructed in this way is the unique real symmetric positive definite square root of <span class="arithmatex">\(B\)</span> (see \cite{GilbertIntroductionToLinearAlgebra2016}).</p>
+<p>The square root constructed in this way is the unique real symmetric positive definite square root of <span class="arithmatex">\(B\)</span> (see <a href="#GilbertIntroductionToLinearAlgebra2016">[1]</a>).</p>
 <h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h2>
 <p>We have shown that <span class="arithmatex">\(B\)</span> is real symmetric and positive definite for all physically relevant parameters (<span class="arithmatex">\(0 \le \eta_{H,V} \le 1\)</span>, finite squeezing <span class="arithmatex">\(r\)</span>). This ensures both the convergence of the Gaussian integral and the validity of the factorization used in equation (43) of <a href="../../theory/cc_derivation/#A_factorization">Derivation of the coincidence probability</a>.</p>
 <h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>

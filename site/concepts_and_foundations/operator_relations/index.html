@@ -634,41 +634,44 @@
 
 
 <h1 id="operator-relations">Operator relations<a class="headerlink" href="#operator-relations" title="Permanent link">&para;</a></h1>
-<p>In this section the relation</p>
+<p>In this section, the relation</p>
 <div class="arithmatex">\[\begin{equation}
     Se^XS^{-1}=e^{SXS^{-1}}
 \end{equation}\]</div>
-<p>for operators <span class="arithmatex">\(S\)</span> and <span class="arithmatex">\(X\)</span> will be derived. First, recall that</p>
+<p>for operators <span class="arithmatex">\(S\)</span> and <span class="arithmatex">\(X\)</span> is derived. This identity expresses how operator exponentials transform under similarity transformations.</p>
+<p>First, recall the power series definition of the exponential of an operator:</p>
 <div class="arithmatex">\[\begin{equation}
     e^X=\sum_{n=0}^\infty\dfrac{X^n}{n!}.
 \end{equation}\]</div>
-<p>Following that, we get</p>
+<p>Using this expansion, the left-hand side can be written as</p>
 <div class="arithmatex">\[\begin{equation}
     Se^XS^{-1}=S\left(\sum_{n=0}^\infty\dfrac{X^n}{n!}\right)S^{-1}.
 \end{equation}\]</div>
-<p>With <span class="arithmatex">\(S\)</span> as a linear operator, we can move <span class="arithmatex">\(S\)</span> and <span class="arithmatex">\(S^{-1}\)</span> inside the sum:</p>
+<p>Since <span class="arithmatex">\(S\)</span> is a linear operator, it can be distributed over the sum, allowing <span class="arithmatex">\(S\)</span> and <span class="arithmatex">\(S^{-1}\)</span> to be moved inside:</p>
 <div class="arithmatex">\[\begin{equation}
     \label{appendix:powerseries1}
     Se^XS^{-1}=\sum_{n=0}^\infty\dfrac{SX^nS^{-1}}{n!}
 \end{equation}\]</div>
-<p>Therefore, the next step is to understand how <span class="arithmatex">\(SX^nS^{-1}\)</span> is evaluated.
-Recall that</p>
+<p>The problem is thus reduced to evaluating the transformed powers <span class="arithmatex">\(SX^nS^{-1}\)</span>.</p>
+<p>To proceed, recall the identity</p>
 <div class="arithmatex">\[\begin{equation}
 S(AB)S^{-1}=\left(SAS^{-1}\right)\left(SBS^{-1}\right),
 \end{equation}\]</div>
-<p>so for <span class="arithmatex">\(n=2\)</span> we get</p>
+<p>which shows how products of operators transform under conjugation.</p>
+<p>Applying this relation to powers of <span class="arithmatex">\(X\)</span>, for <span class="arithmatex">\(n=2\)</span> one obtains</p>
 <div class="arithmatex">\[\begin{equation}
 SX^2S^{-1}=\left(SXS^{-1}\right)\left(SXS^{-1}\right),
 \end{equation}\]</div>
-<p>and for <span class="arithmatex">\(n=3\)</span> we get</p>
+<p>and for <span class="arithmatex">\(n=3\)</span></p>
 <div class="arithmatex">\[\begin{equation}
 SX^3S^{-1}=\left(SXS^{-1}\right)\left(SXS^{-1}\right)\left(SXS^{-1}\right).
 \end{equation}\]</div>
-<p>In general we get</p>
+<p>This pattern generalizes to arbitrary <span class="arithmatex">\(n\)</span>, yielding</p>
 <div class="arithmatex">\[\begin{equation}
     SX^nS^{-1}=\left(SXS^{-1}\right)^n,
 \end{equation}\]</div>
-<p>which can be inserted back into <span class="arithmatex">\(\eqref{appendix:powerseries1}\)</span> resulting in the relation which we wanted to prove at the beginning:</p>
+<p>so that each term in the series transforms into a corresponding power of the conjugated operator.</p>
+<p>Substituting this result back into <span class="arithmatex">\(\eqref{appendix:powerseries1}\)</span> gives</p>
 <p><span id="appendix:powerseries_final"></span></p>
 <div class="arithmatex">\[\begin{equation}
 \label{appendix:powerseries_final}
@@ -676,6 +679,7 @@ SX^3S^{-1}=\left(SXS^{-1}\right)\left(SXS^{-1}\right)\left(SXS^{-1}\right).
 Se^XS^{-1}&amp;=\sum_{n=0}^\infty\dfrac{\left(SXS^{-1}\right)^n}{n!}=e^{SXS^{-1}}
 \end{aligned}
 \end{equation}\]</div>
+<p>This establishes the desired relation, showing that exponentiation and similarity transformation commute.</p>
 
 
 

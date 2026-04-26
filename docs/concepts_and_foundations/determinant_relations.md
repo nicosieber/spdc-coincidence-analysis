@@ -2,7 +2,9 @@
 
 ## Determinant of a 2 by 2 block matrix
 
-According to Powell[@powell2011blockdet], the determinant of a $2\times2$ block matrix 
+The determinant of a $2\times2$ block matrix can be expressed in terms of its sub-blocks. This result is particularly useful when one of the blocks is invertible.
+
+Consider the matrix
 
 \begin{equation}
 \begin{aligned}
@@ -14,22 +16,28 @@ Q_{21} & Q_{22}
 \end{aligned}
 \end{equation}
 
-can be calculated by
+Under suitable conditions (in particular, assuming the required inverses exist), its determinant can be written as
 
 \begin{equation}
 \label{appendix:det_of_blockmatrix}
 \det Q = \det(Q_{11}-Q_{12}Q_{22}^{-1}Q_{21})\det Q_{11}
 \end{equation}
 
+This expression allows the determinant of a block matrix to be reduced to determinants of smaller matrices (see <a href="#ref-powell2011">[1]</a>).
+
+---
+
 ## Determinant identity for scaled matrices
 
-Here I show the derivation of a useful identity for the determinant of a $2\times 2$ matrix of the form
+A useful identity for determinants of $2\times2$ matrices is derived in the following.
+
+Consider the expression
 
 \begin{equation}
 \det(\mathbb{1}-\lambda^2 X),
 \end{equation}
 
-where $X$ is an arbitrary $2\times2$ matrix.
+where $X$ is an arbitrary $2\times2$ matrix. The goal is to express this determinant in terms of invariants of $X$.
 
 Let
 
@@ -45,7 +53,7 @@ c & d
 \end{aligned}
 \end{equation}
 
-Then
+Then the matrix $\mathbb{1}-\lambda^2 X$ takes the form
 
 \begin{equation}
 \begin{aligned}
@@ -58,7 +66,7 @@ Then
 \end{aligned}
 \end{equation}
 
-Using the determinant formula for a $2\times2$ matrix,
+The determinant of a general $2\times2$ matrix is given by
 
 \begin{equation}
 \begin{aligned}
@@ -71,7 +79,7 @@ r&s
 \end{aligned}
 \end{equation}
 
-one obtains
+which can now be applied directly:
 
 \begin{equation}
 \begin{aligned}
@@ -85,7 +93,7 @@ one obtains
 \end{aligned}
 \end{equation}
 
-Now recall that for the matrix $X$,
+The result can be expressed more compactly by recalling the definitions
 
 \begin{equation}
 \begin{aligned}
@@ -95,7 +103,7 @@ Now recall that for the matrix $X$,
 \end{aligned}
 \end{equation}
 
-Therefore:
+Substituting these into the previous expression yields
 
 <span id="appendix:det_1minusl2X"></span>
 
@@ -108,4 +116,12 @@ Therefore:
 \end{aligned}
 \end{equation}
 
-Thus, for any $2\times2$ matrix $X$, the determinant of $\mathbb{1}-\lambda^2X$ can always be written in terms of the trace and determinant of $X$.
+This shows that, for any $2\times2$ matrix $X$, the determinant of $\mathbb{1}-\lambda^2X$ depends only on the trace and determinant of $X$.
+
+---
+
+## References
+
+<p id="ref-powell2011">
+[1] P. D. Powell, <em>Calculating Determinants of Block Matrices</em>, 2011. Available: https://arxiv.org/abs/1112.4379
+</p>

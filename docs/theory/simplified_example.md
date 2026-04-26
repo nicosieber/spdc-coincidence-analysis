@@ -21,7 +21,7 @@ In equation \(\eqref{initial_state_simple}\), $\hat a_{H,V}^\dagger$ are the bos
 \label{eq:fock}
 \end{equation}
 
-Assuming that the fast axis of the HWP is aligned with the horizontal axis, the Jones matrix is given by [@collett2005fieldguidepolarization]
+Assuming that the fast axis of the HWP is aligned with the horizontal axis, the Jones matrix is given by<a href="#ref-collett2005">[1]</a>
 
 \begin{equation}
 \label{Jones}
@@ -110,3 +110,7 @@ Consequently, for $\vartheta=\pi/8$, the sum of terms in \(\eqref{Transformation
 </div>
 
 ## References
+
+<p id="ref-collett2005">
+[1] E. Collett, <em>Field Guide to Polarization</em>, SPIE Press, Bellingham, WA, USA, 2005.
+</p>
