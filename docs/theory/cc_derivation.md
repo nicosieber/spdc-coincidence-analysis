@@ -67,7 +67,7 @@ Then \(\eqref{formula:last_term1}\) becomes
 \end{aligned}
 \end{equation}
 
-which is achieved by inserting $S^{-1}S=\mathbf{1}$ and usage of the relation (9) of [Operator relations](../concepts_and_foundations/operator_relations.md#appendix:powerseries_final). By inserting $S^{-1}S=\mathbf{1}$ into the exponent and using \(\eqref{formula:SaS_Da}\) we get
+which is achieved by inserting $S^{-1}S=\mathbf{1}$ and usage of the relation (9) of [Operator relations](../concepts_and_foundations/operator_relations.md#appendix:powerseries_final). By inserting $S^{-1}S=\mathbf{1}$ into the exponent and using \(\eqref{formula:SaS_Da}\), the following can be obtained:
 
 \begin{equation}
 \label{formula:tmsv_DaMDa}
@@ -75,11 +75,11 @@ which is achieved by inserting $S^{-1}S=\mathbf{1}$ and usage of the relation (9
 &\Lambda^2 \langle 0 \rvert e^{\frac{\lambda}{2} \mathbf{\hat a}^T M\mathbf{\hat a}} e^{\frac{\lambda}{2} S (\mathbf{\hat a^{\dagger}})^T M \mathbf{\hat a^{\dagger}}S^{-1}}S \lvert 0 \rangle\\
 =&\Lambda^2\langle 0 \rvert e^{\frac{\lambda}{2} \mathbf{\hat a}^T M\mathbf{\hat a}} e^{\frac{\lambda}{2} (S (\mathbf{\hat a^{\dagger}})^T S^{-1}) M (S \mathbf{\hat a^{\dagger}}S^{-1})}S \lvert 0 \rangle\\
 =&\Lambda^2\langle 0 \rvert e^{\frac{\lambda}{2} \mathbf{\hat a}^T M\mathbf{\hat a}} e^{\frac{\lambda}{2} (D\mathbf{\hat a^{\dagger}})^T M D\mathbf{\hat a^{\dagger}}}S \lvert 0 \rangle\\
-=&\Lambda^2\langle 0 \rvert e^{\frac{\lambda}{2} \mathbf{\hat a}^T M\mathbf{\hat a}} e^{\frac{\lambda}{2} (\mathbf{\hat a^{\dagger}})^T D M D\mathbf{\hat a^{\dagger}}}S \lvert 0 \rangle.
+=&\Lambda^2\langle 0 \rvert e^{\frac{\lambda}{2} \mathbf{\hat a}^T M\mathbf{\hat a}} e^{\frac{\lambda}{2} (\mathbf{\hat a^{\dagger}})^T D M D\mathbf{\hat a^{\dagger}}}S \lvert 0 \rangle
 \end{aligned}
 \end{equation}
 
-Here, we made use of the fact that you can expand the indices of $(\mathbf{\hat a^{\dagger}})^T M \mathbf{\hat a^{\dagger}}$ which results in:
+Here, the expansion of the indices of $(\mathbf{\hat a^{\dagger}})^T M \mathbf{\hat a^{\dagger}}$ results in:
 
 \begin{equation}
 \begin{aligned}
@@ -90,13 +90,13 @@ Here, we made use of the fact that you can expand the indices of $(\mathbf{\hat 
 \end{aligned}
 \end{equation}
 
-By further using equation (2) of [Conjugation of creation operators](../concepts_and_foundations/conjugation_operators.md#eq:xpownm) we can see that
+By further using equation (2) of [Conjugation of creation operators](../concepts_and_foundations/conjugation_operators.md#eq:xpownm), it follows that
 
 \begin{equation}
 S \lvert 0 \rangle =\lvert 0 \rangle,
 \end{equation}
 
-which gives us
+which results in
 
 \begin{equation}
 \label{eq:tmsv_aDMDa}
@@ -106,7 +106,7 @@ which gives us
 \end{aligned}
 \end{equation}
 
-Using die identity from equation (11) of [Coherent states](../concepts_and_foundations/coherent_states.md#eq:coherent_identity), expression \(\eqref{eq:tmsv_aDMDa}\) becomes
+Using the identity from equation (11) of [Coherent states](../concepts_and_foundations/coherent_states.md#eq:coherent_identity), expression \(\eqref{eq:tmsv_aDMDa}\) becomes
 
 \begin{equation}
 \label{eq:tmsv_coherent_identity}
@@ -117,7 +117,7 @@ e^{\frac{\lambda}{2} (\mathbf{\hat a^{\dagger}})^T L \mathbf{\hat a^{\dagger}}}\
 \end{aligned}
 \end{equation}
 
-with $DMD=L$ as an abbreviation. Also note that $\pi$ and $d^2\alpha$ are squared since we have a to modes:
+with $DMD=L$ as an abbreviation. Also note that $\pi$ and $d^2\alpha$ are squared since the TMSV has two modes (horizontal and vertical):
 
 \begin{equation}
 \lvert \alpha \rangle=\lvert \alpha_H,\alpha_V \rangle
@@ -125,16 +125,16 @@ with $DMD=L$ as an abbreviation. Also note that $\pi$ and $d^2\alpha$ are square
 
 By inserting the coherent-state resolution of the identity, the operator expression is transformed into an integral over phase-space variables. This reformulation introduces classical field amplitudes as integration variables, while the underlying quantum correlations remain encoded in the resulting Gaussian weight. 
 
-In order to evaluate the expression \(\eqref{eq:tmsv_coherent_identity}\), we first need to show how $\mathbf{\hat a}^T M\mathbf{\hat a}$ acts on $\lvert \alpha \rangle$ . We can write 
+In order to evaluate the expression \(\eqref{eq:tmsv_coherent_identity}\), the action of $\mathbf{\hat a}^T M\mathbf{\hat a}$ on $\lvert \alpha \rangle$ needs to be shown first. With
 
 \begin{equation}
 \begin{aligned}
 \hat a_{H}\lvert \alpha_H,\alpha_V \rangle&=\alpha_{H}\lvert \alpha_H,\alpha_V \rangle,\\
-\hat a_{V}\lvert \alpha_H,\alpha_V \rangle&=\alpha_{V}\lvert \alpha_H,\alpha_V \rangle.
+\hat a_{V}\lvert \alpha_H,\alpha_V \rangle&=\alpha_{V}\lvert \alpha_H,\alpha_V \rangle
 \end{aligned}
 \end{equation}
 
-Then we can write $\mathbf{\hat a}^T M\mathbf{\hat a}$ as
+$\mathbf{\hat a}^T M\mathbf{\hat a}$ can be written as
 
 \begin{equation}
 \label{eq:ama_1}
@@ -151,7 +151,7 @@ Since the annihilation operators commute
 \left[\hat a_H,\hat a_V\right]=0,
 \end{equation}
 
-we can shorten expression \(\eqref{eq:ama_1}\) a little bit:
+the expression \(\eqref{eq:ama_1}\) can be shortened a little bit:
 
 \begin{equation}
 \begin{aligned}
@@ -160,7 +160,7 @@ we can shorten expression \(\eqref{eq:ama_1}\) a little bit:
 \end{aligned}
 \end{equation}
 
-Consequently, we can write
+Consequently, one can write
 
 \begin{equation}
 \begin{aligned}
@@ -171,7 +171,7 @@ Consequently, we can write
 \end{aligned}
 \end{equation}
 
-Following that we can see how the exponential of \(\eqref{eq:tmsv_coherent_identity}\) evaluates by writing it as an infinite sum:
+Following that, the exponential of \(\eqref{eq:tmsv_coherent_identity}\) can be written it as an infinite sum:
 
 \begin{equation}
 \begin{aligned}
@@ -635,7 +635,7 @@ While this connection provides useful conceptual insight, the following calculat
 \end{aligned}
 \end{equation}
 
-with $\det(W)^2=\mathbb 1$. Using (\ref{appendix:det_of_blockmatrix}) and (\ref{eq:Q}), we are able to rewrite $\det A$ as:
+with $\det(W)^2=\mathbb 1$. Using equation [(2)](../concepts_and_foundations/determinant_relations.md#appendix:det_of_blockmatrix) and equation \(\eqref{eq:Q}\), $\det A$ can be rewritten as:
 
 \begin{equation}
 \begin{aligned}
@@ -646,6 +646,7 @@ with $\det(W)^2=\mathbb 1$. Using (\ref{appendix:det_of_blockmatrix}) and (\ref{
 \end{equation}
 
 ## Evaluation of the determinant
+The calculation of $MD$ results in
 
 \begin{equation}
 \begin{aligned}
@@ -657,7 +658,7 @@ MD&=
 \end{aligned}
 \end{equation}
 
-and therefore
+and therefore $MDMD$ can be calculated as
 
 \begin{equation}
 \label{eq:mdmd_abbreviation}
@@ -731,7 +732,7 @@ or with \(\eqref{eq:t_eta}\)
 \end{aligned}
 \end{equation}
 
-Finally, we can write $P^{(\eta_H,\eta_V)}(0,0)$ from equation \(\eqref{formula:last_term1}\) as
+Finally, $P^{(\eta_H,\eta_V)}(0,0)$ from equation \(\eqref{formula:last_term1}\) can be expressed as
 
 \begin{equation}
 \begin{aligned}
@@ -740,19 +741,19 @@ Finally, we can write $P^{(\eta_H,\eta_V)}(0,0)$ from equation \(\eqref{formula:
 \end{aligned}
 \end{equation}
 
-In order to calculate $P^{(\eta_{H})}_{H}(0)$ or $P^{(\eta_{V})}_{V}(0)$, we can set $\eta_{V}=0$ or $\eta_{H}=0$. For $P^{(\eta_{H})}_{H}(0)$ we therefore get
+In order to calculate $P^{(\eta_{H})}_{H}(0)$ or $P^{(\eta_{V})}_{V}(0)$, one can set $\eta_{V}=0$ or $\eta_{H}=0$. For $P^{(\eta_{H})}_{H}(0)$ this results in the following expression:
 
 \begin{equation}
 \begin{aligned}
-P^{(\eta_{H})}_{H}(0)=P^{(\eta_H,\eta_V=0)}(0,0)=\dfrac{(1-\lambda^2)}{\sqrt{\left(1-\lambda^2(1-\eta_H)\right)^2-\lambda^2\eta_H^2\sin^2(4\vartheta)}},
+P^{(\eta_{H})}_{H}(0)=P^{(\eta_H,\eta_V=0)}(0,0)=\dfrac{(1-\lambda^2)}{\sqrt{\left(1-\lambda^2(1-\eta_H)\right)^2-\lambda^2\eta_H^2\sin^2(4\vartheta)}}
 \end{aligned}
 \end{equation}
 
-and $P^{(\eta_{V})}_{V}(0)$ we get
+Similarly, the expression for $P^{(\eta_{V})}_{V}(0)$ can be calculated to:
 
 \begin{equation}
 \begin{aligned}
-P^{(\eta_{V})}_{V}(0)=P^{(\eta_H=0,\eta_V)}(0,0)=\dfrac{(1-\lambda^2)}{\sqrt{\left(1-\lambda^2(1-\eta_V)\right)^2-\lambda^2\eta_V^2\sin^2(4\vartheta)}}.
+P^{(\eta_{V})}_{V}(0)=P^{(\eta_H=0,\eta_V)}(0,0)=\dfrac{(1-\lambda^2)}{\sqrt{\left(1-\lambda^2(1-\eta_V)\right)^2-\lambda^2\eta_V^2\sin^2(4\vartheta)}}
 \end{aligned}
 \end{equation}
 
@@ -869,14 +870,14 @@ P_{\text{coinc.}} &:= P_{\mathrm{cc}}.
 \end{aligned}
 \end{equation}
 
-Equation~\eqref{eq:four_outcomes_sum} then becomes
+Equation \(\eqref{eq:four_outcomes_sum}\) then becomes
 
 \begin{equation}
 1 \overset{!}{=} P_{\text{no-click}} + P_{\text{1-click}} + P_{\text{coinc.}}.
 \label{eq:lossless_grouped}
 \end{equation}
 
-Thus, the quantities $P_H^{(\eta_H)}(0)$ and $P_V^{(\eta_V)}(0)$ are not additional detector outcomes by themselves. Rather, they are marginal no-click probabilities, i.e.\ partial sums over the four elementary outcomes:
+Thus, the quantities $P_H^{(\eta_H)}(0)$ and $P_V^{(\eta_V)}(0)$ are not additional detector outcomes by themselves. Rather, they are marginal no-click probabilities, i.e. partial sums over the four elementary outcomes:
 
 \begin{equation}
 \begin{aligned}

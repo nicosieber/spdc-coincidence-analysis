@@ -18,6 +18,8 @@ Q_{21} & Q_{22}
 
 Under suitable conditions (in particular, assuming the required inverses exist), its determinant can be written as
 
+<span id="appendix:det_of_blockmatrix"></span>
+
 \begin{equation}
 \label{appendix:det_of_blockmatrix}
 \det Q = \det(Q_{11}-Q_{12}Q_{22}^{-1}Q_{21})\det Q_{11}

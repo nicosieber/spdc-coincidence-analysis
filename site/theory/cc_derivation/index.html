@@ -905,17 +905,17 @@ S\hat a_{H,V}^{\dagger}S^{-1}=t_{H,V}\hat a_{H,V}^{\dagger}.
 =&amp;\Lambda^2 \langle 0 \rvert e^{\frac{\lambda}{2} \mathbf{\hat a}^T M\mathbf{\hat a}} e^{\frac{\lambda}{2} S (\mathbf{\hat a^{\dagger}})^T M \mathbf{\hat a^{\dagger}}S^{-1}}S \lvert 0 \rangle,
 \end{aligned}
 \end{equation}\]</div>
-<p>which is achieved by inserting <span class="arithmatex">\(S^{-1}S=\mathbf{1}\)</span> and usage of the relation (9) of <a href="../../concepts_and_foundations/operator_relations/#appendix:powerseries_final">Operator relations</a>. By inserting <span class="arithmatex">\(S^{-1}S=\mathbf{1}\)</span> into the exponent and using <span class="arithmatex">\(\eqref{formula:SaS_Da}\)</span> we get</p>
+<p>which is achieved by inserting <span class="arithmatex">\(S^{-1}S=\mathbf{1}\)</span> and usage of the relation (9) of <a href="../../concepts_and_foundations/operator_relations/#appendix:powerseries_final">Operator relations</a>. By inserting <span class="arithmatex">\(S^{-1}S=\mathbf{1}\)</span> into the exponent and using <span class="arithmatex">\(\eqref{formula:SaS_Da}\)</span>, the following can be obtained:</p>
 <div class="arithmatex">\[\begin{equation}
 \label{formula:tmsv_DaMDa}
 \begin{aligned}
 &amp;\Lambda^2 \langle 0 \rvert e^{\frac{\lambda}{2} \mathbf{\hat a}^T M\mathbf{\hat a}} e^{\frac{\lambda}{2} S (\mathbf{\hat a^{\dagger}})^T M \mathbf{\hat a^{\dagger}}S^{-1}}S \lvert 0 \rangle\\
 =&amp;\Lambda^2\langle 0 \rvert e^{\frac{\lambda}{2} \mathbf{\hat a}^T M\mathbf{\hat a}} e^{\frac{\lambda}{2} (S (\mathbf{\hat a^{\dagger}})^T S^{-1}) M (S \mathbf{\hat a^{\dagger}}S^{-1})}S \lvert 0 \rangle\\
 =&amp;\Lambda^2\langle 0 \rvert e^{\frac{\lambda}{2} \mathbf{\hat a}^T M\mathbf{\hat a}} e^{\frac{\lambda}{2} (D\mathbf{\hat a^{\dagger}})^T M D\mathbf{\hat a^{\dagger}}}S \lvert 0 \rangle\\
-=&amp;\Lambda^2\langle 0 \rvert e^{\frac{\lambda}{2} \mathbf{\hat a}^T M\mathbf{\hat a}} e^{\frac{\lambda}{2} (\mathbf{\hat a^{\dagger}})^T D M D\mathbf{\hat a^{\dagger}}}S \lvert 0 \rangle.
+=&amp;\Lambda^2\langle 0 \rvert e^{\frac{\lambda}{2} \mathbf{\hat a}^T M\mathbf{\hat a}} e^{\frac{\lambda}{2} (\mathbf{\hat a^{\dagger}})^T D M D\mathbf{\hat a^{\dagger}}}S \lvert 0 \rangle
 \end{aligned}
 \end{equation}\]</div>
-<p>Here, we made use of the fact that you can expand the indices of <span class="arithmatex">\((\mathbf{\hat a^{\dagger}})^T M \mathbf{\hat a^{\dagger}}\)</span> which results in:</p>
+<p>Here, the expansion of the indices of <span class="arithmatex">\((\mathbf{\hat a^{\dagger}})^T M \mathbf{\hat a^{\dagger}}\)</span> results in:</p>
 <div class="arithmatex">\[\begin{equation}
 \begin{aligned}
 &amp;S\left((\mathbf{\hat a^{\dagger}})^T M \mathbf{\hat a^{\dagger}}\right)S^{-1}\\=&amp;S\left(\sum_{i,j}M_{i,j}\hat a_i^{\dagger}\hat a_j^{\dagger}\right)S^{-1}\\
@@ -924,11 +924,11 @@ S\hat a_{H,V}^{\dagger}S^{-1}=t_{H,V}\hat a_{H,V}^{\dagger}.
 =&amp;\left(S(\mathbf{\hat a^{\dagger}})^TS^{-1}\right)M\left(S\mathbf{\hat a^{\dagger}}S^{-1}\right)
 \end{aligned}
 \end{equation}\]</div>
-<p>By further using equation (2) of <a href="../../concepts_and_foundations/conjugation_operators/#eq:xpownm">Conjugation of creation operators</a> we can see that</p>
+<p>By further using equation (2) of <a href="../../concepts_and_foundations/conjugation_operators/#eq:xpownm">Conjugation of creation operators</a>, it follows that</p>
 <div class="arithmatex">\[\begin{equation}
 S \lvert 0 \rangle =\lvert 0 \rangle,
 \end{equation}\]</div>
-<p>which gives us</p>
+<p>which results in</p>
 <div class="arithmatex">\[\begin{equation}
 \label{eq:tmsv_aDMDa}
 \begin{aligned}
@@ -936,7 +936,7 @@ S \lvert 0 \rangle =\lvert 0 \rangle,
 =&amp;\Lambda^2\langle 0 \rvert e^{\frac{\lambda}{2} \mathbf{\hat a}^T M\mathbf{\hat a}}  e^{\frac{\lambda}{2} (\mathbf{\hat a^{\dagger}})^T DMD \mathbf{\hat a^{\dagger}}} \lvert 0 \rangle
 \end{aligned}
 \end{equation}\]</div>
-<p>Using die identity from equation (11) of <a href="../../concepts_and_foundations/coherent_states/#eq:coherent_identity">Coherent states</a>, expression <span class="arithmatex">\(\eqref{eq:tmsv_aDMDa}\)</span> becomes</p>
+<p>Using the identity from equation (11) of <a href="../../concepts_and_foundations/coherent_states/#eq:coherent_identity">Coherent states</a>, expression <span class="arithmatex">\(\eqref{eq:tmsv_aDMDa}\)</span> becomes</p>
 <div class="arithmatex">\[\begin{equation}
 \label{eq:tmsv_coherent_identity}
 \begin{aligned}
@@ -945,19 +945,19 @@ e^{\frac{\lambda}{2} (\mathbf{\hat a^{\dagger}})^T L \mathbf{\hat a^{\dagger}}}\
 =&amp;\Lambda^2\int \dfrac{d^4\alpha}{\pi^2}   \langle 0 \rvert e^{\frac{\lambda}{2} \mathbf{\hat a}^T M\mathbf{\hat a}}\lvert \alpha \rangle \langle \alpha \rvert e^{\frac{\lambda}{2} (\mathbf{\hat a^{\dagger}})^T L \mathbf{\hat a^{\dagger}}} \lvert 0 \rangle,
 \end{aligned}
 \end{equation}\]</div>
-<p>with <span class="arithmatex">\(DMD=L\)</span> as an abbreviation. Also note that <span class="arithmatex">\(\pi\)</span> and <span class="arithmatex">\(d^2\alpha\)</span> are squared since we have a to modes:</p>
+<p>with <span class="arithmatex">\(DMD=L\)</span> as an abbreviation. Also note that <span class="arithmatex">\(\pi\)</span> and <span class="arithmatex">\(d^2\alpha\)</span> are squared since the TMSV has two modes (horizontal and vertical):</p>
 <div class="arithmatex">\[\begin{equation}
 \lvert \alpha \rangle=\lvert \alpha_H,\alpha_V \rangle
 \end{equation}\]</div>
 <p>By inserting the coherent-state resolution of the identity, the operator expression is transformed into an integral over phase-space variables. This reformulation introduces classical field amplitudes as integration variables, while the underlying quantum correlations remain encoded in the resulting Gaussian weight. </p>
-<p>In order to evaluate the expression <span class="arithmatex">\(\eqref{eq:tmsv_coherent_identity}\)</span>, we first need to show how <span class="arithmatex">\(\mathbf{\hat a}^T M\mathbf{\hat a}\)</span> acts on <span class="arithmatex">\(\lvert \alpha \rangle\)</span> . We can write </p>
+<p>In order to evaluate the expression <span class="arithmatex">\(\eqref{eq:tmsv_coherent_identity}\)</span>, the action of <span class="arithmatex">\(\mathbf{\hat a}^T M\mathbf{\hat a}\)</span> on <span class="arithmatex">\(\lvert \alpha \rangle\)</span> needs to be shown first. With</p>
 <div class="arithmatex">\[\begin{equation}
 \begin{aligned}
 \hat a_{H}\lvert \alpha_H,\alpha_V \rangle&amp;=\alpha_{H}\lvert \alpha_H,\alpha_V \rangle,\\
-\hat a_{V}\lvert \alpha_H,\alpha_V \rangle&amp;=\alpha_{V}\lvert \alpha_H,\alpha_V \rangle.
+\hat a_{V}\lvert \alpha_H,\alpha_V \rangle&amp;=\alpha_{V}\lvert \alpha_H,\alpha_V \rangle
 \end{aligned}
 \end{equation}\]</div>
-<p>Then we can write <span class="arithmatex">\(\mathbf{\hat a}^T M\mathbf{\hat a}\)</span> as</p>
+<p><span class="arithmatex">\(\mathbf{\hat a}^T M\mathbf{\hat a}\)</span> can be written as</p>
 <div class="arithmatex">\[\begin{equation}
 \label{eq:ama_1}
 \begin{aligned}
@@ -970,14 +970,14 @@ e^{\frac{\lambda}{2} (\mathbf{\hat a^{\dagger}})^T L \mathbf{\hat a^{\dagger}}}\
 <div class="arithmatex">\[\begin{equation}
 \left[\hat a_H,\hat a_V\right]=0,
 \end{equation}\]</div>
-<p>we can shorten expression <span class="arithmatex">\(\eqref{eq:ama_1}\)</span> a little bit:</p>
+<p>the expression <span class="arithmatex">\(\eqref{eq:ama_1}\)</span> can be shortened a little bit:</p>
 <div class="arithmatex">\[\begin{equation}
 \begin{aligned}
 &amp;\dfrac{1}{2}\mathbf{\hat a}^T M\mathbf{\hat a}\\
 =&amp;cs\hat a_H^2+(s^2-c^2)\hat a_H\hat a_V-cs\hat a_V^2
 \end{aligned}
 \end{equation}\]</div>
-<p>Consequently, we can write</p>
+<p>Consequently, one can write</p>
 <div class="arithmatex">\[\begin{equation}
 \begin{aligned}
 &amp;\mathbf{\hat a}^T M\mathbf{\hat a}\lvert \alpha \rangle\\
@@ -986,7 +986,7 @@ e^{\frac{\lambda}{2} (\mathbf{\hat a^{\dagger}})^T L \mathbf{\hat a^{\dagger}}}\
 =&amp;\alpha^TM\alpha \lvert \alpha \rangle
 \end{aligned}
 \end{equation}\]</div>
-<p>Following that we can see how the exponential of <span class="arithmatex">\(\eqref{eq:tmsv_coherent_identity}\)</span> evaluates by writing it as an infinite sum:</p>
+<p>Following that, the exponential of <span class="arithmatex">\(\eqref{eq:tmsv_coherent_identity}\)</span> can be written it as an infinite sum:</p>
 <div class="arithmatex">\[\begin{equation}
 \begin{aligned}
 \langle 0 \rvert e^{\frac{\lambda}{2}\mathbf{\hat a}^T M\mathbf{\hat a}}\lvert \alpha \rangle&amp;=\sum_{n=0}^\infty\dfrac{(\frac{\lambda}{2}\mathbf{\hat a}^T M\mathbf{\hat a})^n}{n!}\langle 0 \rvert \alpha \rangle\\
@@ -1357,7 +1357,7 @@ I
 &amp;=\det Q,
 \end{aligned}
 \end{equation}\]</div>
-<p>with <span class="arithmatex">\(\det(W)^2=\mathbb 1\)</span>. Using (\ref{appendix:det_of_blockmatrix}) and (\ref{eq:Q}), we are able to rewrite <span class="arithmatex">\(\det A\)</span> as:</p>
+<p>with <span class="arithmatex">\(\det(W)^2=\mathbb 1\)</span>. Using equation <a href="../../concepts_and_foundations/determinant_relations/#appendix:det_of_blockmatrix">(2)</a> and equation <span class="arithmatex">\(\eqref{eq:Q}\)</span>, <span class="arithmatex">\(\det A\)</span> can be rewritten as:</p>
 <div class="arithmatex">\[\begin{equation}
 \begin{aligned}
 \det A&amp;=\det(\lambda^2ML-\mathbb{1})\\
@@ -1366,6 +1366,7 @@ I
 \end{aligned}
 \end{equation}\]</div>
 <h2 id="evaluation-of-the-determinant">Evaluation of the determinant<a class="headerlink" href="#evaluation-of-the-determinant" title="Permanent link">&para;</a></h2>
+<p>The calculation of <span class="arithmatex">\(MD\)</span> results in</p>
 <div class="arithmatex">\[\begin{equation}
 \begin{aligned}
 MD&amp;=
@@ -1375,7 +1376,7 @@ MD&amp;=
 \end{pmatrix},
 \end{aligned}
 \end{equation}\]</div>
-<p>and therefore</p>
+<p>and therefore <span class="arithmatex">\(MDMD\)</span> can be calculated as</p>
 <div class="arithmatex">\[\begin{equation}
 \label{eq:mdmd_abbreviation}
 \begin{aligned}
@@ -1435,23 +1436,23 @@ s^2-c^2=-\cos(4\vartheta),
 \left(1-\lambda^2(1-\eta_H)(1-\eta_V)\right)^2-\lambda^2(\eta_H-\eta_V)^2\sin^2(4\vartheta).
 \end{aligned}
 \end{equation}\]</div>
-<p>Finally, we can write <span class="arithmatex">\(P^{(\eta_H,\eta_V)}(0,0)\)</span> from equation <span class="arithmatex">\(\eqref{formula:last_term1}\)</span> as</p>
+<p>Finally, <span class="arithmatex">\(P^{(\eta_H,\eta_V)}(0,0)\)</span> from equation <span class="arithmatex">\(\eqref{formula:last_term1}\)</span> can be expressed as</p>
 <div class="arithmatex">\[\begin{equation}
 \begin{aligned}
 &amp;P^{(\eta_H,\eta_V)}(0,0)=\langle \Psi \rvert \left(1-\eta_H\right)^{\hat{n}_H}\otimes \left(1-\eta_V\right)^{\hat{n}_V}\lvert \Psi \rangle\\
 =&amp;\dfrac{(1-\lambda^2)}{\sqrt{\left(1-\lambda^2(1-\eta_H)(1-\eta_V)\right)^2-\lambda^2(\eta_H-\eta_V)^2\sin^2(4\vartheta)}}.
 \end{aligned}
 \end{equation}\]</div>
-<p>In order to calculate <span class="arithmatex">\(P^{(\eta_{H})}_{H}(0)\)</span> or <span class="arithmatex">\(P^{(\eta_{V})}_{V}(0)\)</span>, we can set <span class="arithmatex">\(\eta_{V}=0\)</span> or <span class="arithmatex">\(\eta_{H}=0\)</span>. For <span class="arithmatex">\(P^{(\eta_{H})}_{H}(0)\)</span> we therefore get</p>
+<p>In order to calculate <span class="arithmatex">\(P^{(\eta_{H})}_{H}(0)\)</span> or <span class="arithmatex">\(P^{(\eta_{V})}_{V}(0)\)</span>, one can set <span class="arithmatex">\(\eta_{V}=0\)</span> or <span class="arithmatex">\(\eta_{H}=0\)</span>. For <span class="arithmatex">\(P^{(\eta_{H})}_{H}(0)\)</span> this results in the following expression:</p>
 <div class="arithmatex">\[\begin{equation}
 \begin{aligned}
-P^{(\eta_{H})}_{H}(0)=P^{(\eta_H,\eta_V=0)}(0,0)=\dfrac{(1-\lambda^2)}{\sqrt{\left(1-\lambda^2(1-\eta_H)\right)^2-\lambda^2\eta_H^2\sin^2(4\vartheta)}},
+P^{(\eta_{H})}_{H}(0)=P^{(\eta_H,\eta_V=0)}(0,0)=\dfrac{(1-\lambda^2)}{\sqrt{\left(1-\lambda^2(1-\eta_H)\right)^2-\lambda^2\eta_H^2\sin^2(4\vartheta)}}
 \end{aligned}
 \end{equation}\]</div>
-<p>and <span class="arithmatex">\(P^{(\eta_{V})}_{V}(0)\)</span> we get</p>
+<p>Similarly, the expression for <span class="arithmatex">\(P^{(\eta_{V})}_{V}(0)\)</span> can be calculated to:</p>
 <div class="arithmatex">\[\begin{equation}
 \begin{aligned}
-P^{(\eta_{V})}_{V}(0)=P^{(\eta_H=0,\eta_V)}(0,0)=\dfrac{(1-\lambda^2)}{\sqrt{\left(1-\lambda^2(1-\eta_V)\right)^2-\lambda^2\eta_V^2\sin^2(4\vartheta)}}.
+P^{(\eta_{V})}_{V}(0)=P^{(\eta_H=0,\eta_V)}(0,0)=\dfrac{(1-\lambda^2)}{\sqrt{\left(1-\lambda^2(1-\eta_V)\right)^2-\lambda^2\eta_V^2\sin^2(4\vartheta)}}
 \end{aligned}
 \end{equation}\]</div>
 <h2 id="interpretation-of-the-no-click-and-coincidence-probabilities">Interpretation of the no-click and coincidence probabilities<a class="headerlink" href="#interpretation-of-the-no-click-and-coincidence-probabilities" title="Permanent link">&para;</a></h2>
@@ -1537,12 +1538,12 @@ P_{\text{1-click}} &amp;:= P_{H\text{-only}} + P_{V\text{-only}},\\
 P_{\text{coinc.}} &amp;:= P_{\mathrm{cc}}.
 \end{aligned}
 \end{equation}\]</div>
-<p>Equation~\eqref{eq:four_outcomes_sum} then becomes</p>
+<p>Equation <span class="arithmatex">\(\eqref{eq:four_outcomes_sum}\)</span> then becomes</p>
 <div class="arithmatex">\[\begin{equation}
 1 \overset{!}{=} P_{\text{no-click}} + P_{\text{1-click}} + P_{\text{coinc.}}.
 \label{eq:lossless_grouped}
 \end{equation}\]</div>
-<p>Thus, the quantities <span class="arithmatex">\(P_H^{(\eta_H)}(0)\)</span> and <span class="arithmatex">\(P_V^{(\eta_V)}(0)\)</span> are not additional detector outcomes by themselves. Rather, they are marginal no-click probabilities, i.e.\ partial sums over the four elementary outcomes:</p>
+<p>Thus, the quantities <span class="arithmatex">\(P_H^{(\eta_H)}(0)\)</span> and <span class="arithmatex">\(P_V^{(\eta_V)}(0)\)</span> are not additional detector outcomes by themselves. Rather, they are marginal no-click probabilities, i.e. partial sums over the four elementary outcomes:</p>
 <div class="arithmatex">\[\begin{equation}
 \begin{aligned}
 P_H^{(\eta_H)}(0) &amp;= P_{\text{no-click}} + P_{V\text{-only}},\\
