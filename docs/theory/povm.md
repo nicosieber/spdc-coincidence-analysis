@@ -119,7 +119,7 @@ Within the POVM framework, loss can be incorporated directly into the measuremen
 \begin{equation}
 \label{POVM:loss}
 \begin{aligned}
-    \Pi_0^{(\eta)} = \sum_{n=0}^{\infty} (1-\eta)^{\hat n} \lvert n \rangle \langle n \rvert,
+    \Pi_0^{(\eta)} = \sum_{n=0}^{\infty} (1-\eta)^{n} \lvert n \rangle \langle n \rvert,
 \end{aligned}
 \end{equation}
 
