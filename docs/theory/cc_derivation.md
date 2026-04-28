@@ -314,7 +314,7 @@ we obtain
 \begin{equation}
 I
 =
-\int \frac{d^2\alpha}{\pi^2}\,
+\int \frac{d^4\alpha}{\pi^2}\,
 \exp\!\left(-\frac12\,\xi^T A\,\xi\right),
 \end{equation}
 
