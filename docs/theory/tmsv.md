@@ -3,7 +3,7 @@
 
 The next step is to do the same steps which we did for the state in equation (1) of the [simplified example](simplified_example.md#initial_state)  for the two-mode squeezed vacuum (TMSV). In this section, we first will look at the mathematical formulation of the TMSV, how it behaves when transformed by the HWP, and how relevant detection probabilities can be derived using the POVM for lossy bucket detectors.
 
-For the correct phase-matching conditions the previously mentioned conditions of spatial overlap and indistinguishability are met. Mathematically, the TMSV state can be expressed as[@Lvovsky2014]
+For the correct phase-matching conditions the previously mentioned conditions of spatial overlap and indistinguishability are met. Mathematically, the TMSV state can be expressed as <a href="#ref-lvovsky2014">[1]</a>
 
 \begin{equation}
 \label{tmsv}
@@ -238,3 +238,7 @@ equation \(\eqref{formula:tmsv_as_exp}\) becomes:
 </div>
 
 ## References
+<p id="ref-lvovsky2014">
+[1] A. I. Lvovsky, 
+<em>Squeezed Light</em>, 2014. Available: https://arxiv.org/abs/1401.4118
+</p>
