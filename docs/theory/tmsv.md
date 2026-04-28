@@ -31,11 +31,11 @@ Sending the TMSV through a HWP results in
 \label{TMSV_HWP:full}
 \begin{aligned}
     \lvert \Psi \rangle =\Lambda&\sum_{n=0}^{\infty}\dfrac{\lambda^n}{n!}\left(\cos(2\vartheta)\hat a_H^\dagger+\sin(2\vartheta)\hat a_V^\dagger\right)^n\\ 
-    &\times\left(\sin(2\vartheta)\hat a_H^\dagger-\cos(2\vartheta)\hat a_V^\dagger\right)^n \lvert 0,0 \rangle.
+    &\times\left(\sin(2\vartheta)\hat a_H^\dagger-\cos(2\vartheta)\hat a_V^\dagger\right)^n \lvert 0,0 \rangle,
 \end{aligned}
 \end{equation}
 
-Using the shorthand notation
+with $\Lambda = \sqrt{1-|\lambda|^2}$ as an abbreviation. Using the shorthand notation
 
 \begin{equation}
 c:=\cos(2\vartheta),
