@@ -23,7 +23,13 @@ nav = [
     {"Derivation of the coincidence probabiliy" = "theory/cc_derivation.md"}
   ]},
   { "Additional concepts, identities and derivations" = [
-    { "Overview" = "concepts_and_foundations/overview.md" }
+    { "Overview" = "concepts_and_foundations/overview.md" },
+    { "Coherent states" = "concepts_and_foundations/coherent_states.md" },
+    { "Conjugation of operators" = "concepts_and_foundations/conjugation_operators.md" },
+    { "Determinant relations" = "concepts_and_foundations/determinant_relations.md" },
+    { "Matrix properties" = "concepts_and_foundations/matrix_properties.md" },
+    { "Operator relations" = "concepts_and_foundations/operator_relations.md" },
+    { "POVM as number operator" = "concepts_and_foundations/povm_number_operator.md" }
   ]}
 ]
 
