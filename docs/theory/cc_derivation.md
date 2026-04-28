@@ -888,6 +888,12 @@ P_V^{(\eta_V)}(0) &= P_{\text{no-click}} + P_{H\text{-only}}.
 
 They appear naturally when expanding the POVM expression for the coincidence event.
 
+<div class="nav-footer">
+  <a class="nav-prev" href="tmsv.md">
+    ← Previous
+  </a>
+</div>
+
 ## References
 <p id="ref-axler2024">
 [1] S. Axler, <em>Linear Algebra Done Right</em>, 4th ed., Springer, 2024. Available: https://linear.axler.net/LADR4e.pdf

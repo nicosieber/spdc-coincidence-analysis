@@ -100,7 +100,7 @@ Consequently, for $\vartheta=\pi/8$, the sum of terms in \(\eqref{Transformation
 
 
 <div class="nav-footer">
-  <a class="nav-prev" href="overview.md">
+  <a class="nav-prev" href="experimental_setup.md">
     ← Previous
   </a>
 
