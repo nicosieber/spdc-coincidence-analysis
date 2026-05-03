@@ -5,10 +5,12 @@ Summary: Analytical and numerical tools for SPDC coincidence calculations
 Author: Nico Sieber
 Requires-Python: >=3.14
 Description-Content-Type: text/markdown
+License-File: LICENSE
 Requires-Dist: ipykernel
 Requires-Dist: numpy
 Requires-Dist: scipy
 Requires-Dist: matplotlib
+Requires-Dist: plotly
 Requires-Dist: zensical
 Provides-Extra: docs
 Requires-Dist: zensical; extra == "docs"
@@ -16,6 +18,7 @@ Provides-Extra: dev
 Requires-Dist: ipykernel; extra == "dev"
 Requires-Dist: black; extra == "dev"
 Requires-Dist: ruff; extra == "dev"
+Dynamic: license-file
 
 # SPDC Coincidence Analysis
 

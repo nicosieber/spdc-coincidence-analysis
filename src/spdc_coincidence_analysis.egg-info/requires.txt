@@ -2,6 +2,7 @@ ipykernel
 numpy
 scipy
 matplotlib
+plotly
 zensical
 
 [dev]

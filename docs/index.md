@@ -32,9 +32,9 @@
     <p>Detailed derivation of identities used for the main derivation.</p>
   </a>
 
-  <a class="tile tile--disabled" href="javascript:void(0);" aria-disabled="true">
+  <a class="tile" href="dashboard/dashboard/">
     <div class="tile__icon">📓</div>
-    <h3>Notebooks</h3>
-    <p>Numerical checks, examples, and interactive computational support. Coming soon.</p>
+    <h3>Interactive dashboard</h3>
+    <p>Additional explanation and interactive dashboard to play around with.</p>
   </a>
 </div>
