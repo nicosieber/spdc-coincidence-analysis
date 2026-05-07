@@ -1,4 +1,4 @@
-# Interactive dashboard
+# Normalized coincidence probability of the TMSV
 <iframe
   src="../assets/plots/coincidence_plot.html"
   width="100%"
@@ -6,7 +6,6 @@
   style="border:0;"
   loading="lazy">
 </iframe>
-## What is plotted: The coincidence probability of the TMSV
 
 This dashboard visualizes the normalized coincidence probability as a function of the half-wave plate angle \(\vartheta\). The plotted quantity is based on the coincidence probability derived in [Derivation of the coincidence probability](../theory/cc_derivation.md#eq:Pcoinc_inclusion_exclusion):
 
@@ -52,7 +51,7 @@ P^{(\eta_H=0,\eta_V)}(0,0).
 \end{aligned}
 \end{equation}
 
-## Normalization and visibility
+## Normalization 
 
 The dashboard plots the coincidence probability normalized by its maximum value over the displayed interval
 
@@ -86,6 +85,16 @@ C_{\max}
 \end{equation}
 
 Thus, the largest value of the displayed curve is always equal to one. This makes it easier to compare the shape of the coincidence dip for different values of \(\lambda\), \(\eta_H\), and \(\eta_V\).
+
+# Visibility
+
+<iframe
+  src="../assets/plots/visibility_vs_etaH_plot.html"
+  width="100%"
+  height="600"
+  style="border:0;"
+  loading="lazy">
+</iframe>
 
 The visibility shown in the dashboard quantifies the relative depth of the coincidence modulation. It is computed from the unnormalized coincidence curve as
 

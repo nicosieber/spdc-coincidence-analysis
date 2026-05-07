@@ -31,7 +31,7 @@ nav = [
     { "Operator relations" = "concepts_and_foundations/operator_relations.md" },
     { "POVM as number operator" = "concepts_and_foundations/povm_number_operator.md" }
   ]},
-  { "Interactive dashboard" = "dashboard/dashboard.md"}
+  { "Interactive dashboards" = "dashboard/dashboard.md"}
 ]
 
 [project.theme]

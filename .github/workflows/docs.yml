@@ -33,6 +33,7 @@ jobs:
       - name: Generate Plotly charts
         run: |
           python scripts/make_cc_plot.py
+          python scripts/make_visibility_plot.py
 
       - name: Build docs
         run: zensical build

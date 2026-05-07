@@ -27,7 +27,7 @@
     
     
       
-        <title>Interactive dashboard - SPDC Coincidence Analysis</title>
+        <title>Normalized coincidence probability of the TMSV - SPDC Coincidence Analysis</title>
       
     
     
@@ -85,7 +85,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#interactive-dashboard" class="md-skip">
+        <a href="#normalized-coincidence-probability-of-the-tmsv" class="md-skip">
           Skip to content
         </a>
       
@@ -119,7 +119,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Interactive dashboard
+              Normalized coincidence probability of the TMSV
             
           </span>
         </div>
@@ -248,7 +248,7 @@
       <a href="././" class="md-tabs__link">
         
   
-  Interactive dashboard
+  Interactive dashboards
 
       </a>
     </li>
@@ -810,7 +810,7 @@
   <span class="md-ellipsis">
     
   
-    Interactive dashboard
+    Interactive dashboards
   
 
     
@@ -828,7 +828,7 @@
   <span class="md-ellipsis">
     
   
-    Interactive dashboard
+    Interactive dashboards
   
 
     
@@ -855,21 +855,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#what-is-plotted-the-coincidence-probability-of-the-tmsv" class="md-nav__link">
+  <a href="#normalization" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        What is plotted: The coincidence probability of the TMSV
-      </span>
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#normalization-and-visibility" class="md-nav__link">
-    <span class="md-ellipsis">
-      <span class="md-typeset">
-        Normalization and visibility
+        Normalization
       </span>
     </span>
   </a>
@@ -913,21 +902,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#what-is-plotted-the-coincidence-probability-of-the-tmsv" class="md-nav__link">
+  <a href="#normalization" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        What is plotted: The coincidence probability of the TMSV
-      </span>
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#normalization-and-visibility" class="md-nav__link">
-    <span class="md-ellipsis">
-      <span class="md-typeset">
-        Normalization and visibility
+        Normalization
       </span>
     </span>
   </a>
@@ -952,15 +930,15 @@
   
 
 
-<h1 id="interactive-dashboard">Interactive dashboard<a class="headerlink" href="#interactive-dashboard" title="Permanent link">&para;</a></h1>
+<h1 id="normalized-coincidence-probability-of-the-tmsv">Normalized coincidence probability of the TMSV<a class="headerlink" href="#normalized-coincidence-probability-of-the-tmsv" title="Permanent link">&para;</a></h1>
 <p><iframe
   src="../../assets/plots/coincidence_plot.html"
   width="100%"
   height="600"
   style="border:0;"
   loading="lazy">
-</iframe></p>
-<h2 id="what-is-plotted-the-coincidence-probability-of-the-tmsv">What is plotted: The coincidence probability of the TMSV<a class="headerlink" href="#what-is-plotted-the-coincidence-probability-of-the-tmsv" title="Permanent link">&para;</a></h2>
+</iframe>
+</p>
 <p>This dashboard visualizes the normalized coincidence probability as a function of the half-wave plate angle <span class="arithmatex">\(\vartheta\)</span>. The plotted quantity is based on the coincidence probability derived in <a href="../../theory/cc_derivation/#eq:Pcoinc_inclusion_exclusion">Derivation of the coincidence probability</a>:</p>
 <div class="arithmatex">\[\begin{equation}
 \label{eq:dashboard_pcc}
@@ -999,7 +977,7 @@ P_V^{(\eta_V)}(0)
 P^{(\eta_H=0,\eta_V)}(0,0).
 \end{aligned}
 \end{equation}\]</div>
-<h2 id="normalization-and-visibility">Normalization and visibility<a class="headerlink" href="#normalization-and-visibility" title="Permanent link">&para;</a></h2>
+<h2 id="normalization">Normalization<a class="headerlink" href="#normalization" title="Permanent link">&para;</a></h2>
 <p>The dashboard plots the coincidence probability normalized by its maximum value over the displayed interval</p>
 <div class="arithmatex">\[\begin{equation}
 0 \leq \vartheta \leq \frac{\pi}{4}.
@@ -1024,6 +1002,15 @@ C_{\max}
 \max_{\vartheta \in [0,\pi/4]} C(\vartheta).
 \end{equation}\]</div>
 <p>Thus, the largest value of the displayed curve is always equal to one. This makes it easier to compare the shape of the coincidence dip for different values of <span class="arithmatex">\(\lambda\)</span>, <span class="arithmatex">\(\eta_H\)</span>, and <span class="arithmatex">\(\eta_V\)</span>.</p>
+<h1 id="visibility">Visibility<a class="headerlink" href="#visibility" title="Permanent link">&para;</a></h1>
+<p><iframe
+  src="../../assets/plots/visibility_vs_etaH_plot.html"
+  width="100%"
+  height="600"
+  style="border:0;"
+  loading="lazy">
+</iframe>
+</p>
 <p>The visibility shown in the dashboard quantifies the relative depth of the coincidence modulation. It is computed from the unnormalized coincidence curve as</p>
 <div class="arithmatex">\[\begin{equation}
 \label{eq:dashboard_visibility}
