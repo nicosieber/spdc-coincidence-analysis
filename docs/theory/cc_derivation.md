@@ -164,10 +164,10 @@ Consequently, one can write
 
 \begin{equation}
 \begin{aligned}
-&\mathbf{\hat a}^T M\mathbf{\hat a}\lvert \alpha \rangle\\
-=&\left(cs\hat a_H^2+(s^2-c^2)\hat a_H\hat a_V-cs\hat a_V^2\right)\lvert \alpha_H,\alpha_V \rangle\\
-=&\left(cs\alpha_H^2+(s^2-c^2)\alpha_H\alpha_V-cs\alpha_V^2\right)\lvert \alpha_H,\alpha_V \rangle\\
-=&\alpha^TM\alpha \lvert \alpha \rangle
+&\dfrac{1}{2}\mathbf{\hat a}^T M\mathbf{\hat a}\lvert \alpha \rangle\\
+=&\dfrac{1}{2}\left(2cs\hat a_H^2+2(s^2-c^2)\hat a_H\hat a_V-2cs\hat a_V^2\right)\lvert \alpha_H,\alpha_V \rangle\\
+=&\dfrac{1}{2}\left(2cs\alpha_H^2+2(s^2-c^2)\alpha_H\alpha_V-2cs\alpha_V^2\right)\lvert \alpha_H,\alpha_V \rangle\\
+=&\dfrac{1}{2}\alpha^TM\alpha \lvert \alpha \rangle
 \end{aligned}
 \end{equation}
 
