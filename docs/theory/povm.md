@@ -168,7 +168,7 @@ For non-symmetric losses on detectors $A$ and $B$, this becomes:
     &-\langle \Psi \rvert\mathbb{1}\otimes\left(1-\eta_B\right)^{\hat{n}_B}\lvert \Psi \rangle\\
     &-\langle \Psi \rvert\left(1-\eta_A\right)^{\hat{n}_A}\otimes \mathbb{1}\lvert \Psi \rangle\\
     &+\langle \Psi \rvert\left(1-\eta_A\right)^{\hat{n}_A}\otimes \left(1-\eta_B\right)^{\hat{n}_B}\lvert \Psi \rangle\\
-    &= 1 - P_H^{(\eta_A,\eta_B)}(0) - P_V^{(\eta_A,\eta_B)}(0) + P^{(\eta_A,\eta_B)}(0,0)
+    &= 1 - P_H^{(\eta_A)}(0) - P_V^{(\eta_B)}(0) + P^{(\eta_A,\eta_B)}(0,0)
 \end{aligned}
 \end{equation}
 
