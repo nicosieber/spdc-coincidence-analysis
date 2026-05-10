@@ -1,6 +1,7 @@
+from pathlib import Path
+
 import numpy as np
 import plotly.graph_objects as go
-from pathlib import Path
 
 
 def p00(lam, theta, eta_H, eta_V):
@@ -179,222 +180,29 @@ controls = f"""
   </div>
 """
 
-styles = f"""
-<style>
-html, body {{
-  width: 100%;
-  height: 580px;
-  margin: 0;
-  padding: 0;
-  background: {page_bg};
-  color: {text};
-  overflow: hidden;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-}}
 
-.plot-card {{
-  box-sizing: border-box;
-  width: 100%;
-  height: 580px;
-  background: {panel};
-  border-radius: 18px;
-  padding: 18px 20px 10px 20px;
-  overflow: hidden;
-}}
 
-.header {{
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 16px;
-  margin-bottom: 12px;
-}}
-
-.eyebrow {{
-  color: {lime};
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-}}
-
-.readout {{
-  color: {lime};
-  font-size: 0.92rem;
-  font-weight: 700;
-  white-space: nowrap;
-  padding-top: 2px;
-}}
-
-.controls {{
-  display: flex;
-  gap: 28px;
-  align-items: center;
-  margin-bottom: 4px;
-}}
-
-.input-group {{
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: {text};
-  font-weight: 700;
-}}
-
-.input-group > span {{
-  color: {lime};
-  font-size: 1.05rem;
-}}
-
-sub {{
-  font-size: 0.7em;
-  vertical-align: sub;
-}}
-
-.spinbox {{
-  display: flex;
-  align-items: center;
-  border: 1px solid {lime};
-  border-radius: 12px;
-  overflow: hidden;
-  background: #171a22;
-}}
-
-.spinbox input {{
-  width: 76px;
-  background: #171a22;
-  color: {text};
-  border: none;
-  text-align: center;
-  padding: 6px 4px;
-  font-size: 0.95rem;
-  outline: none;
-}}
-
-.spinbox button {{
-  width: 30px;
-  height: 32px;
-  background: #171a22;
-  color: {lime};
-  border: none;
-  font-size: 0.95rem;
-  font-weight: 800;
-  cursor: pointer;
-  user-select: none;
-  touch-action: none;
-}}
-
-.spinbox button:hover {{
-  background: {lime};
-  color: #171a22;
-}}
-
-#coincidence-plot {{
-  height: 420px !important;
-}}
-</style>
+css_link = """
+<link rel="stylesheet"
+      href="../../stylesheets/coincidence_plots.css">
 """
 
-custom_js = r"""
-<script>
-let stepInterval = null;
+html = html.replace(
+    "<head>",
+    f"<head>{css_link}"
+)
 
-function p00(lam, theta, eta_H, eta_V) {
-    const radicand =
-        Math.pow(1 - Math.pow(lam, 2) * (1 - eta_H) * (1 - eta_V), 2)
-        - Math.pow(lam, 2) * Math.pow(eta_H - eta_V, 2) * Math.pow(Math.sin(4 * theta), 2);
 
-    return (1 - Math.pow(lam, 2)) / Math.sqrt(radicand);
-}
-
-function linspace(start, stop, num) {
-    const arr = [];
-    const step = (stop - start) / (num - 1);
-    for (let i = 0; i < num; i++) arr.push(start + step * i);
-    return arr;
-}
-
-function readNumber(id) {
-    return parseFloat(document.getElementById(id).value.replace(",", "."));
-}
-
-function clamp(value, minValue, maxValue) {
-    return Math.min(Math.max(value, minValue), maxValue);
-}
-
-function writeNumber(id, value) {
-    document.getElementById(id).value = value.toFixed(2);
-}
-
-function stepValue(id, delta) {
-    let value = readNumber(id);
-    if (isNaN(value)) value = 0;
-
-    value += delta;
-
-    if (id === "lam") {
-        value = clamp(value, 0.01, 0.9999);
-    } else {
-        value = clamp(value, 0, 1);
-    }
-
-    writeNumber(id, value);
-    updatePlot();
-}
-
-function startStepping(id, delta) {
-    stopStepping();
-    stepValue(id, delta);
-
-    stepInterval = setInterval(() => {
-        stepValue(id, delta);
-    }, 90);
-}
-
-function stopStepping() {
-    if (stepInterval !== null) {
-        clearInterval(stepInterval);
-        stepInterval = null;
-    }
-}
-
-window.addEventListener("mouseup", stopStepping);
-window.addEventListener("touchend", stopStepping);
-
-function updatePlot() {
-    const lam = readNumber("lam");
-    const etaH = readNumber("etaH");
-    const etaV = readNumber("etaV");
-
-    if (isNaN(lam) || isNaN(etaH) || isNaN(etaV)) return;
-
-    const theta = linspace(0, Math.PI / 4, 1000);
-
-    const C = theta.map(t => {
-        const p00val = p00(lam, t, etaH, etaV);
-        const pH0 = p00(lam, t, etaH, 0);
-        const pV0 = p00(lam, t, 0, etaV);
-        return 1 - pH0 - pV0 + p00val;
-    });
-
-    const Cmax = Math.max(...C);
-    const Cmin = Math.min(...C);
-    const Cnorm = C.map(v => v / Cmax);
-    const visibility = (Cmax - Cmin) / (Cmax + Cmin);
-
-    document.getElementById("readout").innerHTML =
-        `λ=${lam.toFixed(4)}, η<sub>H</sub>=${etaH.toFixed(4)}, η<sub>V</sub>=${etaV.toFixed(4)}, Visibility=${visibility.toFixed(4)}`;
-
-    Plotly.update("coincidence-plot", {
-        x: [theta],
-        y: [Cnorm]
-    });
-}
-</script>
-"""
-
-html = html.replace("<head>", f"<head>{styles}")
 html = html.replace("<body>", f"<body>{controls}")
-html = html.replace("</body>", f"</div>{custom_js}</body>")
+
+script_tag = """
+<script src="../../js/coincidence_plot.js"></script>
+"""
+
+html = html.replace(
+    "</body>",
+    f"</div>{script_tag}</body>"
+)
 
 output_file.write_text(html, encoding="utf-8")
 

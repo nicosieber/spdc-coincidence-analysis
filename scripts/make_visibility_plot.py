@@ -1,6 +1,7 @@
+from pathlib import Path
+
 import numpy as np
 import plotly.graph_objects as go
-from pathlib import Path
 
 
 def p00(lam, theta, eta_H, eta_V):

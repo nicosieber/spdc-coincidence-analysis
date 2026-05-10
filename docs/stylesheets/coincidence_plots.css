@@ -1,0 +1,111 @@
+html, body {
+  width: 100%;
+  height: 580px;
+  margin: 0;
+  padding: 0;
+  background: #1f222b;
+  color: #e8ebf2;
+  overflow: hidden;
+  font-family: system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.plot-card {
+  box-sizing: border-box;
+  width: 100%;
+  height: 580px;
+  background: #252936;
+  border-radius: 18px;
+  padding: 18px 20px 10px 20px;
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.eyebrow {
+  color: #c9f23c;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.readout {
+  color: #c9f23c;
+  font-size: 0.92rem;
+  font-weight: 700;
+  white-space: nowrap;
+  padding-top: 2px;
+}
+
+.controls {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #e8ebf2;
+  font-weight: 700;
+}
+
+.input-group > span {
+  color: #c9f23c;
+  font-size: 1.05rem;
+}
+
+sub {
+  font-size: 0.7em;
+  vertical-align: sub;
+}
+
+.spinbox {
+  display: flex;
+  align-items: center;
+  border: 1px solid #c9f23c;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #171a22;
+}
+
+.spinbox input {
+  width: 76px;
+  background: #171a22;
+  color: #e8ebf2;
+  border: none;
+  text-align: center;
+  padding: 6px 4px;
+  font-size: 0.95rem;
+  outline: none;
+}
+
+.spinbox button {
+  width: 30px;
+  height: 32px;
+  background: #171a22;
+  color: #c9f23c;
+  border: none;
+  font-size: 0.95rem;
+  font-weight: 800;
+  cursor: pointer;
+  user-select: none;
+  touch-action: none;
+}
+
+.spinbox button:hover {
+  background: #c9f23c;
+  color: #171a22;
+}
+
+#coincidence-plot {
+  height: 420px !important;
+}
