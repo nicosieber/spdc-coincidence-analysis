@@ -837,56 +837,6 @@ P^{(\eta_H,\eta_V)}(0,0)=P_{00}.
 \label{eq:P00_meaning}
 \end{equation}
 
-## Connection to the coincidence probability
-
-The coincidence probability is the probability that both detectors click:
-
-\begin{equation}
-P_{\mathrm{coinc}}
-=
-P_{\mathrm{cc}}.
-\end{equation}
-
-Using equations \(\eqref{eq:PH_meaning}\)-\(\eqref{eq:P00_meaning}\), it follows that
-
-\begin{equation}
-P_{\mathrm{coinc}}
-=
-1 - P_H^{(\eta_H)}(0) - P_V^{(\eta_V)}(0) + P^{(\eta_H,\eta_V)}(0,0),
-\label{eq:Pcoinc_inclusion_exclusion}
-\end{equation}
-
-which is just the inclusion-exclusion formula for the event that both detectors click.
-
-## Connection to the lossless notation
-
-In the lossless discussion, one often groups the four elementary outcomes into only three classes:
-
-\begin{equation}
-\begin{aligned}
-P_{\text{no-click}} &:= P_{00},\\
-P_{\text{1-click}} &:= P_{H\text{-only}} + P_{V\text{-only}},\\
-P_{\text{coinc.}} &:= P_{\mathrm{cc}}.
-\end{aligned}
-\end{equation}
-
-Equation \(\eqref{eq:four_outcomes_sum}\) then becomes
-
-\begin{equation}
-1 \overset{!}{=} P_{\text{no-click}} + P_{\text{1-click}} + P_{\text{coinc.}}.
-\label{eq:lossless_grouped}
-\end{equation}
-
-Thus, the quantities $P_H^{(\eta_H)}(0)$ and $P_V^{(\eta_V)}(0)$ are not additional detector outcomes by themselves. Rather, they are marginal no-click probabilities, i.e. partial sums over the four elementary outcomes:
-
-\begin{equation}
-\begin{aligned}
-P_H^{(\eta_H)}(0) &= P_{\text{no-click}} + P_{V\text{-only}},\\
-P_V^{(\eta_V)}(0) &= P_{\text{no-click}} + P_{H\text{-only}}.
-\end{aligned}
-\end{equation}
-
-They appear naturally when expanding the POVM expression for the coincidence event.
 
 <div class="nav-footer">
   <a class="nav-prev" href="tmsv.md">
