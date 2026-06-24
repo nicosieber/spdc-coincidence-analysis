@@ -130,17 +130,17 @@ A larger visibility therefore corresponds to a deeper coincidence dip, while \(V
 Estimating an unknown parameter $\varphi$ — here the half-wave plate phase — proceeds by repeating a measurement many times and observing outcomes $\{i\}$ drawn from a probability distribution $\{p_i(\varphi)\}$.
 After $\nu$ independent trials, the variance of any unbiased estimator $\hat{\varphi}$ is bounded below by the **Cramér–Rao bound** <a href="#ref-paris2009">[1]</a><a href="#ref-toth2014">[2]</a>
 
-$$
+\begin{equation}
 \label{eq:cramer_rao}
 \mathrm{Var}(\hat{\varphi}) \geq \frac{1}{\nu\, \mathcal{F}(\varphi)},
-$$
+\end{equation}
 
 where $\nu$ is the number of independent repetitions of the experiment and the **classical Fisher information** is
 
-$$
+\begin{equation}
 \label{eq:fisher_def}
 \mathcal{F}(\varphi) = \sum_{i} \frac{1}{p_i(\varphi)}\left(\frac{\partial p_i(\varphi)}{\partial \varphi}\right)^2.
-$$
+\end{equation}
 
 A larger Fisher information means the probability distribution changes more steeply with $\varphi$, so each trial carries more information about the parameter. The Cramér–Rao bound is asymptotically tight: it is achieved by the maximum-likelihood estimator in the limit of many trials<a href="#ref-paris2009">[1]</a>.
 
@@ -148,17 +148,17 @@ A larger Fisher information means the probability distribution changes more stee
 
 In a quantum experiment, the choice of measurement is itself a degree of freedom. For a given quantum state $\hat{\rho}(\varphi)$, different positive-operator valued measures (POVMs) yield different classical Fisher informations. The **quantum Fisher information** (QFI) $\mathcal{F}_Q$ is defined as the maximum of $\mathcal{F}$ over all allowed POVMs <a href="#ref-paris2009">[1]</a><a href="#ref-toth2014">[2]</a>
 
-$$
+\begin{equation}
 \label{eq:qfi_def}
 \mathcal{F}_Q(\varphi) = \max_{\{M_i\}} \mathcal{F}(\varphi),
-$$
+\end{equation}
 
 and the resulting **quantum Cramér–Rao bound** (QCRB)
 
-$$
+\begin{equation}
 \label{eq:qcrb}
 \mathrm{Var}(\hat{\varphi}) \geq \frac{1}{\nu\, \mathcal{F}_Q(\varphi)}
-$$
+\end{equation}
 
 is the fundamental precision limit set by quantum mechanics, independent of which measurement is performed. The QFI depends only on the geometry of the quantum state in parameter space and is saturated by an optimal projective measurement constructed from the symmetric logarithmic derivative of $\hat{\rho}(\varphi)$<a href="#ref-paris2009">[1]</a>.
 
@@ -168,10 +168,10 @@ The measurement considered here is not optimised over all POVMs: it is fixed to 
 
 The shot-noise limit (SNL), also called the standard quantum limit, is the best precision achievable with $\bar{n}$ independent (unentangled) probes per recorded trial<a href="#ref-toth2014">[2]</a>. For $N$ independent photons each carrying phase information, the Fisher information scales linearly with the number of probes:
 
-$$
+\begin{equation}
 \label{eq:snl_general}
 \mathcal{F}_{\mathrm{SNL}} = \bar{n}.
-$$
+\end{equation}
 
 The corresponding phase uncertainty $\Delta\varphi_{\mathrm{SNL}} = 1/\sqrt{\nu\bar{n}}$ decreases as $1/\sqrt{\bar{n}}$. Quantum entanglement can in principle push this to the **Heisenberg limit** $\Delta\varphi_{\mathrm{HL}} = 1/(\sqrt{\nu}\,\bar{n})$, scaling as $1/\bar{n}$ <a href="#ref-toth2014">[2]</a><a href="#ref-giovanetti2011">[3]</a>. A key result of quantum metrology is that entanglement is *necessary* to surpass the shot-noise scaling in a general linear interferometer<a href="#ref-toth2014">[2]</a>. Beating the SNL — i.e. achieving $\mathcal{F}(\varphi) > \mathcal{F}_{\mathrm{SNL}}$ — is therefore the standard signature of a genuinely quantum metrological advantage.
 
@@ -188,10 +188,10 @@ which follows directly from the photon-number distribution of the TMSV state (se
 Not every generated pair leads to a recorded click: detection succeeds with probability $P_{\mathrm{click}} = 1 - P^{(\eta_H, \eta_V)}(0,0)$, where $P^{(\eta_H, \eta_V)}(0,0)$ is the joint vacuum (no-click) probability derived [here](../theory/cc_derivation.md).
 The Fisher information is defined per *recorded trial*, so the mean photon number committed per recorded trial — the true resource cost — is
 
-$$
+\begin{equation}
 \label{eq:n_per_trial}
 \bar{n}(\varphi) = \frac{\langle \hat{n}_H + \hat{n}_V \rangle}{P_{\mathrm{click}}(\varphi)} = \frac{2\lambda^2/(1-\lambda^2)}{1 - P^{(\eta_H,\eta_V)}(0,0)\big|_{\vartheta = \varphi/4}}.
-$$
+\end{equation}
 
 The SNL for this model is therefore
 
@@ -206,7 +206,7 @@ The SNL for this model is therefore
 
 with the joint vacuum probability
 
-$$
+\begin{equation}
 P^{(\eta_H,\eta_V)}(0,0)
 =
 \frac{1-\lambda^2}{\sqrt{
@@ -214,7 +214,7 @@ P^{(\eta_H,\eta_V)}(0,0)
 -
 \lambda^2(\eta_H-\eta_V)^2\sin^2(4\vartheta)
 }}.
-$$
+\end{equation}
 
 **Flat SNL for symmetric losses.** A direct symbolic calculation shows that $\partial \mathcal{F}_{\mathrm{SNL}} / \partial \varphi = 0$ whenever $\eta_H = \eta_V$: the SNL is then completely flat in the phase. This is physically sensible — with symmetric detection the probability of registering *any* click does not depend on how the HWP routes the photons, so the resource cost per trial is the same at every phase. For asymmetric losses the SNL acquires a weak $\varphi$-dependence through the same $(\eta_H - \eta_V)^2\sin^2(4\vartheta)$ interference term that appears in $P^{(\eta_H,\eta_V)}(0,0)$.
 
