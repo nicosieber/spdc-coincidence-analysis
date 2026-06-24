@@ -195,14 +195,14 @@ $$
 
 The SNL for this model is therefore
 
-$$
+\begin{equation}
 \label{eq:snl_tmsv}
 \boxed{
 \mathcal{F}_{\mathrm{SNL}}(\varphi)
 =
 \frac{2\lambda^2/(1-\lambda^2)}{1 - P^{(\eta_H,\eta_V)}(0,0)\big|_{\vartheta=\varphi/4}}
 }
-$$
+\end{equation}
 
 with the joint vacuum probability
 
