@@ -179,10 +179,10 @@ The corresponding phase uncertainty $\Delta\varphi_{\mathrm{SNL}} = 1/\sqrt{\nu\
 
 The photon source in this setup is a two-mode squeezed vacuum (TMSV) with squeezing parameter $\lambda$. The mean number of photons generated per SPDC attempt is
 
-$$
+\begin{eqation}
 \label{eq:n_mean_tmsv}
 \langle \hat{n}_H + \hat{n}_V \rangle = \frac{2\lambda^2}{1 - \lambda^2},
-$$
+\end{equation}
 
 which follows directly from the photon-number distribution of the TMSV state (see [TMSV section](../theory/tmsv.md)).
 Not every generated pair leads to a recorded click: detection succeeds with probability $P_{\mathrm{click}} = 1 - P^{(\eta_H, \eta_V)}(0,0)$, where $P^{(\eta_H, \eta_V)}(0,0)$ is the joint vacuum (no-click) probability derived [here](../theory/cc_derivation.md).
