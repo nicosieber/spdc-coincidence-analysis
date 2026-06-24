@@ -612,28 +612,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#connection-to-the-coincidence-probability" class="md-nav__link">
-    <span class="md-ellipsis">
-      <span class="md-typeset">
-        Connection to the coincidence probability
-      </span>
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#connection-to-the-lossless-notation" class="md-nav__link">
-    <span class="md-ellipsis">
-      <span class="md-typeset">
-        Connection to the lossless notation
-      </span>
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#references" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
@@ -1010,28 +988,6 @@
     <span class="md-ellipsis">
       <span class="md-typeset">
         Connection to the notation <span class="arithmatex">\(P_H^{(\eta)}(0)\)</span>, <span class="arithmatex">\(P_V^{(\eta)}(0)\)</span>, and <span class="arithmatex">\(P^{(\eta_H,\eta_V)}(0,0)\)</span>
-      </span>
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#connection-to-the-coincidence-probability" class="md-nav__link">
-    <span class="md-ellipsis">
-      <span class="md-typeset">
-        Connection to the coincidence probability
-      </span>
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#connection-to-the-lossless-notation" class="md-nav__link">
-    <span class="md-ellipsis">
-      <span class="md-typeset">
-        Connection to the lossless notation
       </span>
     </span>
   </a>
@@ -1727,43 +1683,6 @@ P^{(\eta_H,\eta_V)}(0,0)
 P^{(\eta_H,\eta_V)}(0,0)=P_{00}.
 \label{eq:P00_meaning}
 \end{equation}\]</div>
-<h2 id="connection-to-the-coincidence-probability">Connection to the coincidence probability<a class="headerlink" href="#connection-to-the-coincidence-probability" title="Permanent link">&para;</a></h2>
-<p>The coincidence probability is the probability that both detectors click:</p>
-<div class="arithmatex">\[\begin{equation}
-P_{\mathrm{coinc}}
-=
-P_{\mathrm{cc}}.
-\end{equation}\]</div>
-<p>Using equations <span class="arithmatex">\(\eqref{eq:PH_meaning}\)</span>-<span class="arithmatex">\(\eqref{eq:P00_meaning}\)</span>, it follows that</p>
-<div class="arithmatex">\[\begin{equation}
-P_{\mathrm{coinc}}
-=
-1 - P_H^{(\eta_H)}(0) - P_V^{(\eta_V)}(0) + P^{(\eta_H,\eta_V)}(0,0),
-\label{eq:Pcoinc_inclusion_exclusion}
-\end{equation}\]</div>
-<p>which is just the inclusion-exclusion formula for the event that both detectors click.</p>
-<h2 id="connection-to-the-lossless-notation">Connection to the lossless notation<a class="headerlink" href="#connection-to-the-lossless-notation" title="Permanent link">&para;</a></h2>
-<p>In the lossless discussion, one often groups the four elementary outcomes into only three classes:</p>
-<div class="arithmatex">\[\begin{equation}
-\begin{aligned}
-P_{\text{no-click}} &amp;:= P_{00},\\
-P_{\text{1-click}} &amp;:= P_{H\text{-only}} + P_{V\text{-only}},\\
-P_{\text{coinc.}} &amp;:= P_{\mathrm{cc}}.
-\end{aligned}
-\end{equation}\]</div>
-<p>Equation <span class="arithmatex">\(\eqref{eq:four_outcomes_sum}\)</span> then becomes</p>
-<div class="arithmatex">\[\begin{equation}
-1 \overset{!}{=} P_{\text{no-click}} + P_{\text{1-click}} + P_{\text{coinc.}}.
-\label{eq:lossless_grouped}
-\end{equation}\]</div>
-<p>Thus, the quantities <span class="arithmatex">\(P_H^{(\eta_H)}(0)\)</span> and <span class="arithmatex">\(P_V^{(\eta_V)}(0)\)</span> are not additional detector outcomes by themselves. Rather, they are marginal no-click probabilities, i.e. partial sums over the four elementary outcomes:</p>
-<div class="arithmatex">\[\begin{equation}
-\begin{aligned}
-P_H^{(\eta_H)}(0) &amp;= P_{\text{no-click}} + P_{V\text{-only}},\\
-P_V^{(\eta_V)}(0) &amp;= P_{\text{no-click}} + P_{H\text{-only}}.
-\end{aligned}
-\end{equation}\]</div>
-<p>They appear naturally when expanding the POVM expression for the coincidence event.</p>
 <div class="nav-footer">
   <a class="nav-prev" href="../tmsv/">
     ← Previous

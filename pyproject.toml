@@ -12,6 +12,7 @@ dependencies = [
     "scipy",
     "matplotlib",
     "plotly",
+    "sympy",
     "zensical",
 ]
 
