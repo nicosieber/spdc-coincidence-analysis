@@ -1,4 +1,7 @@
-# Normalized coincidence probability of the TMSV
+# Interactive Dashboards
+The following sections show and explain some interactive plots to play around with to increase how the different metrics like coincidence probability, visibility and Fisher Information change with respect to the amount squeezing and detection efficiencies.
+
+## Normalized coincidence probability of the TMSV
 <iframe
   src="../assets/plots/coincidence_plot.html"
   width="100%"
@@ -51,7 +54,7 @@ P^{(\eta_H=0,\eta_V)}(0,0).
 \end{aligned}
 \end{equation}
 
-## Normalization 
+### Normalization 
 
 The dashboard plots the coincidence probability normalized by its maximum value over the displayed interval
 
@@ -86,7 +89,7 @@ C_{\max}
 
 Thus, the largest value of the displayed curve is always equal to one. This makes it easier to compare the shape of the coincidence dip for different values of \(\lambda\), \(\eta_H\), and \(\eta_V\).
 
-# Visibility
+## Visibility
 
 <iframe
   src="../assets/plots/visibility_vs_etaH_plot.html"
@@ -115,7 +118,7 @@ C_{\min}
 
 A larger visibility therefore corresponds to a deeper coincidence dip, while \(V=0\) would correspond to a flat coincidence curve.
 
-# Fisher Information and Quantum Sensing
+## Fisher Information and Quantum Sensing
 
 <iframe
   src="../assets/plots/fisher_plot.html"
@@ -125,7 +128,7 @@ A larger visibility therefore corresponds to a deeper coincidence dip, while \(V
   loading="lazy">
 </iframe>
 
-## Motivation: Reading the Phase from Click Patterns
+### Motivation: Reading the Phase from Click Patterns
 
 To estimate the half-wave plate phase, we repeat the experiment many times and record what
 the two bucket detectors report on each trial. Each trial ends in one of three
@@ -178,7 +181,7 @@ rare (and therefore statistically noisy) and rewarding outcomes that are both se
 \(\mathcal{F}(\varphi)\) that captures, per trial, how much the full click pattern
 constrains the unknown phase.
 
-## The SNL for the TMSV Model
+### The SNL for the TMSV Model
 
 The photon source in this setup is a two-mode squeezed vacuum (TMSV) with squeezing parameter $\lambda$. The mean number of photons generated per SPDC attempt is
 
@@ -216,10 +219,10 @@ The SNL for this model is therefore
 }.
 \end{equation}
 
-### Flat SNL for symmetric losses
+#### Flat SNL for symmetric losses
 A direct symbolic calculation shows that $\partial \mathcal{F}_{\mathrm{SNL}} / \partial \varphi = 0$ whenever $\eta_H = \eta_V$: the SNL is then completely flat in the phase. This is physically sensible — with symmetric detection the probability of registering *any* click does not depend on how the HWP routes the photons, so the resource cost per trial is the same at every phase. For asymmetric losses the SNL acquires a weak $\varphi$-dependence through the same $(\eta_H - \eta_V)^2\sin^2(4\vartheta)$ interference term that appears in $P^{(\eta_H,\eta_V)}(0,0)$.
 
-### Comparison to the experiment of Slussarenko et al 
+#### Comparison to the experiment of Slussarenko et al 
 Reference <a href="#ref-slussarenko2017">[1]</a> defines
 $\mathcal{F}_{\mathrm{SNL}} = N\tilde{k}/k$, where $N = 2$ (photon pair) and $\tilde{k}/k = (1+\xi)/\eta_{\min}$, with $\xi$ the multi-pair emission probability and $\eta_{\min}$ the minimum click probability over all phases and outcomes. This is the worst-case (most conservative) version of the same resource counting. The expression in equation \(\eqref{eq:snl_tmsv}\) is exact for all $\lambda$ and recovers the same value in the limit $\lambda \to 0$ (few-pair, $N=2$-dominant regime): numerically, with $\lambda = 0.1235$ and $\eta_H = \eta_V = 0.80$ it gives $\mathcal{F}_{\mathrm{SNL}} \approx 2.114$, versus the reported $2.096$ — the small difference originating from the multi-pair correction factor $\xi \approx 0.155\,\%$ and the experimental $\eta_{\min} = 0.9556$.
 
