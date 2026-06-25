@@ -231,5 +231,5 @@ $\mathcal{F}_{\mathrm{SNL}} = N\tilde{k}/k$, where $N = 2$ (photon pair) and $\t
 ## References
 
 <p id="ref-slussarenko2017">
-[1] S. Slussarenko et al., Unconditional violation of the shot-noise limit in photonic quantum metrology, Nature Photonics 11, 700–703 (2017). Open-access preprint: https://arxiv.org/abs/1707.08977. 
+[1] S. Slussarenko et al., Unconditional violation of the shot-noise limit in photonic quantum metrology, Nature Photonics 11, 700-703 (2017). Open-access preprint: https://arxiv.org/abs/1707.08977. 
 </p>

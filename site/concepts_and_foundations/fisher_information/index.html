@@ -837,6 +837,39 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#maximum-likelihood-estimation" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Maximum Likelihood Estimation
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fisher-information-from-the-log-likelihood" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Fisher Information from the Log-Likelihood
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-cramerrao-bound" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The Cramér–Rao Bound
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#from-classical-to-quantum-fisher-information" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
@@ -889,20 +922,92 @@
 
 <h1 id="fisher-information">Fisher Information<a class="headerlink" href="#fisher-information" title="Permanent link">&para;</a></h1>
 <p><span id="concept:fisher_information"></span></p>
-<p>Estimating an unknown parameter <span class="arithmatex">\(\varphi\)</span> — here the half-wave plate phase — proceeds by repeating a measurement many times and observing outcomes <span class="arithmatex">\(\{i\}\)</span> drawn from a probability distribution <span class="arithmatex">\(\{p_i(\varphi)\}\)</span>.
-After <span class="arithmatex">\(\nu\)</span> independent trials, the variance of any unbiased estimator <span class="arithmatex">\(\hat{\varphi}\)</span> is bounded below by the <strong>Cramér–Rao bound</strong> <a href="#ref-paris2009">[1]</a><a href="#ref-toth2014">[2]</a></p>
+<h2 id="maximum-likelihood-estimation">Maximum Likelihood Estimation<a class="headerlink" href="#maximum-likelihood-estimation" title="Permanent link">&para;</a></h2>
+<p>Estimating an unknown parameter <span class="arithmatex">\(\varphi\)</span> - <a href="../../theory/experimental_setup/">here the half-wave plate phase</a> - proceeds by
+repeating a measurement many times and observing outcomes <span class="arithmatex">\(\{i\}\)</span> drawn from a probability
+distribution <span class="arithmatex">\(\{p_i(\varphi)\}\)</span>. After <span class="arithmatex">\(\nu\)</span> independent trials in which outcome <span class="arithmatex">\(i\)</span>
+occurs <span class="arithmatex">\(n_i\)</span> times, the likelihood of the full dataset is multinomial:</p>
 <div class="arithmatex">\[\begin{equation}
-\label{eq:cramer_rao}
-\mathrm{Var}(\hat{\varphi}) \geq \frac{1}{\nu\, \mathcal{F}(\varphi)},
+\label{eq:likelihood}
+L(\varphi) = \prod_i p_i(\varphi)^{n_i}.
 \end{equation}\]</div>
-<p>where <span class="arithmatex">\(\nu\)</span> is the number of independent repetitions of the experiment and the <strong>classical Fisher information</strong> is</p>
+<p>The <strong>maximum likelihood estimator</strong> (MLE) <span class="arithmatex">\(\hat{\varphi}\)</span> is the value of <span class="arithmatex">\(\varphi\)</span> that
+makes the observed data most probable, i.e. the maximiser of <span class="arithmatex">\(L(\varphi)\)</span>. In practice one
+maximises the <strong>log-likelihood</strong></p>
+<div class="arithmatex">\[\begin{equation}
+\label{eq:log_likelihood}
+\ell(\varphi) = \sum_i n_i \log p_i(\varphi),
+\end{equation}\]</div>
+<p>which is equivalent since the logarithm is monotone, and is numerically more convenient.
+The MLE is found by solving <span class="arithmatex">\(\partial \ell / \partial \varphi = 0\)</span>.</p>
+<h2 id="fisher-information-from-the-log-likelihood">Fisher Information from the Log-Likelihood<a class="headerlink" href="#fisher-information-from-the-log-likelihood" title="Permanent link">&para;</a></h2>
+<p>The precision of the MLE is governed by how sharply peaked <span class="arithmatex">\(\ell(\varphi)\)</span> is around its
+maximum: a sharply curved log-likelihood means the data strongly prefers one value of
+<span class="arithmatex">\(\varphi\)</span>, while a flat one means many values are nearly equally likely. The curvature is</p>
+<div class="arithmatex">\[\begin{equation}
+-\frac{\partial^2 \ell}{\partial \varphi^2}
+=
+-\sum_i n_i \frac{\partial^2}{\partial\varphi^2}\log p_i(\varphi).
+\end{equation}\]</div>
+<p>Taking the expectation over many realisations of the experiment, with <span class="arithmatex">\(\langle n_i \rangle
+= \nu\, p_i(\varphi)\)</span>, gives</p>
+<div class="arithmatex">\[\begin{equation}
+\left\langle -\frac{\partial^2 \ell}{\partial \varphi^2} \right\rangle
+=
+-\nu \sum_i p_i(\varphi)\,\frac{\partial^2}{\partial\varphi^2}\log p_i(\varphi).
+\end{equation}\]</div>
+<p>Expanding the second derivative of the logarithm,</p>
+<div class="arithmatex">\[\begin{equation}
+\frac{\partial^2}{\partial\varphi^2}\log p_i(\varphi)
+=
+\frac{1}{p_i(\varphi)}\frac{\partial^2 p_i(\varphi)}{\partial\varphi^2}
+-
+\frac{1}{p_i(\varphi)^2}\left(\frac{\partial p_i(\varphi)}{\partial\varphi}\right)^2,
+\end{equation}\]</div>
+<p>and substituting back,</p>
+<div class="arithmatex">\[\begin{equation}
+\left\langle -\frac{\partial^2 \ell}{\partial \varphi^2} \right\rangle
+=
+-\nu\sum_i \frac{\partial^2 p_i(\varphi)}{\partial\varphi^2}
++
+\nu\sum_i \frac{1}{p_i(\varphi)}\left(\frac{\partial p_i(\varphi)}{\partial\varphi}\right)^2.
+\end{equation}\]</div>
+<p>The first sum vanishes because the probabilities sum to one for all <span class="arithmatex">\(\varphi\)</span>,</p>
+<div class="arithmatex">\[\begin{equation}
+\sum_i p_i(\varphi) = 1
+\quad\Longrightarrow\quad
+\sum_i \frac{\partial^2 p_i(\varphi)}{\partial\varphi^2} = 0,
+\end{equation}\]</div>
+<p>leaving</p>
+<div class="arithmatex">\[\begin{equation}
+\left\langle -\frac{\partial^2 \ell}{\partial \varphi^2} \right\rangle
+=
+\nu \sum_{i} \frac{1}{p_i(\varphi)}\left(\frac{\partial p_i(\varphi)}{\partial \varphi}\right)^2
+=
+\nu\,\mathcal{F}(\varphi).
+\end{equation}\]</div>
+<p>The <strong>classical Fisher information</strong> is therefore the expected curvature of the
+log-likelihood per trial:</p>
 <div class="arithmatex">\[\begin{equation}
 \label{eq:fisher_def}
 \mathcal{F}(\varphi) = \sum_{i} \frac{1}{p_i(\varphi)}\left(\frac{\partial p_i(\varphi)}{\partial \varphi}\right)^2.
 \end{equation}\]</div>
-<p>A larger Fisher information means the probability distribution changes more steeply with <span class="arithmatex">\(\varphi\)</span>, so each trial carries more information about the parameter. The Cramér–Rao bound is asymptotically tight: it is achieved by the maximum-likelihood estimator in the limit of many trials <a href="#ref-paris2009">[1]</a>.</p>
-<p>Note that the probabilities <span class="arithmatex">\(p_i(\varphi)\)</span> entering equation \eqref{eq:fisher_def} are
-conditioned on a click being recorded — they are the outcome probabilities <em>given</em> that at
+<p>A larger Fisher information means the log-likelihood is more sharply peaked around its
+maximum, so the MLE is more tightly localised and the parameter can be estimated more
+precisely from the same number of trials.</p>
+<h2 id="the-cramerrao-bound">The Cramér–Rao Bound<a class="headerlink" href="#the-cramerrao-bound" title="Permanent link">&para;</a></h2>
+<p>The connection between <span class="arithmatex">\(\mathcal{F}(\varphi)\)</span> and estimation precision is made precise by
+the <strong>Cramér–Rao bound</strong> <a href="#ref-paris2009">[1]</a><a href="#ref-toth2014">[2]</a>:
+after <span class="arithmatex">\(\nu\)</span> independent trials, the variance of any unbiased estimator <span class="arithmatex">\(\hat{\varphi}\)</span> satisfies</p>
+<div class="arithmatex">\[\begin{equation}
+\label{eq:cramer_rao}
+\mathrm{Var}(\hat{\varphi}) \geq \frac{1}{\nu\, \mathcal{F}(\varphi)}.
+\end{equation}\]</div>
+<p>This bound is asymptotically tight: it is achieved by the MLE in the limit of many
+trials <a href="#ref-paris2009">[1]</a>, which is the sense in which the MLE is the
+optimal estimator.</p>
+<p>Note that the probabilities <span class="arithmatex">\(p_i(\varphi)\)</span> entering equation <span class="arithmatex">\(\eqref{eq:fisher_def}\)</span> are
+conditioned on a click being recorded - they are the outcome probabilities <em>given</em> that at
 least one detector fired. This conditioning is necessary because trials in which neither
 detector clicks (<span class="arithmatex">\(00\)</span> outcome) are not recorded and carry no phase information. The
 unnormalized outcome probabilities must therefore be divided by the total click probability
@@ -929,7 +1034,7 @@ to the shot-noise limit defined on the same per-recorded-trial basis.</p>
 \label{eq:snl_general}
 \mathcal{F}_{\mathrm{SNL}} = \bar{n}.
 \end{equation}\]</div>
-<p>The corresponding phase uncertainty <span class="arithmatex">\(\Delta\varphi_{\mathrm{SNL}} = 1/\sqrt{\nu\bar{n}}\)</span> decreases as <span class="arithmatex">\(1/\sqrt{\bar{n}}\)</span>. Quantum entanglement can in principle push this to the <strong>Heisenberg limit</strong> <span class="arithmatex">\(\Delta\varphi_{\mathrm{HL}} = 1/(\sqrt{\nu}\,\bar{n})\)</span>, scaling as <span class="arithmatex">\(1/\bar{n}\)</span> <a href="#ref-toth2014">[2]</a><a href="#ref-giovanetti2011">[3]</a>. A key result of quantum metrology is that entanglement is <em>necessary</em> to surpass the shot-noise scaling in a general linear interferometer <a href="#ref-toth2014">[2]</a>. Beating the SNL — i.e. achieving <span class="arithmatex">\(\mathcal{F}(\varphi) &gt; \mathcal{F}_{\mathrm{SNL}}\)</span> — is therefore the standard signature of a genuinely quantum metrological advantage.</p>
+<p>The corresponding phase uncertainty <span class="arithmatex">\(\Delta\varphi_{\mathrm{SNL}} = 1/\sqrt{\nu\bar{n}}\)</span> decreases as <span class="arithmatex">\(1/\sqrt{\bar{n}}\)</span>. Quantum entanglement can in principle push this to the <strong>Heisenberg limit</strong> <span class="arithmatex">\(\Delta\varphi_{\mathrm{HL}} = 1/(\sqrt{\nu}\,\bar{n})\)</span>, scaling as <span class="arithmatex">\(1/\bar{n}\)</span> <a href="#ref-toth2014">[2]</a><a href="#ref-giovanetti2011">[3]</a>. A key result of quantum metrology is that entanglement is <em>necessary</em> to surpass the shot-noise scaling in a general linear interferometer <a href="#ref-toth2014">[2]</a>. Beating the SNL - i.e. achieving <span class="arithmatex">\(\mathcal{F}(\varphi) &gt; \mathcal{F}_{\mathrm{SNL}}\)</span> - is therefore the standard signature of a genuinely quantum metrological advantage.</p>
 <hr />
 <h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
 <p id="ref-paris2009">
