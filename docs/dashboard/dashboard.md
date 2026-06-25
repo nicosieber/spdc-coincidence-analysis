@@ -141,7 +141,7 @@ and parametrise the half-wave plate setting by the phase
 
 so that \(\varphi\) runs over \([0, \pi]\) while \(\vartheta\) runs over \([0, \pi/4]\).
 This substitution is purely a relabelling of the horizontal axis and does not affect the
-physics, but it is the convention used when comparing Fisher information values to
+physics, but it is the convention used when comparing [Fisher Information](../concepts_and_foundations/fisher_information.md) values to
 <a href="#ref-slussarenko2017">[1]</a>. Because \(\varphi = 4\vartheta\), the chain rule
 introduces a factor of \(1/16\) whenever a derivative with respect to \(\vartheta\) is
 converted to one with respect to \(\varphi\):

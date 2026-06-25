@@ -1,4 +1,5 @@
 # Fisher Information
+<span id="concept:fisher_information"></span>
 
 Estimating an unknown parameter $\varphi$ — here the half-wave plate phase — proceeds by repeating a measurement many times and observing outcomes $\{i\}$ drawn from a probability distribution $\{p_i(\varphi)\}$.
 After $\nu$ independent trials, the variance of any unbiased estimator $\hat{\varphi}$ is bounded below by the **Cramér–Rao bound** <a href="#ref-paris2009">[1]</a><a href="#ref-toth2014">[2]</a>
