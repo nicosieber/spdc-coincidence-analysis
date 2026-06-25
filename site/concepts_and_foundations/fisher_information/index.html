@@ -12,10 +12,8 @@
         <meta name="author" content="Nico Sieber">
       
       
-        <link rel="canonical" href="https://nicosieber.github.io/spdc-coincidence-analysis/dashboard/dashboard/">
+        <link rel="canonical" href="https://nicosieber.github.io/spdc-coincidence-analysis/concepts_and_foundations/fisher_information/">
       
-      
-        <link rel="prev" href="../../concepts_and_foundations/povm_number_operator/">
       
       
       
@@ -27,7 +25,7 @@
     
     
       
-        <title>Normalized coincidence probability of the TMSV - SPDC Coincidence Analysis</title>
+        <title>Fisher Information - SPDC Coincidence Analysis</title>
       
     
     
@@ -85,7 +83,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#normalized-coincidence-probability-of-the-tmsv" class="md-skip">
+        <a href="#fisher-information" class="md-skip">
           Skip to content
         </a>
       
@@ -119,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Normalized coincidence probability of the TMSV
+              Fisher Information
             
           </span>
         </div>
@@ -226,7 +224,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../concepts_and_foundations/overview/" class="md-tabs__link">
+        <a href="../overview/" class="md-tabs__link">
           
   
   Additional concepts, identities and derivations
@@ -241,11 +239,9 @@
   
   
   
-    
   
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="././" class="md-tabs__link">
+    <li class="md-tabs__item">
+      <a href="../../dashboard/dashboard/" class="md-tabs__link">
         
   
   Interactive dashboards
@@ -589,7 +585,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../concepts_and_foundations/overview/" class="md-nav__link">
+      <a href="../overview/" class="md-nav__link">
         
   
   
@@ -617,7 +613,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../concepts_and_foundations/coherent_states/" class="md-nav__link">
+      <a href="../coherent_states/" class="md-nav__link">
         
   
   
@@ -645,7 +641,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../concepts_and_foundations/conjugation_operators/" class="md-nav__link">
+      <a href="../conjugation_operators/" class="md-nav__link">
         
   
   
@@ -673,7 +669,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../concepts_and_foundations/determinant_relations/" class="md-nav__link">
+      <a href="../determinant_relations/" class="md-nav__link">
         
   
   
@@ -701,7 +697,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../concepts_and_foundations/matrix_properties/" class="md-nav__link">
+      <a href="../matrix_properties/" class="md-nav__link">
         
   
   
@@ -729,7 +725,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../concepts_and_foundations/operator_relations/" class="md-nav__link">
+      <a href="../operator_relations/" class="md-nav__link">
         
   
   
@@ -757,7 +753,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../concepts_and_foundations/povm_number_operator/" class="md-nav__link">
+      <a href="../povm_number_operator/" class="md-nav__link">
         
   
   
@@ -789,39 +785,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      
-        <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Interactive dashboards
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="././" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../dashboard/dashboard/" class="md-nav__link">
         
   
   
@@ -837,38 +804,6 @@
   
 
       </a>
-      
-        
-
-
-<nav class="md-nav md-nav--secondary" aria-label="On this page">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      On this page
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#normalization" class="md-nav__link">
-    <span class="md-ellipsis">
-      <span class="md-typeset">
-        Normalization
-      </span>
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -902,10 +837,32 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#normalization" class="md-nav__link">
+  <a href="#from-classical-to-quantum-fisher-information" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Normalization
+        From Classical to Quantum Fisher Information
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-shot-noise-limit" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The Shot-Noise Limit
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        References
       </span>
     </span>
   </a>
@@ -930,192 +887,60 @@
   
 
 
-<h1 id="normalized-coincidence-probability-of-the-tmsv">Normalized coincidence probability of the TMSV<a class="headerlink" href="#normalized-coincidence-probability-of-the-tmsv" title="Permanent link">&para;</a></h1>
-<p><iframe
-  src="../../assets/plots/coincidence_plot.html"
-  width="100%"
-  height="600"
-  style="border:0;"
-  loading="lazy">
-</iframe>
-</p>
-<p>This dashboard visualizes the normalized coincidence probability as a function of the half-wave plate angle <span class="arithmatex">\(\vartheta\)</span>. The plotted quantity is based on the coincidence probability derived in <a href="../../theory/cc_derivation/#eq:Pcoinc_inclusion_exclusion">Derivation of the coincidence probability</a>:</p>
+<h1 id="fisher-information">Fisher Information<a class="headerlink" href="#fisher-information" title="Permanent link">&para;</a></h1>
+<p>Estimating an unknown parameter <span class="arithmatex">\(\varphi\)</span> — here the half-wave plate phase — proceeds by repeating a measurement many times and observing outcomes <span class="arithmatex">\(\{i\}\)</span> drawn from a probability distribution <span class="arithmatex">\(\{p_i(\varphi)\}\)</span>.
+After <span class="arithmatex">\(\nu\)</span> independent trials, the variance of any unbiased estimator <span class="arithmatex">\(\hat{\varphi}\)</span> is bounded below by the <strong>Cramér–Rao bound</strong> <a href="#ref-paris2009">[1]</a><a href="#ref-toth2014">[2]</a></p>
 <div class="arithmatex">\[\begin{equation}
-\label{eq:dashboard_pcc}
-P_{\mathrm{coinc}}
-=
-1
--
-P_H^{(\eta_H)}(0)
--
-P_V^{(\eta_V)}(0)
-+
-P^{(\eta_H,\eta_V)}(0,0).
+\label{eq:cramer_rao}
+\mathrm{Var}(\hat{\varphi}) \geq \frac{1}{\nu\, \mathcal{F}(\varphi)},
 \end{equation}\]</div>
-<p>The joint no-click probability entering this expression is given by</p>
+<p>where <span class="arithmatex">\(\nu\)</span> is the number of independent repetitions of the experiment and the <strong>classical Fisher information</strong> is</p>
 <div class="arithmatex">\[\begin{equation}
-\label{eq:dashboard_p00}
-P^{(\eta_H,\eta_V)}(0,0)
-=
-\dfrac{1-\lambda^2}{
-\sqrt{
-\left(1-\lambda^2(1-\eta_H)(1-\eta_V)\right)^2
--
-\lambda^2(\eta_H-\eta_V)^2\sin^2(4\vartheta)
-}
-}.
+\label{eq:fisher_def}
+\mathcal{F}(\varphi) = \sum_{i} \frac{1}{p_i(\varphi)}\left(\frac{\partial p_i(\varphi)}{\partial \varphi}\right)^2.
 \end{equation}\]</div>
-<p>The marginal no-click probabilities are obtained from the same expression by setting the efficiency of the opposite detector to zero:</p>
+<p>A larger Fisher information means the probability distribution changes more steeply with <span class="arithmatex">\(\varphi\)</span>, so each trial carries more information about the parameter. The Cramér–Rao bound is asymptotically tight: it is achieved by the maximum-likelihood estimator in the limit of many trials <a href="#ref-paris2009">[1]</a>.</p>
+<p>Note that the probabilities <span class="arithmatex">\(p_i(\varphi)\)</span> entering equation \eqref{eq:fisher_def} are
+conditioned on a click being recorded — they are the outcome probabilities <em>given</em> that at
+least one detector fired. This conditioning is necessary because trials in which neither
+detector clicks (<span class="arithmatex">\(00\)</span> outcome) are not recorded and carry no phase information. The
+unnormalized outcome probabilities must therefore be divided by the total click probability
+<span class="arithmatex">\(P_{\mathrm{click}} = 1 - P^{(\eta_H,\eta_V)}(0,0)\)</span> before entering the Fisher
+information sum. As a consequence, <span class="arithmatex">\(\mathcal{F}(\varphi)\)</span> as defined here is the Fisher
+information <strong>per recorded trial</strong>, which is the natural figure of merit when comparing
+to the shot-noise limit defined on the same per-recorded-trial basis.</p>
+<h2 id="from-classical-to-quantum-fisher-information">From Classical to Quantum Fisher Information<a class="headerlink" href="#from-classical-to-quantum-fisher-information" title="Permanent link">&para;</a></h2>
+<p>In a quantum experiment, the choice of measurement is itself a degree of freedom. For a given quantum state <span class="arithmatex">\(\hat{\rho}(\varphi)\)</span>, different positive-operator valued measures (POVMs) yield different classical Fisher informations. The <strong>quantum Fisher information</strong> (QFI) <span class="arithmatex">\(\mathcal{F}_Q\)</span> is defined as the maximum of <span class="arithmatex">\(\mathcal{F}\)</span> over all allowed POVMs <a href="#ref-paris2009">[1]</a><a href="#ref-toth2014">[2]</a></p>
 <div class="arithmatex">\[\begin{equation}
-\begin{aligned}
-P_H^{(\eta_H)}(0)
-&amp;=
-P^{(\eta_H,\eta_V=0)}(0,0),
-\\
-P_V^{(\eta_V)}(0)
-&amp;=
-P^{(\eta_H=0,\eta_V)}(0,0).
-\end{aligned}
+\label{eq:qfi_def}
+\mathcal{F}_Q(\varphi) = \max_{\{M_i\}} \mathcal{F}(\varphi),
 \end{equation}\]</div>
-<h2 id="normalization">Normalization<a class="headerlink" href="#normalization" title="Permanent link">&para;</a></h2>
-<p>The dashboard plots the coincidence probability normalized by its maximum value over the displayed interval</p>
+<p>and the resulting <strong>quantum Cramér–Rao bound</strong> (QCRB)</p>
 <div class="arithmatex">\[\begin{equation}
-0 \leq \vartheta \leq \frac{\pi}{4}.
+\label{eq:qcrb}
+\mathrm{Var}(\hat{\varphi}) \geq \frac{1}{\nu\, \mathcal{F}_Q(\varphi)}
 \end{equation}\]</div>
-<p>For fixed values of <span class="arithmatex">\(\lambda\)</span>, <span class="arithmatex">\(\eta_H\)</span>, and <span class="arithmatex">\(\eta_V\)</span>, the unnormalized coincidence curve is</p>
+<p>is the fundamental precision limit set by quantum mechanics, independent of which measurement is performed. The QFI depends only on the geometry of the quantum state in parameter space and is saturated by an optimal projective measurement constructed from the symmetric logarithmic derivative of <span class="arithmatex">\(\hat{\rho}(\varphi)\)</span> <a href="#ref-paris2009">[1]</a>.</p>
+<p>The measurement considered here is not optimised over all POVMs: it is fixed to a pair of bucket detectors after the PBS, which defines a specific POVM with three outcomes <span class="arithmatex">\(\{11, H\text{-only}, V\text{-only}\}\)</span> (see <a href="../../theory/povm/">POVM section</a>). The classical Fisher information computed from these three probabilities is therefore a lower bound to the QFI, and quantifies how well this specific measurement scheme can estimate <span class="arithmatex">\(\varphi\)</span>.</p>
+<h2 id="the-shot-noise-limit">The Shot-Noise Limit<a class="headerlink" href="#the-shot-noise-limit" title="Permanent link">&para;</a></h2>
+<p>The shot-noise limit (SNL), also called the standard quantum limit, is the best precision achievable with <span class="arithmatex">\(\bar{n}\)</span> independent (unentangled) probes per recorded trial <a href="#ref-toth2014">[2]</a>. For <span class="arithmatex">\(N\)</span> independent photons each carrying phase information, the Fisher information scales linearly with the number of probes:</p>
 <div class="arithmatex">\[\begin{equation}
-C(\vartheta)
-=
-P_{\mathrm{coinc}}(\vartheta).
+\label{eq:snl_general}
+\mathcal{F}_{\mathrm{SNL}} = \bar{n}.
 \end{equation}\]</div>
-<p>The plotted normalized coincidence is</p>
-<div class="arithmatex">\[\begin{equation}
-\label{eq:dashboard_normalized_coincidence}
-C_{\mathrm{norm}}(\vartheta)
-=
-\frac{C(\vartheta)}{C_{\max}},
-\end{equation}\]</div>
-<p>where</p>
-<div class="arithmatex">\[\begin{equation}
-C_{\max}
-=
-\max_{\vartheta \in [0,\pi/4]} C(\vartheta).
-\end{equation}\]</div>
-<p>Thus, the largest value of the displayed curve is always equal to one. This makes it easier to compare the shape of the coincidence dip for different values of <span class="arithmatex">\(\lambda\)</span>, <span class="arithmatex">\(\eta_H\)</span>, and <span class="arithmatex">\(\eta_V\)</span>.</p>
-<h1 id="visibility">Visibility<a class="headerlink" href="#visibility" title="Permanent link">&para;</a></h1>
-<p><iframe
-  src="../../assets/plots/visibility_vs_etaH_plot.html"
-  width="100%"
-  height="600"
-  style="border:0;"
-  loading="lazy">
-</iframe>
-</p>
-<p>The visibility shown in the dashboard quantifies the relative depth of the coincidence modulation. It is computed from the unnormalized coincidence curve as</p>
-<div class="arithmatex">\[\begin{equation}
-\label{eq:dashboard_visibility}
-V
-=
-\frac{C_{\max}-C_{\min}}{C_{\max}+C_{\min}},
-\end{equation}\]</div>
-<p>with</p>
-<div class="arithmatex">\[\begin{equation}
-C_{\min}
-=
-\min_{\vartheta \in [0,\pi/4]} C(\vartheta).
-\end{equation}\]</div>
-<p>A larger visibility therefore corresponds to a deeper coincidence dip, while <span class="arithmatex">\(V=0\)</span> would correspond to a flat coincidence curve.</p>
-<h1 id="fisher-information-and-quantum-sensing">Fisher Information and Quantum Sensing<a class="headerlink" href="#fisher-information-and-quantum-sensing" title="Permanent link">&para;</a></h1>
-<p><iframe
-  src="../../assets/plots/fisher_plot.html"
-  width="100%"
-  height="600"
-  style="border:0;"
-  loading="lazy">
-</iframe>
-</p>
-<h2 id="motivation-reading-the-phase-from-click-patterns">Motivation: Reading the Phase from Click Patterns<a class="headerlink" href="#motivation-reading-the-phase-from-click-patterns" title="Permanent link">&para;</a></h2>
-<p>To estimate the half-wave plate phase, we repeat the experiment many times and record what
-the two bucket detectors report on each trial. Each trial ends in one of three
-distinguishable outcomes: both detectors click, only the H-detector
-clicks, or only the V-detector clicks. The no-click outcome carries no phase information and is discarded from the analysis.</p>
-<p>Throughout this section we follow the convention of <a href="#ref-slussarenko2017">[1]</a>
-and parametrise the half-wave plate setting by the phase</p>
-<div class="arithmatex">\[\begin{equation}
-\varphi = 4\vartheta,
-\end{equation}\]</div>
-<p>so that <span class="arithmatex">\(\varphi\)</span> runs over <span class="arithmatex">\([0, \pi]\)</span> while <span class="arithmatex">\(\vartheta\)</span> runs over <span class="arithmatex">\([0, \pi/4]\)</span>.
-This substitution is purely a relabelling of the horizontal axis and does not affect the
-physics, but it is the convention used when comparing Fisher information values to
-<a href="#ref-slussarenko2017">[1]</a>. Because <span class="arithmatex">\(\varphi = 4\vartheta\)</span>, the chain rule
-introduces a factor of <span class="arithmatex">\(1/16\)</span> whenever a derivative with respect to <span class="arithmatex">\(\vartheta\)</span> is
-converted to one with respect to <span class="arithmatex">\(\varphi\)</span>:</p>
-<div class="arithmatex">\[\begin{equation}
-\frac{\partial}{\partial\vartheta} = 4\,\frac{\partial}{\partial\varphi}
-\quad\Longrightarrow\quad
-\left(\frac{\partial p_i}{\partial\varphi}\right)^2
-=
-\frac{1}{16}\left(\frac{\partial p_i}{\partial\vartheta}\right)^2.
-\end{equation}\]</div>
-<p>The Fisher information quoted per unit of <span class="arithmatex">\(\varphi\)</span> is therefore smaller by a factor of
-<span class="arithmatex">\(16\)</span> compared to the same quantity quoted per unit of <span class="arithmatex">\(\vartheta\)</span>.</p>
-<p>Each of the three outcomes occurs with a probability that depends on <span class="arithmatex">\(\varphi\)</span>:</p>
-<div class="arithmatex">\[\begin{equation}
-p_{11}(\varphi) = P_{\mathrm{coinc}}(\varphi), \qquad
-p_H(\varphi) = P_H(\varphi), \qquad
-p_V(\varphi) = P_V(\varphi).
-\end{equation}\]</div>
-<p>If these probabilities were flat — the same value for every <span class="arithmatex">\(\varphi\)</span> — no amount of
-data could tell us where the wave plate is set. Conversely, the more steeply they vary
-with <span class="arithmatex">\(\varphi\)</span>, the more information each trial carries. Intuitively, when the
-coincidence dip is steep, a small rotation of the wave plate shifts photons from the
-coincidence outcome into the <span class="arithmatex">\(H\)</span>-only or <span class="arithmatex">\(V\)</span>-only outcomes in a detectable way; the
-imbalance between <span class="arithmatex">\(p_H\)</span> and <span class="arithmatex">\(p_V\)</span> breaks the symmetry and further pins down the
-phase. The Fisher information formalises exactly this intuition: it weights the slope of
-each outcome probability by the inverse of that probability, penalising outcomes that are
-rare (and therefore statistically noisy) and rewarding outcomes that are both sensitive to
-<span class="arithmatex">\(\varphi\)</span> <em>and</em> frequently observed. The result is a single number
-<span class="arithmatex">\(\mathcal{F}(\varphi)\)</span> that captures, per trial, how much the full click pattern
-constrains the unknown phase.</p>
-<h2 id="the-snl-for-the-tmsv-model">The SNL for the TMSV Model<a class="headerlink" href="#the-snl-for-the-tmsv-model" title="Permanent link">&para;</a></h2>
-<p>The photon source in this setup is a two-mode squeezed vacuum (TMSV) with squeezing parameter <span class="arithmatex">\(\lambda\)</span>. The mean number of photons generated per SPDC attempt is</p>
-<div class="arithmatex">\[\begin{equation}
-\label{eq:n_mean_tmsv}
-\langle \hat{n}_H + \hat{n}_V \rangle = \frac{2\lambda^2}{1 - \lambda^2},
-\end{equation}\]</div>
-<p>which follows directly from the photon-number distribution of the TMSV state (see <a href="../../theory/tmsv/">TMSV section</a>).
-Not every generated pair leads to a recorded click: detection succeeds with probability
-<span class="arithmatex">\(P_{\mathrm{click}} = 1 - P^{(\eta_H, \eta_V)}(0,0)\)</span>, where <span class="arithmatex">\(P^{(\eta_H, \eta_V)}(0,0)\)</span>
-is the joint vacuum (no-click) probability derived <a href="../../theory/cc_derivation/">here</a>.
-The Fisher information is defined per <em>recorded trial</em>, so the mean photon number
-committed per recorded trial — the true resource cost — is</p>
-<div class="arithmatex">\[\begin{equation}
-\label{eq:n_per_trial}
-\bar{n}(\varphi) = \frac{\langle \hat{n}_H + \hat{n}_V \rangle}{P_{\mathrm{click}}(\varphi)} = \frac{2\lambda^2/(1-\lambda^2)}{1 - P^{(\eta_H,\eta_V)}(0,0)\big|_{\vartheta = \varphi/4}}.
-\end{equation}\]</div>
-<p>Dividing by <span class="arithmatex">\(P_{\mathrm{click}}\)</span> accounts for the fact that most SPDC attempts produce no
-detectable photon pair: the photon budget must be charged only against trials that actually
-contribute to the Fisher information sum. Using the total number of SPDC attempts instead
-would undercount the resource cost per useful event and artificially inflate the apparent
-advantage over the SNL.</p>
-<p>The SNL for this model is therefore</p>
-<div class="arithmatex">\[\begin{equation}
-\label{eq:snl_tmsv}
-\boxed{
-\mathcal{F}_{\mathrm{SNL}}(\varphi)
-=
-\frac{2\lambda^2/(1-\lambda^2)}{1 - P^{(\eta_H,\eta_V)}(0,0)\big|_{\vartheta=\varphi/4}}
-}.
-\end{equation}\]</div>
-<h3 id="flat-snl-for-symmetric-losses">Flat SNL for symmetric losses<a class="headerlink" href="#flat-snl-for-symmetric-losses" title="Permanent link">&para;</a></h3>
-<p>A direct symbolic calculation shows that <span class="arithmatex">\(\partial \mathcal{F}_{\mathrm{SNL}} / \partial \varphi = 0\)</span> whenever <span class="arithmatex">\(\eta_H = \eta_V\)</span>: the SNL is then completely flat in the phase. This is physically sensible — with symmetric detection the probability of registering <em>any</em> click does not depend on how the HWP routes the photons, so the resource cost per trial is the same at every phase. For asymmetric losses the SNL acquires a weak <span class="arithmatex">\(\varphi\)</span>-dependence through the same <span class="arithmatex">\((\eta_H - \eta_V)^2\sin^2(4\vartheta)\)</span> interference term that appears in <span class="arithmatex">\(P^{(\eta_H,\eta_V)}(0,0)\)</span>.</p>
-<h3 id="comparison-to-the-experiment-of-slussarenko-et-al">Comparison to the experiment of Slussarenko et al<a class="headerlink" href="#comparison-to-the-experiment-of-slussarenko-et-al" title="Permanent link">&para;</a></h3>
-<p>Reference <a href="#ref-slussarenko2017">[1]</a> defines
-<span class="arithmatex">\(\mathcal{F}_{\mathrm{SNL}} = N\tilde{k}/k\)</span>, where <span class="arithmatex">\(N = 2\)</span> (photon pair) and <span class="arithmatex">\(\tilde{k}/k = (1+\xi)/\eta_{\min}\)</span>, with <span class="arithmatex">\(\xi\)</span> the multi-pair emission probability and <span class="arithmatex">\(\eta_{\min}\)</span> the minimum click probability over all phases and outcomes. This is the worst-case (most conservative) version of the same resource counting. The expression in equation <span class="arithmatex">\(\eqref{eq:snl_tmsv}\)</span> is exact for all <span class="arithmatex">\(\lambda\)</span> and recovers the same value in the limit <span class="arithmatex">\(\lambda \to 0\)</span> (few-pair, <span class="arithmatex">\(N=2\)</span>-dominant regime): numerically, with <span class="arithmatex">\(\lambda = 0.1235\)</span> and <span class="arithmatex">\(\eta_H = \eta_V = 0.80\)</span> it gives <span class="arithmatex">\(\mathcal{F}_{\mathrm{SNL}} \approx 2.114\)</span>, versus the reported <span class="arithmatex">\(2.096\)</span> — the small difference originating from the multi-pair correction factor <span class="arithmatex">\(\xi \approx 0.155\,\%\)</span> and the experimental <span class="arithmatex">\(\eta_{\min} = 0.9556\)</span>.</p>
+<p>The corresponding phase uncertainty <span class="arithmatex">\(\Delta\varphi_{\mathrm{SNL}} = 1/\sqrt{\nu\bar{n}}\)</span> decreases as <span class="arithmatex">\(1/\sqrt{\bar{n}}\)</span>. Quantum entanglement can in principle push this to the <strong>Heisenberg limit</strong> <span class="arithmatex">\(\Delta\varphi_{\mathrm{HL}} = 1/(\sqrt{\nu}\,\bar{n})\)</span>, scaling as <span class="arithmatex">\(1/\bar{n}\)</span> <a href="#ref-toth2014">[2]</a><a href="#ref-giovanetti2011">[3]</a>. A key result of quantum metrology is that entanglement is <em>necessary</em> to surpass the shot-noise scaling in a general linear interferometer <a href="#ref-toth2014">[2]</a>. Beating the SNL — i.e. achieving <span class="arithmatex">\(\mathcal{F}(\varphi) &gt; \mathcal{F}_{\mathrm{SNL}}\)</span> — is therefore the standard signature of a genuinely quantum metrological advantage.</p>
 <hr />
 <h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
-<p id="ref-slussarenko2017">
-[1] S. Slussarenko et al., Unconditional violation of the shot-noise limit in photonic quantum metrology, Nature Photonics 11, 700–703 (2017). Open-access preprint: https://arxiv.org/abs/1707.08977. 
+<p id="ref-paris2009">
+[1] M. G. A. Paris, Quantum estimation for quantum technology, Int. J. Quantum Inf. 7, 125–137 (2009). Open access: https://arxiv.org/abs/0804.2981.
+</p>
+
+<p id="ref-toth2014">
+[2] G. Tóth and I. Apellaniz, Quantum metrology from a quantum information science perspective, J. Phys. A: Math. Theor.47, 424006 (2014). Open access: https://arxiv.org/abs/1405.4878. 
+</p>
+
+<p id="ref-giovanetti2011">
+[3] V. Giovannetti, S. Lloyd, and L. Maccone, Advances in quantum metrology, Nature Photonics 5, 222–229 (2011). Open-access preprint: https://arxiv.org/abs/1102.2318. 
 </p>
 
 

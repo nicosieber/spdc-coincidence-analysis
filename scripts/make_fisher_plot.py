@@ -1,9 +1,8 @@
 from pathlib import Path
 
 import numpy as np
-import sympy as sp
 import plotly.graph_objects as go
-
+import sympy as sp
 
 # ── Symbolic setup: exact analytic derivatives via sympy ────────────────────
 #
