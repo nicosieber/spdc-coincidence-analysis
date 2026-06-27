@@ -612,6 +612,89 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#inclusion-of-dark-counts" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Inclusion of dark counts
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Inclusion of dark counts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dark-count-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Dark count model
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modified-single-mode-povm-element" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Modified single-mode POVM element
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#two-mode-coincidence-povm-with-dark-counts" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Two-mode coincidence POVM with dark counts
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#factoring-out-the-dark-count-probabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Factoring out the dark count probabilities
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modified-coincidence-probability" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Modified coincidence probability
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#physical-interpretation" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Physical interpretation
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#references" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
@@ -991,6 +1074,89 @@
       </span>
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inclusion-of-dark-counts" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Inclusion of dark counts
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Inclusion of dark counts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dark-count-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Dark count model
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modified-single-mode-povm-element" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Modified single-mode POVM element
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#two-mode-coincidence-povm-with-dark-counts" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Two-mode coincidence POVM with dark counts
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#factoring-out-the-dark-count-probabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Factoring out the dark count probabilities
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modified-coincidence-probability" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Modified coincidence probability
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#physical-interpretation" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Physical interpretation
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1683,6 +1849,83 @@ P^{(\eta_H,\eta_V)}(0,0)
 P^{(\eta_H,\eta_V)}(0,0)=P_{00}.
 \label{eq:P00_meaning}
 \end{equation}\]</div>
+<h2 id="inclusion-of-dark-counts">Inclusion of dark counts<a class="headerlink" href="#inclusion-of-dark-counts" title="Permanent link">&para;</a></h2>
+<p><span id="dark_counts"></span></p>
+<h3 id="dark-count-model">Dark count model<a class="headerlink" href="#dark-count-model" title="Permanent link">&para;</a></h3>
+<p>A dark count is a spontaneous detector click unrelated to any incident photon. It occurs independently with probability <span class="arithmatex">\(d\)</span> per detector per trial. The detector reports "no click" only if <em>both</em> the photon detection gives no click <em>and</em> no dark count fires. Since these are independent processes:</p>
+<div class="arithmatex">\[\begin{equation}
+P(\text{no click}\,|\,n\text{ photons}) = \underbrace{(1-\eta)^n}_{\text{no photon detected}} \;\times\; \underbrace{(1-d)}_{\text{no dark count}}.
+\end{equation}\]</div>
+<p>The dark count probability <span class="arithmatex">\(d\)</span> is modelled as an independent Poisson process with rate <span class="arithmatex">\(R_d\)</span> (counts per second). In a coincidence window of duration <span class="arithmatex">\(\Delta t\)</span>, the probability of at least one dark count occurring is</p>
+<div class="arithmatex">\[\begin{equation}
+\label{eq:dark_count_prob}
+d = 1 - e^{-R_d\,\Delta t},
+\end{equation}\]</div>
+<p>which for <span class="arithmatex">\(R_d\,\Delta t \ll 1\)</span> simplifies to <span class="arithmatex">\(d \approx R_d\,\Delta t\)</span>. The coincidence window is set by the total timing jitter of the detection system. For two identical channels, each contributing a jitter</p>
+<div class="arithmatex">\[\begin{equation}
+\sigma_{\text{ch}} = \sqrt{\sigma_{\text{det}}^2 + \sigma_{\text{tag}}^2}
+\end{equation}\]</div>
+<p>from the detector and time tagger in quadrature <a href="#ref-you2013">[4]</a>, the jitter of the time difference is <span class="arithmatex">\(\sigma_{\Delta t} = \sqrt{2}\,\sigma_{\text{ch}}\)</span>, and the window is typically chosen as <span class="arithmatex">\(\Delta t \approx 3 \times \text{FWHM}_{\Delta t}\)</span> with <span class="arithmatex">\(\text{FWHM} = 2\sqrt{2\ln 2}\,\sigma\)</span>. The factor of <span class="arithmatex">\(3\)</span> is an engineering convention: for a Gaussian timing distribution, a window of <span class="arithmatex">\(3 \times \text{FWHM}\)</span> captures approximately <span class="arithmatex">\(99.7\%\)</span> of all true coincidence events while keeping the window narrow enough to suppress accidental coincidences.</p>
+<h3 id="modified-single-mode-povm-element">Modified single-mode POVM element<a class="headerlink" href="#modified-single-mode-povm-element" title="Permanent link">&para;</a></h3>
+<p>In the absence of dark counts, the no-click POVM element for a single lossy detector is <span class="arithmatex">\(\Pi_0^{(\eta)} = t^{\hat{n}}\)</span> with <span class="arithmatex">\(t = 1-\eta\)</span> (see equation <span class="arithmatex">\(\eqref{eq:t_eta}\)</span>). Incorporating dark counts, the no-click POVM element becomes</p>
+<div class="arithmatex">\[\begin{equation}
+\label{eq:povm_dark}
+\Pi_0^{(\eta,d)} = (1-d)\sum_{n=0}^{\infty}(1-\eta)^n|n\rangle\langle n| = (1-d)\,t^{\hat{n}}.
+\end{equation}\]</div>
+<p>The click element is</p>
+<div class="arithmatex">\[\begin{equation}
+\Pi_{\text{click}}^{(\eta,d)} = \mathbb{1} - (1-d)\,t^{\hat{n}}.
+\end{equation}\]</div>
+<p>Completeness is immediate:</p>
+<div class="arithmatex">\[\begin{equation}
+\Pi_0^{(\eta,d)} + \Pi_{\text{click}}^{(\eta,d)} = (1-d)\,t^{\hat{n}} + \mathbb{1} - (1-d)\,t^{\hat{n}} = \mathbb{1}.
+\end{equation}\]</div>
+<p>Positivity holds since the diagonal matrix elements satisfy <span class="arithmatex">\((1-d)(1-\eta)^n \leq 1\)</span> for all <span class="arithmatex">\(n\)</span>, <span class="arithmatex">\(0 \leq d \leq 1\)</span>, and <span class="arithmatex">\(0 \leq \eta \leq 1\)</span>. Setting <span class="arithmatex">\(d = 0\)</span> recovers the existing POVM.</p>
+<h3 id="two-mode-coincidence-povm-with-dark-counts">Two-mode coincidence POVM with dark counts<a class="headerlink" href="#two-mode-coincidence-povm-with-dark-counts" title="Permanent link">&para;</a></h3>
+<p>Each detector has its own dark count probability <span class="arithmatex">\(d_H\)</span>, <span class="arithmatex">\(d_V\)</span>. The coincidence operator is</p>
+<div class="arithmatex">\[\begin{equation}
+\Pi_{\text{coinc}}^{(d_H,d_V)} = \Pi_{\text{click},H}^{(\eta_H,d_H)} \otimes \Pi_{\text{click},V}^{(\eta_V,d_V)}.
+\end{equation}\]</div>
+<p>Expanding via inclusion-exclusion exactly as in the existing derivation:</p>
+<div class="arithmatex">\[\begin{equation}
+\begin{aligned}
+P_{\mathrm{coinc}}^{(d)} &amp;= \langle\Psi|\,\mathbb{1}\otimes\mathbb{1}\,|\Psi\rangle \\[4pt]
+&amp;\quad- \langle\Psi|\,(1-d_H)\,t_H^{\hat{n}_H}\otimes\mathbb{1}\,|\Psi\rangle \\[4pt]
+&amp;\quad- \langle\Psi|\,\mathbb{1}\otimes(1-d_V)\,t_V^{\hat{n}_V}\,|\Psi\rangle \\[4pt]
+&amp;\quad+ \langle\Psi|\,(1-d_H)\,t_H^{\hat{n}_H}\otimes(1-d_V)\,t_V^{\hat{n}_V}\,|\Psi\rangle.
+\end{aligned}
+\end{equation}\]</div>
+<h3 id="factoring-out-the-dark-count-probabilities">Factoring out the dark count probabilities<a class="headerlink" href="#factoring-out-the-dark-count-probabilities" title="Permanent link">&para;</a></h3>
+<p>In every term, <span class="arithmatex">\((1-d)\)</span> is a c-number that commutes with all operators. It factors straight out of each expectation value:</p>
+<div class="arithmatex">\[\begin{equation}
+\begin{aligned}
+\langle\Psi|\,(1-d_H)\,t_H^{\hat{n}_H}\otimes\mathbb{1}\,|\Psi\rangle
+&amp;= (1-d_H)\,\underbrace{\langle\Psi|\,t_H^{\hat{n}_H}\otimes\mathbb{1}\,|\Psi\rangle}_{P_H^{(\eta_H)}(0)},
+\\[8pt]
+\langle\Psi|\,\mathbb{1}\otimes(1-d_V)\,t_V^{\hat{n}_V}\,|\Psi\rangle
+&amp;= (1-d_V)\,\underbrace{\langle\Psi|\,\mathbb{1}\otimes t_V^{\hat{n}_V}\,|\Psi\rangle}_{P_V^{(\eta_V)}(0)},
+\\[8pt]
+\langle\Psi|\,(1-d_H)\,t_H^{\hat{n}_H}\otimes(1-d_V)\,t_V^{\hat{n}_V}\,|\Psi\rangle
+&amp;= (1-d_H)(1-d_V)\,\underbrace{\langle\Psi|\,t_H^{\hat{n}_H}\,t_V^{\hat{n}_V}\,|\Psi\rangle}_{P^{(\eta_H,\eta_V)}(0,0)}.
+\end{aligned}
+\end{equation}\]</div>
+<p>The entire derivation — the conjugation <span class="arithmatex">\(S\mathbf{\hat a}^{\dagger}S^{-1} = D\mathbf{\hat a}^{\dagger}\)</span>, the coherent-state resolution, the Gaussian integral, and the determinant evaluation — acts exclusively on the operator <span class="arithmatex">\(t_H^{\hat{n}_H}\,t_V^{\hat{n}_V}\)</span>, which is unchanged. Dark counts therefore do not enter the core calculation at any stage.</p>
+<h3 id="modified-coincidence-probability">Modified coincidence probability<a class="headerlink" href="#modified-coincidence-probability" title="Permanent link">&para;</a></h3>
+<p>Substituting into the inclusion-exclusion formula yields</p>
+<div class="arithmatex">\[\begin{equation}
+\label{eq:Pcoinc_dark}
+\boxed{
+P_{\mathrm{coinc}}^{(d)}
+= 1
+- (1-d_H)\,P_H^{(\eta_H)}(0)
+- (1-d_V)\,P_V^{(\eta_V)}(0)
++ (1-d_H)(1-d_V)\,P^{(\eta_H,\eta_V)}(0,0),
+}
+\end{equation}\]</div>
+<p>where <span class="arithmatex">\(P_H^{(\eta_H)}(0)\)</span>, <span class="arithmatex">\(P_V^{(\eta_V)}(0)\)</span>, and <span class="arithmatex">\(P^{(\eta_H,\eta_V)}(0,0)\)</span> are exactly the dark-count-free expressions derived above. Setting <span class="arithmatex">\(d_H = d_V = 0\)</span> recovers the original result.</p>
+<h3 id="physical-interpretation">Physical interpretation<a class="headerlink" href="#physical-interpretation" title="Permanent link">&para;</a></h3>
+<p>Dark counts can only increase the coincidence probability: since <span class="arithmatex">\((1-d) \leq 1\)</span>, each no-click probability is suppressed, meaning the detector reports more clicks than the photon field alone would produce. In the extreme case <span class="arithmatex">\(d_H = d_V = 1\)</span>, both detectors click on every trial regardless of the quantum state, and <span class="arithmatex">\(P_{\mathrm{coinc}}^{(d)} = 1\)</span>.</p>
+<p>For modern SNSPDs <a href="#ref-natarajan2012">[5]</a> with <span class="arithmatex">\(R_d \sim 1\text{-}50\,\text{Hz}\)</span> and coincidence windows <span class="arithmatex">\(\Delta t \sim 200\,\text{ps}\)</span>, the dark count probability is <span class="arithmatex">\(d \sim 10^{-8}\)</span>, so that <span class="arithmatex">\((1-d_H)(1-d_V) \approx 1\)</span>.</p>
 <div class="nav-footer">
   <a class="nav-prev" href="../tmsv/">
     ← Previous
@@ -1702,6 +1945,14 @@ P^{(\eta_H,\eta_V)}(0,0)=P_{00}.
 <p id="ref-brask2022">
 [3] J. B. Brask, 
 <em>Gaussian states and operations -- a quick reference</em>, 2022. Available: https://arxiv.org/abs/2102.05748
+</p>
+
+<p id="ref-you2013">
+[4] L. You et al., Jitter analysis of a superconducting nanowire single photon detector, AIP Advances 3, 072135 (2013). Open-access preprint: https://arxiv.org/abs/1308.0763.
+</p>
+
+<p id="ref-natarajan2012">
+[5] C. M. Natarajan, M. G. Tanner, and R. H. Hadfield, Superconducting nanowire single-photon detectors: physics and applications, Supercond. Sci. Technol. 25, 063001 (2012). Open-access preprint: https://arxiv.org/abs/1204.5560.
 </p>
 
 

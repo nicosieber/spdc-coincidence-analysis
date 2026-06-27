@@ -837,6 +837,115 @@ P^{(\eta_H,\eta_V)}(0,0)=P_{00}.
 \label{eq:P00_meaning}
 \end{equation}
 
+## Inclusion of dark counts
+<span id="dark_counts"></span>
+
+### Dark count model
+
+A dark count is a spontaneous detector click unrelated to any incident photon. It occurs independently with probability $d$ per detector per trial. The detector reports "no click" only if *both* the photon detection gives no click *and* no dark count fires. Since these are independent processes:
+
+\begin{equation}
+P(\text{no click}\,|\,n\text{ photons}) = \underbrace{(1-\eta)^n}_{\text{no photon detected}} \;\times\; \underbrace{(1-d)}_{\text{no dark count}}.
+\end{equation}
+
+The dark count probability $d$ is modelled as an independent Poisson process with rate $R_d$ (counts per second). In a coincidence window of duration $\Delta t$, the probability of at least one dark count occurring is
+
+\begin{equation}
+\label{eq:dark_count_prob}
+d = 1 - e^{-R_d\,\Delta t},
+\end{equation}
+
+which for $R_d\,\Delta t \ll 1$ simplifies to $d \approx R_d\,\Delta t$. The coincidence window is set by the total timing jitter of the detection system. For two identical channels, each contributing a jitter
+
+\begin{equation}
+\sigma_{\text{ch}} = \sqrt{\sigma_{\text{det}}^2 + \sigma_{\text{tag}}^2}
+\end{equation}
+
+from the detector and time tagger in quadrature <a href="#ref-you2013">[4]</a>, the jitter of the time difference is $\sigma_{\Delta t} = \sqrt{2}\,\sigma_{\text{ch}}$, and the window is typically chosen as $\Delta t \approx 3 \times \text{FWHM}_{\Delta t}$ with $\text{FWHM} = 2\sqrt{2\ln 2}\,\sigma$. The factor of $3$ is an engineering convention: for a Gaussian timing distribution, a window of $3 \times \text{FWHM}$ captures approximately $99.7\%$ of all true coincidence events while keeping the window narrow enough to suppress accidental coincidences.
+
+### Modified single-mode POVM element
+
+In the absence of dark counts, the no-click POVM element for a single lossy detector is $\Pi_0^{(\eta)} = t^{\hat{n}}$ with $t = 1-\eta$ (see equation \(\eqref{eq:t_eta}\)). Incorporating dark counts, the no-click POVM element becomes
+
+\begin{equation}
+\label{eq:povm_dark}
+\Pi_0^{(\eta,d)} = (1-d)\sum_{n=0}^{\infty}(1-\eta)^n|n\rangle\langle n| = (1-d)\,t^{\hat{n}}.
+\end{equation}
+
+The click element is
+
+\begin{equation}
+\Pi_{\text{click}}^{(\eta,d)} = \mathbb{1} - (1-d)\,t^{\hat{n}}.
+\end{equation}
+
+Completeness is immediate:
+
+\begin{equation}
+\Pi_0^{(\eta,d)} + \Pi_{\text{click}}^{(\eta,d)} = (1-d)\,t^{\hat{n}} + \mathbb{1} - (1-d)\,t^{\hat{n}} = \mathbb{1}.
+\end{equation}
+
+Positivity holds since the diagonal matrix elements satisfy $(1-d)(1-\eta)^n \leq 1$ for all $n$, $0 \leq d \leq 1$, and $0 \leq \eta \leq 1$. Setting $d = 0$ recovers the existing POVM.
+
+### Two-mode coincidence POVM with dark counts
+
+Each detector has its own dark count probability $d_H$, $d_V$. The coincidence operator is
+
+\begin{equation}
+\Pi_{\text{coinc}}^{(d_H,d_V)} = \Pi_{\text{click},H}^{(\eta_H,d_H)} \otimes \Pi_{\text{click},V}^{(\eta_V,d_V)}.
+\end{equation}
+
+Expanding via inclusion-exclusion exactly as in the existing derivation:
+
+\begin{equation}
+\begin{aligned}
+P_{\mathrm{coinc}}^{(d)} &= \langle\Psi|\,\mathbb{1}\otimes\mathbb{1}\,|\Psi\rangle \\[4pt]
+&\quad- \langle\Psi|\,(1-d_H)\,t_H^{\hat{n}_H}\otimes\mathbb{1}\,|\Psi\rangle \\[4pt]
+&\quad- \langle\Psi|\,\mathbb{1}\otimes(1-d_V)\,t_V^{\hat{n}_V}\,|\Psi\rangle \\[4pt]
+&\quad+ \langle\Psi|\,(1-d_H)\,t_H^{\hat{n}_H}\otimes(1-d_V)\,t_V^{\hat{n}_V}\,|\Psi\rangle.
+\end{aligned}
+\end{equation}
+
+### Factoring out the dark count probabilities
+
+In every term, $(1-d)$ is a c-number that commutes with all operators. It factors straight out of each expectation value:
+
+\begin{equation}
+\begin{aligned}
+\langle\Psi|\,(1-d_H)\,t_H^{\hat{n}_H}\otimes\mathbb{1}\,|\Psi\rangle
+&= (1-d_H)\,\underbrace{\langle\Psi|\,t_H^{\hat{n}_H}\otimes\mathbb{1}\,|\Psi\rangle}_{P_H^{(\eta_H)}(0)},
+\\[8pt]
+\langle\Psi|\,\mathbb{1}\otimes(1-d_V)\,t_V^{\hat{n}_V}\,|\Psi\rangle
+&= (1-d_V)\,\underbrace{\langle\Psi|\,\mathbb{1}\otimes t_V^{\hat{n}_V}\,|\Psi\rangle}_{P_V^{(\eta_V)}(0)},
+\\[8pt]
+\langle\Psi|\,(1-d_H)\,t_H^{\hat{n}_H}\otimes(1-d_V)\,t_V^{\hat{n}_V}\,|\Psi\rangle
+&= (1-d_H)(1-d_V)\,\underbrace{\langle\Psi|\,t_H^{\hat{n}_H}\,t_V^{\hat{n}_V}\,|\Psi\rangle}_{P^{(\eta_H,\eta_V)}(0,0)}.
+\end{aligned}
+\end{equation}
+
+The entire derivation — the conjugation $S\mathbf{\hat a}^{\dagger}S^{-1} = D\mathbf{\hat a}^{\dagger}$, the coherent-state resolution, the Gaussian integral, and the determinant evaluation — acts exclusively on the operator $t_H^{\hat{n}_H}\,t_V^{\hat{n}_V}$, which is unchanged. Dark counts therefore do not enter the core calculation at any stage.
+
+### Modified coincidence probability
+
+Substituting into the inclusion-exclusion formula yields
+
+\begin{equation}
+\label{eq:Pcoinc_dark}
+\boxed{
+P_{\mathrm{coinc}}^{(d)}
+= 1
+- (1-d_H)\,P_H^{(\eta_H)}(0)
+- (1-d_V)\,P_V^{(\eta_V)}(0)
++ (1-d_H)(1-d_V)\,P^{(\eta_H,\eta_V)}(0,0),
+}
+\end{equation}
+
+where $P_H^{(\eta_H)}(0)$, $P_V^{(\eta_V)}(0)$, and $P^{(\eta_H,\eta_V)}(0,0)$ are exactly the dark-count-free expressions derived above. Setting $d_H = d_V = 0$ recovers the original result.
+
+### Physical interpretation
+
+Dark counts can only increase the coincidence probability: since $(1-d) \leq 1$, each no-click probability is suppressed, meaning the detector reports more clicks than the photon field alone would produce. In the extreme case $d_H = d_V = 1$, both detectors click on every trial regardless of the quantum state, and $P_{\mathrm{coinc}}^{(d)} = 1$.
+
+For modern SNSPDs <a href="#ref-natarajan2012">[5]</a> with $R_d \sim 1\text{-}50\,\text{Hz}$ and coincidence windows $\Delta t \sim 200\,\text{ps}$, the dark count probability is $d \sim 10^{-8}$, so that $(1-d_H)(1-d_V) \approx 1$.
 
 <div class="nav-footer">
   <a class="nav-prev" href="tmsv.md">
@@ -857,4 +966,12 @@ P^{(\eta_H,\eta_V)}(0,0)=P_{00}.
 <p id="ref-brask2022">
 [3] J. B. Brask, 
 <em>Gaussian states and operations -- a quick reference</em>, 2022. Available: https://arxiv.org/abs/2102.05748
+</p>
+
+<p id="ref-you2013">
+[4] L. You et al., Jitter analysis of a superconducting nanowire single photon detector, AIP Advances 3, 072135 (2013). Open-access preprint: https://arxiv.org/abs/1308.0763.
+</p>
+
+<p id="ref-natarajan2012">
+[5] C. M. Natarajan, M. G. Tanner, and R. H. Hadfield, Superconducting nanowire single-photon detectors: physics and applications, Supercond. Sci. Technol. 25, 063001 (2012). Open-access preprint: https://arxiv.org/abs/1204.5560.
 </p>
