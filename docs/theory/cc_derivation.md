@@ -907,7 +907,7 @@ P_{\mathrm{coinc}}^{(d)} &= \langle\Psi|\,\mathbb{1}\otimes\mathbb{1}\,|\Psi\ran
 
 ### Factoring out the dark count probabilities
 
-In every term, $(1-d)$ is a c-number that commutes with all operators. It factors straight out of each expectation value:
+In every term, $(1-d)$ commutes with all operators, and therefore factors straight out of each expectation value:
 
 \begin{equation}
 \begin{aligned}
