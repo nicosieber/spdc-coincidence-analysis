@@ -19,7 +19,7 @@ Vary \(\lambda\) and watch the markers: at low squeezing they sit exactly on the
 curve, but as \(\lambda\) climbs past \(\approx 0.85\) the mean photon number
 \(\bar n=\lambda^2/(1-\lambda^2)\) grows until the true state carries appreciable weight above
 \(N=60\) photons per mode. That weight is simply truncated away, so the numerical markers lift
-off the closed form — visibly by \(\lambda\approx 0.9\), blatantly by \(\lambda\approx 0.95\).
+off the closed form - visibly by \(\lambda\approx 0.9\), blatantly by \(\lambda\approx 0.95\).
 This is the same break-off the [NumPy dashboard](numpy.md) shows, produced here by an
 independent library: the binding knob is \(N\), the Hilbert-space dimension (capped at 60 for
 compute), and the closed form has no Hilbert space to truncate, so it stays exact everywhere.
@@ -60,12 +60,12 @@ simulation from scratch with array shifts. This page does the **same physics wit
 [QuTiP](https://qutip.org/)**, a purpose-built quantum-optics toolkit. The value is
 twofold: it is a second, independent implementation (different library, different operator
 algebra, same answer), and it is the natural starting point for extensions the closed form
-cannot express — dark counts, number-resolving detectors, dephasing and mixed states. The
+cannot express - number-resolving detectors, dephasing and mixed states. The
 whole physics reduces to a handful of operator lines.
 
 !!! note "Same benchmark, different engine"
-    - **Closed form** — the analytic result derived on the site.
-    - **QuTiP** — construct $|\Psi\rangle=\sqrt{1-\lambda^2}\,e^{\lambda K^\dagger}|0,0\rangle$
+    - **Closed form** - the analytic result derived on the site.
+    - **QuTiP** - construct $|\Psi\rangle=\sqrt{1-\lambda^2}\,e^{\lambda K^\dagger}|0,0\rangle$
       with QuTiP operators and evaluate the detector POVM.
 
     Agreement to the truncation floor confirms both the closed form and the NumPy engine.
@@ -107,7 +107,7 @@ def Kdag(N, theta):
 ## The state
 
 The state is $|\Psi\rangle=\sqrt{1-\lambda^2}\,e^{\lambda K^\dagger}|0,0\rangle$. The obvious
-call is `(lam * Kdag(N, theta)).expm() * vac` — and it is a trap. QuTiP keeps $K^\dagger$
+call is `(lam * Kdag(N, theta)).expm() * vac` - and it is a trap. QuTiP keeps $K^\dagger$
 **sparse**, but `.expm()` **densifies** the $N^2\times N^2$ operator: at $N=60$ that is a
 $3600\times3600$ matrix, costing about $10^3\times$ more time and memory for an identical
 result.

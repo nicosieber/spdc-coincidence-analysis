@@ -19,10 +19,10 @@ Vary \(\lambda\) and watch the markers: at low squeezing they sit exactly on the
 curve, but as \(\lambda\) climbs past \(\approx 0.85\) the mean photon number
 \(\bar n=\lambda^2/(1-\lambda^2)\) grows until the true state carries appreciable weight above
 \(N=60\) photons per mode. That weight is simply truncated away, so the numerical markers lift
-off the closed form — visibly by \(\lambda\approx 0.9\), blatantly by \(\lambda\approx 0.95\).
+off the closed form - visibly by \(\lambda\approx 0.9\), blatantly by \(\lambda\approx 0.95\).
 The binding knob is \(N\), the Hilbert-space dimension (capped here at 60 for compute), not the
 number of power-series terms, which converges quickly. The closed form has no Hilbert space to
-truncate, so it stays exact everywhere — that is precisely where it earns its keep.
+truncate, so it stays exact everywhere - that is precisely where it earns its keep.
 
 The plotted quantity is the closed-form [coincidence probability of the
 half-wave-plate-rotated TMSV](../../theory/cc_derivation.md),
@@ -59,16 +59,16 @@ A closed form is only as trustworthy as the independent check behind it. The res
 page builds that check **from scratch in NumPy**: it constructs the quantum state in a
 truncated Fock space, applies the lossy-detector model directly, and compares the result to
 the analytic expression at every wave-plate angle. Nothing here depends on a specialised
-quantum library — only `numpy`. The [companion QuTiP dashboard](qutip.md) does the same
+quantum library - only `numpy`. The [companion QuTiP dashboard](qutip.md) does the same
 thing with a purpose-built quantum-optics toolkit; the two agree, which is the point.
 
 !!! note "What is being validated"
     Two independent routes to the same number:
 
-    - **Closed form** — the analytic result derived on the site,
+    - **Closed form** - the analytic result derived on the site,
       $P^{(\eta_H,\eta_V)}(0,0)=\dfrac{1-\lambda^2}{\sqrt{(1-\lambda^2 t_H t_V)^2-\lambda^2(\eta_H-\eta_V)^2\sin^2 4\vartheta}}$,
       with $t_{H,V}=1-\eta_{H,V}$, combined by inclusion–exclusion.
-    - **Fock-space simulation** — build
+    - **Fock-space simulation** - build
       $|\Psi\rangle=\sqrt{1-\lambda^2}\,e^{\lambda K^\dagger}|0,0\rangle$ explicitly on a
       photon-number grid and evaluate the detector POVM numerically.
 
@@ -115,7 +115,7 @@ $(n_H,n_V)$. Two ideas keep it exact and fast:
 
 1. **Creation operators act by array shifting.** $a^\dagger$ maps
    $|n\rangle\mapsto\sqrt{n+1}\,|n+1\rangle$, i.e. a shift-by-one along the relevant axis
-   with a $\sqrt{n}$ weight — no dense matrix is ever formed.
+   with a $\sqrt{n}$ weight - no dense matrix is ever formed.
 2. **The exponential is summed as a power series applied to the state**,
    $|\Psi\rangle=\sum_n\frac{\lambda^n}{n!}(K^\dagger)^n|0,0\rangle$. Each term is the
    previous one hit once more with $K^\dagger$, so the whole state costs a handful of
