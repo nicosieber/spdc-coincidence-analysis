@@ -25,10 +25,11 @@ jobs:
         with:
           python-version: "3.14"
 
-      - name: Install Zensical
+      - name: Install package + docs deps
         run: |
           python -m pip install --upgrade pip
-          python -m pip install zensical plotly pandas
+          python -m pip install -e .
+
       
       - name: Generate Plotly charts
         run: |
