@@ -26,7 +26,7 @@
     <p>Detailed derivation of identities used for the main derivation.</p>
   </a>
 
-  <a class="tile" href="dashboard/dashboard/">
+  <a class="tile" href="dashboard/overview/">
     <div class="tile__icon">📓</div>
     <h3>Interactive dashboard</h3>
     <p>Additional explanation and interactive dashboard to play around with.</p>
