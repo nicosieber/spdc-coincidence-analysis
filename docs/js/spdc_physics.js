@@ -26,7 +26,7 @@
 
   var EPS = 1e-15;
 
-  // ---- Joint no-click probability P(0,0) -------------------------------
+  // Joint no-click probability P(0,0)
   function p00(lam, etaH, etaV, theta) {
     var tH = 1 - etaH, tV = 1 - etaV;
     var num = 1 - lam * lam;
@@ -36,14 +36,14 @@
     return num / Math.sqrt(Math.max(rad, EPS));
   }
 
-  // ---- Single-arm no-click: opposite detector transparent (eta = 0) ----
+  // Single-arm no-click: opposite detector transparent (eta = 0)
   function marginalNoclick(lam, eta, theta, arm) {
     if (arm === "H") return p00(lam, eta, 0, theta); // only H can click
     if (arm === "V") return p00(lam, 0, eta, theta); // only V can click
     throw new Error("arm must be 'H' or 'V'");
   }
 
-  // ---- Coincidence via inclusion-exclusion -----------------------------
+  // Coincidence via inclusion-exclusion 
   function coincidence(lam, etaH, etaV, theta) {
     var P00 = p00(lam, etaH, etaV, theta);
     var PH0 = p00(lam, etaH, 0, theta); // only H can click
@@ -51,12 +51,12 @@
     return 1 - PH0 - PV0 + P00;
   }
 
-  // ---- P_click = 1 - P(0,0) --------------------------------------------
+  // P_click = 1 - P(0,0)
   function clickProbability(lam, etaH, etaV, theta) {
     return 1 - p00(lam, etaH, etaV, theta);
   }
 
-  // ---- Derived observables ---------------------------------------------
+  // Derived observables
   function linspace(start, stop, num) {
     var arr = new Array(num);
     var step = (stop - start) / (num - 1);
@@ -78,7 +78,7 @@
   // Mean photon pairs per mode.
   function nbarPerMode(lam) { return lam * lam / (1 - lam * lam); }
 
-  // ---- Fisher information for phi = 4*theta -----------------------------
+  // Fisher information for phi = 4*theta
   // p11/p20/p02 are the click-conditioned outcome probabilities and
   // dp** their d/dtheta derivatives. Bodies emitted by sympy.jscode from
   // spdc.closedform._build_fisher() (variables: lam, etaH, etaV, th).
