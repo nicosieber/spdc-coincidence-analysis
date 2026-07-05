@@ -1,5 +1,5 @@
 [project]
-name = "spdc-coincidence-analysis"
+name = "SPDCCC"
 version = "0.1.0"
 description = "Analytical and numerical tools for SPDC coincidence calculations"
 authors = [{ name = "Nico Sieber" }]
@@ -13,6 +13,7 @@ dependencies = [
     "matplotlib",
     "plotly",
     "sympy",
+    "qutip",
     "zensical",
 ]
 

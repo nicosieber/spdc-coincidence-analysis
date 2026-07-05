@@ -31,7 +31,16 @@ nav = [
     { "Operator relations" = "concepts_and_foundations/operator_relations.md" },
     { "POVM as number operator" = "concepts_and_foundations/povm_number_operator.md" }
   ]},
-  { "Interactive dashboards" = "dashboard/dashboard.md"}
+  { "Interactive dashboards" = [
+    { "Overview" = "dashboard/overview.md" },
+    { "Coincidence probability" = [
+      { "Overview" = "dashboard/coincidence/overview.md" },
+      { "NumPy dashboard" = "dashboard/coincidence/numpy.md" },
+      { "QuTiP dashboard" = "dashboard/coincidence/qutip.md" }
+    ]},
+    { "Visibility" = "dashboard/visibility.md" },
+    { "Fisher information" = "dashboard/fisher.md" }
+  ]}
 ]
 
 [project.theme]

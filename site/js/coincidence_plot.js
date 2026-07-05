@@ -1,18 +1,12 @@
+/**
+ * coincidence_plot.js — UI controller for the coincidence dashboard.
+ * All physics comes from the shared window.SPDC module (spdc_physics.js);
+ * this file only wires the spinboxes to a Plotly redraw.
+ */
 let stepInterval = null;
 
-function p00(lam, theta, eta_H, eta_V) {
-    const radicand =
-        Math.pow(1 - Math.pow(lam, 2) * (1 - eta_H) * (1 - eta_V), 2)
-        - Math.pow(lam, 2) * Math.pow(eta_H - eta_V, 2) * Math.pow(Math.sin(4 * theta), 2);
-
-    return (1 - Math.pow(lam, 2)) / Math.sqrt(radicand);
-}
-
 function linspace(start, stop, num) {
-    const arr = [];
-    const step = (stop - start) / (num - 1);
-    for (let i = 0; i < num; i++) arr.push(start + step * i);
-    return arr;
+    return SPDC.linspace(start, stop, num);
 }
 
 function readNumber(id) {
@@ -69,14 +63,9 @@ function updatePlot() {
 
     if (isNaN(lam) || isNaN(etaH) || isNaN(etaV)) return;
 
-    const theta = linspace(0, Math.PI / 4, 1000);
+    const theta = SPDC.linspace(0, Math.PI / 4, 1000);
 
-    const C = theta.map(t => {
-        const p00val = p00(lam, t, etaH, etaV);
-        const pH0 = p00(lam, t, etaH, 0);
-        const pV0 = p00(lam, t, 0, etaV);
-        return 1 - pH0 - pV0 + p00val;
-    });
+    const C = theta.map(t => SPDC.coincidence(lam, etaH, etaV, t));
 
     const Cmax = Math.max(...C);
     const Cmin = Math.min(...C);

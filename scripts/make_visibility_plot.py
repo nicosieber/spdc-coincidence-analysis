@@ -1,34 +1,24 @@
+"""
+Generate the interactive visibility-vs-efficiency Plotly iframe.
+
+Physics is imported from the shared ``spdc`` package (single source of
+truth); the in-browser slider recompute uses ``docs/js/spdc_physics.js``.
+"""
 from pathlib import Path
 
 import numpy as np
 import plotly.graph_objects as go
 
-
-def p00(lam, theta, eta_H, eta_V):
-    radicand = (
-        (1 - lam**2 * (1 - eta_H) * (1 - eta_V))**2
-        - lam**2 * (eta_H - eta_V)**2 * np.sin(4 * theta)**2
-    )
-    radicand = np.maximum(radicand, 1e-15)
-    return (1 - lam**2) / np.sqrt(radicand)
-
-
-def coincidence(lam, theta, eta_H, eta_V):
-    pHV0 = p00(lam, theta, eta_H, eta_V)
-    pH0 = p00(lam, theta, eta_H, 0)
-    pV0 = p00(lam, theta, 0, eta_V)
-    return 1 - pH0 - pV0 + pHV0
-
-
-def visibility(lam, eta_H, eta_V):
-    Cmax = coincidence(lam, 0, eta_H, eta_V)
-    Cmin = coincidence(lam, np.pi / 8, eta_H, eta_V)
-    return (Cmax - Cmin) / (Cmax + Cmin)
+from spdccc import coincidence
 
 
 def make_curve(lam, eta_V):
     eta_H = np.linspace(0.01, 1.0, 1000)
-    V = visibility(lam, eta_H, eta_V)
+    # Visibility from the coincidence extremes: Cmax at theta=0, Cmin at
+    # theta=pi/8 (identical convention to spdc_physics.js SPDC.visibility).
+    Cmax = coincidence(lam, eta_H, eta_V, 0.0)
+    Cmin = coincidence(lam, eta_H, eta_V, np.pi / 8)
+    V = (Cmax - Cmin) / (Cmax + Cmin)
     return eta_H, V
 
 
@@ -279,128 +269,9 @@ sub {{
 </style>
 """
 
-custom_js = r"""
-<script>
-let stepInterval = null;
-
-function p00(lam, theta, eta_H, eta_V) {
-    const radicand =
-        Math.pow(1 - Math.pow(lam, 2) * (1 - eta_H) * (1 - eta_V), 2)
-        - Math.pow(lam, 2)
-        * Math.pow(eta_H - eta_V, 2)
-        * Math.pow(Math.sin(4 * theta), 2);
-
-    return (1 - Math.pow(lam, 2)) / Math.sqrt(Math.max(radicand, 1e-15));
-}
-
-function coincidence(lam, theta, eta_H, eta_V) {
-    const pHV0 = p00(lam, theta, eta_H, eta_V);
-    const pH0 = p00(lam, theta, eta_H, 0);
-    const pV0 = p00(lam, theta, 0, eta_V);
-
-    return 1 - pH0 - pV0 + pHV0;
-}
-
-function visibility(lam, eta_H, eta_V) {
-    const Cmax = coincidence(lam, 0, eta_H, eta_V);
-    const Cmin = coincidence(lam, Math.PI / 8, eta_H, eta_V);
-
-    return (Cmax - Cmin) / (Cmax + Cmin);
-}
-
-function paddedRange(values, frac = 0.03) {
-    const Vmin = Math.min(...values);
-    const Vmax = Math.max(...values);
-
-    let padding = frac * (Vmax - Vmin);
-
-    if (padding === 0) {
-        padding = 0.03 * Math.max(Math.abs(Vmax), 1e-6);
-    }
-
-    return [Vmin - padding, Vmax + padding];
-}
-
-function linspace(start, stop, num) {
-    const arr = [];
-    const step = (stop - start) / (num - 1);
-    for (let i = 0; i < num; i++) arr.push(start + step * i);
-    return arr;
-}
-
-function readNumber(id) {
-    return parseFloat(document.getElementById(id).value.replace(",", "."));
-}
-
-function clamp(value, minValue, maxValue) {
-    return Math.min(Math.max(value, minValue), maxValue);
-}
-
-function writeNumber(id, value) {
-    document.getElementById(id).value = value.toFixed(2);
-}
-
-function stepValue(id, delta) {
-    let value = readNumber(id);
-    if (isNaN(value)) value = 0;
-
-    value += delta;
-
-    if (id === "lam") {
-        value = clamp(value, 0.01, 0.9999);
-    } else {
-        value = clamp(value, 0, 1);
-    }
-
-    writeNumber(id, value);
-    updatePlot();
-}
-
-function startStepping(id, delta) {
-    stopStepping();
-    stepValue(id, delta);
-
-    stepInterval = setInterval(() => {
-        stepValue(id, delta);
-    }, 90);
-}
-
-function stopStepping() {
-    if (stepInterval !== null) {
-        clearInterval(stepInterval);
-        stepInterval = null;
-    }
-}
-
-window.addEventListener("mouseup", stopStepping);
-window.addEventListener("touchend", stopStepping);
-
-function updatePlot() {
-    const lam = readNumber("lam");
-    const etaV = readNumber("etaV");
-
-    if (isNaN(lam) || isNaN(etaV)) return;
-
-    const etaH = linspace(0.01, 1.0, 1000);
-    const V = etaH.map(eh => visibility(lam, eh, etaV));
-
-    const [ymin, ymax] = paddedRange(V, 0.03);
-
-    document.getElementById("readout").innerHTML =
-        `λ=${lam.toFixed(4)}, η<sub>V</sub>=${etaV.toFixed(4)}`;
-
-    Plotly.update(
-        "visibility-plot",
-        {
-            x: [etaH],
-            y: [V]
-        },
-        {
-            "yaxis.range": [ymin, ymax]
-        }
-    );
-}
-</script>
+custom_js = """
+<script src="../../js/spdc_physics.js"></script>
+<script src="../../js/visibility_plot.js"></script>
 """
 
 html = html.replace("<head>", f"<head>{styles}")

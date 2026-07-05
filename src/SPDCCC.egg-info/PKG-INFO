@@ -1,5 +1,5 @@
 Metadata-Version: 2.4
-Name: spdc-coincidence-analysis
+Name: SPDCCC
 Version: 0.1.0
 Summary: Analytical and numerical tools for SPDC coincidence calculations
 Author: Nico Sieber
@@ -12,6 +12,7 @@ Requires-Dist: scipy
 Requires-Dist: matplotlib
 Requires-Dist: plotly
 Requires-Dist: sympy
+Requires-Dist: qutip
 Requires-Dist: zensical
 Provides-Extra: docs
 Requires-Dist: zensical; extra == "docs"

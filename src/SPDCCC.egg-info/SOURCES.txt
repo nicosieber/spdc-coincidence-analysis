@@ -1,0 +1,13 @@
+LICENSE
+README.md
+pyproject.toml
+src/SPDCCC.egg-info/PKG-INFO
+src/SPDCCC.egg-info/SOURCES.txt
+src/SPDCCC.egg-info/dependency_links.txt
+src/SPDCCC.egg-info/requires.txt
+src/SPDCCC.egg-info/top_level.txt
+src/spdccc/__init__.py
+src/spdccc/__main__.py
+src/spdccc/closedform.py
+src/spdccc/fock_numpy.py
+src/spdccc/fock_qutip.py

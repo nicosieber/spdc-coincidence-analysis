@@ -46,6 +46,6 @@
     <div class="tile__icon">📓</div>
     <h3>Operator norms</h3>
     <p>Small introduction to operator norms and how they are applied in the main derivation.</p>
-  </a>
+  </a>  
   
 </div>

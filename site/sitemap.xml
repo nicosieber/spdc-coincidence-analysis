@@ -40,6 +40,21 @@
         <loc>https://nicosieber.github.io/spdc-coincidence-analysis/concepts_and_foundations/povm_number_operator/</loc>
       </url>
       <url>
-        <loc>https://nicosieber.github.io/spdc-coincidence-analysis/dashboard/dashboard/</loc>
+        <loc>https://nicosieber.github.io/spdc-coincidence-analysis/dashboard/overview/</loc>
+      </url>
+      <url>
+        <loc>https://nicosieber.github.io/spdc-coincidence-analysis/dashboard/coincidence/overview/</loc>
+      </url>
+      <url>
+        <loc>https://nicosieber.github.io/spdc-coincidence-analysis/dashboard/coincidence/numpy/</loc>
+      </url>
+      <url>
+        <loc>https://nicosieber.github.io/spdc-coincidence-analysis/dashboard/coincidence/qutip/</loc>
+      </url>
+      <url>
+        <loc>https://nicosieber.github.io/spdc-coincidence-analysis/dashboard/visibility/</loc>
+      </url>
+      <url>
+        <loc>https://nicosieber.github.io/spdc-coincidence-analysis/dashboard/fisher/</loc>
       </url>
 </urlset>
