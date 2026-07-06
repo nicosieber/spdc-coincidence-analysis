@@ -526,6 +526,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../theory/generalization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Generalizing the optical element
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1246,10 +1274,10 @@ reports its maximum over the scan.</p>
 curve, but as <span class="arithmatex">\(\lambda\)</span> climbs past <span class="arithmatex">\(\approx 0.85\)</span> the mean photon number
 <span class="arithmatex">\(\bar n=\lambda^2/(1-\lambda^2)\)</span> grows until the true state carries appreciable weight above
 <span class="arithmatex">\(N=60\)</span> photons per mode. That weight is simply truncated away, so the numerical markers lift
-off the closed form — visibly by <span class="arithmatex">\(\lambda\approx 0.9\)</span>, blatantly by <span class="arithmatex">\(\lambda\approx 0.95\)</span>.
+off the closed form - visibly by <span class="arithmatex">\(\lambda\approx 0.9\)</span>, blatantly by <span class="arithmatex">\(\lambda\approx 0.95\)</span>.
 The binding knob is <span class="arithmatex">\(N\)</span>, the Hilbert-space dimension (capped here at 60 for compute), not the
 number of power-series terms, which converges quickly. The closed form has no Hilbert space to
-truncate, so it stays exact everywhere — that is precisely where it earns its keep.</p>
+truncate, so it stays exact everywhere - that is precisely where it earns its keep.</p>
 <p>The plotted quantity is the closed-form <a href="../../../theory/cc_derivation/">coincidence probability of the
 half-wave-plate-rotated TMSV</a>,</p>
 <div class="arithmatex">\[\begin{equation}
@@ -1281,16 +1309,16 @@ P^{(\eta_H,\eta_V)}(0,0)
 page builds that check <strong>from scratch in NumPy</strong>: it constructs the quantum state in a
 truncated Fock space, applies the lossy-detector model directly, and compares the result to
 the analytic expression at every wave-plate angle. Nothing here depends on a specialised
-quantum library — only <code>numpy</code>. The <a href="../qutip/">companion QuTiP dashboard</a> does the same
+quantum library - only <code>numpy</code>. The <a href="../qutip/">companion QuTiP dashboard</a> does the same
 thing with a purpose-built quantum-optics toolkit; the two agree, which is the point.</p>
 <div class="admonition note">
 <p class="admonition-title">What is being validated</p>
 <p>Two independent routes to the same number:</p>
 <ul>
-<li><strong>Closed form</strong> — the analytic result derived on the site,
+<li><strong>Closed form</strong> - the analytic result derived on the site,
   <span class="arithmatex">\(P^{(\eta_H,\eta_V)}(0,0)=\dfrac{1-\lambda^2}{\sqrt{(1-\lambda^2 t_H t_V)^2-\lambda^2(\eta_H-\eta_V)^2\sin^2 4\vartheta}}\)</span>,
   with <span class="arithmatex">\(t_{H,V}=1-\eta_{H,V}\)</span>, combined by inclusion–exclusion.</li>
-<li><strong>Fock-space simulation</strong> — build
+<li><strong>Fock-space simulation</strong> - build
   <span class="arithmatex">\(|\Psi\rangle=\sqrt{1-\lambda^2}\,e^{\lambda K^\dagger}|0,0\rangle\)</span> explicitly on a
   photon-number grid and evaluate the detector POVM numerically.</li>
 </ul>
@@ -1330,7 +1358,7 @@ HWP-rotated pair-creation generator</p>
 <ol>
 <li><strong>Creation operators act by array shifting.</strong> <span class="arithmatex">\(a^\dagger\)</span> maps
    <span class="arithmatex">\(|n\rangle\mapsto\sqrt{n+1}\,|n+1\rangle\)</span>, i.e. a shift-by-one along the relevant axis
-   with a <span class="arithmatex">\(\sqrt{n}\)</span> weight — no dense matrix is ever formed.</li>
+   with a <span class="arithmatex">\(\sqrt{n}\)</span> weight - no dense matrix is ever formed.</li>
 <li><strong>The exponential is summed as a power series applied to the state</strong>,
    <span class="arithmatex">\(|\Psi\rangle=\sum_n\frac{\lambda^n}{n!}(K^\dagger)^n|0,0\rangle\)</span>. Each term is the
    previous one hit once more with <span class="arithmatex">\(K^\dagger\)</span>, so the whole state costs a handful of

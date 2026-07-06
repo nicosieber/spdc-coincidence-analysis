@@ -526,6 +526,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../theory/generalization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Generalizing the optical element
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1268,7 +1296,7 @@ The lower panel shows the residual <span class="arithmatex">\(\lvert\text{QuTiP}
 curve, but as <span class="arithmatex">\(\lambda\)</span> climbs past <span class="arithmatex">\(\approx 0.85\)</span> the mean photon number
 <span class="arithmatex">\(\bar n=\lambda^2/(1-\lambda^2)\)</span> grows until the true state carries appreciable weight above
 <span class="arithmatex">\(N=60\)</span> photons per mode. That weight is simply truncated away, so the numerical markers lift
-off the closed form — visibly by <span class="arithmatex">\(\lambda\approx 0.9\)</span>, blatantly by <span class="arithmatex">\(\lambda\approx 0.95\)</span>.
+off the closed form - visibly by <span class="arithmatex">\(\lambda\approx 0.9\)</span>, blatantly by <span class="arithmatex">\(\lambda\approx 0.95\)</span>.
 This is the same break-off the <a href="../numpy/">NumPy dashboard</a> shows, produced here by an
 independent library: the binding knob is <span class="arithmatex">\(N\)</span>, the Hilbert-space dimension (capped at 60 for
 compute), and the closed form has no Hilbert space to truncate, so it stays exact everywhere.</p>
@@ -1304,13 +1332,13 @@ simulation from scratch with array shifts. This page does the <strong>same physi
 <a href="https://qutip.org/">QuTiP</a></strong>, a purpose-built quantum-optics toolkit. The value is
 twofold: it is a second, independent implementation (different library, different operator
 algebra, same answer), and it is the natural starting point for extensions the closed form
-cannot express — dark counts, number-resolving detectors, dephasing and mixed states. The
+cannot express - number-resolving detectors, dephasing and mixed states. The
 whole physics reduces to a handful of operator lines.</p>
 <div class="admonition note">
 <p class="admonition-title">Same benchmark, different engine</p>
 <ul>
-<li><strong>Closed form</strong> — the analytic result derived on the site.</li>
-<li><strong>QuTiP</strong> — construct <span class="arithmatex">\(|\Psi\rangle=\sqrt{1-\lambda^2}\,e^{\lambda K^\dagger}|0,0\rangle\)</span>
+<li><strong>Closed form</strong> - the analytic result derived on the site.</li>
+<li><strong>QuTiP</strong> - construct <span class="arithmatex">\(|\Psi\rangle=\sqrt{1-\lambda^2}\,e^{\lambda K^\dagger}|0,0\rangle\)</span>
   with QuTiP operators and evaluate the detector POVM.</li>
 </ul>
 <p>Agreement to the truncation floor confirms both the closed form and the NumPy engine.</p>
@@ -1345,7 +1373,7 @@ a_V=\texttt{tensor(qeye(N), destroy(N))}.\]</div>
 </code></pre></div>
 <h2 id="the-state">The state<a class="headerlink" href="#the-state" title="Permanent link">&para;</a></h2>
 <p>The state is <span class="arithmatex">\(|\Psi\rangle=\sqrt{1-\lambda^2}\,e^{\lambda K^\dagger}|0,0\rangle\)</span>. The obvious
-call is <code>(lam * Kdag(N, theta)).expm() * vac</code> — and it is a trap. QuTiP keeps <span class="arithmatex">\(K^\dagger\)</span>
+call is <code>(lam * Kdag(N, theta)).expm() * vac</code> - and it is a trap. QuTiP keeps <span class="arithmatex">\(K^\dagger\)</span>
 <strong>sparse</strong>, but <code>.expm()</code> <strong>densifies</strong> the <span class="arithmatex">\(N^2\times N^2\)</span> operator: at <span class="arithmatex">\(N=60\)</span> that is a
 <span class="arithmatex">\(3600\times3600\)</span> matrix, costing about <span class="arithmatex">\(10^3\times\)</span> more time and memory for an identical
 result.</p>

@@ -12,13 +12,13 @@
         <meta name="author" content="Nico Sieber">
       
       
-        <link rel="canonical" href="https://nicosieber.github.io/spdc-coincidence-analysis/theory/simplified_example/">
+        <link rel="canonical" href="https://nicosieber.github.io/spdc-coincidence-analysis/theory/generalization/">
       
       
-        <link rel="prev" href="../experimental_setup/">
+        <link rel="prev" href="../cc_derivation/">
       
       
-        <link rel="next" href="../povm/">
+        <link rel="next" href="../../concepts_and_foundations/overview/">
       
       
         
@@ -29,7 +29,7 @@
     
     
       
-        <title>Simplified example - SPDC Coincidence Analysis</title>
+        <title>Generalizing the optical element - SPDC Coincidence Analysis</title>
       
     
     
@@ -87,7 +87,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#simplified-example" class="md-skip">
+        <a href="#generalizing-the-optical-element" class="md-skip">
           Skip to content
         </a>
       
@@ -121,7 +121,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Simplified example
+              Generalizing the optical element
             
           </span>
         </div>
@@ -421,39 +421,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      
-        <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Simplified example
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="././" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../simplified_example/" class="md-nav__link">
         
   
   
@@ -469,38 +440,6 @@
   
 
       </a>
-      
-        
-
-
-<nav class="md-nav md-nav--secondary" aria-label="On this page">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      On this page
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#references" class="md-nav__link">
-    <span class="md-ellipsis">
-      <span class="md-typeset">
-        References
-      </span>
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -594,10 +533,39 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../generalization/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      
+        <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Generalizing the optical element
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="././" class="md-nav__link md-nav__link--active">
         
   
   
@@ -613,6 +581,127 @@
   
 
       </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-matrix-m-already-contains-the-optics" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The matrix <span class="arithmatex">\(M\)</span> already contains the optics
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#replacing-the-hwp-by-an-arbitrary-element" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Replacing the HWP by an arbitrary element
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-derivation-is-unchanged-up-to-the-determinant" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The derivation is unchanged up to the determinant
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The derivation is unchanged up to the determinant">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-determinant-for-a-general-element" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The determinant for a general element
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#specializing-to-the-hwp" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Specializing to the HWP
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#two-worked-elements" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Two worked elements
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Two worked elements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-phase-shifter-alone-produces-no-fringe" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        A phase shifter alone produces no fringe
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-beam-splitter-is-the-hwp-with-a-relabelled-angle" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        A beam splitter is the HWP with a relabelled angle
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1202,13 +1291,102 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#references" class="md-nav__link">
+  <a href="#the-matrix-m-already-contains-the-optics" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        References
+        The matrix <span class="arithmatex">\(M\)</span> already contains the optics
       </span>
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#replacing-the-hwp-by-an-arbitrary-element" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Replacing the HWP by an arbitrary element
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-derivation-is-unchanged-up-to-the-determinant" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The derivation is unchanged up to the determinant
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The derivation is unchanged up to the determinant">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-determinant-for-a-general-element" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The determinant for a general element
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#specializing-to-the-hwp" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Specializing to the HWP
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#two-worked-elements" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Two worked elements
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Two worked elements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-phase-shifter-alone-produces-no-fringe" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        A phase shifter alone produces no fringe
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-beam-splitter-is-the-hwp-with-a-relabelled-angle" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        A beam splitter is the HWP with a relabelled angle
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1230,101 +1408,288 @@
   
 
 
-<h1 id="simplified-example">Simplified example<a class="headerlink" href="#simplified-example" title="Permanent link">&para;</a></h1>
-<p>First I show a simplified example of the calculation by only passing the state </p>
-<p><span id="initial_state"></span></p>
+<h1 id="generalizing-the-optical-element">Generalizing the optical element<a class="headerlink" href="#generalizing-the-optical-element" title="Permanent link">&para;</a></h1>
+<p>In the <a href="https://nicosieber.github.io/spdc-coincidence-analysis/theory/cc_derivation/">main derivation</a>
+the optical element between source and detectors was a half-wave plate. This
+section shows that the HWP was not special: the entire derivation of
+<span class="arithmatex">\(P^{(\eta_H,\eta_V)}(0,0)\)</span> goes through unchanged if the HWP is replaced by
+<strong>any</strong> passive lossless element (a beam splitter, a phase shifter, a wave plate
+at any angle, or any sequence of these). Only one matrix in the calculation
+changes, and the final formula keeps exactly the same shape.</p>
+<h2 id="the-matrix-m-already-contains-the-optics">The matrix <span class="arithmatex">\(M\)</span> already contains the optics<a class="headerlink" href="#the-matrix-m-already-contains-the-optics" title="Permanent link">&para;</a></h2>
+<p>Recall from <a href="https://nicosieber.github.io/spdc-coincidence-analysis/theory/tmsv/#eq:alpha_vec">TMSV</a>
+that the state after the HWP was written as</p>
 <div class="arithmatex">\[\begin{equation}
-\lvert 1_{H},1_{V} \rangle =\hat a_H^\dagger \hat a_V^\dagger\lvert 0,0 \rangle
-\label{initial_state_simple}
-\end{equation}\]</div>
-<p>through the HWP. </p>
-<p>In equation <span class="arithmatex">\(\eqref{initial_state_simple}\)</span>, <span class="arithmatex">\(\hat a_{H,V}^\dagger\)</span> are the bosonic creation operators (for <span class="arithmatex">\(H\)</span>- and <span class="arithmatex">\(V\)</span>-polarized light) following the relation</p>
-<div class="arithmatex">\[\begin{equation}
-\lvert n_H, n_V \rangle
+\label{eq:state_M}
+\lvert \Psi \rangle
 =
-\frac{(\hat a_H^\dagger)^{n_H}(\hat a_V^\dagger)^{n_V}}{\sqrt{n_H!n_V!}}
-\lvert 0,0 \rangle
-\label{eq:fock}
-\end{equation}\]</div>
-<p>Assuming that the fast axis of the HWP is aligned with the horizontal axis, the Jones matrix is given by<a href="#ref-collett2005">[1]</a></p>
-<div class="arithmatex">\[\begin{equation}
-\label{Jones}
-    U_{\text{HWP}}(\vartheta) = 
-    \begin{pmatrix}
-    \cos(2\vartheta) &amp; \sin(2\vartheta) \\
-    \sin(2\vartheta) &amp; -\cos(2\vartheta) 
-    \end{pmatrix},
-\end{equation}\]</div>
-<p>with <span class="arithmatex">\(\vartheta\)</span> being the angle of the HWP. With <span class="arithmatex">\(\eqref{initial_state_simple}\)</span> and <span class="arithmatex">\(\eqref{Jones}\)</span> we get the transformation</p>
-<div class="arithmatex">\[\begin{equation}
-\label{Transformation:trafo}
+\Lambda\, e^{\frac{\lambda}{2}\,(\mathbf{\hat a^{\dagger}})^T M\,\mathbf{\hat a^{\dagger}}}\lvert 0,0 \rangle,
+\qquad
+M=
 \begin{pmatrix}
-\hat a_{H,\text{new}}^\dagger \\
-\hat a_{V,\text{new}}^\dagger
-\end{pmatrix}
+ 2cs &amp; s^2-c^2 \\
+ s^2-c^2 &amp; -2cs
+\end{pmatrix},
+\end{equation}\]</div>
+<p>with <span class="arithmatex">\(c=\cos(2\vartheta)\)</span>, <span class="arithmatex">\(s=\sin(2\vartheta)\)</span> and <span class="arithmatex">\(\Lambda=\sqrt{1-|\lambda|^2}\)</span>.
+It is worth seeing where this particular <span class="arithmatex">\(M\)</span> comes from, because that is the
+step we are going to generalize.</p>
+<p>The TMSV <strong>before</strong> any optics is the special case <span class="arithmatex">\(\vartheta=0\)</span>, i.e.
+<span class="arithmatex">\(c=1,\,s=0\)</span>. Its generator is the bare pair-creation term
+<span class="arithmatex">\(\lambda\,\hat a_H^\dagger\hat a_V^\dagger\)</span>, i.e.</p>
+<div class="arithmatex">\[\begin{equation}
+\label{eq:M0}
+M_0=
+\begin{pmatrix}
+ 0 &amp; 1\\
+ 1 &amp; 0
+\end{pmatrix},
+\qquad
+\tfrac{\lambda}{2}(\mathbf{\hat a^{\dagger}})^T M_0\,\mathbf{\hat a^{\dagger}}
+=\lambda\,\hat a_H^\dagger \hat a_V^\dagger .
+\end{equation}\]</div>
+<p>The HWP acts on the two creation operators as a
+matrix <span class="arithmatex">\(U\)</span>,</p>
+<div class="arithmatex">\[\begin{equation}
+\label{eq:U_HWP}
+\mathbf{\hat a^{\dagger}}\;\to\; U\,\mathbf{\hat a^{\dagger}},
+\qquad
+U_{\mathrm{HWP}}=
+\begin{pmatrix}
+ c &amp; s\\
+ s &amp; -c
+\end{pmatrix},
+\end{equation}\]</div>
+<p>exactly the linear combinations
+<span class="arithmatex">\(c\,\hat a_H^\dagger + s\,\hat a_V^\dagger\)</span> and
+<span class="arithmatex">\(s\,\hat a_H^\dagger - c\,\hat a_V^\dagger\)</span> that appear inside
+<span class="arithmatex">\(\hat K^\dagger\)</span>. Substituting <span class="arithmatex">\(\mathbf{\hat a^{\dagger}}\to U\mathbf{\hat a^{\dagger}}\)</span>
+into the exponent of <span class="arithmatex">\(\eqref{eq:M0}\)</span>:</p>
+<div class="arithmatex">\[\begin{equation}
+\label{eq:congruence}
+\tfrac{\lambda}{2}\,(\mathbf{\hat a^{\dagger}})^T M_0\,\mathbf{\hat a^{\dagger}}
+\;\to\;
+\tfrac{\lambda}{2}\,(U\mathbf{\hat a^{\dagger}})^T M_0\,(U\mathbf{\hat a^{\dagger}})
 =
+\tfrac{\lambda}{2}\,(\mathbf{\hat a^{\dagger}})^T \underbrace{U^T M_0\, U}_{=\,M}\,\mathbf{\hat a^{\dagger}} .
+\end{equation}\]</div>
+<p>So the effect of the optics is nothing but a congruence of the source matrix,</p>
+<div class="arithmatex">\[\begin{equation}
+\label{eq:M_from_U}
+\boxed{\,M = U^T M_0\, U\,.}
+\end{equation}\]</div>
+<p>A quick check that this reproduces <span class="arithmatex">\(\eqref{eq:state_M}\)</span>:</p>
+<div class="arithmatex">\[\begin{equation}
+\begin{aligned}
+U^T M_0 U
+&amp;=
+\begin{pmatrix} c &amp; s\\ s &amp; -c\end{pmatrix}
+\begin{pmatrix} 0 &amp; 1\\ 1 &amp; 0\end{pmatrix}
+\begin{pmatrix} c &amp; s\\ s &amp; -c\end{pmatrix}
+=
+\begin{pmatrix} 2cs &amp; s^2-c^2\\ s^2-c^2 &amp; -2cs\end{pmatrix}
+=M .
+\end{aligned}
+\end{equation}\]</div>
+<h2 id="replacing-the-hwp-by-an-arbitrary-element">Replacing the HWP by an arbitrary element<a class="headerlink" href="#replacing-the-hwp-by-an-arbitrary-element" title="Permanent link">&para;</a></h2>
+<p>The generalization is now a single sentence: <strong>let <span class="arithmatex">\(U\)</span> be an arbitrary
+<span class="arithmatex">\(2\times2\)</span> unitary.</strong> Every passive lossless element is of this form. For
+example</p>
+<div class="arithmatex">\[\begin{equation}
+U_{\text{phase}}=
+\begin{pmatrix}1 &amp; 0\\ 0 &amp; e^{i\varphi}\end{pmatrix},
+\qquad
+U_{\text{BS}}=
+\begin{pmatrix}\cos\theta_b &amp; \sin\theta_b\\ -\sin\theta_b &amp; \cos\theta_b\end{pmatrix},
+\end{equation}\]</div>
+<p>and a sequence of elements is just the product of their matrices. Unitarity is
+not an extra assumption: it is precisely the condition that the transformed
+operators still obey <span class="arithmatex">\([\hat a_i,\hat a_j^\dagger]=\delta_{ij}\)</span>, i.e. that the
+element neither adds nor removes photons (it is lossless).</p>
+<p>For any such <span class="arithmatex">\(U\)</span>, the state keeps the form <span class="arithmatex">\(\eqref{eq:state_M}\)</span> with</p>
+<div class="arithmatex">\[\begin{equation}
+M = U^T M_0\, U,
+\qquad
+M_0=\begin{pmatrix}0&amp;1\\1&amp;0\end{pmatrix}.
+\end{equation}\]</div>
+<p>The one property the derivation actually uses is that <span class="arithmatex">\(M\)</span> is <strong>symmetric</strong>,
+which holds for every <span class="arithmatex">\(U\)</span>: from <span class="arithmatex">\(\eqref{eq:M_from_U}\)</span>,
+<span class="arithmatex">\((U^T M_0 U)^T=U^T M_0^T U=U^T M_0 U\)</span> since <span class="arithmatex">\(M_0^T=M_0\)</span>. Symmetry of <span class="arithmatex">\(M\)</span> is
+all that the operator manipulations and the Gaussian integral on the main page
+require, so they carry over verbatim.</p>
+<div class="admonition note">
+<p class="admonition-title">Real vs. complex elements</p>
+<p>Wave plates and beam splitters are described by <strong>real</strong> <span class="arithmatex">\(U\)</span> (rotations),
+so their <span class="arithmatex">\(M\)</span> is real. Elements with a genuine phase, such as
+<span class="arithmatex">\(U_{\text{phase}}\)</span>, give a <strong>complex</strong> <span class="arithmatex">\(M\)</span>. This matters at exactly one
+place below: the bra side of the overlap carries <span class="arithmatex">\(M^{*}\)</span>, not <span class="arithmatex">\(M\)</span>, so
+the determinant that appears is
+<span class="arithmatex">\(\det(\mathbb 1-\lambda^2 M D M^{*}D)\)</span>. For real <span class="arithmatex">\(M\)</span> this is identical
+to the main page's <span class="arithmatex">\(\det(\mathbb 1-\lambda^2 MDMD)\)</span>; we keep the
+conjugate explicit so the formula stays correct for complex elements too.</p>
+</div>
+<h2 id="the-derivation-is-unchanged-up-to-the-determinant">The derivation is unchanged up to the determinant<a class="headerlink" href="#the-derivation-is-unchanged-up-to-the-determinant" title="Permanent link">&para;</a></h2>
+<p>Everything on the <a href="https://nicosieber.github.io/spdc-coincidence-analysis/theory/cc_derivation/">coincidence-probability page</a>
+between equation <span class="arithmatex">\(\eqref{eq:state_M}\)</span> and the determinant is a manipulation of
+the <em>operators</em> and of the coherent-state integral. None of those steps used the
+specific entries of <span class="arithmatex">\(M\)</span> — they used only that <span class="arithmatex">\(M\)</span> is a symmetric
+<span class="arithmatex">\(2\times2\)</span> matrix, which holds for any <span class="arithmatex">\(U\)</span>. In particular the loss step</p>
+<div class="arithmatex">\[\begin{equation}
+S\,\mathbf{\hat a^{\dagger}}\,S^{-1}=D\,\mathbf{\hat a^{\dagger}},
+\qquad
+D=\begin{pmatrix}t_H&amp;0\\0&amp;t_V\end{pmatrix},
+\qquad t_{H,V}=1-\eta_{H,V},
+\end{equation}\]</div>
+<p>turns the exponent matrix <span class="arithmatex">\(M\)</span> into <span class="arithmatex">\(DMD\)</span> exactly as before, and the complex
+Gaussian integral gives</p>
+<div class="arithmatex">\[\begin{equation}
+P^{(\eta_H,\eta_V)}(0,0)
+=\frac{\Lambda^2}{\sqrt{\det Q}},
+\qquad
+\det Q=\det\!\big(\mathbb 1-\lambda^2 M D M^{*}D\big).
+\end{equation}\]</div>
+<p>For real optics (<span class="arithmatex">\(M^{*}=M\)</span>) this is the main page's
+<span class="arithmatex">\(\det(\mathbb 1-\lambda^2 MDMD)\)</span>. So the <strong>only</strong> thing that depends on the
+choice of optical element is this single <span class="arithmatex">\(2\times2\)</span> determinant. We evaluate
+it for a general <span class="arithmatex">\(M\)</span>, then specialize.</p>
+<h3 id="the-determinant-for-a-general-element">The determinant for a general element<a class="headerlink" href="#the-determinant-for-a-general-element" title="Permanent link">&para;</a></h3>
+<p>Using <a href="https://nicosieber.github.io/spdc-coincidence-analysis/concepts_and_foundations/determinant_relations/#appendix:det_1minusl2X">determinant relation (9)</a>
+for a <span class="arithmatex">\(2\times2\)</span> matrix <span class="arithmatex">\(X=MDM^{*}D\)</span>,</p>
+<div class="arithmatex">\[\begin{equation}
+\label{eq:detQ_general}
+\det Q
+=1-\lambda^2\,\mathrm{Tr}(MDM^{*}D)+\lambda^4\det(MDM^{*}D).
+\end{equation}\]</div>
+<p>The last term is fixed for every passive element: since <span class="arithmatex">\(M=U^TM_0U\)</span> with <span class="arithmatex">\(U\)</span>
+unitary and <span class="arithmatex">\(\det M_0=-1\)</span>, we have <span class="arithmatex">\(|\det M|=1\)</span>, hence</p>
+<div class="arithmatex">\[\begin{equation}
+\det(MDM^{*}D)=\det M\,\det M^{*}\,(\det D)^2=|\det M|^2\,t_H^2t_V^2=t_H^2t_V^2 .
+\end{equation}\]</div>
+<p>Only the trace <span class="arithmatex">\(\mathrm{Tr}(MDM^{*}D)\)</span> carries the element-dependence, and it
+is a short computation for whatever <span class="arithmatex">\(M\)</span> the element produces.</p>
+<h3 id="specializing-to-the-hwp">Specializing to the HWP<a class="headerlink" href="#specializing-to-the-hwp" title="Permanent link">&para;</a></h3>
+<p>Insert the HWP matrix <span class="arithmatex">\(M\)</span> of <span class="arithmatex">\(\eqref{eq:state_M}\)</span>. With
+<span class="arithmatex">\(D=\mathrm{diag}(t_H,t_V)\)</span>,</p>
+<div class="arithmatex">\[\begin{equation}
+MD=
 \begin{pmatrix}
-\cos(2\vartheta) &amp; \sin(2\vartheta) \\
-\sin(2\vartheta) &amp; -\cos(2\vartheta)
-\end{pmatrix}
-\begin{pmatrix}
-\hat a_{H,\text{old}}^\dagger \\
-\hat a_{V,\text{old}}^\dagger
-\end{pmatrix}
+2cs\,t_H &amp; (s^2-c^2)t_V\\
+(s^2-c^2)t_H &amp; -2cs\,t_V
+\end{pmatrix},
 \end{equation}\]</div>
-<p>which can be used to write the state after the HWP as</p>
+<p>and squaring gives <span class="arithmatex">\(MDMD=\big(\begin{smallmatrix}a&amp;b\\c&amp;d\end{smallmatrix}\big)\)</span>
+with diagonal entries</p>
 <div class="arithmatex">\[\begin{equation}
-\label{Transformation:state_simple}
 \begin{aligned}
-    \lvert 1_H,1_V\rangle&amp;=\hat a_H^\dagger \hat a_V^\dagger\lvert 0,0 \rangle\notag\\
-    &amp;\overset{\eqref{Transformation:trafo}}{\Rightarrow} \left(\hat a_H^\dagger\cos(2\vartheta)+\hat a_V^\dagger\sin(2\vartheta)\right)\notag\\
-    &amp;\times\left(\hat a_H^\dagger\sin(2\vartheta)-\hat a_V^\dagger\cos(2\vartheta)\right)\lvert 0,0 \rangle.
+a&amp;=(2cs)^2t_H^2+(s^2-c^2)^2t_Ht_V,\\
+d&amp;=(s^2-c^2)^2t_Ht_V+(2cs)^2t_V^2,
 \end{aligned}
 \end{equation}\]</div>
-<p>Evaluating the terms of <span class="arithmatex">\(\eqref{Transformation:state_simple}\)</span> results in:</p>
+<p>exactly as on the main page. The trace is their sum,</p>
 <div class="arithmatex">\[\begin{equation}
-\label{Transformation:terms_simple}
 \begin{aligned}
-\cos(2\vartheta)\sin(2\vartheta)(\hat a_H^\dagger)^2\lvert 0,0 \rangle
-&amp;= \sqrt{2}\cos(2\vartheta)\sin(2\vartheta)\lvert 2,0 \rangle \\
--\cos(2\vartheta)\sin(2\vartheta)(\hat a_V^\dagger)^2\lvert 0,0 \rangle
-&amp;= -\sqrt{2}\cos(2\vartheta)\sin(2\vartheta)\lvert 0,2 \rangle \\
--\cos^2(2\vartheta)\hat a_H^\dagger \hat a_V^\dagger\lvert 0,0 \rangle
-&amp;= -\cos^2(2\vartheta)\lvert 1,1 \rangle \\
-\sin^2(2\vartheta)\hat a_H^\dagger \hat a_V^\dagger\lvert 0,0 \rangle
-&amp;= \sin^2(2\vartheta)\lvert 1,1 \rangle 
+\mathrm{Tr}(MDMD)
+&amp;=a+d
+=(2cs)^2(t_H^2+t_V^2)+2(s^2-c^2)^2\,t_Ht_V\\
+&amp;=(t_H^2+t_V^2)\sin^2(4\vartheta)+2t_Ht_V\cos^2(4\vartheta),
 \end{aligned}
 \end{equation}\]</div>
-<p>Remark on notation: In the equations of <span class="arithmatex">\(\eqref{Transformation:terms_simple}\)</span>, the indices for polarization were left out and further won't be used anymore due to convenience. To further make it easier to differentiate which polarization is meant, the convention of choosing <span class="arithmatex">\(H\)</span> polarization for the first and <span class="arithmatex">\(V\)</span> polarization for the second mode when using the <span class="arithmatex">\(\lvert \cdot \rangle\)</span>-notation will strictly be followed (when using operator notation indices will be used).</p>
-<p>Looking at the terms of <span class="arithmatex">\(\eqref{Transformation:terms_simple}\)</span>, we see that for the <span class="arithmatex">\(\vartheta=\pi/8+k\pi/4\)</span> and <span class="arithmatex">\(k=0,1,2,3,...\)</span>, the terms containing one <span class="arithmatex">\(H\)</span> and one <span class="arithmatex">\(V\)</span> photon cancel each other due to destructive interference. However, this case only happens under the following conditions:</p>
-<ul>
-<li>The <span class="arithmatex">\(H\)</span> and <span class="arithmatex">\(V\)</span> photons occupy the same spatial mode.</li>
-<li>The photons must be indistinguishable in all degrees of freedom besides polarization.</li>
-</ul>
-<p>Consequently, for <span class="arithmatex">\(\vartheta=\pi/8\)</span>, the sum of terms in <span class="arithmatex">\(\eqref{Transformation:terms_simple}\)</span> becomes</p>
+<p>using <span class="arithmatex">\(2cs=\sin(4\vartheta)\)</span> and <span class="arithmatex">\(s^2-c^2=-\cos(4\vartheta)\)</span>. Substituting
+this and <span class="arithmatex">\(\det(MDMD)=t_H^2t_V^2\)</span> into <span class="arithmatex">\(\eqref{eq:detQ_general}\)</span>,</p>
 <div class="arithmatex">\[\begin{equation}
-\label{Transformation:state_simple_special}
-\begin{aligned}
-\lvert 1_H,1_V \rangle
-&amp;= \hat a_H^\dagger \hat a_V^\dagger \lvert 0,0 \rangle \notag\\
-&amp;\overset{\eqref{Transformation:trafo},\,\vartheta=\pi/8}{\Rightarrow}
-\dfrac{1}{\sqrt{2}}\left(\lvert 2,0\rangle - \lvert 0,2 \rangle\right)
-\end{aligned}
+\det Q
+=1-\lambda^2\big[(t_H^2+t_V^2)\sin^2(4\vartheta)+2t_Ht_V\cos^2(4\vartheta)\big]
++\lambda^4 t_H^2t_V^2 .
 \end{equation}\]</div>
+<p>The bracket collects into a perfect square plus a remainder,</p>
+<div class="arithmatex">\[\begin{equation}
+(t_H^2+t_V^2)\sin^2(4\vartheta)+2t_Ht_V\cos^2(4\vartheta)
+=2t_Ht_V+(t_H-t_V)^2\sin^2(4\vartheta),
+\end{equation}\]</div>
+<p>(using <span class="arithmatex">\(\cos^2=1-\sin^2\)</span> and <span class="arithmatex">\(t_H^2+t_V^2-2t_Ht_V=(t_H-t_V)^2\)</span>), so that</p>
+<div class="arithmatex">\[\begin{equation}
+\det Q=(1-\lambda^2 t_Ht_V)^2-\lambda^2(t_H-t_V)^2\sin^2(4\vartheta),
+\end{equation}\]</div>
+<p>and with <span class="arithmatex">\(t_{H,V}=1-\eta_{H,V}\)</span> and <span class="arithmatex">\(\Lambda^2=1-\lambda^2\)</span> we recover
+equation (1) of the main page:</p>
+<div class="arithmatex">\[\begin{equation}
+\label{eq:P00_final}
+\boxed{\;
+P^{(\eta_H,\eta_V)}(0,0)
+=\dfrac{1-\lambda^2}
+{\sqrt{\big(1-\lambda^2(1-\eta_H)(1-\eta_V)\big)^2-\lambda^2(\eta_H-\eta_V)^2\sin^2(4\vartheta)}}\; .}
+\end{equation}\]</div>
+<p>The generalization has therefore cost nothing: the closed form for <em>any</em> passive
+element is <span class="arithmatex">\(\eqref{eq:detQ_general}\)</span>, and each specific element only fixes the
+single trace <span class="arithmatex">\(\mathrm{Tr}(MDM^{*}D)\)</span>.</p>
+<h2 id="two-worked-elements">Two worked elements<a class="headerlink" href="#two-worked-elements" title="Permanent link">&para;</a></h2>
+<h3 id="a-phase-shifter-alone-produces-no-fringe">A phase shifter alone produces no fringe<a class="headerlink" href="#a-phase-shifter-alone-produces-no-fringe" title="Permanent link">&para;</a></h3>
+<p>Take <span class="arithmatex">\(U=U_{\text{phase}}\)</span>. Then</p>
+<div class="arithmatex">\[\begin{equation}
+M=U^T M_0 U
+=\begin{pmatrix}1&amp;0\\0&amp;e^{i\varphi}\end{pmatrix}
+ \begin{pmatrix}0&amp;1\\1&amp;0\end{pmatrix}
+ \begin{pmatrix}1&amp;0\\0&amp;e^{i\varphi}\end{pmatrix}
+=e^{i\varphi}\begin{pmatrix}0&amp;1\\1&amp;0\end{pmatrix}.
+\end{equation}\]</div>
+<p>This <span class="arithmatex">\(M\)</span> is complex, so we use the conjugated determinant. With
+<span class="arithmatex">\(M^{*}=e^{-i\varphi}\big(\begin{smallmatrix}0&amp;1\\1&amp;0\end{smallmatrix}\big)\)</span>,
+the phases cancel in the product <span class="arithmatex">\(MDM^{*}D\)</span>:</p>
+<div class="arithmatex">\[\begin{equation}
+MDM^{*}D
+=e^{i\varphi}\begin{pmatrix}0&amp;1\\1&amp;0\end{pmatrix}D\,
+ e^{-i\varphi}\begin{pmatrix}0&amp;1\\1&amp;0\end{pmatrix}D
+=\begin{pmatrix}t_Ht_V&amp;0\\0&amp;t_Ht_V\end{pmatrix},
+\end{equation}\]</div>
+<p>so <span class="arithmatex">\(\mathrm{Tr}(MDM^{*}D)=2t_Ht_V\)</span> and <span class="arithmatex">\(\det(MDM^{*}D)=t_H^2t_V^2\)</span>. Then</p>
+<div class="arithmatex">\[\begin{equation}
+\det Q=1-2\lambda^2 t_Ht_V+\lambda^4t_H^2t_V^2=(1-\lambda^2 t_Ht_V)^2,
+\qquad
+P^{(\eta_H,\eta_V)}(0,0)=\frac{1-\lambda^2}{1-\lambda^2(1-\eta_H)(1-\eta_V)} .
+\end{equation}\]</div>
+<p>No <span class="arithmatex">\(\varphi\)</span> survives. Physically: bucket detectors count photons, and a phase
+alone moves no photons between the arms. To convert a phase into a detectable
+change the modes must first be <em>mixed</em> — which is exactly what the HWP (or a
+beam splitter) does, and why the interferometer sits where it does. (Had we
+forgotten the conjugate and used <span class="arithmatex">\(MDMD\)</span>, <span class="arithmatex">\(\det Q\)</span> would have come out
+complex — a useful sign that the conjugated form is the correct one.)</p>
+<h3 id="a-beam-splitter-is-the-hwp-with-a-relabelled-angle">A beam splitter is the HWP with a relabelled angle<a class="headerlink" href="#a-beam-splitter-is-the-hwp-with-a-relabelled-angle" title="Permanent link">&para;</a></h3>
+<p>Take <span class="arithmatex">\(U=U_{\text{BS}}\)</span>. The same one-line multiplication as for the HWP gives</p>
+<div class="arithmatex">\[\begin{equation}
+M=U^T M_0 U
+=\begin{pmatrix}
+-\sin 2\theta_b &amp; \cos 2\theta_b\\
+\cos 2\theta_b &amp; \sin 2\theta_b
+\end{pmatrix},
+\end{equation}\]</div>
+<p>which is the HWP matrix <span class="arithmatex">\(\eqref{eq:state_M}\)</span> under
+<span class="arithmatex">\(\sin 4\vartheta\to\sin 2\theta_b\)</span>, <span class="arithmatex">\(\cos 4\vartheta\to\cos 2\theta_b\)</span> (up to
+signs that square away in <span class="arithmatex">\(MDMD\)</span>). Every formula on the main page therefore
+holds for a variable beam splitter after the single replacement</p>
+<div class="arithmatex">\[\begin{equation}
+\sin^2(4\vartheta)\;\longrightarrow\;\sin^2(2\theta_b).
+\end{equation}\]</div>
+<p>This also explains the location of the coincidence dip: <span class="arithmatex">\(\vartheta=\pi/8\)</span>
+means <span class="arithmatex">\(4\vartheta=\pi/2\)</span>, i.e. the HWP acts as a <strong>balanced</strong> beam splitter
+(<span class="arithmatex">\(\theta_b=\pi/4\)</span>) — the dip is a Hong–Ou–Mandel suppression in disguise.</p>
+<div class="admonition note">
+<p class="admonition-title">Beyond two modes</p>
+<p>Nothing above was two-dimensional in an essential way. For a source of
+several Schmidt modes (e.g. a multimode JSA) the vector
+<span class="arithmatex">\(\mathbf{\hat a^{\dagger}}\)</span> has more entries, <span class="arithmatex">\(M_0\)</span> becomes
+block-diagonal with one <span class="arithmatex">\(\big(\begin{smallmatrix}0&amp;1\\1&amp;0\end{smallmatrix}\big)\)</span>
+block per mode pair scaled by that mode's <span class="arithmatex">\(\lambda_k\)</span>, <span class="arithmatex">\(U\)</span> is an
+<span class="arithmatex">\(m\times m\)</span> unitary, and the very same steps give
+<span class="arithmatex">\(P(0,\dots,0)=\Lambda^2/\sqrt{\det(\mathbb 1-MDMD\,\text{-type})}\)</span> as an
+<span class="arithmatex">\(m\times m\)</span> determinant. What the closed form does require is that every
+element stay Gaussian — passive optics, squeezing and bucket detection all
+qualify; photon-number-resolving projections or feed-forward do not.</p>
+</div>
 <div class="nav-footer">
-  <a class="nav-prev" href="../experimental_setup/">
+  <a class="nav-prev" href="../cc_derivation/">
     ← Previous
   </a>
-
-  <a class="nav-next" href="../povm/">
-    Next →
-  </a>
 </div>
-
-<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
-<p id="ref-collett2005">
-[1] E. Collett, <em>Field Guide to Polarization</em>, SPIE Press, Bellingham, WA, USA, 2005.
-</p>
 
 
 

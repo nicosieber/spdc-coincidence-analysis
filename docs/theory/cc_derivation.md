@@ -948,8 +948,12 @@ Dark counts can only increase the coincidence probability: since $(1-d) \leq 1$,
 For modern SNSPDs <a href="#ref-natarajan2012">[5]</a> with $R_d \sim 1\text{-}50\,\text{Hz}$ and coincidence windows $\Delta t \sim 200\,\text{ps}$, the dark count probability is $d \sim 10^{-8}$, so that $(1-d_H)(1-d_V) \approx 1$.
 
 <div class="nav-footer">
-  <a class="nav-prev" href="tmsv.md">
+  <a class="nav-prev" href="tsmv.md">
     ← Previous
+  </a>
+
+  <a class="nav-next" href="generalization.md">
+    Next →
   </a>
 </div>
 

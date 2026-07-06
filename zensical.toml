@@ -20,7 +20,8 @@ nav = [
     { "Simplified example" = "theory/simplified_example.md" },
     { "POVM" = "theory/povm.md" },
     { "TMSV" = "theory/tmsv.md" },
-    {"Derivation of the coincidence probabiliy" = "theory/cc_derivation.md"}
+    {"Derivation of the coincidence probabiliy" = "theory/cc_derivation.md"},
+    {"Generalizing the optical element" = "theory/generalization.md"}
   ]},
   { "Additional concepts, identities and derivations" = [
     { "Overview" = "concepts_and_foundations/overview.md" },
