@@ -28,7 +28,7 @@ M=
 
 with \(c=\cos(2\vartheta)\), \(s=\sin(2\vartheta)\) and \(\Lambda=\sqrt{1-|\lambda|^2}\).
 It is worth seeing where this particular \(M\) comes from, because that is the
-step we are going to generalize.
+step that is going to be generalized.
 
 The TMSV **before** any optics is the special case \(\vartheta=0\), i.e.
 \(c=1,\,s=0\). Its generator is the bare pair-creation term
@@ -138,7 +138,7 @@ require, so they carry over verbatim.
     place below: the bra side of the overlap carries \(M^{*}\), not \(M\), so
     the determinant that appears is
     \(\det(\mathbb 1-\lambda^2 M D M^{*}D)\). For real \(M\) this is identical
-    to the main page's \(\det(\mathbb 1-\lambda^2 MDMD)\); we keep the
+    to the main page's \(\det(\mathbb 1-\lambda^2 MDMD)\); keeping the
     conjugate explicit so the formula stays correct for complex elements too.
 
 ## The derivation is unchanged up to the determinant
@@ -168,8 +168,8 @@ P^{(\eta_H,\eta_V)}(0,0)
 
 For real optics (\(M^{*}=M\)) this is the main page's
 \(\det(\mathbb 1-\lambda^2 MDMD)\). So the **only** thing that depends on the
-choice of optical element is this single \(2\times2\) determinant. We evaluate
-it for a general \(M\), then specialize.
+choice of optical element is this single \(2\times2\) determinant. First it is evaluated
+for a general \(M\), then specialized.
 
 ### The determinant for a general element
 
@@ -183,7 +183,7 @@ for a \(2\times2\) matrix \(X=MDM^{*}D\),
 \end{equation}\]
 
 The last term is fixed for every passive element: since \(M=U^TM_0U\) with \(U\)
-unitary and \(\det M_0=-1\), we have \(|\det M|=1\), hence
+unitary and \(\det M_0=-1\), it follows that \(|\det M|=1\), hence
 
 \[\begin{equation}
 \det(MDM^{*}D)=\det M\,\det M^{*}\,(\det D)^2=|\det M|^2\,t_H^2t_V^2=t_H^2t_V^2 .
@@ -248,7 +248,7 @@ The bracket collects into a perfect square plus a remainder,
 \det Q=(1-\lambda^2 t_Ht_V)^2-\lambda^2(t_H-t_V)^2\sin^2(4\vartheta),
 \end{equation}\]
 
-and with \(t_{H,V}=1-\eta_{H,V}\) and \(\Lambda^2=1-\lambda^2\) we recover
+and with \(t_{H,V}=1-\eta_{H,V}\) and \(\Lambda^2=1-\lambda^2\) one can recover
 equation (1) of the main page:
 
 \[\begin{equation}
@@ -277,7 +277,7 @@ M=U^T M_0 U
 =e^{i\varphi}\begin{pmatrix}0&1\\1&0\end{pmatrix}.
 \end{equation}\]
 
-This \(M\) is complex, so we use the conjugated determinant. With
+This \(M\) is complex, so the conjugated determinant is used. With
 \(M^{*}=e^{-i\varphi}\big(\begin{smallmatrix}0&1\\1&0\end{smallmatrix}\big)\),
 the phases cancel in the product \(MDM^{*}D\):
 
@@ -299,8 +299,8 @@ P^{(\eta_H,\eta_V)}(0,0)=\frac{1-\lambda^2}{1-\lambda^2(1-\eta_H)(1-\eta_V)} .
 No \(\varphi\) survives. Physically: bucket detectors count photons, and a phase
 alone moves no photons between the arms. To convert a phase into a detectable
 change the modes must first be *mixed* — which is exactly what the HWP (or a
-beam splitter) does, and why the interferometer sits where it does. (Had we
-forgotten the conjugate and used \(MDMD\), \(\det Q\) would have come out
+beam splitter) does, and why the interferometer sits where it does. (in case 
+the conjugate had been forgotten and \(MDMD\) been had been used, \(\det Q\) would have come out
 complex — a useful sign that the conjugated form is the correct one.)
 
 ### A beam splitter is the HWP with a relabelled angle
