@@ -97,7 +97,7 @@ U^T M_0 U
 \end{aligned}
 \end{equation}\]
 
-!!! note "Sign at θ=0"
+!!! note "Sign at \(\vartheta=0\)"
 
     At the identity angle \(\vartheta=0\) (which gives \(c=1, s=0\)), the 
     congruence transformation yields \(M = -M_0\) rather than \(M = M_0\). 
