@@ -8,8 +8,9 @@ extra_css = ["stylesheets/extra.css"]
 extra_javascript = [
   "js/mathjax.js",
   "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js",
-  "js/home.js"
- 
+  "js/home.js",
+  "js/lorenz-hero.js",
+  "js/vortex-hero.js"
 ]
 site_url = "https://nicosieber.github.io/spdc-coincidence-analysis"
 

@@ -1433,7 +1433,7 @@ M=
 \end{equation}\]</div>
 <p>with <span class="arithmatex">\(c=\cos(2\vartheta)\)</span>, <span class="arithmatex">\(s=\sin(2\vartheta)\)</span> and <span class="arithmatex">\(\Lambda=\sqrt{1-|\lambda|^2}\)</span>.
 It is worth seeing where this particular <span class="arithmatex">\(M\)</span> comes from, because that is the
-step we are going to generalize.</p>
+step that is going to be generalized.</p>
 <p>The TMSV <strong>before</strong> any optics is the special case <span class="arithmatex">\(\vartheta=0\)</span>, i.e.
 <span class="arithmatex">\(c=1,\,s=0\)</span>. Its generator is the bare pair-creation term
 <span class="arithmatex">\(\lambda\,\hat a_H^\dagger\hat a_V^\dagger\)</span>, i.e.</p>
@@ -1491,6 +1491,15 @@ U^T M_0 U
 =M .
 \end{aligned}
 \end{equation}\]</div>
+<div class="admonition note">
+<p class="admonition-title">Sign at θ=0</p>
+<p>At the identity angle <span class="arithmatex">\(\vartheta=0\)</span> (which gives <span class="arithmatex">\(c=1, s=0\)</span>), the 
+congruence transformation yields <span class="arithmatex">\(M = -M_0\)</span> rather than <span class="arithmatex">\(M = M_0\)</span>. 
+This global minus sign is just a phase in the exponent 
+<span class="arithmatex">\(\frac{\lambda}{2}(\mathbf{\hat a^{\dagger}})^T M\,\mathbf{\hat a^{\dagger}}\)</span> 
+and vanishes entirely when probabilities are computed, so it does not 
+affect any physical result.</p>
+</div>
 <h2 id="replacing-the-hwp-by-an-arbitrary-element">Replacing the HWP by an arbitrary element<a class="headerlink" href="#replacing-the-hwp-by-an-arbitrary-element" title="Permanent link">&para;</a></h2>
 <p>The generalization is now a single sentence: <strong>let <span class="arithmatex">\(U\)</span> be an arbitrary
 <span class="arithmatex">\(2\times2\)</span> unitary.</strong> Every passive lossless element is of this form. For
@@ -1525,7 +1534,7 @@ so their <span class="arithmatex">\(M\)</span> is real. Elements with a genuine 
 place below: the bra side of the overlap carries <span class="arithmatex">\(M^{*}\)</span>, not <span class="arithmatex">\(M\)</span>, so
 the determinant that appears is
 <span class="arithmatex">\(\det(\mathbb 1-\lambda^2 M D M^{*}D)\)</span>. For real <span class="arithmatex">\(M\)</span> this is identical
-to the main page's <span class="arithmatex">\(\det(\mathbb 1-\lambda^2 MDMD)\)</span>; we keep the
+to the main page's <span class="arithmatex">\(\det(\mathbb 1-\lambda^2 MDMD)\)</span>; keeping the
 conjugate explicit so the formula stays correct for complex elements too.</p>
 </div>
 <h2 id="the-derivation-is-unchanged-up-to-the-determinant">The derivation is unchanged up to the determinant<a class="headerlink" href="#the-derivation-is-unchanged-up-to-the-determinant" title="Permanent link">&para;</a></h2>
@@ -1550,8 +1559,8 @@ P^{(\eta_H,\eta_V)}(0,0)
 \end{equation}\]</div>
 <p>For real optics (<span class="arithmatex">\(M^{*}=M\)</span>) this is the main page's
 <span class="arithmatex">\(\det(\mathbb 1-\lambda^2 MDMD)\)</span>. So the <strong>only</strong> thing that depends on the
-choice of optical element is this single <span class="arithmatex">\(2\times2\)</span> determinant. We evaluate
-it for a general <span class="arithmatex">\(M\)</span>, then specialize.</p>
+choice of optical element is this single <span class="arithmatex">\(2\times2\)</span> determinant. First it is evaluated
+for a general <span class="arithmatex">\(M\)</span>, then specialized.</p>
 <h3 id="the-determinant-for-a-general-element">The determinant for a general element<a class="headerlink" href="#the-determinant-for-a-general-element" title="Permanent link">&para;</a></h3>
 <p>Using <a href="https://nicosieber.github.io/spdc-coincidence-analysis/concepts_and_foundations/determinant_relations/#appendix:det_1minusl2X">determinant relation (9)</a>
 for a <span class="arithmatex">\(2\times2\)</span> matrix <span class="arithmatex">\(X=MDM^{*}D\)</span>,</p>
@@ -1561,7 +1570,7 @@ for a <span class="arithmatex">\(2\times2\)</span> matrix <span class="arithmate
 =1-\lambda^2\,\mathrm{Tr}(MDM^{*}D)+\lambda^4\det(MDM^{*}D).
 \end{equation}\]</div>
 <p>The last term is fixed for every passive element: since <span class="arithmatex">\(M=U^TM_0U\)</span> with <span class="arithmatex">\(U\)</span>
-unitary and <span class="arithmatex">\(\det M_0=-1\)</span>, we have <span class="arithmatex">\(|\det M|=1\)</span>, hence</p>
+unitary and <span class="arithmatex">\(\det M_0=-1\)</span>, it follows that <span class="arithmatex">\(|\det M|=1\)</span>, hence</p>
 <div class="arithmatex">\[\begin{equation}
 \det(MDM^{*}D)=\det M\,\det M^{*}\,(\det D)^2=|\det M|^2\,t_H^2t_V^2=t_H^2t_V^2 .
 \end{equation}\]</div>
@@ -1610,7 +1619,7 @@ this and <span class="arithmatex">\(\det(MDMD)=t_H^2t_V^2\)</span> into <span cl
 <div class="arithmatex">\[\begin{equation}
 \det Q=(1-\lambda^2 t_Ht_V)^2-\lambda^2(t_H-t_V)^2\sin^2(4\vartheta),
 \end{equation}\]</div>
-<p>and with <span class="arithmatex">\(t_{H,V}=1-\eta_{H,V}\)</span> and <span class="arithmatex">\(\Lambda^2=1-\lambda^2\)</span> we recover
+<p>and with <span class="arithmatex">\(t_{H,V}=1-\eta_{H,V}\)</span> and <span class="arithmatex">\(\Lambda^2=1-\lambda^2\)</span> one can recover
 equation (1) of the main page:</p>
 <div class="arithmatex">\[\begin{equation}
 \label{eq:P00_final}
@@ -1632,7 +1641,7 @@ M=U^T M_0 U
  \begin{pmatrix}1&amp;0\\0&amp;e^{i\varphi}\end{pmatrix}
 =e^{i\varphi}\begin{pmatrix}0&amp;1\\1&amp;0\end{pmatrix}.
 \end{equation}\]</div>
-<p>This <span class="arithmatex">\(M\)</span> is complex, so we use the conjugated determinant. With
+<p>This <span class="arithmatex">\(M\)</span> is complex, so the conjugated determinant is used. With
 <span class="arithmatex">\(M^{*}=e^{-i\varphi}\big(\begin{smallmatrix}0&amp;1\\1&amp;0\end{smallmatrix}\big)\)</span>,
 the phases cancel in the product <span class="arithmatex">\(MDM^{*}D\)</span>:</p>
 <div class="arithmatex">\[\begin{equation}
@@ -1650,8 +1659,8 @@ P^{(\eta_H,\eta_V)}(0,0)=\frac{1-\lambda^2}{1-\lambda^2(1-\eta_H)(1-\eta_V)} .
 <p>No <span class="arithmatex">\(\varphi\)</span> survives. Physically: bucket detectors count photons, and a phase
 alone moves no photons between the arms. To convert a phase into a detectable
 change the modes must first be <em>mixed</em> — which is exactly what the HWP (or a
-beam splitter) does, and why the interferometer sits where it does. (Had we
-forgotten the conjugate and used <span class="arithmatex">\(MDMD\)</span>, <span class="arithmatex">\(\det Q\)</span> would have come out
+beam splitter) does, and why the interferometer sits where it does. (in case 
+the conjugate had been forgotten and <span class="arithmatex">\(MDMD\)</span> been had been used, <span class="arithmatex">\(\det Q\)</span> would have come out
 complex — a useful sign that the conjugated form is the correct one.)</p>
 <h3 id="a-beam-splitter-is-the-hwp-with-a-relabelled-angle">A beam splitter is the HWP with a relabelled angle<a class="headerlink" href="#a-beam-splitter-is-the-hwp-with-a-relabelled-angle" title="Permanent link">&para;</a></h3>
 <p>Take <span class="arithmatex">\(U=U_{\text{BS}}\)</span>. The same one-line multiplication as for the HWP gives</p>
@@ -1767,6 +1776,10 @@ qualify; photon-number-resolving projections or feed-forward do not.</p>
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
         <script src="../../js/home.js"></script>
+      
+        <script src="../../js/lorenz-hero.js"></script>
+      
+        <script src="../../js/vortex-hero.js"></script>
       
     
   </body>

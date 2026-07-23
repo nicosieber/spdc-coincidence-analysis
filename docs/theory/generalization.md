@@ -97,6 +97,15 @@ U^T M_0 U
 \end{aligned}
 \end{equation}\]
 
+!!! note "Sign at θ=0"
+
+    At the identity angle \(\vartheta=0\) (which gives \(c=1, s=0\)), the 
+    congruence transformation yields \(M = -M_0\) rather than \(M = M_0\). 
+    This global minus sign is just a phase in the exponent 
+    \(\frac{\lambda}{2}(\mathbf{\hat a^{\dagger}})^T M\,\mathbf{\hat a^{\dagger}}\) 
+    and vanishes entirely when probabilities are computed, so it does not 
+    affect any physical result.
+
 ## Replacing the HWP by an arbitrary element
 
 The generalization is now a single sentence: **let \(U\) be an arbitrary
