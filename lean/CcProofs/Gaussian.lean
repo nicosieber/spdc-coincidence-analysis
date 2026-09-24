@@ -240,5 +240,4 @@ theorem integral_gaussian_complex_symmetric (A : Matrix n n ℂ) (hA : Aᵀ = A)
   have := integral_gaussian_complex_matrix_sq hB hC
   rw [cplx_re_im] at this
   simp_rw [← this, ← quadratic_form_cplx, cplx_re_im]
-
 end
