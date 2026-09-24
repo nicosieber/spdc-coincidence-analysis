@@ -1,0 +1,30 @@
+name: Lean proofs
+
+on:
+  push:
+    branches: [main]
+    paths: ["lean/**", ".github/workflows/lean.yml"]
+  pull_request:
+    paths: ["lean/**", ".github/workflows/lean.yml"]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build Lean project
+        uses: leanprover/lean-action@v1
+        with:
+          lake-package-directory: lean
+          use-mathlib-cache: true
+
+      - name: Check axioms (no sorry)
+        working-directory: lean
+        run: |
+          lake env lean Axioms.lean | tee axioms.txt
+          if grep -q sorryAx axioms.txt; then
+            echo "::error::A theorem depends on sorryAx"
+            exit 1
+          fi

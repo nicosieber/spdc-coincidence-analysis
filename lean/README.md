@@ -22,6 +22,6 @@ lake exe cache get   # download prebuilt Mathlib (first time only)
 lake build
 ```
 
-To check that a theorem has no gaps (`sorry`), add e.g.
+To check that the theorems have no gaps (`sorry`), run `lake env lean Axioms.lean` (CI does this on every push), or add e.g.
 `#print axioms integral_gaussian_complex_symmetric` to a file and run `lake env lean <file>`;
 only `propext`, `Classical.choice` and `Quot.sound` should be listed.

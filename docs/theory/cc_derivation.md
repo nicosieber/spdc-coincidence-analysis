@@ -623,6 +623,21 @@ I
 \frac{1}{\sqrt{\det A}}.
 \end{equation}
 
+!!! success "Machine-checked in Lean 4"
+    [![Lean proofs](https://github.com/nicosieber/spdc-coincidence-analysis/actions/workflows/lean.yml/badge.svg)](https://github.com/nicosieber/spdc-coincidence-analysis/actions/workflows/lean.yml)
+
+    This result is formally verified with Lean 4 and Mathlib for any dimension $n$ (here $n=4$). The proof is in [`lean/CcProofs/Gaussian.lean`](https://github.com/nicosieber/spdc-coincidence-analysis/blob/main/lean/CcProofs/Gaussian.lean):
+
+    ```lean4
+    theorem integral_gaussian_complex_symmetric (A : Matrix n n ℂ) (hA : Aᵀ = A)
+        (hB : (A.map re).PosDef) :
+        (∫ ξ : n → ℝ, cexp (-(1 / 2 : ℂ) *
+            ((fun i => (ξ i : ℂ)) ⬝ᵥ (A *ᵥ fun i => (ξ i : ℂ))))) ^ 2 * A.det
+          = (2 * (π : ℂ)) ^ Fintype.card n
+    ```
+
+    In words: if $A$ is complex symmetric and $B=\mathbb{R}(A)$ is positive definite, then $I^2\det A = 1$. The Lean file also proves the explicit form $I=(\det B)^{-1/2}\prod_j(1+i\kappa_j)^{-1/2}$ and $\det A=\det B\prod_j(1+i\kappa_j)$. Lean does not check which branch of $\sqrt{\det A}$ to take. CI rebuilds the proof on every change and fails if any theorem depends on `sorry`. Only the standard axioms `propext`, `Classical.choice` and `Quot.sound` are used.
+
 After transforming the expression into a real quadratic form, the problem reduces to a multivariate Gaussian integral. Expressions of this form are equivalent to those encountered in the phase-space description of Gaussian states via the Wigner function formalism, where the matrix $A$ can be interpreted as an effective inverse covariance matrix  (see <a href="#ref-ferraro2005">[2]</a>, <a href="#ref-brask2022">[3]</a>).
 
 While this connection provides useful conceptual insight, the following calculation is carried out within the present operator-based framework in order to maintain a direct and explicit derivation. In order to evaluate $\det A$, we recall that $A=W^TQW$. Consequently, the determinant of $A$ is
