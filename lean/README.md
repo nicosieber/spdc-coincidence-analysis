@@ -6,11 +6,13 @@ Machine-checked proofs (Lean 4 + Mathlib) of parts of the coincidence-probabilit
 |---|---|
 | `CcProofs/Determinant.lean` | `det(1 − λ²MDMD) = (1 − λ²t_H t_V)² − λ²(t_H − t_V)² sin²(4ϑ)`, the final `P(0,0)` formula (assuming the operator part as a hypothesis), dark-count limits |
 | `CcProofs/Gaussian.lean` | Multivariate complex Gaussian integral: for complex symmetric `A` with `Re A` positive definite, `(∫ dⁿξ exp(−½ ξᵀAξ))² · det A = (2π)ⁿ`, plus the explicit form `(det B)^{-1/2} ∏ⱼ (2π/(1+iκⱼ))^{1/2}` |
+| `CcProofs/Chain.lean` | Connects the two: `A = WᵀQW` in explicit form, `det A = det(1 − λ²MDMD)`, `Re A` positive definite for `0 ≤ λ < 1`, `0 ≤ η ≤ 1`, and end to end `I² · det Q = 1` and `P(0,0) = (1 − λ²)/√det Q` |
 
 New to Lean's symbols (`ᵀ`, `∃`, `∑`, …)? See [UNICODE_INPUT.md](UNICODE_INPUT.md) for how to type them.
 
-Not formalized: the Fock-space / coherent-state steps, and the choice of square-root branch
-(`I = +1/√det A`) for the physical case.
+Not formalized: the Fock-space / coherent-state steps up to `P(0,0) = Λ² I` (Mathlib has no bosonic
+Fock space). `P00_closed_form` takes that step as its hypothesis `hquantum`. The square-root branch
+`I = +1/√det Q` then follows from `P(0,0) ≥ 0`.
 
 ## Build
 

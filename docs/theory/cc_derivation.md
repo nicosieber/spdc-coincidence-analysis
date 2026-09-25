@@ -374,6 +374,15 @@ i\begin{pmatrix}
 \end{aligned}
 \end{equation}
 
+!!! success "Machine-checked in Lean 4"
+    The explicit form of $A=W^TQW$ above, with $W$ and $Q$ as defined in this section, is verified in [`lean/CcProofs/Chain.lean`](https://github.com/nicosieber/spdc-coincidence-analysis/blob/main/lean/CcProofs/Chain.lean) (`Amat_eq`), together with $A^T=A$ (`Amat_transpose`):
+
+    ```lean4
+    theorem Amat_eq : Amat l c s tH tV = cplx (Bmat l c s tH tV) (Cmat l c s tH tV)
+    ```
+
+    Here `cplx B C` is $B+iC$ and `l` stands for $\lambda$.
+
 ## Evaluation of the complex Gaussian integral
 
 <span id="GIntegral"></span>
@@ -636,7 +645,7 @@ I
           = (2 * (π : ℂ)) ^ Fintype.card n
     ```
 
-    In words: if $A$ is complex symmetric and $B=\mathbb{R}(A)$ is positive definite, then $I^2\det A = 1$. The Lean file also proves the explicit form $I=(\det B)^{-1/2}\prod_j(1+i\kappa_j)^{-1/2}$ and $\det A=\det B\prod_j(1+i\kappa_j)$. Lean does not check which branch of $\sqrt{\det A}$ to take. CI rebuilds the proof on every change and fails if any theorem depends on `sorry`. Only the standard axioms `propext`, `Classical.choice` and `Quot.sound` are used.
+    In words: if $A$ is complex symmetric and $B=\mathbb{R}(A)$ is positive definite, then $I^2\det A = 1$. The Lean file also proves the explicit form $I=(\det B)^{-1/2}\prod_j(1+i\kappa_j)^{-1/2}$ and $\det A=\det B\prod_j(1+i\kappa_j)$. The hypothesis that $B$ is positive definite is verified for the $A$ of this derivation in [Matrix properties](../concepts_and_foundations/matrix_properties.md#conclusion). This theorem alone does not fix the branch of $\sqrt{\det A}$; for $P^{(\eta_H,\eta_V)}(0,0)$ the branch is fixed [at the end of the derivation](#P00_lean) using $P\ge 0$. CI rebuilds the proof on every change and fails if any theorem depends on `sorry`. Only the standard axioms `propext`, `Classical.choice` and `Quot.sound` are used.
 
 After transforming the expression into a real quadratic form, the problem reduces to a multivariate Gaussian integral. Expressions of this form are equivalent to those encountered in the phase-space description of Gaussian states via the Wigner function formalism, where the matrix $A$ can be interpreted as an effective inverse covariance matrix  (see <a href="#ref-ferraro2005">[2]</a>, <a href="#ref-brask2022">[3]</a>).
 
@@ -659,6 +668,15 @@ with $\det(W)^2=\mathbb 1$. Using equation [(2)](../concepts_and_foundations/det
 &=\det(\mathbb{1}-\lambda^2MDMD)
 \end{aligned}
 \end{equation}
+
+!!! success "Machine-checked in Lean 4"
+    The chain $\det A=\det(W)^2\det Q=\det(\mathbb 1-\lambda^2MDMD)$ is verified in [`lean/CcProofs/Chain.lean`](https://github.com/nicosieber/spdc-coincidence-analysis/blob/main/lean/CcProofs/Chain.lean), including $\det W=-1$ (`det_Wmat`) and the block-determinant step (`det_Qmat`):
+
+    ```lean4
+    theorem det_Amat :
+        (Amat l c s tH tV).det
+          = ((1 - l ^ 2 • (Mmat c s * Dmat tH tV * Mmat c s * Dmat tH tV)).det : ℂ)
+    ```
 
 ## Evaluation of the determinant
 The calculation of $MD$ results in
@@ -747,6 +765,16 @@ or with \(\eqref{eq:t_eta}\)
 \end{aligned}
 \end{equation}
 
+!!! success "Machine-checked in Lean 4"
+    The evaluation of the determinant is verified in [`lean/CcProofs/Determinant.lean`](https://github.com/nicosieber/spdc-coincidence-analysis/blob/main/lean/CcProofs/Determinant.lean) for all real $\vartheta$, $\lambda$, $\eta_H$, $\eta_V$:
+
+    ```lean4
+    theorem det_Q (ϑ l ηH ηV : ℝ) :
+        (1 - l ^ 2 • (Mmat (cos (2 * ϑ)) (sin (2 * ϑ)) * Dmat (1 - ηH) (1 - ηV)
+            * Mmat (cos (2 * ϑ)) (sin (2 * ϑ)) * Dmat (1 - ηH) (1 - ηV))).det
+          = (1 - l ^ 2 * (1 - ηH) * (1 - ηV)) ^ 2 - l ^ 2 * (ηH - ηV) ^ 2 * sin (4 * ϑ) ^ 2
+    ```
+
 Finally, $P^{(\eta_H,\eta_V)}(0,0)$ from equation \(\eqref{formula:last_term1}\) can be expressed as
 
 \begin{equation}
@@ -755,6 +783,33 @@ Finally, $P^{(\eta_H,\eta_V)}(0,0)$ from equation \(\eqref{formula:last_term1}\)
 =&\dfrac{(1-\lambda^2)}{\sqrt{\left(1-\lambda^2(1-\eta_H)(1-\eta_V)\right)^2-\lambda^2(\eta_H-\eta_V)^2\sin^2(4\vartheta)}}.
 \end{aligned}
 \end{equation}
+
+<span id="P00_lean"></span>
+
+!!! success "Machine-checked in Lean 4: from the Gaussian integral to $P^{(\eta_H,\eta_V)}(0,0)$"
+    [![Lean proofs](https://github.com/nicosieber/spdc-coincidence-analysis/actions/workflows/lean.yml/badge.svg)](https://github.com/nicosieber/spdc-coincidence-analysis/actions/workflows/lean.yml)
+
+    Everything from the Gaussian integral to this formula is machine-checked. [`lean/CcProofs/Chain.lean`](https://github.com/nicosieber/spdc-coincidence-analysis/blob/main/lean/CcProofs/Chain.lean) combines the Gaussian integral, $\det A=\det(\mathbb 1-\lambda^2MDMD)$, the [positive definiteness of $B$](../concepts_and_foundations/matrix_properties.md#conclusion) and the evaluation of $\det Q$:
+
+    ```lean4
+    theorem Iphys_sq_mul_detQ (ϑ l ηH ηV : ℝ) (hl0 : 0 ≤ l) (hl1 : l < 1)
+        (hH0 : 0 ≤ ηH) (hH1 : ηH ≤ 1) (hV0 : 0 ≤ ηV) (hV1 : ηV ≤ 1) :
+        Iphys ϑ l ηH ηV ^ 2 * (detQ ϑ l ηH ηV : ℂ) = 1
+
+    theorem P00_closed_form (ϑ l ηH ηV P00 : ℝ) (hl0 : 0 ≤ l) (hl1 : l < 1)
+        (hH0 : 0 ≤ ηH) (hH1 : ηH ≤ 1) (hV0 : 0 ≤ ηV) (hV1 : ηV ≤ 1)
+        (hquantum : (P00 : ℂ) = (1 - l ^ 2) * Iphys ϑ l ηH ηV) (hprob : 0 ≤ P00) :
+        P00 = (1 - l ^ 2) / Real.sqrt (detQ ϑ l ηH ηV)
+    ```
+
+    `Iphys` is $I=\int \frac{d^4\xi}{(2\pi)^2}\exp\left(-\frac12\xi^TA\xi\right)$ with the explicit $A=W^TQW$, and `detQ` is the expression for $\det Q$ above. In words: for all $0\le\lambda<1$ and $0\le\eta_{H,V}\le1$, $I^2\det Q=1$.
+
+    `P00_closed_form` makes two assumptions:
+
+    - `hquantum`: $P^{(\eta_H,\eta_V)}(0,0)=\Lambda^2 I$ with $\Lambda^2=1-\lambda^2$. This is the result of the Fock-space and coherent-state steps up to \(\eqref{eq:intermediate}\) and the change of variables from $\alpha$ to $\xi$. These steps are not formalized, because Mathlib has no bosonic Fock space. They are cross-checked by the NumPy and QuTiP Fock-space simulations in this repository.
+    - `hprob`: $P^{(\eta_H,\eta_V)}(0,0)\ge 0$, since it is a probability. This fixes the square-root branch: $\Lambda^2 I$ is real and nonnegative, so $I=+1/\sqrt{\det Q}$.
+
+    Everything else, including $\det Q>0$, follows from the proofs.
 
 In order to calculate $P^{(\eta_{H})}_{H}(0)$ or $P^{(\eta_{V})}_{V}(0)$, one can set $\eta_{V}=0$ or $\eta_{H}=0$. For $P^{(\eta_{H})}_{H}(0)$ this results in the following expression:
 
