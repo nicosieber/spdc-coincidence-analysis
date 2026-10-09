@@ -107,18 +107,6 @@ function sliceRange(lam, etaH, etaV) {
     return 3 * Math.sqrt(maxAxis);
 }
 
-// y-range of the peak-height plot. For eta_H = eta_V the curve is exactly
-// flat (det sigma_Q' does not depend on theta), and autoscaling would zoom
-// into floating-point noise of order 1e-16; show a flat line instead.
-function peakAxisRange(peaks) {
-    const lo = Math.min(...peaks);
-    const hi = Math.max(...peaks);
-    const mid = (lo + hi) / 2;
-    if (hi - lo < 1e-10 * mid) return [mid - 0.01 * mid, mid + 0.01 * mid];
-    const pad = 0.05 * (hi - lo);
-    return [lo - pad, hi + pad];
-}
-
 // Side length of the square slice plot: the largest square that fits the
 // container. With equal left+right and top+bottom margins the plot area is
 // then square as well, so the range [-R, R] fills it exactly in both axes.
@@ -224,7 +212,6 @@ function updatePlot() {
     const thetas = SPDC.linspace(0, THETA_MAX, N_THETA);
     const peaks = thetas.map(th => 1 / Math.sqrt(SPDC.det(SPDC.sigmaQLossy(lam, etaH, etaV, th))));
     const P00 = Math.PI * Math.PI * Q0;
-    const peakRange = peakAxisRange(peaks);
 
     Plotly.react("peak-height-plot", [
         {
@@ -259,7 +246,9 @@ function updatePlot() {
             ticktext: ["0", "π/16", "π/8", "3π/16", "π/4"],
             fixedrange: true,
         },
-        yaxis: { ...axisStyle("P(0,0)"), range: peakRange, fixedrange: true, automargin: true },
+        // Fixed range: P(0,0) is a probability, so curves stay comparable
+        // across parameters.
+        yaxis: { ...axisStyle("P(0,0)"), range: [0, 1], fixedrange: true, automargin: true },
         showlegend: false,
     }, CONFIG);
 
