@@ -4,7 +4,7 @@ The experimental configuration considered in the following calculation consists 
 $\vartheta$, spatially separated at a polarizing beam splitter (PBS), and finally measured by bucket detectors. 
 
 <div class="figure-box figure-center">
-  <img src="../experimental_setup.png" alt="SPDC setup">
+  <img src="../experimental_setup.svg" alt="SPDC setup">
   <p class="figure-caption">
     SPDC setup with HWP and PBS followed by bucket detectors
   </p>

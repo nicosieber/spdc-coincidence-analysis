@@ -5,7 +5,9 @@ matplotlib
 plotly
 sympy
 qutip
-zensical
+properdocs
+properdocs-theme-readthedocs
+pymdown-extensions
 
 [dev]
 ipykernel
@@ -13,4 +15,6 @@ black
 ruff
 
 [docs]
-zensical
+properdocs
+properdocs-theme-readthedocs
+pymdown-extensions
