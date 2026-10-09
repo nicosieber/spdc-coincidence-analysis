@@ -76,7 +76,7 @@ efficiencies in $[0,1]$; `theta` = HWP angle, with the coincidence dip at $\vart
 git clone https://github.com/nicosieber/spdc-coincidence-analysis.git
 cd spdc-coincidence-analysis
 pip install -e .            # core package (numpy, scipy, sympy)
-pip install -e ".[docs]"    # + zensical, to build the docs site locally
+pip install -e ".[docs]"    # + properdocs, to build the docs site locally
 ```
 
 Requires Python ≥ 3.14.
@@ -131,8 +131,8 @@ JavaScript physics module (`docs/js/spdc_physics.js`) that mirrors the Python pa
 
 ## Deployment
 
-The documentation site is built with [Zensical](https://github.com/zensical/zensical) and
-deployed automatically to GitHub Pages via GitHub Actions (`.github/workflows/docs.yml`) on every
+The documentation site is built with [ProperDocs](https://properdocs.org/) (a maintained fork
+of MkDocs) using the ReadTheDocs theme, configured in `properdocs.yml`, and deployed automatically to GitHub Pages via GitHub Actions (`.github/workflows/docs.yml`) on every
 push to `main`.
 
 ---

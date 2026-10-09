@@ -108,6 +108,8 @@ which results in
 
 Using the identity from equation (11) of [Coherent states](../concepts_and_foundations/coherent_states.md#eq:coherent_identity), expression \(\eqref{eq:tmsv_aDMDa}\) becomes
 
+<span id="tmsv_coherent_identity"></span>
+
 \begin{equation}
 \label{eq:tmsv_coherent_identity}
 \begin{aligned}
@@ -188,6 +190,8 @@ For a normalized two-mode coherent state we can evaluate $\langle 0 \rvert \alph
 \end{equation}
 
 Following, we can see that 
+
+<span id="overlap_coherent"></span>
 
 \begin{equation}
 \begin{aligned}
@@ -1016,16 +1020,6 @@ where $P_H^{(\eta_H)}(0)$, $P_V^{(\eta_V)}(0)$, and $P^{(\eta_H,\eta_V)}(0,0)$ a
 Dark counts can only increase the coincidence probability: since $(1-d) \leq 1$, each no-click probability is suppressed, meaning the detector reports more clicks than the photon field alone would produce. In the extreme case $d_H = d_V = 1$, both detectors click on every trial regardless of the quantum state, and $P_{\mathrm{coinc}}^{(d)} = 1$.
 
 For modern SNSPDs <a href="#ref-natarajan2012">[5]</a> with $R_d \sim 1\text{-}50\,\text{Hz}$ and coincidence windows $\Delta t \sim 200\,\text{ps}$, the dark count probability is $d \sim 10^{-8}$, so that $(1-d_H)(1-d_V) \approx 1$.
-
-<div class="nav-footer">
-  <a class="nav-prev" href="tsmv.md">
-    ← Previous
-  </a>
-
-  <a class="nav-next" href="generalization.md">
-    Next →
-  </a>
-</div>
 
 ## References
 <p id="ref-axler2024">

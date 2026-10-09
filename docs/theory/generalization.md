@@ -350,9 +350,3 @@ means \(4\vartheta=\pi/2\), i.e. the HWP acts as a **balanced** beam splitter
     element stay Gaussian — passive optics, squeezing and bucket detection all
     qualify; photon-number-resolving projections or feed-forward do not.
 
-
-<div class="nav-footer">
-  <a class="nav-prev" href="cc_derivation.md">
-    ← Previous
-  </a>
-</div>

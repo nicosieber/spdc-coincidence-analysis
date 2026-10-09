@@ -14,12 +14,16 @@ dependencies = [
     "plotly",
     "sympy",
     "qutip",
-    "zensical",
+    "properdocs",
+    "properdocs-theme-readthedocs",
+    "pymdown-extensions",
 ]
 
 [project.optional-dependencies]
 docs = [
-    "zensical",
+    "properdocs",
+    "properdocs-theme-readthedocs",
+    "pymdown-extensions",
 ]
 
 dev = [
@@ -39,8 +43,3 @@ select = ["E", "F", "I"]
 [build-system]
 requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
-
-[dependency-groups]
-dev = [
-    "zensical>=0.0.36",
-]

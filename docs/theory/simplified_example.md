@@ -97,18 +97,6 @@ Consequently, for $\vartheta=\pi/8$, the sum of terms in \(\eqref{Transformation
 \end{aligned}
 \end{equation}
 
-
-
-<div class="nav-footer">
-  <a class="nav-prev" href="experimental_setup.md">
-    ← Previous
-  </a>
-
-  <a class="nav-next" href="povm.md">
-    Next →
-  </a>
-</div>
-
 ## References
 
 <p id="ref-collett2005">

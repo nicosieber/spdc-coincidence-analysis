@@ -1,22 +1,24 @@
+/* Shared styling for the Plotly dashboard iframes, matching the
+   ReadTheDocs theme: white panel, #404040 text, #2980B9 accent. */
+
 html, body {
   width: 100%;
   height: 580px;
   margin: 0;
   padding: 0;
-  background: #1f222b;
-  color: #e8ebf2;
+  background: #fcfcfc;
+  color: #404040;
   overflow: hidden;
-  font-family: system-ui, -apple-system,
-    BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: "Lato", "proxima-nova", "Helvetica Neue", Arial, sans-serif;
 }
 
 .plot-card {
   box-sizing: border-box;
   width: 100%;
   height: 580px;
-  background: #252936;
-  border-radius: 18px;
-  padding: 18px 20px 10px 20px;
+  background: #ffffff;
+  border: 1px solid #e1e4e5;
+  padding: 14px 16px 8px 16px;
   overflow: hidden;
 }
 
@@ -29,15 +31,15 @@ html, body {
 }
 
 .eyebrow {
-  color: #c9f23c;
-  font-size: 0.78rem;
+  color: #6a6a6a;
+  font-size: 0.75rem;
   font-weight: 700;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.1em;
 }
 
 .readout {
-  color: #c9f23c;
-  font-size: 0.92rem;
+  color: #2980b9;
+  font-size: 0.9rem;
   font-weight: 700;
   white-space: nowrap;
   padding-top: 2px;
@@ -45,7 +47,8 @@ html, body {
 
 .controls {
   display: flex;
-  gap: 28px;
+  flex-wrap: wrap;
+  gap: 12px 28px;
   align-items: center;
   margin-bottom: 4px;
 }
@@ -54,12 +57,11 @@ html, body {
   display: flex;
   align-items: center;
   gap: 8px;
-  color: #e8ebf2;
+  color: #404040;
   font-weight: 700;
 }
 
 .input-group > span {
-  color: #c9f23c;
   font-size: 1.05rem;
 }
 
@@ -71,28 +73,34 @@ sub {
 .spinbox {
   display: flex;
   align-items: center;
-  border: 1px solid #c9f23c;
-  border-radius: 12px;
+  border: 1px solid #d0d4d6;
+  border-radius: 3px;
   overflow: hidden;
-  background: #171a22;
+  background: #ffffff;
 }
 
 .spinbox input {
   width: 76px;
-  background: #171a22;
-  color: #e8ebf2;
+  background: #ffffff;
+  color: #404040;
   border: none;
+  border-left: 1px solid #d0d4d6;
+  border-right: 1px solid #d0d4d6;
   text-align: center;
   padding: 6px 4px;
   font-size: 0.95rem;
   outline: none;
 }
 
+.spinbox input:focus {
+  box-shadow: inset 0 0 0 2px #2980b9;
+}
+
 .spinbox button {
   width: 30px;
   height: 32px;
-  background: #171a22;
-  color: #c9f23c;
+  background: #f3f6f6;
+  color: #404040;
   border: none;
   font-size: 0.95rem;
   font-weight: 800;
@@ -102,8 +110,8 @@ sub {
 }
 
 .spinbox button:hover {
-  background: #c9f23c;
-  color: #171a22;
+  background: #2980b9;
+  color: #ffffff;
 }
 
 #coincidence-plot {

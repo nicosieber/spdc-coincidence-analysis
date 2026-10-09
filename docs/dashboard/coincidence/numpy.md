@@ -1,7 +1,7 @@
 # Coincidence dashboard (NumPy)
 
 <iframe
-  src="../../assets/plots/coincidence_plot_numpy.html"
+  src="../../../assets/plots/coincidence_plot_numpy.html"
   width="100%"
   height="660"
   style="border:0;"
@@ -9,8 +9,8 @@
 </iframe>
 
 The dashboard above plots the coincidence probability normalized by its maximum over
-\(0\le\vartheta\le\pi/4\), so the peak of the displayed curve is always one. The lime line is
-the closed form, whereas the amber open circles are from a truncated-Fock simulation at fixed
+\(0\le\vartheta\le\pi/4\), so the peak of the displayed curve is always one. The blue line is
+the closed form, whereas the orange open circles are from a truncated-Fock simulation at fixed
 Hilbert dimension \(N=60\). The lower panel shows the residual
 \(\lvert\text{numeric}-\text{closed}\rvert\) at each marker (log scale), and the readout
 reports its maximum over the scan.

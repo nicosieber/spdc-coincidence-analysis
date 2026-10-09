@@ -1,0 +1,76 @@
+site_name: SPDC Coincidence Analysis
+site_description: Analytical derivation of coincidence probabilities for TMSV states with bucket detectors
+site_author: Nico Sieber
+site_url: https://nicosieber.github.io/spdc-coincidence-analysis/
+repo_url: https://github.com/nicosieber/spdc-coincidence-analysis
+edit_uri: blob/main/docs/
+
+theme:
+  name: readthedocs
+  highlightjs: true
+  hljs_languages:
+    - python
+  navigation_depth: 3
+  collapse_navigation: false
+  prev_next_buttons_location: bottom
+
+extra_css:
+  - stylesheets/extra.css
+
+extra_javascript:
+  - js/mathjax.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+nav:
+  - Home: index.md
+  - Main derivation:
+      - Experimental setup: theory/experimental_setup.md
+      - Simplified example: theory/simplified_example.md
+      - POVM: theory/povm.md
+      - TMSV: theory/tmsv.md
+      - Derivation of the coincidence probability: theory/cc_derivation.md
+      - Generalizing the optical element: theory/generalization.md
+  - Gaussian formalism:
+      - Overview: gaussian_formalism/overview.md
+      - Notation: gaussian_formalism/notation.md
+      - Covariance matrix: gaussian_formalism/covariance_matrix.md
+      - Vacuum probability: gaussian_formalism/vacuum_probability.md
+      - Detector efficiency: gaussian_formalism/detector_efficiency.md
+      - Determinant: gaussian_formalism/determinant.md
+      - Coincidence probability: gaussian_formalism/coincidence.md
+      - Comparison and numerical checks: gaussian_formalism/comparison.md
+  - Additional concepts, identities and derivations:
+      - Overview: concepts_and_foundations/overview.md
+      - Coherent states: concepts_and_foundations/coherent_states.md
+      - Conjugation of operators: concepts_and_foundations/conjugation_operators.md
+      - Determinant relations: concepts_and_foundations/determinant_relations.md
+      - Matrix properties: concepts_and_foundations/matrix_properties.md
+      - Operator relations: concepts_and_foundations/operator_relations.md
+      - POVM as number operator: concepts_and_foundations/povm_number_operator.md
+      - Peak height of a Gaussian: concepts_and_foundations/gaussian_peak_height.md
+      - Commutator with an exponential: concepts_and_foundations/commutator_exponential.md
+      - Loss as a beam splitter: concepts_and_foundations/loss_beam_splitter.md
+      - Block-matrix identities: concepts_and_foundations/block_matrices.md
+  - Interactive dashboards:
+      - Overview: dashboard/overview.md
+      - Coincidence probability:
+          - Overview: dashboard/coincidence/overview.md
+          - NumPy dashboard: dashboard/coincidence/numpy.md
+          - QuTiP dashboard: dashboard/coincidence/qutip.md
+      - Visibility: dashboard/visibility.md
+      - Fisher information: dashboard/fisher.md
+
+markdown_extensions:
+  - footnotes
+  - def_list
+  - admonition
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.highlight:
+      use_pygments: false
+  - pymdownx.superfences
+
+plugins:
+  - search

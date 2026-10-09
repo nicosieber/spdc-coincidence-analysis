@@ -3,7 +3,7 @@ The following sections show and explain some interactive plots to play around wi
 
 ## Normalized coincidence probability of the TMSV
 <iframe
-  src="../assets/plots/coincidence_plot.html"
+  src="../../assets/plots/coincidence_plot.html"
   width="100%"
   height="600"
   style="border:0;"
@@ -92,7 +92,7 @@ Thus, the largest value of the displayed curve is always equal to one. This make
 ## Visibility
 
 <iframe
-  src="../assets/plots/visibility_vs_etaH_plot.html"
+  src="../../assets/plots/visibility_vs_etaH_plot.html"
   width="100%"
   height="600"
   style="border:0;"
@@ -121,7 +121,7 @@ A larger visibility therefore corresponds to a deeper coincidence dip, while \(V
 ## Fisher Information and Quantum Sensing
 
 <iframe
-  src="../assets/plots/fisher_plot.html"
+  src="../../assets/plots/fisher_plot.html"
   width="100%"
   height="600"
   style="border:0;"

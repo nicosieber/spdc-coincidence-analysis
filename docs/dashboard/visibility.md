@@ -1,7 +1,7 @@
 # Visibility
 
 <iframe
-  src="../assets/plots/visibility_vs_etaH_plot.html"
+  src="../../assets/plots/visibility_vs_etaH_plot.html"
   width="100%"
   height="600"
   style="border:0;"

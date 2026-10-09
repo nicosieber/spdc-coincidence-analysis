@@ -23,16 +23,8 @@ one built from scratch in NumPy, one built with the purpose-built quantum-optics
 QuTiP. Both carry the identical live dashboard at the top and then walk through their own
 engine. Pick a route.
 
-<div class="tile-grid">
-  <a class="tile" href="../../dashboard/coincidence/numpy">
-    <div class="tile__icon">🔢</div>
-    <h3>NumPy dashboard</h3>
-    <p>The Fock-space simulation from scratch — creation operators as array shifts, the state as a power series, no specialised library.</p>
-  </a>
+[NumPy dashboard](numpy.md)
+:   The Fock-space simulation from scratch — creation operators as array shifts, the state as a power series, no specialised library.
 
-  <a class="tile" href="../../dashboard/coincidence/qutip">
-    <div class="tile__icon">⚛️</div>
-    <h3>QuTiP dashboard</h3>
-    <p>The same physics with QuTiP operators — a second, independent implementation and the natural starting point for dark counts, number-resolving detectors and mixed states.</p>
-  </a>
-</div>
+[QuTiP dashboard](qutip.md)
+:   The same physics with QuTiP operators — a second, independent implementation and the natural starting point for dark counts, number-resolving detectors and mixed states.

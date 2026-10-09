@@ -43,12 +43,11 @@ default_eta_V = 0.3
 eta_H, V = make_curve(default_lam, default_eta_V)
 ymin, ymax = padded_range(V)
 
-page_bg = "#1f222b"
-panel = "#252936"
-lime = "#c9f23c"
-text = "#e8ebf2"
-muted = "#aeb4c2"
-grid = "#3a4050"
+panel = "#ffffff"
+blue = "#2980b9"
+text = "#404040"
+muted = "#6a6a6a"
+grid = "#e1e4e5"
 
 fig = go.Figure()
 
@@ -57,7 +56,7 @@ fig.add_trace(
         x=eta_H,
         y=V,
         mode="lines",
-        line=dict(width=3, color=lime),
+        line=dict(width=3, color=blue),
         hovertemplate="ηH=%{x:.4f}<br>V=%{y:.4f}<extra></extra>",
     )
 )
@@ -69,7 +68,7 @@ fig.update_layout(
     margin=dict(l=72, r=20, t=4, b=10),
     font=dict(
         color=text,
-        family="system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif",
+        family="Lato, proxima-nova, Helvetica Neue, Arial, sans-serif",
     ),
     xaxis=dict(
         title=dict(text="Detector efficiency ηH", font=dict(color=text), standoff=8),
@@ -77,7 +76,7 @@ fig.update_layout(
         gridcolor=grid,
         zerolinecolor=grid,
         linecolor=text,
-        linewidth=2,
+        linewidth=1,
         tickfont=dict(color=muted),
     ),
     yaxis=dict(
@@ -86,7 +85,7 @@ fig.update_layout(
         gridcolor=grid,
         zerolinecolor=grid,
         linecolor=text,
-        linewidth=2,
+        linewidth=1,
         tickfont=dict(color=muted),
     ),
     showlegend=False,
@@ -154,118 +153,10 @@ controls = f"""
   </div>
 """
 
-styles = f"""
+styles = """
+<link rel="stylesheet" href="../../stylesheets/coincidence_plots.css">
 <style>
-html, body {{
-  width: 100%;
-  height: 580px;
-  margin: 0;
-  padding: 0;
-  background: {page_bg};
-  color: {text};
-  overflow: hidden;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-}}
-
-.plot-card {{
-  box-sizing: border-box;
-  width: 100%;
-  height: 580px;
-  background: {panel};
-  border-radius: 18px;
-  padding: 18px 20px 10px 20px;
-  overflow: hidden;
-}}
-
-.header {{
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 16px;
-  margin-bottom: 12px;
-}}
-
-.eyebrow {{
-  color: {lime};
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-}}
-
-.readout {{
-  color: {lime};
-  font-size: 0.92rem;
-  font-weight: 700;
-  white-space: nowrap;
-  padding-top: 2px;
-}}
-
-.controls {{
-  display: flex;
-  gap: 28px;
-  align-items: center;
-  margin-bottom: 4px;
-}}
-
-.input-group {{
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: {text};
-  font-weight: 700;
-}}
-
-.input-group > span {{
-  color: {lime};
-  font-size: 1.05rem;
-}}
-
-sub {{
-  font-size: 0.7em;
-  vertical-align: sub;
-}}
-
-.spinbox {{
-  display: flex;
-  align-items: center;
-  border: 1px solid {lime};
-  border-radius: 12px;
-  overflow: hidden;
-  background: #171a22;
-}}
-
-.spinbox input {{
-  width: 76px;
-  background: #171a22;
-  color: {text};
-  border: none;
-  text-align: center;
-  padding: 6px 4px;
-  font-size: 0.95rem;
-  outline: none;
-}}
-
-.spinbox button {{
-  width: 30px;
-  height: 32px;
-  background: #171a22;
-  color: {lime};
-  border: none;
-  font-size: 0.95rem;
-  font-weight: 800;
-  cursor: pointer;
-  user-select: none;
-  touch-action: none;
-}}
-
-.spinbox button:hover {{
-  background: {lime};
-  color: #171a22;
-}}
-
-#visibility-plot {{
-  height: 420px !important;
-}}
+  #visibility-plot { height: 420px !important; }
 </style>
 """
 

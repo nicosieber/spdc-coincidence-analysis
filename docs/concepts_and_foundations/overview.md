@@ -1,51 +1,37 @@
 # Additional concepts, identities and derivations
-<div class="tile-grid">
-  <a class="tile" href="../concepts_and_foundations/coherent_states">
-    <div class="tile__icon">📘</div>
-    <h3>Coherent states</h3>
-    <p>Introduction to coherent states and corresponding identities.</p>
-  </a>
 
-  <a class="tile" href="../concepts_and_foundations/operator_relations">
-    <div class="tile__icon">📘</div>
-    <h3>Operator relations</h3>
-    <p>Operator relations used in the main derivation.</p>
-  </a>
+[Coherent states](coherent_states.md)
+:   Introduction to coherent states and corresponding identities.
 
-  <a class="tile" href="../concepts_and_foundations/povm_number_operator">
-    <div class="tile__icon">📘</div>
-    <h3>POVM as a function of the number operator</h3>
-    <p>Derivation on why the POVM for bucket detectors with loss can be rewritten as a function of the number operator.</p>
-  </a>
+[Operator relations](operator_relations.md)
+:   Operator relations used in the main derivation.
 
-  <a class="tile" href="../concepts_and_foundations/conjugation_operators">
-    <div class="tile__icon">📘</div>
-    <h3>Conjugation of creation operators</h3>
-    <p>Showcase of the conjugation of creation operators.</p>
-  </a>
+[POVM as a function of the number operator](povm_number_operator.md)
+:   Derivation on why the POVM for bucket detectors with loss can be rewritten as a function of the number operator.
 
-  <a class="tile" href="../concepts_and_foundations/determinant_relations">
-    <div class="tile__icon">📘</div>
-    <h3>Determinant relations</h3>
-    <p> dive on determinant relations used in the main derivation.</p>
-  </a>
+[Conjugation of creation operators](conjugation_operators.md)
+:   Showcase of the conjugation of creation operators.
 
-  <a class="tile" href="../concepts_and_foundations/matrix_properties">
-    <div class="tile__icon">📘</div>
-    <h3>Matrix properties</h3>
-    <p>Showcase of matrix properties used in the main derivation.</p>
-  </a>
+[Determinant relations](determinant_relations.md)
+:   Deep dive on determinant relations used in the main derivation.
 
-  <a class="tile" href="../concepts_and_foundations/fisher_information">
-    <div class="tile__icon">📘</div>
-    <h3>Fisher Information</h3>
-    <p>An Introduction to the concept of Fisher Information.</p>
-  </a>
+[Matrix properties](matrix_properties.md)
+:   Showcase of matrix properties used in the main derivation.
 
-  <a class="tile tile--disabled" href="javascript:void(0);" aria-disabled="true">
-    <div class="tile__icon">📓</div>
-    <h3>Operator norms</h3>
-    <p>Small introduction to operator norms and how they are applied in the main derivation.</p>
-  </a>  
-  
-</div>
+[Fisher Information](fisher_information.md)
+:   An Introduction to the concept of Fisher Information.
+
+[Peak height of a Gaussian](gaussian_peak_height.md)
+:   Why the height of a bell curve at its centre is completely determined by the determinant of its covariance matrix, for real and complex variables.
+
+[Commutator with an exponential](commutator_exponential.md)
+:   Derivation of \([A, e^X] = [A, X]\,e^X\), used to move annihilation operators past the TMSV exponential.
+
+[Detector loss as a beam splitter](loss_beam_splitter.md)
+:   Kraus operators of the loss channel and why they reproduce the lossy no-click POVM element.
+
+[Block-matrix identities](block_matrices.md)
+:   Determinants of block matrices with repeated blocks, block diagonalization and Jacobi's complementary-minor identity.
+
+Operator norms *(planned)*
+:   Small introduction to operator norms and how they are applied in the main derivation.

@@ -37,12 +37,12 @@ default_eta_V = 0.8
 phi, F, SNL, F_max = make_curve(default_lam, default_eta_H, default_eta_V)
 
 # Style
-panel  = "#252936"
-lime   = "#c9f23c"
-orange = "#ff9d4d"   # F_SNL reference line
-text   = "#e8ebf2"
-muted  = "#aeb4c2"
-grid   = "#3a4050"
+panel  = "#ffffff"
+blue   = "#2980b9"
+orange = "#e67e22"   # F_SNL reference line
+text   = "#404040"
+muted  = "#6a6a6a"
+grid   = "#e1e4e5"
 
 
 # phi in [0, pi]: use clean quarter-pi tick marks
@@ -58,7 +58,7 @@ fig.add_trace(
         y=F,
         mode="lines",
         name="<i>F</i>(φ)",
-        line=dict(width=3, color=lime),
+        line=dict(width=3, color=blue),
         hovertemplate="φ=%{x:.4f}<br><i>F</i>=%{y:.4f}<extra></extra>",
     )
 )
@@ -82,7 +82,7 @@ fig.update_layout(
     margin=dict(l=72, r=20, t=4, b=10),
     font=dict(
         color=text,
-        family="system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif",
+        family="Lato, proxima-nova, Helvetica Neue, Arial, sans-serif",
     ),
     xaxis=dict(
         title=dict(
@@ -94,7 +94,7 @@ fig.update_layout(
         gridcolor=grid,
         zerolinecolor=grid,
         linecolor=text,
-        linewidth=2,
+        linewidth=1,
         tickfont=dict(color=muted),
         tickvals=tick_vals,
         ticktext=tick_text,
@@ -105,12 +105,12 @@ fig.update_layout(
         gridcolor=grid,
         zerolinecolor=grid,
         linecolor=text,
-        linewidth=2,
+        linewidth=1,
         tickfont=dict(color=muted),
     ),
     legend=dict(
         x=0.99, y=0.95, xanchor="right", yanchor="top",
-        bgcolor="rgba(37,41,54,0.7)",
+        bgcolor="rgba(255,255,255,0.85)",
         font=dict(color=text, size=12),
     ),
     showlegend=True,

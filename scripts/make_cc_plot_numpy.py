@@ -60,13 +60,12 @@ default_eta_V = 0.7
     default_lam, default_eta_H, default_eta_V
 )
 
-page_bg = "#1f222b"
-panel = "#252936"
-lime = "#c9f23c"
-text = "#e8ebf2"
-muted = "#aeb4c2"
-grid = "#3a4050"
-amber = "#ff9f43"  # Fock markers / residual — reads as "the numeric one"
+panel = "#ffffff"
+blue = "#2980b9"
+text = "#404040"
+muted = "#6a6a6a"
+grid = "#e1e4e5"
+amber = "#e67e22"  # Fock markers / residual — reads as "the numeric one"
 
 tick_vals = [0, np.pi / 16, np.pi / 8, 3 * np.pi / 16, np.pi / 4]
 tick_text = ["0", "π/16", "π/8", "3π/16", "π/4"]
@@ -88,7 +87,7 @@ fig.add_trace(
         x=theta,
         y=y,
         mode="lines",
-        line=dict(width=3, color=lime),
+        line=dict(width=3, color=blue),
         name="closed form",
         hovertemplate="ϑ=%{x:.4f}<br>C/Cmax=%{y:.4f}<extra>closed form</extra>",
     ),
@@ -135,7 +134,7 @@ fig.update_layout(
     margin=dict(l=72, r=20, t=4, b=10),
     font=dict(
         color=text,
-        family="system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif",
+        family="Lato, proxima-nova, Helvetica Neue, Arial, sans-serif",
     ),
     showlegend=True,
     legend=dict(
@@ -156,7 +155,7 @@ fig.update_yaxes(
     gridcolor=grid,
     zerolinecolor=grid,
     linecolor=text,
-    linewidth=2,
+    linewidth=1,
     tickfont=dict(color=muted),
     row=1,
     col=1,
@@ -169,7 +168,7 @@ fig.update_yaxes(
     gridcolor=grid,
     zerolinecolor=grid,
     linecolor=text,
-    linewidth=2,
+    linewidth=1,
     tickfont=dict(color=muted),
     dtick=3,  # decade gridlines every 4 orders
     exponentformat="power",      # 10^-n labels, not SI prefixes (µ, n, p)
@@ -183,7 +182,7 @@ fig.update_xaxes(
     gridcolor=grid,
     zerolinecolor=grid,
     linecolor=text,
-    linewidth=2,
+    linewidth=1,
     tickfont=dict(color=muted),
     tickvals=tick_vals,
     ticktext=tick_text,
@@ -196,7 +195,7 @@ fig.update_xaxes(
     gridcolor=grid,
     zerolinecolor=grid,
     linecolor=text,
-    linewidth=2,
+    linewidth=1,
     tickfont=dict(color=muted),
     tickvals=tick_vals,
     ticktext=tick_text,

@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Nico Sieber" /><link rel="canonical" href="https://nicosieber.github.io/spdc-coincidence-analysis/gaussian_formalism/covariance_matrix/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Covariance matrix - SPDC Coincidence Analysis</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../stylesheets/extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var properdocs_page_name = "Covariance matrix";
+        var properdocs_page_input_path = "gaussian_formalism/covariance_matrix.md";
+        var properdocs_page_url = "/spdc-coincidence-analysis/gaussian_formalism/covariance_matrix/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/python.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> SPDC Coincidence Analysis
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../..#contents">Contents</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Main derivation</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../theory/experimental_setup/">Experimental setup</a>
+    <ul>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../theory/simplified_example/">Simplified example</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../../theory/simplified_example/#references">References</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../theory/povm/">POVM</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../../theory/povm/#general-povm-formalism">General POVM formalism</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../theory/povm/#povm-of-bucket-detectors">POVM of bucket detectors</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../theory/povm/#inclusion-of-loss-into-the-detector-model">Inclusion of loss into the detector model</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../theory/povm/#references">References</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../theory/tmsv/">TMSV</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../../theory/tmsv/#mathematical-description-of-the-quantum-state">Mathematical description of the quantum state</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../theory/tmsv/#tmsv-rotated-by-a-hwp">TMSV rotated by a HWP</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../theory/tmsv/#tmsv-written-as-an-exponential">TMSV written as an exponential</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../theory/tmsv/#references">References</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../theory/cc_derivation/">Derivation of the coincidence probability</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../../theory/cc_derivation/#evaluation-of-the-complex-gaussian-integral">Evaluation of the complex Gaussian integral</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../theory/cc_derivation/#evaluation-of-the-determinant">Evaluation of the determinant</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../theory/cc_derivation/#interpretation-of-the-no-click-and-coincidence-probabilities">Interpretation of the no-click and coincidence probabilities</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../theory/cc_derivation/#connection-to-the-notation-p_heta0-p_veta0-and-peta_heta_v00">Connection to the notation \(P_H^{(\eta)}(0)\), \(P_V^{(\eta)}(0)\), and \(P^{(\eta_H,\eta_V)}(0,0)\)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../theory/cc_derivation/#inclusion-of-dark-counts">Inclusion of dark counts</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../../theory/cc_derivation/#dark-count-model">Dark count model</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../theory/cc_derivation/#modified-single-mode-povm-element">Modified single-mode POVM element</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../theory/cc_derivation/#two-mode-coincidence-povm-with-dark-counts">Two-mode coincidence POVM with dark counts</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../theory/cc_derivation/#factoring-out-the-dark-count-probabilities">Factoring out the dark count probabilities</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../theory/cc_derivation/#modified-coincidence-probability">Modified coincidence probability</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../theory/cc_derivation/#physical-interpretation">Physical interpretation</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../theory/cc_derivation/#references">References</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../theory/generalization/">Generalizing the optical element</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../../theory/generalization/#the-matrix-m-already-contains-the-optics">The matrix \(M\) already contains the optics</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../theory/generalization/#replacing-the-hwp-by-an-arbitrary-element">Replacing the HWP by an arbitrary element</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../theory/generalization/#the-derivation-is-unchanged-up-to-the-determinant">The derivation is unchanged up to the determinant</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../../theory/generalization/#the-determinant-for-a-general-element">The determinant for a general element</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../theory/generalization/#specializing-to-the-hwp">Specializing to the HWP</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../theory/generalization/#two-worked-elements">Two worked elements</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../../theory/generalization/#a-phase-shifter-alone-produces-no-fringe">A phase shifter alone produces no fringe</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../theory/generalization/#a-beam-splitter-is-the-hwp-with-a-relabelled-angle">A beam splitter is the HWP with a relabelled angle</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Gaussian formalism</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../overview/">Overview</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../overview/#outline-of-quesadas-approach">Outline of Quesada's approach</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../overview/#the-core-idea">The core idea</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../overview/#the-steps">The steps</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../overview/#supporting-concepts">Supporting concepts</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../overview/#references">References</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../notation/">Notation</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../notation/#references">References</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Covariance matrix</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#why-the-covariance-matrix">Why the covariance matrix?</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#why-we-look-at-hat-alvertpsirangle">Why we look at \(\hat a\lvert\Psi\rangle\)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#the-key-relation">The key relation</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#the-two-blocks-n-and-mathcalm">The two blocks \(N\) and \(\mathcal{M}\)</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#one-entry-step-by-step">One entry step by step</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#all-eight-entries">All eight entries</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#matrix-form">Matrix form</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#solving-for-mathcalm">Solving for \(\mathcal{M}\)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#the-abbreviations-nu-and-mu">The abbreviations \(\nu\) and \(\mu\)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#the-matrix-sigma_q">The matrix \(\sigma_Q\)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#references">References</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../vacuum_probability/">Vacuum probability</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../vacuum_probability/#the-q-function">The \(Q\) function</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../vacuum_probability/#height-of-a-bell-curve">Height of a bell curve</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../vacuum_probability/#is-q-really-a-bell-curve-check-with-the-main-derivation">Is \(Q\) really a bell curve? Check with the main derivation</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../vacuum_probability/#references">References</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../detector_efficiency/">Detector efficiency</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../detector_efficiency/#why-this-is-allowed">Why this is allowed</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../detector_efficiency/#what-the-beam-splitter-does-to-the-covariance-matrix">What the beam splitter does to the covariance matrix</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../detector_efficiency/#the-lossy-matrix-sigma_q">The lossy matrix \(\sigma_Q'\)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../detector_efficiency/#references">References</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../determinant/">Determinant</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../determinant/#reducing-4times4-to-two-2times2-determinants">Reducing \(4\times4\) to two \(2\times2\) determinants</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../determinant/#evaluating-the-two-factors">Evaluating the two factors</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../determinant/#result">Result</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../determinant/#sanity-checks">Sanity checks</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../determinant/#references">References</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../coincidence/">Coincidence probability</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../coincidence/#from-clicks-to-no-clicks-inclusionexclusion">From clicks to no-clicks (inclusion–exclusion)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../coincidence/#the-same-formula-from-the-q-function-quesadas-derivation">The same formula from the \(Q\) function (Quesada's derivation)</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../coincidence/#part-1-ideal-detectors-arbitrary-state">Part 1: ideal detectors, arbitrary state</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../coincidence/#part-2-detector-efficiency">Part 2: detector efficiency</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../coincidence/#no-click-in-one-detector">No click in one detector</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../coincidence/#the-coincidence-probability">The coincidence probability</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../coincidence/#the-torontonian">The Torontonian</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../coincidence/#references">References</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../comparison/">Comparison and numerical checks</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../comparison/#comparison-with-the-main-derivation">Comparison with the main derivation</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../comparison/#numerical-check">Numerical check</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../comparison/#with-thewalrus">With thewalrus</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../comparison/#symbolic-check">Symbolic check</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../comparison/#references">References</a>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Additional concepts, identities and derivations</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../concepts_and_foundations/overview/">Overview</a>
+    <ul>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../concepts_and_foundations/coherent_states/">Coherent states</a>
+    <ul>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../concepts_and_foundations/conjugation_operators/">Conjugation of operators</a>
+    <ul>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../concepts_and_foundations/determinant_relations/">Determinant relations</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../../concepts_and_foundations/determinant_relations/#determinant-of-a-2-by-2-block-matrix">Determinant of a 2 by 2 block matrix</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../concepts_and_foundations/determinant_relations/#determinant-identity-for-scaled-matrices">Determinant identity for scaled matrices</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../concepts_and_foundations/determinant_relations/#references">References</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../concepts_and_foundations/matrix_properties/">Matrix properties</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../../concepts_and_foundations/matrix_properties/#structure-of-b">Structure of B</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../concepts_and_foundations/matrix_properties/#spectral-properties-of-m">Spectral properties of M</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../concepts_and_foundations/matrix_properties/#bound-on-l">Bound on L</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../concepts_and_foundations/matrix_properties/#positivity-of-b">Positivity of B</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../concepts_and_foundations/matrix_properties/#existence-and-uniqueness-of-the-matrix-square-root-of-b">Existence and uniqueness of the matrix square root of B</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../concepts_and_foundations/matrix_properties/#conclusion">Conclusion</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../concepts_and_foundations/matrix_properties/#references">References</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../concepts_and_foundations/operator_relations/">Operator relations</a>
+    <ul>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../concepts_and_foundations/povm_number_operator/">POVM as number operator</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../../concepts_and_foundations/povm_number_operator/#action-of-exponentials-of-the-number-operator">Action of exponentials of the number operator</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../concepts_and_foundations/povm_number_operator/#action-of-a-on-number-states">Action of \(A\) on number states</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../concepts_and_foundations/povm_number_operator/#identification-of-the-operators">Identification of the operators</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../concepts_and_foundations/gaussian_peak_height/">Peak height of a Gaussian</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../../concepts_and_foundations/gaussian_peak_height/#one-variable">One variable</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../concepts_and_foundations/gaussian_peak_height/#independent-variables-the-determinant-is-a-product-of-variances">Independent variables: the determinant is a product of variances</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../concepts_and_foundations/gaussian_peak_height/#correlated-variables-rotate-until-they-are-independent">Correlated variables: rotate until they are independent</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../concepts_and_foundations/gaussian_peak_height/#complex-variables">Complex variables</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../concepts_and_foundations/gaussian_peak_height/#marginals">Marginals</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../concepts_and_foundations/commutator_exponential/">Commutator with an exponential</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../../concepts_and_foundations/commutator_exponential/#linearity">Linearity</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../concepts_and_foundations/commutator_exponential/#product-rule">Product rule</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../concepts_and_foundations/commutator_exponential/#commutator-with-a-power">Commutator with a power</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../concepts_and_foundations/commutator_exponential/#summing-the-series">Summing the series</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../concepts_and_foundations/loss_beam_splitter/">Loss as a beam splitter</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../../concepts_and_foundations/loss_beam_splitter/#the-beam-splitter-on-photon-number-states">The beam splitter on photon-number states</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../concepts_and_foundations/loss_beam_splitter/#kraus-operators">Kraus operators</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../concepts_and_foundations/loss_beam_splitter/#the-vacuum-probability-behind-the-beam-splitter">The vacuum probability behind the beam splitter</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../concepts_and_foundations/loss_beam_splitter/#the-beam-splitter-on-operators">The beam splitter on operators</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../concepts_and_foundations/block_matrices/">Block-matrix identities</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../../concepts_and_foundations/block_matrices/#determinant-of-leftbeginsmallmatrixabbaendsmallmatrixright">Determinant of \(\left(\begin{smallmatrix}A&amp;B\\B&amp;A\end{smallmatrix}\right)\)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../concepts_and_foundations/block_matrices/#block-diagonalization-by-a-rotation">Block diagonalization by a rotation</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../concepts_and_foundations/block_matrices/#jacobis-complementary-minor-identity">Jacobi's complementary-minor identity</a>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Interactive dashboards</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../dashboard/overview/">Overview</a>
+    <ul>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Coincidence probability</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../dashboard/coincidence/overview/">Overview</a>
+    <ul>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../dashboard/coincidence/numpy/">NumPy dashboard</a>
+    <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../../dashboard/coincidence/numpy/#the-closed-form">The closed form</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../dashboard/coincidence/numpy/#the-fock-space-simulation">The Fock-space simulation</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../dashboard/coincidence/qutip/">QuTiP dashboard</a>
+    <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../../dashboard/coincidence/qutip/#operators-and-the-generator">Operators and the generator</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../dashboard/coincidence/qutip/#the-state">The state</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../dashboard/coincidence/qutip/#bucket-detectors-and-probabilities">Bucket detectors and probabilities</a>
+    </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../dashboard/visibility/">Visibility</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../../dashboard/visibility/#the-ideal-ceiling">The ideal ceiling</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../dashboard/fisher/">Fisher information</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../../dashboard/fisher/#motivation-reading-the-phase-from-click-patterns">Motivation: Reading the Phase from Click Patterns</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../dashboard/fisher/#the-snl-for-the-tmsv-model">The SNL for the TMSV Model</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../../dashboard/fisher/#flat-snl-for-symmetric-losses">Flat SNL for symmetric losses</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../dashboard/fisher/#comparison-to-the-experiment-of-slussarenko-et-al">Comparison to the experiment of Slussarenko et al</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../dashboard/fisher/#references">References</a>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">SPDC Coincidence Analysis</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Gaussian formalism</li>
+      <li class="breadcrumb-item active">Covariance matrix</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/nicosieber/spdc-coincidence-analysis/blob/main/docs/gaussian_formalism/covariance_matrix.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="covariance-matrix-of-lvertpsirangle">Covariance matrix of <span class="arithmatex">\(\lvert\Psi\rangle\)</span><a class="headerlink" href="#covariance-matrix-of-lvertpsirangle" title="Permanent link">&para;</a></h1>
+<p><span id="why-cov"></span></p>
+<h2 id="why-the-covariance-matrix">Why the covariance matrix?<a class="headerlink" href="#why-the-covariance-matrix" title="Permanent link">&para;</a></h2>
+<p>Before computing anything: why should expectation values of two ladder operators be the right thing to compute at all?</p>
+<p><strong>Classical picture.</strong> A bell-shaped (Gaussian) probability distribution of <span class="arithmatex">\(n\)</span> real variables <span class="arithmatex">\(x_1,\dots,x_n\)</span>, centred at <span class="arithmatex">\(0\)</span>, is <strong>completely determined</strong> by its covariance matrix <span class="arithmatex">\(\Sigma\)</span>, the matrix of all averages <span class="arithmatex">\(\langle x_ix_j\rangle\)</span>: knowing <span class="arithmatex">\(\Sigma\)</span>, one can write down the whole distribution. In particular, its height at the centre <strong>follows directly from <span class="arithmatex">\(\Sigma\)</span></strong>:</p>
+<div class="arithmatex">\[
+p(0)=\frac{1}{(2\pi)^{n/2}\sqrt{\det\Sigma}} .
+\]</div>
+<p>The wider the distribution (the larger <span class="arithmatex">\(\det\Sigma\)</span>), the lower its peak. This is derived step by step in <a href="../../concepts_and_foundations/gaussian_peak_height/">Peak height of a Gaussian distribution</a>.</p>
+<p><strong>Quantum counterpart.</strong> <a href="../vacuum_probability/">Vacuum probability</a> shows that the state can be described by a probability distribution <span class="arithmatex">\(Q(\alpha_H,\alpha_V)\)</span> over coherent-state amplitudes. For our states this distribution is a bell curve centred at <span class="arithmatex">\(\alpha=0\)</span> (states with this property are called <em>Gaussian states</em> <a href="#ref-weedbrook2012">[8]</a>, <a href="#ref-ferraro2005">[9]</a>), and its height at the centre is exactly the no-click probability <span class="arithmatex">\(P(0,0)\)</span>. So, as in the classical case:</p>
+<div class="arithmatex">\[
+\text{covariance matrix of }Q\;\Longrightarrow\;\text{width of the bell curve}\;\Longrightarrow\;\text{height at }0\;=\;P(0,0).
+\]</div>
+<p>The entries of the covariance matrix of <span class="arithmatex">\(Q\)</span> are averages of products of two amplitudes, <span class="arithmatex">\(\alpha_i\alpha_j\)</span> and <span class="arithmatex">\(\alpha_i\alpha_j^{*}\)</span>. These averages are expectation values of two ladder operators, e.g. <span class="arithmatex">\(\langle\Psi\rvert\hat a_i\hat a_j\lvert\Psi\rangle\)</span> and <span class="arithmatex">\(\langle\Psi\rvert\hat a_i\hat a_j^{\dagger}\lvert\Psi\rangle\)</span>, eq. <a href="../vacuum_probability/#eq23">(23)</a>. This is why this page computes expectation values of <strong>pairs</strong> of ladder operators, and nothing else.</p>
+<p><strong>Which pairs?</strong> With two modes, every product of two ladder operators is of one of four types:</p>
+<div class="arithmatex">\[
+\hat a_i\hat a_j,\qquad
+\hat a_i^{\dagger}\hat a_j^{\dagger},\qquad
+\hat a_i^{\dagger}\hat a_j,\qquad
+\hat a_i\hat a_j^{\dagger},
+\qquad i,j\in\{H,V\},
+\]</div>
+<p>i.e. <span class="arithmatex">\(4\times4=16\)</span> numbers. Most of them are redundant:</p>
+<ul>
+<li><span class="arithmatex">\(\langle\Psi\rvert\hat a_i^{\dagger}\hat a_j^{\dagger}\lvert\Psi\rangle=\langle\Psi\rvert\hat a_j\hat a_i\lvert\Psi\rangle^{*}\)</span>, by taking the complex conjugate (adjoint) of the operator,</li>
+<li><span class="arithmatex">\(\langle\Psi\rvert\hat a_i\hat a_j^{\dagger}\lvert\Psi\rangle=\delta_{ij}+\langle\Psi\rvert\hat a_j^{\dagger}\hat a_i\lvert\Psi\rangle\)</span>, by the commutator <span class="arithmatex">\([\hat a_i,\hat a_j^{\dagger}]=\delta_{ij}\)</span>.</li>
+</ul>
+<p>Written as one <span class="arithmatex">\(4\times4\)</span> matrix, with the rule "annihilation operators to the left of creation operators" (the reason for this rule follows in <a href="../vacuum_probability/#eq23">Vacuum probability</a>), all 16 expectation values form the covariance matrix, which the Gaussian boson sampling literature calls <span class="arithmatex">\(\sigma_Q\)</span> <a href="#ref-hamilton2017">[1]</a>, <a href="#ref-kruse2019">[3]</a></p>
+<p><span id="eq6"></span></p>
+<div class="arithmatex">\[
+\sigma_Q=
+\begin{pmatrix}
+\langle\Psi\rvert\hat a_H\hat a_H^{\dagger}\lvert\Psi\rangle &amp; \langle\Psi\rvert\hat a_H\hat a_V^{\dagger}\lvert\Psi\rangle &amp; \langle\Psi\rvert\hat a_H\hat a_H\lvert\Psi\rangle &amp; \langle\Psi\rvert\hat a_H\hat a_V\lvert\Psi\rangle\\
+\langle\Psi\rvert\hat a_V\hat a_H^{\dagger}\lvert\Psi\rangle &amp; \langle\Psi\rvert\hat a_V\hat a_V^{\dagger}\lvert\Psi\rangle &amp; \langle\Psi\rvert\hat a_V\hat a_H\lvert\Psi\rangle &amp; \langle\Psi\rvert\hat a_V\hat a_V\lvert\Psi\rangle\\
+\langle\Psi\rvert\hat a_H^{\dagger}\hat a_H^{\dagger}\lvert\Psi\rangle &amp; \langle\Psi\rvert\hat a_H^{\dagger}\hat a_V^{\dagger}\lvert\Psi\rangle &amp; \langle\Psi\rvert\hat a_H\hat a_H^{\dagger}\lvert\Psi\rangle &amp; \langle\Psi\rvert\hat a_V\hat a_H^{\dagger}\lvert\Psi\rangle\\
+\langle\Psi\rvert\hat a_V^{\dagger}\hat a_H^{\dagger}\lvert\Psi\rangle &amp; \langle\Psi\rvert\hat a_V^{\dagger}\hat a_V^{\dagger}\lvert\Psi\rangle &amp; \langle\Psi\rvert\hat a_H\hat a_V^{\dagger}\lvert\Psi\rangle &amp; \langle\Psi\rvert\hat a_V\hat a_V^{\dagger}\lvert\Psi\rangle
+\end{pmatrix}.
+\tag{6}
+\]</div>
+<p>Applying the two rules above to every entry rewrites it with only the types <span class="arithmatex">\(\langle\Psi\rvert\hat a^{\dagger}\hat a\lvert\Psi\rangle\)</span> and <span class="arithmatex">\(\langle\Psi\rvert\hat a\hat a\lvert\Psi\rangle\)</span>:</p>
+<div class="arithmatex">\[
+\sigma_Q=
+\begin{pmatrix}
+1+\langle\Psi\rvert\hat a_H^{\dagger}\hat a_H\lvert\Psi\rangle &amp; \langle\Psi\rvert\hat a_V^{\dagger}\hat a_H\lvert\Psi\rangle &amp; \langle\Psi\rvert\hat a_H\hat a_H\lvert\Psi\rangle &amp; \langle\Psi\rvert\hat a_H\hat a_V\lvert\Psi\rangle\\
+\langle\Psi\rvert\hat a_H^{\dagger}\hat a_V\lvert\Psi\rangle &amp; 1+\langle\Psi\rvert\hat a_V^{\dagger}\hat a_V\lvert\Psi\rangle &amp; \langle\Psi\rvert\hat a_V\hat a_H\lvert\Psi\rangle &amp; \langle\Psi\rvert\hat a_V\hat a_V\lvert\Psi\rangle\\
+\langle\Psi\rvert\hat a_H\hat a_H\lvert\Psi\rangle^{*} &amp; \langle\Psi\rvert\hat a_H\hat a_V\lvert\Psi\rangle^{*} &amp; 1+\langle\Psi\rvert\hat a_H^{\dagger}\hat a_H\lvert\Psi\rangle &amp; \langle\Psi\rvert\hat a_H^{\dagger}\hat a_V\lvert\Psi\rangle\\
+\langle\Psi\rvert\hat a_V\hat a_H\lvert\Psi\rangle^{*} &amp; \langle\Psi\rvert\hat a_V\hat a_V\lvert\Psi\rangle^{*} &amp; \langle\Psi\rvert\hat a_V^{\dagger}\hat a_H\lvert\Psi\rangle &amp; 1+\langle\Psi\rvert\hat a_V^{\dagger}\hat a_V\lvert\Psi\rangle
+\end{pmatrix}.
+\]</div>
+<p>The lower half contains no new numbers: it repeats the upper half, complex-conjugated or reordered. So only eight expectation values have to be computed: the four <span class="arithmatex">\(\langle\Psi\rvert\hat a_i^{\dagger}\hat a_j\lvert\Psi\rangle\)</span> (upper-left <span class="arithmatex">\(2\times2\)</span> part) and the four <span class="arithmatex">\(\langle\Psi\rvert\hat a_i\hat a_j\lvert\Psi\rangle\)</span> (upper-right <span class="arithmatex">\(2\times2\)</span> part). Below they are abbreviated as the <span class="arithmatex">\(2\times2\)</span> matrices <span class="arithmatex">\(N\)</span> and <span class="arithmatex">\(\mathcal{M}\)</span> of (10). These are only names for these parts of the full matrix above. Single operators are not needed: <span class="arithmatex">\(\langle\Psi\rvert\hat a_H\lvert\Psi\rangle=\langle\Psi\rvert\hat a_V\lvert\Psi\rangle=0\)</span>, because photons come in pairs and <span class="arithmatex">\(\hat a\)</span> changes the photon number by one. This means the bell curve is centred at <span class="arithmatex">\(0\)</span>.</p>
+<p><strong>What they mean physically.</strong></p>
+<ul>
+<li><span class="arithmatex">\(\langle\Psi\rvert\hat a_H^{\dagger}\hat a_H\lvert\Psi\rangle=\langle\Psi\rvert\hat n_H\lvert\Psi\rangle\)</span> is the mean photon number in arm <span class="arithmatex">\(H\)</span>, the quantity a detector responds to. The off-diagonal <span class="arithmatex">\(\langle\Psi\rvert\hat a_H^{\dagger}\hat a_V\lvert\Psi\rangle\)</span> measures coherence between the arms.</li>
+<li><span class="arithmatex">\(\langle\Psi\rvert\hat a_H\hat a_V\lvert\Psi\rangle\)</span> is the amplitude for <strong>removing a pair</strong> of photons. It is zero for vacuum and thermal light, and nonzero here precisely because SPDC creates photons in pairs. (For laser light <span class="arithmatex">\(\langle\alpha\rvert\hat a\hat a\lvert\alpha\rangle=\alpha^2\)</span> is nonzero too, but only because <span class="arithmatex">\(\langle\alpha\rvert\hat a\lvert\alpha\rangle=\alpha\neq0\)</span>. For our states <span class="arithmatex">\(\langle\Psi\rvert\hat a\lvert\Psi\rangle=0\)</span>, so a nonzero <span class="arithmatex">\(\langle\Psi\rvert\hat a\hat a\lvert\Psi\rangle\)</span> is a genuine pair correlation.) It is the "squeezing" part of the state.</li>
+</ul>
+<p><strong>Why not stay with <span class="arithmatex">\(\lvert\Psi\rangle\)</span>?</strong> The detector efficiency (<a href="../detector_efficiency/">Detector efficiency</a>) turns <span class="arithmatex">\(\lvert\Psi\rangle\)</span> into a mixed state, which no longer has the exponential form <a href="../notation/#eq2">(2)</a>. The covariance matrix, by contrast, keeps its meaning and changes in a very simple way: its entries get multiplied by factors of <span class="arithmatex">\(\sqrt{\eta}\)</span>.</p>
+<h2 id="why-we-look-at-hat-alvertpsirangle">Why we look at <span class="arithmatex">\(\hat a\lvert\Psi\rangle\)</span><a class="headerlink" href="#why-we-look-at-hat-alvertpsirangle" title="Permanent link">&para;</a></h2>
+<p>So this page needs numbers like</p>
+<div class="arithmatex">\[
+\langle\Psi\rvert\hat a_H^{\dagger}\hat a_H\lvert\Psi\rangle,
+\qquad
+\langle\Psi\rvert\hat a_H\hat a_V\lvert\Psi\rangle,
+\qquad
+\dots
+\]</div>
+<p>The brute-force way is to expand <span class="arithmatex">\(\lvert\Psi\rangle\)</span> in Fock states and evaluate double sums over photon numbers for a general HWP angle. That works, but it is messy.</p>
+<p>There is a shortcut. In every one of these expectation values, the <strong>right-most operator is an annihilation operator acting directly on <span class="arithmatex">\(\lvert\Psi\rangle\)</span></strong>. If we know what <span class="arithmatex">\(\hat a_H\lvert\Psi\rangle\)</span> and <span class="arithmatex">\(\hat a_V\lvert\Psi\rangle\)</span> are, we can replace them and the expectation value simplifies. The next subsection shows that removing a photon from <span class="arithmatex">\(\lvert\Psi\rangle\)</span> is the same as <em>adding</em> one, times <span class="arithmatex">\(\lambda M\)</span>. Inserted into an expectation value, this turns it into a combination of <em>other</em> expectation values. This gives a small linear system of equations that yields all of them at once, eq. (12), without any Fock sums.</p>
+<p>The idea is familiar from coherent states, where <span class="arithmatex">\(\hat a\lvert\alpha\rangle=\alpha\lvert\alpha\rangle\)</span> replaces the annihilation operator by a number. For the squeezed state <span class="arithmatex">\(\lvert\Psi\rangle\)</span> it is replaced by creation operators instead.</p>
+<p><span id="key-relation"></span></p>
+<h2 id="the-key-relation">The key relation<a class="headerlink" href="#the-key-relation" title="Permanent link">&para;</a></h2>
+<p>Call the exponent of <a href="../notation/#eq2">(2)</a> <span class="arithmatex">\(\hat X\)</span>. Here <span class="arithmatex">\(\mathbf{\hat a^{\dagger}}=(\hat a_H^{\dagger},\hat a_V^{\dagger})^T\)</span> is the column of creation operators, and <span class="arithmatex">\((\mathbf{\hat a^{\dagger}})^T\)</span> is the same entries as a row (a plain transpose, not a dagger). Row times <span class="arithmatex">\(M\)</span> times column is a sum over the four entries of <a href="../notation/#eq3">(3)</a>, and the two off-diagonal terms are equal because <span class="arithmatex">\(\hat a_H^{\dagger}\hat a_V^{\dagger}=\hat a_V^{\dagger}\hat a_H^{\dagger}\)</span>:</p>
+<p><span id="eq7"></span></p>
+<div class="arithmatex">\[
+\hat X:=\frac{\lambda}{2}(\mathbf{\hat a^{\dagger}})^T M\mathbf{\hat a^{\dagger}}
+=\frac{\lambda}{2}\sum_{i,j\in\{H,V\}}M_{ij}\,\hat a_i^{\dagger}\hat a_j^{\dagger}
+=\frac{\lambda}{2}\left(S_4\,\hat a_H^{\dagger 2}-2C_4\,\hat a_H^{\dagger}\hat a_V^{\dagger}-S_4\,\hat a_V^{\dagger 2}\right).
+\tag{7}
+\]</div>
+<p>Now commute <span class="arithmatex">\(\hat a_H\)</span> with each of the three terms. Everything follows from <span class="arithmatex">\([\hat a_H,\hat a_H^{\dagger}]=1\)</span>, <span class="arithmatex">\([\hat a_H,\hat a_V^{\dagger}]=0\)</span> and the product rule <span class="arithmatex">\([\hat A,\hat B\hat C]=[\hat A,\hat B]\,\hat C+\hat B\,[\hat A,\hat C]\)</span> (equation (2) of <a href="../../concepts_and_foundations/commutator_exponential/#comm:product">Commutator with an operator exponential</a>):</p>
+<div class="arithmatex">\[
+\begin{aligned}
+[\hat a_H,\hat a_H^{\dagger}\hat a_H^{\dagger}]
+&amp;=[\hat a_H,\hat a_H^{\dagger}]\,\hat a_H^{\dagger}+\hat a_H^{\dagger}\,[\hat a_H,\hat a_H^{\dagger}]
+=\hat a_H^{\dagger}+\hat a_H^{\dagger}=2\hat a_H^{\dagger},\\
+[\hat a_H,\hat a_H^{\dagger}\hat a_V^{\dagger}]
+&amp;=[\hat a_H,\hat a_H^{\dagger}]\,\hat a_V^{\dagger}+\hat a_H^{\dagger}\,[\hat a_H,\hat a_V^{\dagger}]
+=\hat a_V^{\dagger}+0=\hat a_V^{\dagger},\\
+[\hat a_H,\hat a_V^{\dagger}\hat a_V^{\dagger}]
+&amp;=[\hat a_H,\hat a_V^{\dagger}]\,\hat a_V^{\dagger}+\hat a_V^{\dagger}\,[\hat a_H,\hat a_V^{\dagger}]
+=0 .
+\end{aligned}
+\]</div>
+<p>The commutator is linear in its second argument (equation (1) of <a href="../../concepts_and_foundations/commutator_exponential/#comm:linear">Commutator with an operator exponential</a>). So <span class="arithmatex">\([\hat a_H,\hat X]\)</span> is the sum of the three commutators above, weighted with the coefficients of (7):</p>
+<div class="arithmatex">\[
+[\hat a_H,\hat X]
+=\frac{\lambda}{2}\left(S_4\cdot2\hat a_H^{\dagger}-2C_4\cdot\hat a_V^{\dagger}-S_4\cdot0\right)
+=\lambda\left(S_4\,\hat a_H^{\dagger}-C_4\,\hat a_V^{\dagger}\right).
+\]</div>
+<p>For <span class="arithmatex">\(\hat a_V\)</span> the roles swap: <span class="arithmatex">\([\hat a_V,\hat a_H^{\dagger 2}]=0\)</span>, <span class="arithmatex">\([\hat a_V,\hat a_H^{\dagger}\hat a_V^{\dagger}]=\hat a_H^{\dagger}\)</span> and <span class="arithmatex">\([\hat a_V,\hat a_V^{\dagger 2}]=2\hat a_V^{\dagger}\)</span>, so <span class="arithmatex">\([\hat a_V,\hat X]=\frac{\lambda}{2}\left(-2C_4\,\hat a_H^{\dagger}-S_4\cdot2\hat a_V^{\dagger}\right)\)</span>. Together:</p>
+<p><span id="eq8"></span></p>
+<div class="arithmatex">\[
+[\hat a_H,\hat X]=\lambda\left(S_4\,\hat a_H^{\dagger}-C_4\,\hat a_V^{\dagger}\right),
+\qquad
+[\hat a_V,\hat X]=\lambda\left(-C_4\,\hat a_H^{\dagger}-S_4\,\hat a_V^{\dagger}\right).
+\tag{8}
+\]</div>
+<p>Now apply <span class="arithmatex">\(\hat a_H\)</span> to <span class="arithmatex">\(\lvert\Psi\rangle=\Lambda e^{\hat X}\lvert 0,0\rangle\)</span>. Writing <span class="arithmatex">\(\hat a_He^{\hat X}=[\hat a_H,e^{\hat X}]+e^{\hat X}\hat a_H\)</span> and using <span class="arithmatex">\(\hat a_H\lvert 0,0\rangle=0\)</span>:</p>
+<div class="arithmatex">\[
+\hat a_H\lvert\Psi\rangle
+=\Lambda\left([\hat a_H,e^{\hat X}]+e^{\hat X}\hat a_H\right)\lvert 0,0\rangle
+=\Lambda\,[\hat a_H,e^{\hat X}]\lvert 0,0\rangle .
+\]</div>
+<p>It remains to evaluate <span class="arithmatex">\([\hat a_H,e^{\hat X}]\)</span>. By (8), <span class="arithmatex">\([\hat a_H,\hat X]\)</span> contains only creation operators, and so does <span class="arithmatex">\(\hat X\)</span>, so the two commute. For exactly this situation, equation (4) of <a href="../../concepts_and_foundations/commutator_exponential/#comm:exp">Commutator with an operator exponential</a> gives</p>
+<div class="arithmatex">\[
+[\hat a_H,e^{\hat X}]=[\hat a_H,\hat X]\,e^{\hat X},
+\]</div>
+<p>the operator version of <span class="arithmatex">\(\frac{d}{dx}e^{f(x)}=f'(x)\,e^{f(x)}\)</span>. The same holds for <span class="arithmatex">\(\hat a_V\)</span>. Together with (8):</p>
+<p><span id="eq9"></span></p>
+<div class="arithmatex">\[
+\begin{aligned}
+\hat a_H\lvert\Psi\rangle&amp;=\lambda\left(S_4\,\hat a_H^{\dagger}-C_4\,\hat a_V^{\dagger}\right)\lvert\Psi\rangle,\\
+\hat a_V\lvert\Psi\rangle&amp;=\lambda\left(-C_4\,\hat a_H^{\dagger}-S_4\,\hat a_V^{\dagger}\right)\lvert\Psi\rangle,
+\end{aligned}
+\qquad\text{i.e.}\qquad
+\mathbf{\hat a}\lvert\Psi\rangle=\lambda M\,\mathbf{\hat a^{\dagger}}\lvert\Psi\rangle .
+\tag{9}
+\]</div>
+<p>Equation (9) says that an annihilation operator acting on <span class="arithmatex">\(\lvert\Psi\rangle\)</span> can be traded for creation operators. It is all that is needed to compute the covariance matrix.</p>
+<p><strong>Check at <span class="arithmatex">\(\vartheta=0\)</span>.</strong> Here <span class="arithmatex">\(S_4=0\)</span> and <span class="arithmatex">\(C_4=1\)</span>, and (9) reads <span class="arithmatex">\(\hat a_H\lvert\Psi\rangle=-\lambda\,\hat a_V^{\dagger}\lvert\Psi\rangle\)</span>. At this angle the state is <span class="arithmatex">\(\lvert\Psi\rangle=\Lambda\sum_n(-\lambda)^n\lvert n,n\rangle\)</span> (see (17) below). Both sides can be evaluated in the Fock basis:</p>
+<div class="arithmatex">\[
+\hat a_H\lvert\Psi\rangle=\Lambda\sum_{n}(-\lambda)^n\sqrt{n}\,\lvert n-1,n\rangle,
+\qquad
+-\lambda\,\hat a_V^{\dagger}\lvert\Psi\rangle=\Lambda\sum_{m}(-\lambda)^{m+1}\sqrt{m+1}\,\lvert m,m+1\rangle .
+\]</div>
+<p>Renaming <span class="arithmatex">\(m=n-1\)</span> in the second sum makes the two sides identical.</p>
+<p>Physically, the photons of <span class="arithmatex">\(\lvert\Psi\rangle\)</span> come in <span class="arithmatex">\(H\)</span>–<span class="arithmatex">\(V\)</span> pairs. Removing one <span class="arithmatex">\(H\)</span> photon leaves a state with one more <span class="arithmatex">\(V\)</span> photon than <span class="arithmatex">\(H\)</span> photons, which is the same as adding a <span class="arithmatex">\(V\)</span> photon to the pair state, up to the factor <span class="arithmatex">\(-\lambda\)</span>. For other angles the HWP mixes <span class="arithmatex">\(H\)</span> and <span class="arithmatex">\(V\)</span>, and <span class="arithmatex">\(M\)</span> keeps track of which photon is "added".</p>
+<h2 id="the-two-blocks-n-and-mathcalm">The two blocks <span class="arithmatex">\(N\)</span> and <span class="arithmatex">\(\mathcal{M}\)</span><a class="headerlink" href="#the-two-blocks-n-and-mathcalm" title="Permanent link">&para;</a></h2>
+<p>As motivated <a href="#why-cov">above</a>, the eight independent second-order expectation values are abbreviated by two <span class="arithmatex">\(2\times2\)</span> matrices:</p>
+<p><span id="eq10"></span></p>
+<div class="arithmatex">\[
+N=
+\begin{pmatrix}
+\langle\Psi\rvert\hat a_H^{\dagger}\hat a_H\lvert\Psi\rangle &amp; \langle\Psi\rvert\hat a_H^{\dagger}\hat a_V\lvert\Psi\rangle\\
+\langle\Psi\rvert\hat a_V^{\dagger}\hat a_H\lvert\Psi\rangle &amp; \langle\Psi\rvert\hat a_V^{\dagger}\hat a_V\lvert\Psi\rangle
+\end{pmatrix},
+\qquad
+\mathcal{M}=
+\begin{pmatrix}
+\langle\Psi\rvert\hat a_H\hat a_H\lvert\Psi\rangle &amp; \langle\Psi\rvert\hat a_H\hat a_V\lvert\Psi\rangle\\
+\langle\Psi\rvert\hat a_V\hat a_H\lvert\Psi\rangle &amp; \langle\Psi\rvert\hat a_V\hat a_V\lvert\Psi\rangle
+\end{pmatrix},
+\tag{10}
+\]</div>
+<p><span class="arithmatex">\(N\)</span> holds photon numbers, with mean photon numbers on its diagonal. <span class="arithmatex">\(\mathcal{M}\)</span> holds the pair correlations created by SPDC. All other second-order expectation values follow from these through <span class="arithmatex">\([\hat a_i,\hat a_j^{\dagger}]=\delta_{ij}\)</span> and complex conjugation.</p>
+<h3 id="one-entry-step-by-step">One entry step by step<a class="headerlink" href="#one-entry-step-by-step" title="Permanent link">&para;</a></h3>
+<p>Each entry is computed with the same three moves:</p>
+<ol>
+<li>replace the annihilator next to the ket by (9),</li>
+<li>pull out the numbers <span class="arithmatex">\(\lambda\)</span>, <span class="arithmatex">\(S_4\)</span>, <span class="arithmatex">\(C_4\)</span>,</li>
+<li>rewrite the remaining expectation value with complex conjugation or the commutator.</li>
+</ol>
+<p><strong>Photon-number type.</strong> For <span class="arithmatex">\(\langle\Psi\rvert\hat a_H^{\dagger}\hat a_H\lvert\Psi\rangle\)</span>, step 3 uses <span class="arithmatex">\(\langle\Psi\rvert\hat O^{\dagger}\lvert\Psi\rangle=\langle\Psi\rvert\hat O\lvert\Psi\rangle^{*}\)</span> with <span class="arithmatex">\((\hat a_H^{\dagger}\hat a_V^{\dagger})^{\dagger}=\hat a_V\hat a_H=\hat a_H\hat a_V\)</span> (different modes commute):</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\langle\Psi\rvert\hat a_H^{\dagger}\hat a_H\lvert\Psi\rangle
+&amp;=\langle\Psi\rvert\hat a_H^{\dagger}\,\big(\hat a_H\lvert\Psi\rangle\big)
+=\lambda\,\langle\Psi\rvert\hat a_H^{\dagger}\left(S_4\,\hat a_H^{\dagger}-C_4\,\hat a_V^{\dagger}\right)\lvert\Psi\rangle\\
+&amp;=\lambda S_4\,\langle\Psi\rvert\hat a_H^{\dagger}\hat a_H^{\dagger}\lvert\Psi\rangle-\lambda C_4\,\langle\Psi\rvert\hat a_H^{\dagger}\hat a_V^{\dagger}\lvert\Psi\rangle
+=\lambda S_4\,\langle\Psi\rvert\hat a_H\hat a_H\lvert\Psi\rangle^{*}-\lambda C_4\,\langle\Psi\rvert\hat a_H\hat a_V\lvert\Psi\rangle^{*} .
+\end{aligned}
+\]</div>
+<p><strong>Pair type.</strong> For <span class="arithmatex">\(\langle\Psi\rvert\hat a_H\hat a_H\lvert\Psi\rangle\)</span>, the replacement leaves an annihilator <em>left</em> of a creator. Step 3 reorders them with <span class="arithmatex">\(\hat a_H\hat a_H^{\dagger}=1+\hat a_H^{\dagger}\hat a_H\)</span> and <span class="arithmatex">\(\hat a_H\hat a_V^{\dagger}=\hat a_V^{\dagger}\hat a_H\)</span>:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\langle\Psi\rvert\hat a_H\hat a_H\lvert\Psi\rangle
+&amp;=\langle\Psi\rvert\hat a_H\,\big(\hat a_H\lvert\Psi\rangle\big)
+=\lambda S_4\,\langle\Psi\rvert\hat a_H\hat a_H^{\dagger}\lvert\Psi\rangle-\lambda C_4\,\langle\Psi\rvert\hat a_H\hat a_V^{\dagger}\lvert\Psi\rangle\\
+&amp;=\lambda S_4\,\big(1+\langle\Psi\rvert\hat a_H^{\dagger}\hat a_H\lvert\Psi\rangle\big)-\lambda C_4\,\langle\Psi\rvert\hat a_V^{\dagger}\hat a_H\lvert\Psi\rangle .
+\end{aligned}
+\]</div>
+<p>So photon numbers are expressed through pair correlations and vice versa. The <span class="arithmatex">\(1\)</span> from the commutator is the only term without an unknown.</p>
+<h3 id="all-eight-entries">All eight entries<a class="headerlink" href="#all-eight-entries" title="Permanent link">&para;</a></h3>
+<p>For the photon-number type <span class="arithmatex">\(\langle\Psi\rvert\hat a_i^{\dagger}\hat a_j\lvert\Psi\rangle\)</span>, the operator <span class="arithmatex">\(\hat a_j\)</span> is replaced:</p>
+<p><span id="eq11a"></span></p>
+<div class="arithmatex">\[
+\begin{aligned}
+\langle\Psi\rvert\hat a_H^{\dagger}\hat a_H\lvert\Psi\rangle&amp;=\lambda\Big(S_4\,\langle\Psi\rvert\hat a_H\hat a_H\lvert\Psi\rangle^{*}-C_4\,\langle\Psi\rvert\hat a_H\hat a_V\lvert\Psi\rangle^{*}\Big),\\
+\langle\Psi\rvert\hat a_V^{\dagger}\hat a_H\lvert\Psi\rangle&amp;=\lambda\Big(S_4\,\langle\Psi\rvert\hat a_H\hat a_V\lvert\Psi\rangle^{*}-C_4\,\langle\Psi\rvert\hat a_V\hat a_V\lvert\Psi\rangle^{*}\Big),\\
+\langle\Psi\rvert\hat a_H^{\dagger}\hat a_V\lvert\Psi\rangle&amp;=\lambda\Big(-C_4\,\langle\Psi\rvert\hat a_H\hat a_H\lvert\Psi\rangle^{*}-S_4\,\langle\Psi\rvert\hat a_H\hat a_V\lvert\Psi\rangle^{*}\Big),\\
+\langle\Psi\rvert\hat a_V^{\dagger}\hat a_V\lvert\Psi\rangle&amp;=\lambda\Big(-C_4\,\langle\Psi\rvert\hat a_H\hat a_V\lvert\Psi\rangle^{*}-S_4\,\langle\Psi\rvert\hat a_V\hat a_V\lvert\Psi\rangle^{*}\Big),
+\end{aligned}
+\tag{11a}
+\]</div>
+<p>and for the pair type <span class="arithmatex">\(\langle\Psi\rvert\hat a_i\hat a_j\lvert\Psi\rangle\)</span>, again the right-hand operator <span class="arithmatex">\(\hat a_j\)</span> is replaced:</p>
+<p><span id="eq11b"></span></p>
+<div class="arithmatex">\[
+\begin{aligned}
+\langle\Psi\rvert\hat a_H\hat a_H\lvert\Psi\rangle&amp;=\lambda\Big(S_4\,\big(1+\langle\Psi\rvert\hat a_H^{\dagger}\hat a_H\lvert\Psi\rangle\big)-C_4\,\langle\Psi\rvert\hat a_V^{\dagger}\hat a_H\lvert\Psi\rangle\Big),\\
+\langle\Psi\rvert\hat a_H\hat a_V\lvert\Psi\rangle&amp;=\lambda\Big(-C_4\,\big(1+\langle\Psi\rvert\hat a_H^{\dagger}\hat a_H\lvert\Psi\rangle\big)-S_4\,\langle\Psi\rvert\hat a_V^{\dagger}\hat a_H\lvert\Psi\rangle\Big),\\
+\langle\Psi\rvert\hat a_V\hat a_H\lvert\Psi\rangle&amp;=\lambda\Big(S_4\,\langle\Psi\rvert\hat a_H^{\dagger}\hat a_V\lvert\Psi\rangle-C_4\,\big(1+\langle\Psi\rvert\hat a_V^{\dagger}\hat a_V\lvert\Psi\rangle\big)\Big),\\
+\langle\Psi\rvert\hat a_V\hat a_V\lvert\Psi\rangle&amp;=\lambda\Big(-C_4\,\langle\Psi\rvert\hat a_H^{\dagger}\hat a_V\lvert\Psi\rangle-S_4\,\big(1+\langle\Psi\rvert\hat a_V^{\dagger}\hat a_V\lvert\Psi\rangle\big)\Big).
+\end{aligned}
+\tag{11b}
+\]</div>
+<p>(11a) and (11b) are eight linear equations for the eight unknown expectation values. No Fock-state sums were needed.</p>
+<h3 id="matrix-form">Matrix form<a class="headerlink" href="#matrix-form" title="Permanent link">&para;</a></h3>
+<p>The eight equations have a pattern. In every line, the coefficients <span class="arithmatex">\(S_4\)</span>, <span class="arithmatex">\(-C_4\)</span> (first line of (9)) or <span class="arithmatex">\(-C_4\)</span>, <span class="arithmatex">\(-S_4\)</span> (second line of (9)) are a row of <span class="arithmatex">\(M\)</span>. So the equations are matrix products with <span class="arithmatex">\(M\)</span>. With the matrices <span class="arithmatex">\(N\)</span> and <span class="arithmatex">\(\mathcal{M}\)</span> of (10), (11a) is entry by entry the product <span class="arithmatex">\(\lambda\,\mathcal{M}^{*}M\)</span>. For example, the third line is the <span class="arithmatex">\((H,V)\)</span> entry:</p>
+<div class="arithmatex">\[
+\big(\lambda\,\mathcal{M}^{*}M\big)_{HV}
+=\lambda\Big(\langle\Psi\rvert\hat a_H\hat a_H\lvert\Psi\rangle^{*}\,M_{HV}+\langle\Psi\rvert\hat a_H\hat a_V\lvert\Psi\rangle^{*}\,M_{VV}\Big)
+=\lambda\Big(-C_4\,\langle\Psi\rvert\hat a_H\hat a_H\lvert\Psi\rangle^{*}-S_4\,\langle\Psi\rvert\hat a_H\hat a_V\lvert\Psi\rangle^{*}\Big)
+=\langle\Psi\rvert\hat a_H^{\dagger}\hat a_V\lvert\Psi\rangle .
+\]</div>
+<p>Likewise, (11b) is entry by entry <span class="arithmatex">\(\lambda M+\lambda N^TM\)</span>, where <span class="arithmatex">\(\lambda M\)</span> collects the terms with the <span class="arithmatex">\(1\)</span>'s. For example, the <span class="arithmatex">\((H,V)\)</span> entry:</p>
+<div class="arithmatex">\[
+\big(\lambda M+\lambda N^TM\big)_{HV}
+=\lambda\Big(M_{HV}+\langle\Psi\rvert\hat a_H^{\dagger}\hat a_H\lvert\Psi\rangle\,M_{HV}+\langle\Psi\rvert\hat a_V^{\dagger}\hat a_H\lvert\Psi\rangle\,M_{VV}\Big)
+=\lambda\Big(-C_4\big(1+\langle\Psi\rvert\hat a_H^{\dagger}\hat a_H\lvert\Psi\rangle\big)-S_4\,\langle\Psi\rvert\hat a_V^{\dagger}\hat a_H\lvert\Psi\rangle\Big)
+=\langle\Psi\rvert\hat a_H\hat a_V\lvert\Psi\rangle .
+\]</div>
+<p>Here <span class="arithmatex">\((N^T)_{HV}=N_{VH}=\langle\Psi\rvert\hat a_V^{\dagger}\hat a_H\lvert\Psi\rangle\)</span>. Together:</p>
+<p><span id="eq12"></span></p>
+<div class="arithmatex">\[
+N=\lambda\,\mathcal{M}^{*}M,
+\qquad
+\mathcal{M}=\lambda M+\lambda\,N^TM .
+\tag{12}
+\]</div>
+<h3 id="solving-for-mathcalm">Solving for <span class="arithmatex">\(\mathcal{M}\)</span><a class="headerlink" href="#solving-for-mathcalm" title="Permanent link">&para;</a></h3>
+<p>Take the transpose of the first equation of (12). With <span class="arithmatex">\((XY)^T=Y^TX^T\)</span> and the symmetry of <span class="arithmatex">\(M\)</span> and <span class="arithmatex">\(\mathcal{M}\)</span> (<span class="arithmatex">\(M^T=M\)</span>, <span class="arithmatex">\((\mathcal{M}^{*})^T=\mathcal{M}^{*}\)</span>):</p>
+<div class="arithmatex">\[
+N^T=\lambda\,(\mathcal{M}^{*}M)^T=\lambda\,M\mathcal{M}^{*}.
+\]</div>
+<p>Inserting this into the second equation of (12) gives an equation for <span class="arithmatex">\(\mathcal{M}\)</span> alone:</p>
+<p><span id="eq13"></span></p>
+<div class="arithmatex">\[
+\mathcal{M}=\lambda M+\lambda^2\,M\mathcal{M}^{*}M .
+\tag{13}
+\]</div>
+<p>Equation (13) contains <span class="arithmatex">\(\mathcal{M}^{*}\)</span> on the right. Its complex conjugate gives an expression for it. Since <span class="arithmatex">\(\lambda\)</span> and <span class="arithmatex">\(M\)</span> are real,</p>
+<div class="arithmatex">\[
+\mathcal{M}^{*}=\lambda M+\lambda^2\,M\mathcal{M}M .
+\]</div>
+<p>Insert this back into the right-hand side of (13):</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\mathcal{M}
+&amp;=\lambda M+\lambda^2\,M\left(\lambda M+\lambda^2\,M\mathcal{M}M\right)M\\
+&amp;=\lambda M+\lambda^3\,MMM+\lambda^4\,MM\,\mathcal{M}\,MM .
+\end{aligned}
+\]</div>
+<p>With <span class="arithmatex">\(M^2=MM=\mathbb{1}\)</span> from <a href="../notation/#eq4">(4)</a>, <span class="arithmatex">\(MMM=M\)</span> and <span class="arithmatex">\(MM\,\mathcal{M}\,MM=\mathcal{M}\)</span>, so</p>
+<div class="arithmatex">\[
+\mathcal{M}=\lambda M+\lambda^3 M+\lambda^4\mathcal{M}
+\quad\Longrightarrow\quad
+(1-\lambda^4)\,\mathcal{M}=\lambda(1+\lambda^2)\,M .
+\]</div>
+<p>Since <span class="arithmatex">\(1-\lambda^4=(1-\lambda^2)(1+\lambda^2)\)</span> and <span class="arithmatex">\(\lambda&lt;1\)</span>, divide by <span class="arithmatex">\(1-\lambda^4\neq0\)</span>:</p>
+<p><span id="eq14"></span></p>
+<div class="arithmatex">\[
+\mathcal{M}=\frac{\lambda}{1-\lambda^2}\,M .
+\tag{14}
+\]</div>
+<p>So the pair matrix <span class="arithmatex">\(\mathcal{M}\)</span> is the HWP matrix <span class="arithmatex">\(M\)</span> times a number that depends only on <span class="arithmatex">\(\lambda\)</span>. The derivation determines <span class="arithmatex">\(\mathcal{M}\)</span> uniquely: no guess was made.</p>
+<p>The photon-number matrix follows from the first equation of (12), using <span class="arithmatex">\(\mathcal{M}^{*}=\mathcal{M}\)</span> (it is real) and <span class="arithmatex">\(M^2=\mathbb{1}\)</span>: <span class="arithmatex">\(N=\lambda\,\mathcal{M}^{*}M=\frac{\lambda^2}{1-\lambda^2}\,\mathbb{1}\)</span>.</p>
+<h3 id="the-abbreviations-nu-and-mu">The abbreviations <span class="arithmatex">\(\nu\)</span> and <span class="arithmatex">\(\mu\)</span><a class="headerlink" href="#the-abbreviations-nu-and-mu" title="Permanent link">&para;</a></h3>
+<p>The two numbers in these results appear throughout the rest of this section, so they get names:</p>
+<p><span id="eq15"></span></p>
+<div class="arithmatex">\[
+\nu=\frac{\lambda^2}{1-\lambda^2},
+\qquad
+\mu=\frac{\lambda}{1-\lambda^2}.
+\tag{15}
+\]</div>
+<p>With <span class="arithmatex">\(\lambda=\tanh r\)</span> and <span class="arithmatex">\(1-\tanh^2 r=1/\cosh^2 r\)</span>, they are <span class="arithmatex">\(\nu=\sinh^2 r\)</span> (the mean photon number per arm) and <span class="arithmatex">\(\mu=\sinh r\cosh r\)</span> (the pair amplitude). With these names, the result is</p>
+<p><span id="eq16"></span></p>
+<div class="arithmatex">\[
+N=\nu\,\mathbb{1},
+\qquad
+\mathcal{M}=\mu M .
+\tag{16}
+\]</div>
+<p><strong>Reading it physically:</strong></p>
+<ul>
+<li>Each arm carries <span class="arithmatex">\(\nu=\sinh^2r\)</span> photons on average, for every HWP angle. The HWP only redistributes the <em>pairs</em>, not the mean photon number.</li>
+<li>At <span class="arithmatex">\(\vartheta=0\)</span>: <span class="arithmatex">\(S_4=0\)</span> and <span class="arithmatex">\(C_4=1\)</span>. Only <span class="arithmatex">\(\langle\Psi\rvert\hat a_H\hat a_V\lvert\Psi\rangle=-\mu\)</span> is nonzero, so each pair is split into one <span class="arithmatex">\(H\)</span> and one <span class="arithmatex">\(V\)</span> photon.</li>
+<li>At <span class="arithmatex">\(\vartheta=\pi/8\)</span>: <span class="arithmatex">\(S_4=1\)</span> and <span class="arithmatex">\(C_4=0\)</span>. Now <span class="arithmatex">\(\langle\Psi\rvert\hat a_H\hat a_H\lvert\Psi\rangle=\mu\)</span> and <span class="arithmatex">\(\langle\Psi\rvert\hat a_V\hat a_V\lvert\Psi\rangle=-\mu\)</span>, so both photons of a pair go to the same port, as in Hong-Ou-Mandel bunching.</li>
+</ul>
+<p><strong>Cross-check at <span class="arithmatex">\(\vartheta=0\)</span>.</strong> Here <span class="arithmatex">\(\lvert\Psi\rangle=\Lambda\sum_n(-\lambda)^n\lvert n,n\rangle\)</span>. With <span class="arithmatex">\(\hat a_H\hat a_V\lvert n+1,n+1\rangle=(n+1)\lvert n,n\rangle\)</span>:</p>
+<p><span id="eq17"></span></p>
+<div class="arithmatex">\[
+\langle\Psi\rvert\hat n_H\lvert\Psi\rangle=(1-\lambda^2)\sum_n n\lambda^{2n}=\frac{\lambda^2}{1-\lambda^2}=\nu,
+\qquad
+\langle\Psi\rvert\hat a_H\hat a_V\lvert\Psi\rangle=(1-\lambda^2)\sum_n(n+1)(-\lambda)^{2n+1}=-\frac{\lambda}{1-\lambda^2}=-\mu .
+\tag{17}
+\]</div>
+<p>Two identities used later:</p>
+<p><span id="eq18"></span></p>
+<div class="arithmatex">\[
+1+\nu=\frac{1}{1-\lambda^2},
+\qquad
+\nu^2-\mu^2=\frac{\lambda^4-\lambda^2}{(1-\lambda^2)^2}=-\nu .
+\tag{18}
+\]</div>
+<h2 id="the-matrix-sigma_q">The matrix <span class="arithmatex">\(\sigma_Q\)</span><a class="headerlink" href="#the-matrix-sigma_q" title="Permanent link">&para;</a></h2>
+<p>With <span class="arithmatex">\(N\)</span> and <span class="arithmatex">\(\mathcal{M}\)</span> known, the covariance matrix (6) can be filled in. Its rewritten form from <a href="#why-cov">Why the covariance matrix?</a> is, in terms of the blocks of (10),</p>
+<p><span id="eq19"></span></p>
+<div class="arithmatex">\[
+\sigma_Q=
+\begin{pmatrix}
+\mathbb{1}+N^T &amp; \mathcal{M}\\
+\mathcal{M}^{*} &amp; \mathbb{1}+N
+\end{pmatrix}.
+\tag{19}
+\]</div>
+<p>Plugging in (16) for <span class="arithmatex">\(\lvert\Psi\rangle\)</span>:</p>
+<p><span id="eq20"></span></p>
+<div class="arithmatex">\[
+\sigma_Q=
+\begin{pmatrix}
+1+\nu &amp; 0 &amp; \mu S_4 &amp; -\mu C_4\\
+0 &amp; 1+\nu &amp; -\mu C_4 &amp; -\mu S_4\\
+\mu S_4 &amp; -\mu C_4 &amp; 1+\nu &amp; 0\\
+-\mu C_4 &amp; -\mu S_4 &amp; 0 &amp; 1+\nu
+\end{pmatrix}.
+\tag{20}
+\]</div>
+<p><code>thewalrus.quantum.Qmat</code> <a href="#ref-gupt2019">[4]</a> returns this matrix (checked entry by entry, see the <a href="../comparison/#numerical-check">numerical check</a>). The library stores states differently internally, but <code>Qmat</code> converts to this form.</p>
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<p id="ref-hamilton2017">
+[1] C. S. Hamilton, R. Kruse, L. Sansoni, S. Barkhofen, C. Silberhorn, I. Jex,
+<em>Gaussian Boson Sampling</em>, Phys. Rev. Lett. <strong>119</strong>, 170501 (2017). Available: https://arxiv.org/abs/1612.01199
+</p>
+
+<p id="ref-kruse2019">
+[3] R. Kruse, C. S. Hamilton, L. Sansoni, S. Barkhofen, C. Silberhorn, I. Jex,
+<em>Detailed study of Gaussian boson sampling</em>, Phys. Rev. A <strong>100</strong>, 032326 (2019). Available: https://arxiv.org/abs/1801.07488
+</p>
+
+<p id="ref-gupt2019">
+[4] B. Gupt, J. Izaac, N. Quesada,
+<em>The Walrus: a library for the calculation of hafnians, Hermite polynomials and Gaussian boson sampling</em>, J. Open Source Softw. <strong>4</strong>(44), 1705 (2019). Documentation: https://the-walrus.readthedocs.io
+</p>
+
+<p id="ref-weedbrook2012">
+[8] C. Weedbrook, S. Pirandola, R. García-Patrón, N. J. Cerf, T. C. Ralph, J. H. Shapiro, S. Lloyd,
+<em>Gaussian quantum information</em>, Rev. Mod. Phys. <strong>84</strong>, 621 (2012). Available: https://arxiv.org/abs/1110.3234
+</p>
+
+<p id="ref-ferraro2005">
+[9] A. Ferraro, S. Olivares, M. G. A. Paris,
+<em>Gaussian states in continuous variable quantum information</em>, 2005. Available: https://arxiv.org/abs/quant-ph/0503237
+</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../notation/" class="btn btn-neutral float-left" title="Notation"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../vacuum_probability/" class="btn btn-neutral float-right" title="Vacuum probability">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://properdocs.org/">ProperDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/nicosieber/spdc-coincidence-analysis" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../notation/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../vacuum_probability/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../js/mathjax.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

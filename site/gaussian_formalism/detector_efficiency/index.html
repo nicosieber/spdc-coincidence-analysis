@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Nico Sieber" /><link rel="canonical" href="https://nicosieber.github.io/spdc-coincidence-analysis/gaussian_formalism/detector_efficiency/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Detector efficiency - SPDC Coincidence Analysis</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../stylesheets/extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var properdocs_page_name = "Detector efficiency";
+        var properdocs_page_input_path = "gaussian_formalism/detector_efficiency.md";
+        var properdocs_page_url = "/spdc-coincidence-analysis/gaussian_formalism/detector_efficiency/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/python.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> SPDC Coincidence Analysis
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../..#contents">Contents</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Main derivation</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../theory/experimental_setup/">Experimental setup</a>
+    <ul>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../theory/simplified_example/">Simplified example</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../../theory/simplified_example/#references">References</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../theory/povm/">POVM</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../../theory/povm/#general-povm-formalism">General POVM formalism</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../theory/povm/#povm-of-bucket-detectors">POVM of bucket detectors</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../theory/povm/#inclusion-of-loss-into-the-detector-model">Inclusion of loss into the detector model</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../theory/povm/#references">References</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../theory/tmsv/">TMSV</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../../theory/tmsv/#mathematical-description-of-the-quantum-state">Mathematical description of the quantum state</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../theory/tmsv/#tmsv-rotated-by-a-hwp">TMSV rotated by a HWP</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../theory/tmsv/#tmsv-written-as-an-exponential">TMSV written as an exponential</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../theory/tmsv/#references">References</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../theory/cc_derivation/">Derivation of the coincidence probability</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../../theory/cc_derivation/#evaluation-of-the-complex-gaussian-integral">Evaluation of the complex Gaussian integral</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../theory/cc_derivation/#evaluation-of-the-determinant">Evaluation of the determinant</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../theory/cc_derivation/#interpretation-of-the-no-click-and-coincidence-probabilities">Interpretation of the no-click and coincidence probabilities</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../theory/cc_derivation/#connection-to-the-notation-p_heta0-p_veta0-and-peta_heta_v00">Connection to the notation \(P_H^{(\eta)}(0)\), \(P_V^{(\eta)}(0)\), and \(P^{(\eta_H,\eta_V)}(0,0)\)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../theory/cc_derivation/#inclusion-of-dark-counts">Inclusion of dark counts</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../../theory/cc_derivation/#dark-count-model">Dark count model</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../theory/cc_derivation/#modified-single-mode-povm-element">Modified single-mode POVM element</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../theory/cc_derivation/#two-mode-coincidence-povm-with-dark-counts">Two-mode coincidence POVM with dark counts</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../theory/cc_derivation/#factoring-out-the-dark-count-probabilities">Factoring out the dark count probabilities</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../theory/cc_derivation/#modified-coincidence-probability">Modified coincidence probability</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../theory/cc_derivation/#physical-interpretation">Physical interpretation</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../theory/cc_derivation/#references">References</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../theory/generalization/">Generalizing the optical element</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../../theory/generalization/#the-matrix-m-already-contains-the-optics">The matrix \(M\) already contains the optics</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../theory/generalization/#replacing-the-hwp-by-an-arbitrary-element">Replacing the HWP by an arbitrary element</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../theory/generalization/#the-derivation-is-unchanged-up-to-the-determinant">The derivation is unchanged up to the determinant</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../../theory/generalization/#the-determinant-for-a-general-element">The determinant for a general element</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../theory/generalization/#specializing-to-the-hwp">Specializing to the HWP</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../theory/generalization/#two-worked-elements">Two worked elements</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../../theory/generalization/#a-phase-shifter-alone-produces-no-fringe">A phase shifter alone produces no fringe</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../theory/generalization/#a-beam-splitter-is-the-hwp-with-a-relabelled-angle">A beam splitter is the HWP with a relabelled angle</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Gaussian formalism</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../overview/">Overview</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../overview/#outline-of-quesadas-approach">Outline of Quesada's approach</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../overview/#the-core-idea">The core idea</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../overview/#the-steps">The steps</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../overview/#supporting-concepts">Supporting concepts</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../overview/#references">References</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../notation/">Notation</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../notation/#references">References</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../covariance_matrix/">Covariance matrix</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../covariance_matrix/#why-the-covariance-matrix">Why the covariance matrix?</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../covariance_matrix/#why-we-look-at-hat-alvertpsirangle">Why we look at \(\hat a\lvert\Psi\rangle\)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../covariance_matrix/#the-key-relation">The key relation</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../covariance_matrix/#the-two-blocks-n-and-mathcalm">The two blocks \(N\) and \(\mathcal{M}\)</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../covariance_matrix/#one-entry-step-by-step">One entry step by step</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../covariance_matrix/#all-eight-entries">All eight entries</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../covariance_matrix/#matrix-form">Matrix form</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../covariance_matrix/#solving-for-mathcalm">Solving for \(\mathcal{M}\)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../covariance_matrix/#the-abbreviations-nu-and-mu">The abbreviations \(\nu\) and \(\mu\)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../covariance_matrix/#the-matrix-sigma_q">The matrix \(\sigma_Q\)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../covariance_matrix/#references">References</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../vacuum_probability/">Vacuum probability</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../vacuum_probability/#the-q-function">The \(Q\) function</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../vacuum_probability/#height-of-a-bell-curve">Height of a bell curve</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../vacuum_probability/#is-q-really-a-bell-curve-check-with-the-main-derivation">Is \(Q\) really a bell curve? Check with the main derivation</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../vacuum_probability/#references">References</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Detector efficiency</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#why-this-is-allowed">Why this is allowed</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#what-the-beam-splitter-does-to-the-covariance-matrix">What the beam splitter does to the covariance matrix</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#the-lossy-matrix-sigma_q">The lossy matrix \(\sigma_Q'\)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#references">References</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../determinant/">Determinant</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../determinant/#reducing-4times4-to-two-2times2-determinants">Reducing \(4\times4\) to two \(2\times2\) determinants</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../determinant/#evaluating-the-two-factors">Evaluating the two factors</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../determinant/#result">Result</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../determinant/#sanity-checks">Sanity checks</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../determinant/#references">References</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../coincidence/">Coincidence probability</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../coincidence/#from-clicks-to-no-clicks-inclusionexclusion">From clicks to no-clicks (inclusion–exclusion)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../coincidence/#the-same-formula-from-the-q-function-quesadas-derivation">The same formula from the \(Q\) function (Quesada's derivation)</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../coincidence/#part-1-ideal-detectors-arbitrary-state">Part 1: ideal detectors, arbitrary state</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../coincidence/#part-2-detector-efficiency">Part 2: detector efficiency</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../coincidence/#no-click-in-one-detector">No click in one detector</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../coincidence/#the-coincidence-probability">The coincidence probability</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../coincidence/#the-torontonian">The Torontonian</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../coincidence/#references">References</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../comparison/">Comparison and numerical checks</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../comparison/#comparison-with-the-main-derivation">Comparison with the main derivation</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../comparison/#numerical-check">Numerical check</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../comparison/#with-thewalrus">With thewalrus</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../comparison/#symbolic-check">Symbolic check</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../comparison/#references">References</a>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Additional concepts, identities and derivations</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../concepts_and_foundations/overview/">Overview</a>
+    <ul>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../concepts_and_foundations/coherent_states/">Coherent states</a>
+    <ul>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../concepts_and_foundations/conjugation_operators/">Conjugation of operators</a>
+    <ul>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../concepts_and_foundations/determinant_relations/">Determinant relations</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../../concepts_and_foundations/determinant_relations/#determinant-of-a-2-by-2-block-matrix">Determinant of a 2 by 2 block matrix</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../concepts_and_foundations/determinant_relations/#determinant-identity-for-scaled-matrices">Determinant identity for scaled matrices</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../concepts_and_foundations/determinant_relations/#references">References</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../concepts_and_foundations/matrix_properties/">Matrix properties</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../../concepts_and_foundations/matrix_properties/#structure-of-b">Structure of B</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../concepts_and_foundations/matrix_properties/#spectral-properties-of-m">Spectral properties of M</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../concepts_and_foundations/matrix_properties/#bound-on-l">Bound on L</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../concepts_and_foundations/matrix_properties/#positivity-of-b">Positivity of B</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../concepts_and_foundations/matrix_properties/#existence-and-uniqueness-of-the-matrix-square-root-of-b">Existence and uniqueness of the matrix square root of B</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../concepts_and_foundations/matrix_properties/#conclusion">Conclusion</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../concepts_and_foundations/matrix_properties/#references">References</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../concepts_and_foundations/operator_relations/">Operator relations</a>
+    <ul>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../concepts_and_foundations/povm_number_operator/">POVM as number operator</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../../concepts_and_foundations/povm_number_operator/#action-of-exponentials-of-the-number-operator">Action of exponentials of the number operator</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../concepts_and_foundations/povm_number_operator/#action-of-a-on-number-states">Action of \(A\) on number states</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../concepts_and_foundations/povm_number_operator/#identification-of-the-operators">Identification of the operators</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../concepts_and_foundations/gaussian_peak_height/">Peak height of a Gaussian</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../../concepts_and_foundations/gaussian_peak_height/#one-variable">One variable</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../concepts_and_foundations/gaussian_peak_height/#independent-variables-the-determinant-is-a-product-of-variances">Independent variables: the determinant is a product of variances</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../concepts_and_foundations/gaussian_peak_height/#correlated-variables-rotate-until-they-are-independent">Correlated variables: rotate until they are independent</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../concepts_and_foundations/gaussian_peak_height/#complex-variables">Complex variables</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../concepts_and_foundations/gaussian_peak_height/#marginals">Marginals</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../concepts_and_foundations/commutator_exponential/">Commutator with an exponential</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../../concepts_and_foundations/commutator_exponential/#linearity">Linearity</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../concepts_and_foundations/commutator_exponential/#product-rule">Product rule</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../concepts_and_foundations/commutator_exponential/#commutator-with-a-power">Commutator with a power</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../concepts_and_foundations/commutator_exponential/#summing-the-series">Summing the series</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../concepts_and_foundations/loss_beam_splitter/">Loss as a beam splitter</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../../concepts_and_foundations/loss_beam_splitter/#the-beam-splitter-on-photon-number-states">The beam splitter on photon-number states</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../concepts_and_foundations/loss_beam_splitter/#kraus-operators">Kraus operators</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../concepts_and_foundations/loss_beam_splitter/#the-vacuum-probability-behind-the-beam-splitter">The vacuum probability behind the beam splitter</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../concepts_and_foundations/loss_beam_splitter/#the-beam-splitter-on-operators">The beam splitter on operators</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../concepts_and_foundations/block_matrices/">Block-matrix identities</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../../concepts_and_foundations/block_matrices/#determinant-of-leftbeginsmallmatrixabbaendsmallmatrixright">Determinant of \(\left(\begin{smallmatrix}A&amp;B\\B&amp;A\end{smallmatrix}\right)\)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../concepts_and_foundations/block_matrices/#block-diagonalization-by-a-rotation">Block diagonalization by a rotation</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../concepts_and_foundations/block_matrices/#jacobis-complementary-minor-identity">Jacobi's complementary-minor identity</a>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Interactive dashboards</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../dashboard/overview/">Overview</a>
+    <ul>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Coincidence probability</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../dashboard/coincidence/overview/">Overview</a>
+    <ul>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../dashboard/coincidence/numpy/">NumPy dashboard</a>
+    <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../../dashboard/coincidence/numpy/#the-closed-form">The closed form</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../dashboard/coincidence/numpy/#the-fock-space-simulation">The Fock-space simulation</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../dashboard/coincidence/qutip/">QuTiP dashboard</a>
+    <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../../dashboard/coincidence/qutip/#operators-and-the-generator">Operators and the generator</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../dashboard/coincidence/qutip/#the-state">The state</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../dashboard/coincidence/qutip/#bucket-detectors-and-probabilities">Bucket detectors and probabilities</a>
+    </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../dashboard/visibility/">Visibility</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../../dashboard/visibility/#the-ideal-ceiling">The ideal ceiling</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../dashboard/fisher/">Fisher information</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../../dashboard/fisher/#motivation-reading-the-phase-from-click-patterns">Motivation: Reading the Phase from Click Patterns</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../dashboard/fisher/#the-snl-for-the-tmsv-model">The SNL for the TMSV Model</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../../dashboard/fisher/#flat-snl-for-symmetric-losses">Flat SNL for symmetric losses</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../dashboard/fisher/#comparison-to-the-experiment-of-slussarenko-et-al">Comparison to the experiment of Slussarenko et al</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../dashboard/fisher/#references">References</a>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">SPDC Coincidence Analysis</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Gaussian formalism</li>
+      <li class="breadcrumb-item active">Detector efficiency</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/nicosieber/spdc-coincidence-analysis/blob/main/docs/gaussian_formalism/detector_efficiency.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="detector-efficiency-as-a-beam-splitter">Detector efficiency as a beam splitter<a class="headerlink" href="#detector-efficiency-as-a-beam-splitter" title="Permanent link">&para;</a></h1>
+<h2 id="why-this-is-allowed">Why this is allowed<a class="headerlink" href="#why-this-is-allowed" title="Permanent link">&para;</a></h2>
+<p>A beam splitter with transmissivity <span class="arithmatex">\(\eta\)</span>, whose other input is vacuum, loses <span class="arithmatex">\(k\)</span> of <span class="arithmatex">\(n\)</span> photons with binomial probability. Its effect on a state is described by the operators (Kraus operators)</p>
+<p><span id="eq30"></span></p>
+<div class="arithmatex">\[
+\hat K_k=\sum_{n=k}^{\infty}\sqrt{\binom{n}{k}}\,\eta^{\frac{n-k}{2}}(1-\eta)^{\frac{k}{2}}\,\lvert n-k\rangle\langle n\rvert,
+\qquad
+\rho\;\longrightarrow\;\mathcal{E}_\eta(\rho)=\sum_{k=0}^{\infty}\hat K_k\,\rho\,\hat K_k^{\dagger}.
+\tag{30}
+\]</div>
+<p>Only the term <span class="arithmatex">\(n=k\)</span> ("all photons lost") ends in the vacuum, so <span class="arithmatex">\(\langle 0\rvert\hat K_k\lvert n\rangle=\delta_{nk}(1-\eta)^{n/2}\)</span>. Therefore</p>
+<p><span id="eq31"></span></p>
+<div class="arithmatex">\[
+\langle 0\rvert\mathcal{E}_\eta(\rho)\lvert 0\rangle
+=\sum_{n}(1-\eta)^{n}\langle n\rvert\rho\lvert n\rangle
+=\operatorname{Tr}\!\left[\rho\,(1-\eta)^{\hat n}\right].
+\tag{31}
+\]</div>
+<p>Where the Kraus operators (30) come from, and the step to (31) written out, is shown in <a href="../../concepts_and_foundations/loss_beam_splitter/">Detector loss as a beam splitter</a>.</p>
+<p>The right-hand side of (31) is the no-click POVM element <span class="arithmatex">\(\Pi_0^{(\eta)}\)</span> from <a href="../../theory/povm/#formula_P_cc_loss">POVM</a>. So <a href="../overview/#eq1">(1)</a> becomes</p>
+<p><span id="eq32"></span></p>
+<div class="arithmatex">\[
+P^{(\eta_H,\eta_V)}(0,0)
+=\langle 0,0\rvert\,\rho'\,\lvert 0,0\rangle,
+\qquad
+\rho'=(\mathcal{E}_{\eta_H}\otimes\mathcal{E}_{\eta_V})\big(\lvert\Psi\rangle\langle\Psi\rvert\big):
+\tag{32}
+\]</div>
+<p>an inefficient detector is a perfect detector behind a beam splitter. This beam-splitter model of absorption is standard in quantum optics <a href="#ref-leonhardt1997">[7, Sec. 4.1.4]</a>; in the language of Gaussian channels it is the pure-loss channel <a href="#ref-weedbrook2012">[8]</a>. By <a href="../vacuum_probability/#eq26">(26)</a>, <span class="arithmatex">\(P(0,0)=1/\sqrt{\det\sigma_Q'}\)</span>, where <span class="arithmatex">\(\sigma_Q'\)</span> is the matrix <a href="../covariance_matrix/#eq6">(6)</a> of <span class="arithmatex">\(\rho'\)</span>.</p>
+<h2 id="what-the-beam-splitter-does-to-the-covariance-matrix">What the beam splitter does to the covariance matrix<a class="headerlink" href="#what-the-beam-splitter-does-to-the-covariance-matrix" title="Permanent link">&para;</a></h2>
+<p>Expectation values in <span class="arithmatex">\(\rho'\)</span> are easiest to compute by letting the beam splitter act on the operators (Heisenberg picture, <a href="#ref-leonhardt1997">[7, Sec. 4.1.1]</a>). A new mode <span class="arithmatex">\(\hat b_H\)</span> (or <span class="arithmatex">\(\hat b_V\)</span>) in the vacuum enters the unused port:</p>
+<p><span id="eq33"></span></p>
+<div class="arithmatex">\[
+\hat a_H\;\longrightarrow\;\sqrt{\eta_H}\,\hat a_H+\sqrt{1-\eta_H}\,\hat b_H,
+\qquad
+\hat a_V\;\longrightarrow\;\sqrt{\eta_V}\,\hat a_V+\sqrt{1-\eta_V}\,\hat b_V .
+\tag{33}
+\]</div>
+<p>Insert (33) into the blocks <span class="arithmatex">\(N\)</span> and <span class="arithmatex">\(\mathcal{M}\)</span> of <a href="../covariance_matrix/#eq10">(10)</a>. Because the <span class="arithmatex">\(\hat b\)</span> modes are in the vacuum and uncorrelated with <span class="arithmatex">\(\lvert\Psi\rangle\)</span>, every term containing a <span class="arithmatex">\(\hat b\)</span> vanishes: <span class="arithmatex">\(\langle 0\rvert\hat b\lvert 0\rangle=\langle 0\rvert\hat b^{\dagger}\hat b\lvert 0\rangle=\langle 0\rvert\hat b\hat b\lvert 0\rangle=0\)</span>. (This is why <span class="arithmatex">\(N\)</span> and <span class="arithmatex">\(\mathcal{M}\)</span> are transformed rather than the entries of <span class="arithmatex">\(\sigma_Q\)</span>: <span class="arithmatex">\(\langle 0\rvert\hat b\hat b^{\dagger}\lvert 0\rangle=1\)</span> would not vanish.) For example,</p>
+<p><span id="eq34"></span></p>
+<div class="arithmatex">\[
+\begin{aligned}
+\operatorname{Tr}\!\big[\rho'\,\hat a_H^{\dagger}\hat a_H\big]
+&amp;=\eta_H\langle\Psi\rvert\hat a_H^{\dagger}\hat a_H\lvert\Psi\rangle+(1-\eta_H)\underbrace{\langle 0\rvert\hat b_H^{\dagger}\hat b_H\lvert 0\rangle}_{0}+\text{cross terms with }\langle 0\rvert\hat b_H\lvert 0\rangle=0
+=\eta_H\,\nu,\\
+\operatorname{Tr}\!\big[\rho'\,\hat a_H\hat a_V\big]
+&amp;=\sqrt{\eta_H\eta_V}\,\langle\Psi\rvert\hat a_H\hat a_V\lvert\Psi\rangle=-\sqrt{\eta_H\eta_V}\,\mu C_4,\\
+\operatorname{Tr}\!\big[\rho'\,\hat a_H\hat a_H\big]&amp;=\eta_H\langle\Psi\rvert\hat a_H\hat a_H\lvert\Psi\rangle=\eta_H\,\mu S_4,
+\qquad
+\operatorname{Tr}\!\big[\rho'\,\hat a_V\hat a_V\big]=\eta_V\langle\Psi\rvert\hat a_V\hat a_V\lvert\Psi\rangle=-\eta_V\,\mu S_4 .
+\end{aligned}
+\tag{34}
+\]</div>
+<p>In words: every factor <span class="arithmatex">\(\hat a_H\)</span> or <span class="arithmatex">\(\hat a_H^{\dagger}\)</span> in an expectation value brings a <span class="arithmatex">\(\sqrt{\eta_H}\)</span>, and every <span class="arithmatex">\(\hat a_V\)</span> or <span class="arithmatex">\(\hat a_V^{\dagger}\)</span> brings a <span class="arithmatex">\(\sqrt{\eta_V}\)</span>. A pair correlation between <span class="arithmatex">\(H\)</span> and <span class="arithmatex">\(V\)</span> survives only if both photons are detected, which has amplitude factor <span class="arithmatex">\(\sqrt{\eta_H\eta_V}\)</span>.</p>
+<p><span id="sigmaQ_prime"></span></p>
+<h2 id="the-lossy-matrix-sigma_q">The lossy matrix <span class="arithmatex">\(\sigma_Q'\)</span><a class="headerlink" href="#the-lossy-matrix-sigma_q" title="Permanent link">&para;</a></h2>
+<p>Putting (34) into the pattern <a href="../covariance_matrix/#eq6">(6)</a>, with <span class="arithmatex">\(\operatorname{Tr}\!\big[\rho'\,\hat a_i\hat a_i^{\dagger}\big]=1+\operatorname{Tr}\!\big[\rho'\,\hat a_i^{\dagger}\hat a_i\big]\)</span>:</p>
+<p><span id="eq35a"></span></p>
+<div class="arithmatex">\[
+\sigma_Q'=
+\begin{pmatrix}
+1+\nu\eta_H &amp; 0 &amp; \mu\eta_H S_4 &amp; -\mu\sqrt{\eta_H\eta_V}\,C_4\\
+0 &amp; 1+\nu\eta_V &amp; -\mu\sqrt{\eta_H\eta_V}\,C_4 &amp; -\mu\eta_V S_4\\
+\mu\eta_H S_4 &amp; -\mu\sqrt{\eta_H\eta_V}\,C_4 &amp; 1+\nu\eta_H &amp; 0\\
+-\mu\sqrt{\eta_H\eta_V}\,C_4 &amp; -\mu\eta_V S_4 &amp; 0 &amp; 1+\nu\eta_V
+\end{pmatrix}
+=
+\begin{pmatrix}
+A &amp; B\\
+B &amp; A
+\end{pmatrix}
+\tag{35a}
+\]</div>
+<p>with the two <span class="arithmatex">\(2\times2\)</span> blocks</p>
+<p><span id="eq35b"></span></p>
+<div class="arithmatex">\[
+A=\begin{pmatrix}1+\nu\eta_H &amp; 0\\ 0 &amp; 1+\nu\eta_V\end{pmatrix}=\mathbb{1}+\nu(\mathbb{1}-D),
+\qquad
+B=\mu\begin{pmatrix}\eta_H S_4 &amp; -\sqrt{\eta_H\eta_V}\,C_4\\ -\sqrt{\eta_H\eta_V}\,C_4 &amp; -\eta_V S_4\end{pmatrix}.
+\tag{35b}
+\]</div>
+<p>Setting <span class="arithmatex">\(\eta_H=\eta_V=1\)</span> gives back <a href="../covariance_matrix/#eq20">(20)</a>, and <span class="arithmatex">\(\eta_H=\eta_V=0\)</span> gives <span class="arithmatex">\(\mathbb{1}\)</span>, the vacuum.</p>
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<p id="ref-leonhardt1997">
+[7] U. Leonhardt,
+<em>Measuring the Quantum State of Light</em>, Cambridge University Press, Cambridge (1997).
+</p>
+
+<p id="ref-weedbrook2012">
+[8] C. Weedbrook, S. Pirandola, R. García-Patrón, N. J. Cerf, T. C. Ralph, J. H. Shapiro, S. Lloyd,
+<em>Gaussian quantum information</em>, Rev. Mod. Phys. <strong>84</strong>, 621 (2012). Available: https://arxiv.org/abs/1110.3234
+</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../vacuum_probability/" class="btn btn-neutral float-left" title="Vacuum probability"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../determinant/" class="btn btn-neutral float-right" title="Determinant">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://properdocs.org/">ProperDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/nicosieber/spdc-coincidence-analysis" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../vacuum_probability/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../determinant/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../js/mathjax.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

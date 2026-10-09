@@ -1,4 +1,4 @@
-name: Deploy Zensical docs
+name: Deploy docs
 
 on:
   push:
@@ -39,7 +39,7 @@ jobs:
           python scripts/make_visibility_plot.py
 
       - name: Build docs
-        run: zensical build
+        run: properdocs build
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3

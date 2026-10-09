@@ -174,16 +174,6 @@ For non-symmetric losses on detectors $A$ and $B$, this becomes:
 
 Note: In equation \(\eqref{formula_P_cc_loss}\), I made use of the fact that the [POVM can be rewritten in terms of the photon number operator](../concepts_and_foundations/povm_number_operator.md).
 
-<div class="nav-footer">
-  <a class="nav-prev" href="simplified_example.md">
-    ← Previous
-  </a>
-
-  <a class="nav-next" href="tmsv.md">
-    Next →
-  </a>
-</div>
-
 ## References
 
 <p id="ref-nc">

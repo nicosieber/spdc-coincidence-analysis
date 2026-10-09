@@ -227,16 +227,6 @@ equation \(\eqref{formula:tmsv_as_exp}\) becomes:
 \end{aligned}
 \end{equation}
 
-<div class="nav-footer">
-  <a class="nav-prev" href="povm.md">
-    ← Previous
-  </a>
-
-  <a class="nav-next" href="cc_derivation.md">
-    Next →
-  </a>
-</div>
-
 ## References
 <p id="ref-lvovsky2014">
 [1] A. I. Lvovsky, 
