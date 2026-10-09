@@ -1,0 +1,114 @@
+<html>
+<head>
+<link rel="stylesheet" href="../../stylesheets/coincidence_plots.css">
+<style>
+  /* Height follows the content; the iframe is resized to fit (fitFrame). */
+  html, body, .plot-card { height: auto; }
+  #q-slice-plot { display: flex; justify-content: center; }
+</style>
+<meta charset="utf-8" />
+<script charset="utf-8" src="https://cdn.plot.ly/plotly-3.5.0.min.js"></script>
+</head>
+<body>
+<div class="plot-card">
+  <div class="header">
+    <div class="eyebrow">INTERACTIVE PLOT</div>
+    <div id="readout" class="readout"></div>
+  </div>
+
+  <div class="controls">
+    <div class="input-group">
+      <span>λ</span>
+      <div class="spinbox">
+        <button
+          onmousedown="startStepping('lam', -0.01)"
+          onmouseup="stopStepping()"
+          onmouseleave="stopStepping()"
+          ontouchstart="startStepping('lam', -0.01)"
+          ontouchend="stopStepping()"
+        >-</button>
+        <input id="lam" type="text" inputmode="decimal" value="0.6" oninput="updatePlot()">
+        <button
+          onmousedown="startStepping('lam', 0.01)"
+          onmouseup="stopStepping()"
+          onmouseleave="stopStepping()"
+          ontouchstart="startStepping('lam', 0.01)"
+          ontouchend="stopStepping()"
+        >+</button>
+      </div>
+    </div>
+
+    <div class="input-group">
+      <span>η<sub>H</sub></span>
+      <div class="spinbox">
+        <button
+          onmousedown="startStepping('etaH', -0.01)"
+          onmouseup="stopStepping()"
+          onmouseleave="stopStepping()"
+          ontouchstart="startStepping('etaH', -0.01)"
+          ontouchend="stopStepping()"
+        >-</button>
+        <input id="etaH" type="text" inputmode="decimal" value="0.9" oninput="updatePlot()">
+        <button
+          onmousedown="startStepping('etaH', 0.01)"
+          onmouseup="stopStepping()"
+          onmouseleave="stopStepping()"
+          ontouchstart="startStepping('etaH', 0.01)"
+          ontouchend="stopStepping()"
+        >+</button>
+      </div>
+    </div>
+
+    <div class="input-group">
+      <span>η<sub>V</sub></span>
+      <div class="spinbox">
+        <button
+          onmousedown="startStepping('etaV', -0.01)"
+          onmouseup="stopStepping()"
+          onmouseleave="stopStepping()"
+          ontouchstart="startStepping('etaV', -0.01)"
+          ontouchend="stopStepping()"
+        >-</button>
+        <input id="etaV" type="text" inputmode="decimal" value="0.2" oninput="updatePlot()">
+        <button
+          onmousedown="startStepping('etaV', 0.01)"
+          onmouseup="stopStepping()"
+          onmouseleave="stopStepping()"
+          ontouchstart="startStepping('etaV', 0.01)"
+          ontouchend="stopStepping()"
+        >+</button>
+      </div>
+    </div>
+
+    <div class="input-group">
+      <span>ϑ</span>
+      <div class="spinbox">
+        <button
+          onmousedown="startStepping('theta', -0.01)"
+          onmouseup="stopStepping()"
+          onmouseleave="stopStepping()"
+          ontouchstart="startStepping('theta', -0.01)"
+          ontouchend="stopStepping()"
+        >-</button>
+        <input id="theta" type="text" inputmode="decimal" value="0.2" oninput="updatePlot()">
+        <button
+          onmousedown="startStepping('theta', 0.01)"
+          onmouseup="stopStepping()"
+          onmouseleave="stopStepping()"
+          ontouchstart="startStepping('theta', 0.01)"
+          ontouchend="stopStepping()"
+        >+</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="plot-row">
+    <div id="q-slice-plot"></div>
+    <div id="peak-height-plot"></div>
+  </div>
+  <div id="peak-note" class="result-note"></div>
+</div>
+<script src="../../js/spdc_physics.js"></script>
+<script src="../../js/comparison_qfunction_plot.js"></script>
+</body>
+</html>

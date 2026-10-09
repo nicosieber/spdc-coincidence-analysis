@@ -347,7 +347,7 @@ Hence the prefactor of (25) is $\frac{1}{\pi^2\sqrt{\det\sigma_Q}}=\frac{1-\lamb
 
 **Consequence.** For $\lvert\Psi\rangle$, (26) gives $P(0,0)=1/\sqrt{\det\sigma_Q}=1-\lambda^2$. This agrees with the vacuum amplitude read off directly from (2): only the $n=0$ term of the exponential series contributes to $\langle 0,0\vert\Psi\rangle=\Lambda$, so $P(0,0)=\lvert\langle 0,0\vert\Psi\rangle\rvert^2=\Lambda^2=1-\lambda^2$ ✓.
 
-**What is imported.** After the losses of [Detector efficiency](detector_efficiency.md) the state is no longer pure, and steps 1–2 (which use the state vector $\lvert\Psi\rangle$) no longer apply. That $Q$ is still a bell curve then is the one general fact the formalism relies on: beam splitters with vacuum inputs map Gaussian states to Gaussian states <a href="#ref-weedbrook2012">[8]</a>, <a href="#ref-ferraro2005">[9]</a>. (How the beam splitter models the loss is shown in [Detector loss as a beam splitter](../concepts_and_foundations/loss_beam_splitter.md).) The [numerical check](comparison.md#numerical-check) confirms it for this case.
+**What is imported.** After the losses of [Detector efficiency](detector_efficiency.md) the state is no longer pure, and steps 1–2 (which use the state vector $\lvert\Psi\rangle$) no longer apply. That $Q$ is still a bell curve then is the one general fact the formalism relies on: beam splitters with vacuum inputs map Gaussian states to Gaussian states <a href="#ref-weedbrook2012">[8]</a>, <a href="#ref-ferraro2005">[9]</a>. (How the beam splitter models the loss is shown in [Detector loss as a beam splitter](../concepts_and_foundations/loss_beam_splitter.md).) The [numerical check](../dashboard/comparison.md#numerical-check) confirms it for this case.
 
 ## References
 

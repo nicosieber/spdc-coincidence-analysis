@@ -117,3 +117,40 @@ sub {
 #coincidence-plot {
   height: 420px !important;
 }
+
+/* Two plots side by side; they shrink rather than wrap, because the
+   iframe embedding the card has a fixed height */
+.plot-row {
+  display: flex;
+  gap: 16px;
+}
+
+.plot-row > div {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+/* Result table under the plots */
+.result-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  margin-top: 6px;
+}
+
+.result-table td {
+  padding: 4px 8px;
+  border-top: 1px solid #e1e4e5;
+}
+
+.result-table td.num {
+  font-family: "SFMono-Regular", Menlo, Consolas, monospace;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.result-note {
+  color: #6a6a6a;
+  font-size: 0.85rem;
+  margin-top: 4px;
+}

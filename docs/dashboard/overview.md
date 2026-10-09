@@ -2,7 +2,8 @@
 
 Three interactive dashboards let you vary the squeezing parameter \(\lambda\) and the
 detector efficiencies \(\eta_H,\eta_V\) and watch how the key metrics respond as the
-half-wave plate is rotated. Pick a metric to open its dashboard.
+half-wave plate is rotated. Pick a metric to open its dashboard. A fourth page compares the
+two derivations of the joint no-click probability with two dashboards of its own.
 
 [Coincidence probability](coincidence/overview.md)
 :   Normalized coincidence probability of the TMSV versus the half-wave-plate angle, with two independently validated numerical engines behind it.
@@ -12,3 +13,6 @@ half-wave plate is rotated. Pick a metric to open its dashboard.
 
 [Fisher information](fisher.md)
 :   Phase sensitivity from click patterns, compared against the shot-noise limit of the TMSV model and the Slussarenko <em>et al.</em> experiment.
+
+[Comparison and numerical checks](comparison.md)
+:   The main derivation and the Gaussian formalism side by side: their matrices meeting at the determinant identity (51), the vacuum probability as the peak height of the \(Q\) function, and checks against `thewalrus`.

@@ -226,6 +226,71 @@
     return out;
   }
 
+  // ---------------------------------------------------------------------
+  // Matrices of the two derivations (comparison dashboards)
+  // ---------------------------------------------------------------------
+  // Main derivation: 1 - lam^2 M D M D with M = [[S4, -C4], [-C4, -S4]],
+  // D = diag(1 - etaH, 1 - etaV). Gaussian formalism: the lossy Husimi
+  // covariance matrix sigma_Q' of eq. (35a) in the ordering
+  // (alpha_H, alpha_V, alpha_H*, alpha_V*). Both meet at eq. (51):
+  //   det(1 - lam^2 MDMD) = (1 - lam^2)^2 det sigma_Q'.
+
+  function matMul(A, B) {
+    return A.map(function (row) {
+      return B[0].map(function (_, j) {
+        return row.reduce(function (acc, a, k) { return acc + a * B[k][j]; }, 0);
+      });
+    });
+  }
+
+  function mainMatrix(lam, etaH, etaV, theta) {
+    var S = Math.sin(4 * theta), C = Math.cos(4 * theta);
+    var M = [[S, -C], [-C, -S]];
+    var D = [[1 - etaH, 0], [0, 1 - etaV]];
+    var MDMD = matMul(matMul(M, D), matMul(M, D));
+    return [[1 - lam * lam * MDMD[0][0], -lam * lam * MDMD[0][1]],
+            [-lam * lam * MDMD[1][0], 1 - lam * lam * MDMD[1][1]]];
+  }
+
+  function sigmaQLossy(lam, etaH, etaV, theta) {
+    var nu = lam * lam / (1 - lam * lam), mu = lam / (1 - lam * lam);
+    var S = Math.sin(4 * theta), C = Math.cos(4 * theta);
+    var r = Math.sqrt(etaH * etaV);
+    var aH = 1 + nu * etaH, aV = 1 + nu * etaV;
+    var b11 = mu * etaH * S, b12 = -mu * r * C, b22 = -mu * etaV * S;
+    return [[aH, 0, b11, b12],
+            [0, aV, b12, b22],
+            [b11, b12, aH, 0],
+            [b12, b22, 0, aV]];
+  }
+
+  // Determinant and inverse by Gauss-Jordan elimination with partial
+  // pivoting (small dense matrices only).
+  function gaussJordan(A) {
+    var n = A.length;
+    var a = A.map(function (row, i) {
+      return row.concat(row.map(function (_, j) { return i === j ? 1 : 0; }));
+    });
+    var det = 1;
+    for (var c = 0; c < n; c++) {
+      var p = c;
+      for (var r = c + 1; r < n; r++) if (Math.abs(a[r][c]) > Math.abs(a[p][c])) p = r;
+      if (p !== c) { var tmp = a[p]; a[p] = a[c]; a[c] = tmp; det = -det; }
+      var piv = a[c][c];
+      det *= piv;
+      for (var j = 0; j < 2 * n; j++) a[c][j] /= piv;
+      for (var r2 = 0; r2 < n; r2++) {
+        if (r2 === c) continue;
+        var f = a[r2][c];
+        for (var j2 = 0; j2 < 2 * n; j2++) a[r2][j2] -= f * a[c][j2];
+      }
+    }
+    return { det: det, inv: a.map(function (row) { return row.slice(n); }) };
+  }
+
+  function det(A) { return gaussJordan(A).det; }
+  function inv(A) { return gaussJordan(A).inv; }
+
   root.SPDC = {
     p00: p00,
     marginalNoclick: marginalNoclick,
@@ -237,6 +302,11 @@
     fisherPhi: fisherPhi,
     snlPhi: snlPhi,
     linspace: linspace,
+    // matrices of the two derivations (comparison dashboards)
+    mainMatrix: mainMatrix,
+    sigmaQLossy: sigmaQLossy,
+    det: det,
+    inv: inv,
     // truncated Fock-space engine (browser twin of spdc.fock_numpy)
     fockState: fockState,
     fockCoincidence: fockCoincidence,

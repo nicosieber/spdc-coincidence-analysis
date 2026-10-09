@@ -43,7 +43,7 @@ In more detail:
 4. **Determinant.** $\sigma_Q'$ has the block form $\left(\begin{smallmatrix}A&B\\B&A\end{smallmatrix}\right)$, so its determinant splits into two $2\times2$ determinants, $\det(A+B)\det(A-B)$. The result is $\det\sigma_Q'=\det(\mathbb{1}-\lambda^2MDMD)/(1-\lambda^2)^2$, i.e. the determinant of the main derivation.
 5. **Coincidences.** "Both click" is rewritten through "no click" probabilities (inclusion–exclusion). Each of them is the height of a bell curve at the origin: of the full $Q$ function, or of its one-mode marginals, whose covariance matrices are $2\times2$ parts of $\sigma_Q'$. The resulting formula is what Quesada et al. call the **Torontonian**.
 
-A side-by-side comparison with the main derivation and numerical checks against `thewalrus` are on the [last page](comparison.md).
+A side-by-side comparison with the main derivation, two interactive dashboards and numerical checks against `thewalrus` are on the page [Comparison and numerical checks](../dashboard/comparison.md).
 
 ### Supporting concepts
 

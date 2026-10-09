@@ -438,7 +438,7 @@ $$
 \tag{20}
 $$
 
-`thewalrus.quantum.Qmat` <a href="#ref-gupt2019">[4]</a> returns this matrix (checked entry by entry, see the [numerical check](comparison.md#numerical-check)). The library stores states differently internally, but `Qmat` converts to this form.
+`thewalrus.quantum.Qmat` <a href="#ref-gupt2019">[4]</a> returns this matrix (checked entry by entry, see the [numerical check](../dashboard/comparison.md#numerical-check)). The library stores states differently internally, but `Qmat` converts to this form.
 
 ## References
 

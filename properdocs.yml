@@ -38,7 +38,6 @@ nav:
       - Detector efficiency: gaussian_formalism/detector_efficiency.md
       - Determinant: gaussian_formalism/determinant.md
       - Coincidence probability: gaussian_formalism/coincidence.md
-      - Comparison and numerical checks: gaussian_formalism/comparison.md
   - Additional concepts, identities and derivations:
       - Overview: concepts_and_foundations/overview.md
       - Coherent states: concepts_and_foundations/coherent_states.md
@@ -59,6 +58,7 @@ nav:
           - QuTiP dashboard: dashboard/coincidence/qutip.md
       - Visibility: dashboard/visibility.md
       - Fisher information: dashboard/fisher.md
+      - Comparison and numerical checks: dashboard/comparison.md
 
 markdown_extensions:
   - footnotes

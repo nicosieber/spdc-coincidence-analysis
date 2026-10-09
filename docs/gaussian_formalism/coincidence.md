@@ -243,7 +243,7 @@ Dividing each term of the Torontonian by $\sqrt{\det\sigma_Q'}$ therefore gives:
 
 For $\emptyset$ the determinant of an empty matrix is $1$. For $\{H,V\}$, $\det\sigma_Q'^{-1}\cdot\det\sigma_Q'=1$. Summing the four rows gives exactly (50). So the Torontonian is the inclusion–exclusion sum (48), written with the inverse matrix $\sigma_Q'^{-1}$ so that one matrix $O$ serves every click pattern. For $N$ detectors it has $2^N$ terms, one per subset of dark detectors. (The paper also relates the Torontonian to the hafnians that give photon-*number* probabilities, its Eqs. (13)–(14). That connection is not needed here.)
 
-The [numerical check](comparison.md#numerical-check) confirms (50) against `thewalrus`'s Torontonian <a href="#ref-gupt2019">[4]</a> at five random parameter sets.
+The [numerical check](../dashboard/comparison.md#numerical-check) confirms (50) against `thewalrus`'s Torontonian <a href="#ref-gupt2019">[4]</a> at five random parameter sets.
 
 ## References
 
