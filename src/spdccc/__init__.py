@@ -1,5 +1,5 @@
 """
-spdc-coincidence-analysis -- physics for the SPDC coincidence-analysis project.
+spdccc -- physics for the SPDC coincidence-analysis project.
 
 
 

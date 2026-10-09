@@ -4,7 +4,7 @@ An **exact** analytical framework — with two independent numerical validators 
 live interactive dashboards — for coincidence-click probabilities in type-II SPDC experiments
 with lossy bucket (click / no-click) detectors.
 
-👉 **Live site / interactive dashboards:** https://nicosieber.github.io/spdc-coincidence-analysis/
+👉 **Live site / interactive dashboards:** https://nicosieber.github.io/spdccc/
 
 ---
 
@@ -73,8 +73,8 @@ efficiencies in $[0,1]$; `theta` = HWP angle, with the coincidence dip at $\vart
 ## Install & run
 
 ```bash
-git clone https://github.com/nicosieber/spdc-coincidence-analysis.git
-cd spdc-coincidence-analysis
+git clone https://github.com/nicosieber/spdccc.git
+cd spdccc
 pip install -e .            # core package (numpy, scipy, sympy)
 pip install -e ".[docs]"    # + properdocs, to build the docs site locally
 ```

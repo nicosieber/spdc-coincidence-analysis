@@ -175,7 +175,7 @@ The square root constructed in this way is the unique real symmetric positive de
 We have shown that $B$ is real symmetric and positive definite for all physically relevant parameters ($0 \le \eta_{H,V} \le 1$, finite squeezing $r$). This ensures both the convergence of the Gaussian integral and the validity of the factorization used in equation (43) of [Derivation of the coincidence probability](../theory/cc_derivation.md#A_factorization).
 
 !!! success "Machine-checked in Lean 4"
-    The positive definiteness of $B$ is verified in [`lean/CcProofs/Chain.lean`](https://github.com/nicosieber/spdc-coincidence-analysis/blob/main/lean/CcProofs/Chain.lean), following the argument above: $|u^TMu|\le|u|^2$ (`abs_qM`), $|u^T(L+M)u|\le 2|u|^2$ (`abs_qLM`), and hence $\xi^TB\xi\ge(1-\lambda)|\xi|^2>0$:
+    The positive definiteness of $B$ is verified in [`lean/CcProofs/Chain.lean`](https://github.com/nicosieber/spdccc/blob/main/lean/CcProofs/Chain.lean), following the argument above: $|u^TMu|\le|u|^2$ (`abs_qM`), $|u^T(L+M)u|\le 2|u|^2$ (`abs_qLM`), and hence $\xi^TB\xi\ge(1-\lambda)|\xi|^2>0$:
 
     ```lean4
     theorem Bmat_posDef (h : c ^ 2 + s ^ 2 = 1) (hl0 : 0 ≤ l) (hl1 : l < 1)

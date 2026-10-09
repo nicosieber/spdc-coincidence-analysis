@@ -379,7 +379,7 @@ i\begin{pmatrix}
 \end{equation}
 
 !!! success "Machine-checked in Lean 4"
-    The explicit form of $A=W^TQW$ above, with $W$ and $Q$ as defined in this section, is verified in [`lean/CcProofs/Chain.lean`](https://github.com/nicosieber/spdc-coincidence-analysis/blob/main/lean/CcProofs/Chain.lean) (`Amat_eq`), together with $A^T=A$ (`Amat_transpose`):
+    The explicit form of $A=W^TQW$ above, with $W$ and $Q$ as defined in this section, is verified in [`lean/CcProofs/Chain.lean`](https://github.com/nicosieber/spdccc/blob/main/lean/CcProofs/Chain.lean) (`Amat_eq`), together with $A^T=A$ (`Amat_transpose`):
 
     ```lean4
     theorem Amat_eq : Amat l c s tH tV = cplx (Bmat l c s tH tV) (Cmat l c s tH tV)
@@ -637,9 +637,9 @@ I
 \end{equation}
 
 !!! success "Machine-checked in Lean 4"
-    [![Lean proofs](https://github.com/nicosieber/spdc-coincidence-analysis/actions/workflows/lean.yml/badge.svg)](https://github.com/nicosieber/spdc-coincidence-analysis/actions/workflows/lean.yml)
+    [![Lean proofs](https://github.com/nicosieber/spdccc/actions/workflows/lean.yml/badge.svg)](https://github.com/nicosieber/spdccc/actions/workflows/lean.yml)
 
-    This result is formally verified with Lean 4 and Mathlib for any dimension $n$ (here $n=4$). The proof is in [`lean/CcProofs/Gaussian.lean`](https://github.com/nicosieber/spdc-coincidence-analysis/blob/main/lean/CcProofs/Gaussian.lean):
+    This result is formally verified with Lean 4 and Mathlib for any dimension $n$ (here $n=4$). The proof is in [`lean/CcProofs/Gaussian.lean`](https://github.com/nicosieber/spdccc/blob/main/lean/CcProofs/Gaussian.lean):
 
     ```lean4
     theorem integral_gaussian_complex_symmetric (A : Matrix n n ℂ) (hA : Aᵀ = A)
@@ -674,7 +674,7 @@ with $\det(W)^2=\mathbb 1$. Using equation [(2)](../concepts_and_foundations/det
 \end{equation}
 
 !!! success "Machine-checked in Lean 4"
-    The chain $\det A=\det(W)^2\det Q=\det(\mathbb 1-\lambda^2MDMD)$ is verified in [`lean/CcProofs/Chain.lean`](https://github.com/nicosieber/spdc-coincidence-analysis/blob/main/lean/CcProofs/Chain.lean), including $\det W=-1$ (`det_Wmat`) and the block-determinant step (`det_Qmat`):
+    The chain $\det A=\det(W)^2\det Q=\det(\mathbb 1-\lambda^2MDMD)$ is verified in [`lean/CcProofs/Chain.lean`](https://github.com/nicosieber/spdccc/blob/main/lean/CcProofs/Chain.lean), including $\det W=-1$ (`det_Wmat`) and the block-determinant step (`det_Qmat`):
 
     ```lean4
     theorem det_Amat :
@@ -770,7 +770,7 @@ or with \(\eqref{eq:t_eta}\)
 \end{equation}
 
 !!! success "Machine-checked in Lean 4"
-    The evaluation of the determinant is verified in [`lean/CcProofs/Determinant.lean`](https://github.com/nicosieber/spdc-coincidence-analysis/blob/main/lean/CcProofs/Determinant.lean) for all real $\vartheta$, $\lambda$, $\eta_H$, $\eta_V$:
+    The evaluation of the determinant is verified in [`lean/CcProofs/Determinant.lean`](https://github.com/nicosieber/spdccc/blob/main/lean/CcProofs/Determinant.lean) for all real $\vartheta$, $\lambda$, $\eta_H$, $\eta_V$:
 
     ```lean4
     theorem det_Q (ϑ l ηH ηV : ℝ) :
@@ -791,9 +791,9 @@ Finally, $P^{(\eta_H,\eta_V)}(0,0)$ from equation \(\eqref{formula:last_term1}\)
 <span id="P00_lean"></span>
 
 !!! success "Machine-checked in Lean 4: from the Gaussian integral to $P^{(\eta_H,\eta_V)}(0,0)$"
-    [![Lean proofs](https://github.com/nicosieber/spdc-coincidence-analysis/actions/workflows/lean.yml/badge.svg)](https://github.com/nicosieber/spdc-coincidence-analysis/actions/workflows/lean.yml)
+    [![Lean proofs](https://github.com/nicosieber/spdccc/actions/workflows/lean.yml/badge.svg)](https://github.com/nicosieber/spdccc/actions/workflows/lean.yml)
 
-    Everything from the Gaussian integral to this formula is machine-checked. [`lean/CcProofs/Chain.lean`](https://github.com/nicosieber/spdc-coincidence-analysis/blob/main/lean/CcProofs/Chain.lean) combines the Gaussian integral, $\det A=\det(\mathbb 1-\lambda^2MDMD)$, the [positive definiteness of $B$](../concepts_and_foundations/matrix_properties.md#conclusion) and the evaluation of $\det Q$:
+    Everything from the Gaussian integral to this formula is machine-checked. [`lean/CcProofs/Chain.lean`](https://github.com/nicosieber/spdccc/blob/main/lean/CcProofs/Chain.lean) combines the Gaussian integral, $\det A=\det(\mathbb 1-\lambda^2MDMD)$, the [positive definiteness of $B$](../concepts_and_foundations/matrix_properties.md#conclusion) and the evaluation of $\det Q$:
 
     ```lean4
     theorem Iphys_sq_mul_detQ (ϑ l ηH ηV : ℝ) (hl0 : 0 ≤ l) (hl1 : l < 1)

@@ -1,8 +1,8 @@
 site_name: SPDC Coincidence Analysis
 site_description: Analytical derivation of coincidence probabilities for TMSV states with bucket detectors
 site_author: Nico Sieber
-site_url: https://nicosieber.github.io/spdc-coincidence-analysis/
-repo_url: https://github.com/nicosieber/spdc-coincidence-analysis
+site_url: https://nicosieber.github.io/spdccc/
+repo_url: https://github.com/nicosieber/spdccc
 edit_uri: blob/main/docs/
 
 theme:

@@ -1,6 +1,6 @@
 # Generalizing the optical element
 
-In the [main derivation](https://nicosieber.github.io/spdc-coincidence-analysis/theory/cc_derivation/)
+In the [main derivation](cc_derivation.md)
 the optical element between source and detectors was a half-wave plate. This
 section shows that the HWP was not special: the entire derivation of
 \(P^{(\eta_H,\eta_V)}(0,0)\) goes through unchanged if the HWP is replaced by
@@ -10,7 +10,7 @@ changes, and the final formula keeps exactly the same shape.
 
 ## The matrix \(M\) already contains the optics
 
-Recall from [TMSV](https://nicosieber.github.io/spdc-coincidence-analysis/theory/tmsv/#eq:alpha_vec)
+Recall from [TMSV](tmsv.md#eq:alpha_vec)
 that the state after the HWP was written as
 
 \[\begin{equation}
@@ -152,7 +152,7 @@ require, so they carry over verbatim.
 
 ## The derivation is unchanged up to the determinant
 
-Everything on the [coincidence-probability page](https://nicosieber.github.io/spdc-coincidence-analysis/theory/cc_derivation/)
+Everything on the [coincidence-probability page](cc_derivation.md)
 between equation \(\eqref{eq:state_M}\) and the determinant is a manipulation of
 the *operators* and of the coherent-state integral. None of those steps used the
 specific entries of \(M\) — they used only that \(M\) is a symmetric
@@ -182,7 +182,7 @@ for a general \(M\), then specialized.
 
 ### The determinant for a general element
 
-Using [determinant relation (9)](https://nicosieber.github.io/spdc-coincidence-analysis/concepts_and_foundations/determinant_relations/#appendix:det_1minusl2X)
+Using [determinant relation (9)](../concepts_and_foundations/determinant_relations.md#appendix:det_1minusl2X)
 for a \(2\times2\) matrix \(X=MDM^{*}D\),
 
 \[\begin{equation}
