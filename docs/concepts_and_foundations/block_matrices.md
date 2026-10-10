@@ -26,7 +26,7 @@ The result is block-triangular, and the determinant of a block-triangular matrix
 \det\begin{pmatrix}A&B\\B&A\end{pmatrix}=\det(A+B)\,\det(A-B).
 \end{equation}
 
-A $4\times4$ determinant thus reduces to two $2\times2$ determinants. This is used in [(29)](../gaussian_formalism/vacuum_probability.md#eq29) and [(36)](../gaussian_formalism/determinant.md#eq36).
+A $4\times4$ determinant thus reduces to two $2\times2$ determinants. This is used in [(36)](../gaussian_formalism/determinant.md#eq36).
 
 <span id="block:rotation"></span>
 

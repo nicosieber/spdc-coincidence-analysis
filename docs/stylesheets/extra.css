@@ -59,3 +59,15 @@ a.footnote-ref::after {
   line-height: 1.4;
   height: auto;
 }
+
+/* =========================
+   Justified body text (paragraphs, list items, notes); centred captions stay centred
+   ========================= */
+
+.rst-content p:not(.figure-caption),
+.rst-content li,
+.rst-content dd {
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+}

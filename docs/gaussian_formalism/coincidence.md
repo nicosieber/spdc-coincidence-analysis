@@ -58,7 +58,7 @@ with a weight function $P_\Pi(\alpha)$ (its Glauber–Sudarshan $P$ function <a 
 
 These are [2, Eqs. (10a), (10b)].
 
-**Step (c): a probability is an integral over $Q$.** For a two-mode state $\rho$ with $Q$ function $Q_\rho(\boldsymbol\alpha)=\langle\boldsymbol\alpha\rvert\rho\lvert\boldsymbol\alpha\rangle/\pi^2$ [(21)](vacuum_probability.md#eq21), and one POVM element per detector,
+**Step (c): a probability is an integral over $Q$.** For a two-mode state $\rho$ with $Q$ function $Q_\rho(\boldsymbol\alpha)=\langle\boldsymbol\alpha\rvert\rho\lvert\boldsymbol\alpha\rangle/\pi^2$ [(6)](covariance_matrix.md#eq6), and one POVM element per detector,
 
 $$
 \begin{aligned}
@@ -101,7 +101,7 @@ $$
     the probability that mode $V$ is empty.
 
 - (iii) $=\langle 0\rvert\rho_H\lvert 0\rangle=:p_H(0)$, in the same way with $H$ and $V$ swapped.
-- (iv) $=\pi^2\,Q_\rho(0,0)=\langle 0,0\rvert\rho\lvert 0,0\rangle=:p(0,0)$, by [(22)](vacuum_probability.md#eq22).
+- (iv) $=\pi^2\,Q_\rho(0,0)=\langle 0,0\rvert\rho\lvert 0,0\rangle=:p(0,0)$, by [(7)](covariance_matrix.md#eq7).
 
 Therefore, for ideal detectors and any state,
 
@@ -127,7 +127,7 @@ For the single-mode lines, only the beam splitter in front of that mode matters.
 
 **What the derivation adds.** Step (e) also says *how* each term is obtained from the $Q$ function of $\rho'$:
 
-- $P^{(\eta_H,\eta_V)}(0,0)$ is the height of $Q_{\rho'}$ at the origin. This is what [Vacuum probability](vacuum_probability.md) evaluated: $1/\sqrt{\det\sigma_Q'}$.
+- $P^{(\eta_H,\eta_V)}(0,0)$ is the height of $Q_{\rho'}$ at the origin. This is what [Covariance matrix and vacuum probability](covariance_matrix.md#eq12) evaluated: $1/\sqrt{\det\sigma_Q'}$.
 - $P_H^{(\eta_H)}(0)$ and $P_V^{(\eta_V)}(0)$ are heights at the origin of the **marginals** of $Q_{\rho'}$, i.e. of $Q_{\rho'}$ integrated over the other mode. These are evaluated next.
 
 ## No click in one detector
@@ -138,7 +138,7 @@ $$
 Q_H(\alpha_H)=\frac{1}{\pi}\langle\alpha_H\rvert\rho'_H\lvert\alpha_H\rangle=\int d^2\alpha_V\;Q_{\rho'}(\alpha_H,\alpha_V).
 $$
 
-Integrating a bell curve over some of its variables gives again a bell curve in the remaining ones, whose covariance matrix is the corresponding part of the full one ([Marginals](../concepts_and_foundations/gaussian_peak_height.md#gauss:marginal)). Quantum mechanically: expectation values of operators acting only on mode $H$ are the same in $\rho'$ and in $\rho'_H$. So the covariance matrix of $Q_H$, built by the rule [(6)](covariance_matrix.md#eq6) for one mode, consists of those entries of $\sigma_Q'$ that contain only $\hat a_H$ and $\hat a_H^{\dagger}$. These are the entries in rows and columns $1$ and $3$ of [(35a)](detector_efficiency.md#eq35a):
+Integrating a bell curve over some of its variables gives again a bell curve in the remaining ones, whose covariance matrix is the corresponding part of the full one ([Marginals](../concepts_and_foundations/gaussian_peak_height.md#gauss:marginal)). Quantum mechanically: expectation values of operators acting only on mode $H$ are the same in $\rho'$ and in $\rho'_H$. So the covariance matrix of $Q_H$, built by the rule [(9)](covariance_matrix.md#eq9) for one mode, consists of those entries of $\sigma_Q'$ that contain only $\hat a_H$ and $\hat a_H^{\dagger}$. These are the entries in rows and columns $1$ and $3$ of [(35a)](detector_efficiency.md#eq35a):
 
 $$
 \sigma_Q'^{(H)}=
@@ -153,7 +153,7 @@ $$
 \end{pmatrix}.
 $$
 
-The one-mode version of [(25)](vacuum_probability.md#eq25)–[(26)](vacuum_probability.md#eq26), with $\pi$ instead of $\pi^2$, then gives
+The one-mode version of [(11)](covariance_matrix.md#eq11)–[(12)](covariance_matrix.md#eq12), with $\pi$ instead of $\pi^2$, then gives
 
 <span id="eq49"></span>
 

@@ -11,7 +11,7 @@
 | Object computed | overlap $\langle 0\rvert e^{\frac\lambda2\mathbf{\hat a}^TM\mathbf{\hat a}}e^{\frac\lambda2(\mathbf{\hat a^{\dagger}})^TDMD\mathbf{\hat a^{\dagger}}}\lvert 0\rangle$ | covariance matrix of $\lvert\Psi\rangle$, then vacuum probability |
 | Where coherent states enter | resolution of $\mathbb{1}$, complex Gaussian integral | $Q$ function, height of a real bell curve |
 | Matrix | $\mathbb{1}-\lambda^2MDMD$ ($2\times2$) | $\sigma_Q'$ ($4\times4$, symmetric, positive definite) |
-| Hard part | the complex Gaussian integral | the vacuum formula [(26)](../gaussian_formalism/vacuum_probability.md#eq26), imported |
+| Hard part | the complex Gaussian integral | the vacuum formula [(12)](../gaussian_formalism/covariance_matrix.md#eq12), imported |
 | Sign of the square root | determined separately via $P\ge0$ ([Lean](../theory/cc_derivation.md#P00_lean)) | automatic |
 
 Both routes meet at
@@ -23,7 +23,7 @@ $$
 \tag{51}
 $$
 
-The Gaussian formalism also carries over to the setting of [Generalizing the optical element](../theory/generalization.md). For any passive element in front of the PBS, [(9)](../gaussian_formalism/covariance_matrix.md#eq9) holds with that element's $M$, and the same steps apply. For a complex $M$ the lower-left block becomes $B^{*}$. Effects that are awkward in the state-vector picture are simply extra terms in the covariance matrix: thermal background adds to $N$, and a mixed or multimode source changes $N$ and $\mathcal{M}$.
+The Gaussian formalism also carries over to the setting of [Generalizing the optical element](../theory/generalization.md). For any passive element in front of the PBS, [(15)](../gaussian_formalism/covariance_matrix.md#eq15) holds with that element's $M$, and the same steps apply. For a complex $M$ the lower-left block becomes $B^{*}$. Effects that are awkward in the state-vector picture are simply extra terms in the covariance matrix: thermal background adds to $N$, and a mixed or multimode source changes $N$ and $\mathcal{M}$.
 
 <span id="dashboard-eq51"></span>
 
@@ -57,7 +57,7 @@ Things to try:
   loading="lazy">
 </iframe>
 
-In the Gaussian formalism the joint no-click probability is the height of a bell curve. By [(25)](../gaussian_formalism/vacuum_probability.md#eq25) the $Q$ function of the lossy state is
+In the Gaussian formalism the joint no-click probability is the height of a bell curve. By [(11)](../gaussian_formalism/covariance_matrix.md#eq11) the $Q$ function of the lossy state is
 
 $$
 Q(\boldsymbol\alpha)=\frac{1}{\pi^2\sqrt{\det\sigma_Q'}}\exp\!\left(-\tfrac12\,\mathbf v^{\dagger}\sigma_Q'^{-1}\mathbf v\right),
@@ -65,7 +65,7 @@ Q(\boldsymbol\alpha)=\frac{1}{\pi^2\sqrt{\det\sigma_Q'}}\exp\!\left(-\tfrac12\,\
 \mathbf v=(\alpha_H,\alpha_V,\alpha_H^{*},\alpha_V^{*})^T,
 $$
 
-and by [(26)](../gaussian_formalism/vacuum_probability.md#eq26) its value at the origin gives $P^{(\eta_H,\eta_V)}(0,0)=\pi^2Q(0)=1/\sqrt{\det\sigma_Q'}$.
+and by [(12)](../gaussian_formalism/covariance_matrix.md#eq12) its value at the origin gives $P^{(\eta_H,\eta_V)}(0,0)=\pi^2Q(0)=1/\sqrt{\det\sigma_Q'}$.
 
 $Q$ is a function of four real variables, the real and imaginary parts of $\alpha_H$ and $\alpha_V$. The left plot shows the slice through the origin with $\operatorname{Im}\alpha_H=\operatorname{Im}\alpha_V=0$. There $\mathbf v=(x,y,x,y)^T$ with $x=\operatorname{Re}\alpha_H$, $y=\operatorname{Re}\alpha_V$, and the exponent becomes a quadratic form in $(x,y)$ whose matrix is the sum of the four $2\times2$ blocks of $\sigma_Q'^{-1}$. Darker means larger $Q$; the orange dot marks the maximum $Q(0)$. The plot range is fixed for given $\lambda,\eta_H,\eta_V$, so moving $\vartheta$ shows the bell curve rotating and deforming rather than being rescaled. The right plot shows the peak height $\pi^2Q(0)=P^{(\eta_H,\eta_V)}(0,0)$ over the full range $0\le\vartheta\le\pi/4$, with the orange dot at the current $\vartheta$. The line below the plots compares $\pi^2Q(0)$ with the closed form [(46)](../gaussian_formalism/determinant.md#eq46).
 
@@ -110,7 +110,7 @@ With the computer-algebra library `sympy` <a href="#ref-meurer2017">[11]</a> thr
 
 - the determinant identity [(45)](../gaussian_formalism/determinant.md#eq45), using the explicit matrix [(35a)](../gaussian_formalism/detector_efficiency.md#eq35a),
 - $M^2=\mathbb{1}$,
-- that $\mathcal{M}=\mu M$ and $N=\nu\mathbb{1}$ solve [(12)](../gaussian_formalism/covariance_matrix.md#eq12).
+- that $\mathcal{M}=\mu M$ and $N=\nu\mathbb{1}$ solve [(18)](../gaussian_formalism/covariance_matrix.md#eq18).
 
 In each case the difference of the two sides simplifies to zero. The check is the script [`scripts/check_gaussian_symbolic.py`](https://github.com/nicosieber/spdccc/blob/main/scripts/check_gaussian_symbolic.py).
 

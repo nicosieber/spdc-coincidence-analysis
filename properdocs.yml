@@ -33,8 +33,7 @@ nav:
   - Gaussian formalism:
       - Overview: gaussian_formalism/overview.md
       - Notation: gaussian_formalism/notation.md
-      - Covariance matrix: gaussian_formalism/covariance_matrix.md
-      - Vacuum probability: gaussian_formalism/vacuum_probability.md
+      - Covariance matrix and vacuum probability: gaussian_formalism/covariance_matrix.md
       - Detector efficiency: gaussian_formalism/detector_efficiency.md
       - Determinant: gaussian_formalism/determinant.md
       - Coincidence probability: gaussian_formalism/coincidence.md

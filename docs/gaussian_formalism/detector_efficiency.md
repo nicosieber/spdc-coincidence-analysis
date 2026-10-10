@@ -38,7 +38,7 @@ P^{(\eta_H,\eta_V)}(0,0)
 \tag{32}
 $$
 
-an inefficient detector is a perfect detector behind a beam splitter. This beam-splitter model of absorption is standard in quantum optics <a href="#ref-leonhardt1997">[7, Sec. 4.1.4]</a>; in the language of Gaussian channels it is the pure-loss channel <a href="#ref-weedbrook2012">[8]</a>. By [(26)](vacuum_probability.md#eq26), $P(0,0)=1/\sqrt{\det\sigma_Q'}$, where $\sigma_Q'$ is the matrix [(6)](covariance_matrix.md#eq6) of $\rho'$.
+an inefficient detector is a perfect detector behind a beam splitter. This beam-splitter model of absorption is standard in quantum optics <a href="#ref-leonhardt1997">[7, Sec. 4.1.4]</a>; in the language of Gaussian channels it is the pure-loss channel <a href="#ref-weedbrook2012">[8]</a>. By [(12)](covariance_matrix.md#eq12), $P(0,0)=1/\sqrt{\det\sigma_Q'}$, where $\sigma_Q'$ is the matrix [(9)](covariance_matrix.md#eq9) of $\rho'$.
 
 ## What the beam splitter does to the covariance matrix
 
@@ -53,7 +53,7 @@ $$
 \tag{33}
 $$
 
-Insert (33) into the blocks $N$ and $\mathcal{M}$ of [(10)](covariance_matrix.md#eq10). Because the $\hat b$ modes are in the vacuum and uncorrelated with $\lvert\Psi\rangle$, every term containing a $\hat b$ vanishes: $\langle 0\rvert\hat b\lvert 0\rangle=\langle 0\rvert\hat b^{\dagger}\hat b\lvert 0\rangle=\langle 0\rvert\hat b\hat b\lvert 0\rangle=0$. (This is why $N$ and $\mathcal{M}$ are transformed rather than the entries of $\sigma_Q$: $\langle 0\rvert\hat b\hat b^{\dagger}\lvert 0\rangle=1$ would not vanish.) For example,
+Insert (33) into the blocks $N$ and $\mathcal{M}$ of [(16)](covariance_matrix.md#eq16). Because the $\hat b$ modes are in the vacuum and uncorrelated with $\lvert\Psi\rangle$, every term containing a $\hat b$ vanishes: $\langle 0\rvert\hat b\lvert 0\rangle=\langle 0\rvert\hat b^{\dagger}\hat b\lvert 0\rangle=\langle 0\rvert\hat b\hat b\lvert 0\rangle=0$. (This is why $N$ and $\mathcal{M}$ are transformed rather than the entries of $\sigma_Q$: $\langle 0\rvert\hat b\hat b^{\dagger}\lvert 0\rangle=1$ would not vanish.) For example,
 
 <span id="eq34"></span>
 
@@ -77,7 +77,7 @@ In words: every factor $\hat a_H$ or $\hat a_H^{\dagger}$ in an expectation valu
 
 ## The lossy matrix $\sigma_Q'$
 
-Putting (34) into the pattern [(6)](covariance_matrix.md#eq6), with $\operatorname{Tr}\!\big[\rho'\,\hat a_i\hat a_i^{\dagger}\big]=1+\operatorname{Tr}\!\big[\rho'\,\hat a_i^{\dagger}\hat a_i\big]$:
+Putting (34) into the pattern [(9)](covariance_matrix.md#eq9), with $\operatorname{Tr}\!\big[\rho'\,\hat a_i\hat a_i^{\dagger}\big]=1+\operatorname{Tr}\!\big[\rho'\,\hat a_i^{\dagger}\hat a_i\big]$:
 
 <span id="eq35a"></span>
 
@@ -108,7 +108,7 @@ B=\mu\begin{pmatrix}\eta_H S_4 & -\sqrt{\eta_H\eta_V}\,C_4\\ -\sqrt{\eta_H\eta_V
 \tag{35b}
 $$
 
-Setting $\eta_H=\eta_V=1$ gives back [(20)](covariance_matrix.md#eq20), and $\eta_H=\eta_V=0$ gives $\mathbb{1}$, the vacuum.
+Setting $\eta_H=\eta_V=1$ gives back [(26)](covariance_matrix.md#eq26), and $\eta_H=\eta_V=0$ gives $\mathbb{1}$, the vacuum.
 
 ## References
 

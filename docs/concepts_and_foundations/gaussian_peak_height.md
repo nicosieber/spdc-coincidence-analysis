@@ -98,7 +98,7 @@ With $m$ complex amplitudes there are $n=2m$ real variables and $\det\sigma=4^m\
 p(0)=\frac{1}{(2\pi)^m\sqrt{\det\sigma/4^m}}=\frac{1}{\pi^m\sqrt{\det\sigma}} .
 \end{equation}
 
-For two modes ($m=2$) this is the factor $\pi^2$ of [(25)](../gaussian_formalism/vacuum_probability.md#eq25), and for one mode the factor $\pi$ of [(49)](../gaussian_formalism/coincidence.md#eq49).
+For two modes ($m=2$) this is the factor $\pi^2$ of [(11)](../gaussian_formalism/covariance_matrix.md#eq11), and for one mode the factor $\pi$ of [(49)](../gaussian_formalism/coincidence.md#eq49).
 
 **Check with the vacuum.** The vacuum $Q$ function of one mode is $\pi^{-1}e^{-\lvert\alpha\rvert^2}$, i.e. $\langle x^2\rangle=\langle y^2\rangle=\tfrac12$, $\langle xy\rangle=0$. Then $\det\Sigma_{\mathbb R}=\tfrac14$, $\det\sigma=1$, and \(\eqref{gauss:complex}\) gives $p(0)=1/\pi$ ✓.
 

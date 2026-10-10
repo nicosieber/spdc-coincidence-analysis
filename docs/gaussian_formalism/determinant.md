@@ -64,7 +64,7 @@ $$
 \tag{41}
 $$
 
-Then, using $\nu^2-\mu^2=-\nu$ from [(18)](covariance_matrix.md#eq18),
+Then, using $\nu^2-\mu^2=-\nu$ from [(24)](covariance_matrix.md#eq24),
 
 <span id="eq42"></span>
 
@@ -108,7 +108,7 @@ $$
 \tag{45}
 $$
 
-where $\det Q=\det(\mathbb{1}-\lambda^2MDMD)$ is the determinant of the [main derivation](../theory/cc_derivation.md). With [(26)](vacuum_probability.md#eq26) and [(32)](detector_efficiency.md#eq32):
+where $\det Q=\det(\mathbb{1}-\lambda^2MDMD)$ is the determinant of the [main derivation](../theory/cc_derivation.md). With [(12)](covariance_matrix.md#eq12) and [(32)](detector_efficiency.md#eq32):
 
 <span id="eq46"></span>
 
