@@ -89,19 +89,74 @@ P_{\mathrm{cc}}
 \end{aligned}
 $$
 
-**Step (e): identify each term.** The delta functions set the corresponding amplitude to zero, and each term turns out to be a *vacuum probability* of $\rho$.
+**Step (e): evaluate each term.** Each term is computed with three ingredients:
 
-- (i) $=\int Q_\rho=1$, by normalization of $Q_\rho$.
-- (ii) $=\pi\int d^2\alpha_H\,Q_\rho(\alpha_H,0)$. Integrating over $\alpha_H$ removes mode $H$. With the one-mode resolution of the identity, $\int\frac{d^2\alpha_H}{\pi}\langle\alpha_H\rvert\rho\lvert\alpha_H\rangle=\operatorname{Tr}_H\rho=\rho_V$, the reduced state of mode $V$. So
+- the **sifting property** of the delta function: it picks out the value at the origin. The two-dimensional delta function is the product of one delta function for each of the real and imaginary parts, $\delta^{(2)}(\alpha)=\delta(\operatorname{Re}\alpha)\,\delta(\operatorname{Im}\alpha)$. It is zero everywhere except at $\alpha=0$, and its integral is $1$. Inside an integral it therefore keeps only the value of the other factor at $\alpha=0$:
 
     $$
-    \pi\int d^2\alpha_H\,Q_\rho(\alpha_H,0)=\frac{1}{\pi}\int d^2\alpha_H\,\langle\alpha_H,0\rvert\rho\lvert\alpha_H,0\rangle=\langle 0\rvert\rho_V\lvert 0\rangle=:p_V(0),
+    \int d^2\alpha\;\delta^{(2)}(\alpha)\,f(\alpha)
+    =\int d(\operatorname{Re}\alpha)\,\delta(\operatorname{Re}\alpha)\int d(\operatorname{Im}\alpha)\,\delta(\operatorname{Im}\alpha)\;f(\alpha)
+    =f(0).
     $$
 
-    the probability that mode $V$ is empty.
+    In a two-mode integral the other mode's amplitude is just a fixed parameter during this integration. For example, with $f(\alpha_V)=Q_\rho(\alpha_H,\alpha_V)$ at fixed $\alpha_H$, this gives $\int d^2\alpha_V\,\delta^{(2)}(\alpha_V)\,Q_\rho(\alpha_H,\alpha_V)=Q_\rho(\alpha_H,0)$;
+- the definition $Q_\rho(\alpha_H,\alpha_V)=\frac{1}{\pi^2}\langle\alpha_H,\alpha_V\rvert\rho\lvert\alpha_H,\alpha_V\rangle$, together with $\langle\psi\rvert\rho\lvert\psi\rangle=\operatorname{Tr}\!\left[\rho\,\lvert\psi\rangle\langle\psi\rvert\right]$;
+- the one-mode resolution of the identity $\int\frac{d^2\alpha}{\pi}\lvert\alpha\rangle\langle\alpha\rvert=\mathbb{1}$, and the fact that the coherent state at $\alpha=0$ is the vacuum $\lvert 0\rangle$.
 
-- (iii) $=\langle 0\rvert\rho_H\lvert 0\rangle=:p_H(0)$, in the same way with $H$ and $V$ swapped.
-- (iv) $=\pi^2\,Q_\rho(0,0)=\langle 0,0\rvert\rho\lvert 0,0\rangle=:p(0,0)$, by [(7)](covariance_matrix.md#eq7).
+Term (i), no delta function:
+
+$$
+\begin{aligned}
+\text{(i)}
+&=\int d^2\alpha_H\,d^2\alpha_V\;\frac{1}{\pi^2}\langle\alpha_H,\alpha_V\rvert\rho\lvert\alpha_H,\alpha_V\rangle\\
+&=\operatorname{Tr}\!\left[\rho\left(\int\frac{d^2\alpha_H}{\pi}\lvert\alpha_H\rangle\langle\alpha_H\rvert\right)\otimes\left(\int\frac{d^2\alpha_V}{\pi}\lvert\alpha_V\rangle\langle\alpha_V\rvert\right)\right]\\
+&=\operatorname{Tr}\!\left[\rho\;\mathbb{1}_H\otimes\mathbb{1}_V\right]=\operatorname{Tr}\rho=1.
+\end{aligned}
+$$
+
+Term (ii), delta function in mode $V$. First do the $\alpha_V$ integral at fixed $\alpha_H$. By the sifting property $\int d^2\alpha_V\,\delta^{(2)}(\alpha_V)\,f(\alpha_V)=f(0)$, applied to $f(\alpha_V)=Q_\rho(\alpha_H,\alpha_V)$, it replaces $\alpha_V$ by $0$. Then the remaining $\alpha_H$ integral is a resolution of the identity in mode $H$:
+
+$$
+\begin{aligned}
+\text{(ii)}
+&=\pi^2\cdot\frac{1}{\pi}\int d^2\alpha_H\left[\int d^2\alpha_V\;\delta^{(2)}(\alpha_V)\,Q_\rho(\alpha_H,\alpha_V)\right]\\
+&=\pi\int d^2\alpha_H\;Q_\rho(\alpha_H,0)
+=\pi\int d^2\alpha_H\;\frac{1}{\pi^2}\langle\alpha_H,0\rvert\rho\lvert\alpha_H,0\rangle\\
+&=\operatorname{Tr}\!\left[\rho\left(\int\frac{d^2\alpha_H}{\pi}\lvert\alpha_H\rangle\langle\alpha_H\rvert\right)\otimes\lvert 0\rangle\langle 0\rvert\right]
+=\operatorname{Tr}\!\left[\rho\;\mathbb{1}_H\otimes\lvert 0\rangle\langle 0\rvert\right]\\
+&=\operatorname{Tr}_V\!\left[\rho_V\,\lvert 0\rangle\langle 0\rvert\right]=\langle 0\rvert\rho_V\lvert 0\rangle=:p_V(0).
+\end{aligned}
+$$
+
+In the last line $\rho_V=\operatorname{Tr}_H\rho$ is the reduced state of mode $V$, so $p_V(0)$ is the probability that mode $V$ is empty, whatever happens in mode $H$.
+
+Term (iii), delta function in mode $H$. The same calculation with $H$ and $V$ swapped: by the sifting property $\int d^2\alpha_H\,\delta^{(2)}(\alpha_H)\,f(\alpha_H)=f(0)$, applied to $f(\alpha_H)=Q_\rho(\alpha_H,\alpha_V)$ at fixed $\alpha_V$, the $\alpha_H$ integral replaces $\alpha_H$ by $0$.
+
+$$
+\begin{aligned}
+\text{(iii)}
+&=\pi^2\cdot\frac{1}{\pi}\int d^2\alpha_V\left[\int d^2\alpha_H\;\delta^{(2)}(\alpha_H)\,Q_\rho(\alpha_H,\alpha_V)\right]\\
+&=\pi\int d^2\alpha_V\;Q_\rho(0,\alpha_V)
+=\pi\int d^2\alpha_V\;\frac{1}{\pi^2}\langle 0,\alpha_V\rvert\rho\lvert 0,\alpha_V\rangle\\
+&=\operatorname{Tr}\!\left[\rho\;\lvert 0\rangle\langle 0\rvert\otimes\left(\int\frac{d^2\alpha_V}{\pi}\lvert\alpha_V\rangle\langle\alpha_V\rvert\right)\right]
+=\operatorname{Tr}\!\left[\rho\;\lvert 0\rangle\langle 0\rvert\otimes\mathbb{1}_V\right]\\
+&=\langle 0\rvert\rho_H\lvert 0\rangle=:p_H(0),
+\qquad \rho_H=\operatorname{Tr}_V\rho.
+\end{aligned}
+$$
+
+Term (iv), delta functions in both modes. The sifting property is used twice: the $\alpha_V$ integral replaces $\alpha_V$ by $0$, then the $\alpha_H$ integral replaces $\alpha_H$ by $0$:
+
+$$
+\begin{aligned}
+\text{(iv)}
+&=\pi^2\int d^2\alpha_H\;\delta^{(2)}(\alpha_H)\left[\int d^2\alpha_V\;\delta^{(2)}(\alpha_V)\,Q_\rho(\alpha_H,\alpha_V)\right]
+=\pi^2\int d^2\alpha_H\;\delta^{(2)}(\alpha_H)\,Q_\rho(\alpha_H,0)\\
+&=\pi^2\,Q_\rho(0,0)=\pi^2\cdot\frac{1}{\pi^2}\langle 0,0\rvert\rho\lvert 0,0\rangle=\langle 0,0\rvert\rho\lvert 0,0\rangle=:p(0,0),
+\end{aligned}
+$$
+
+in agreement with [(7)](covariance_matrix.md#eq7).
 
 Therefore, for ideal detectors and any state,
 
@@ -214,34 +269,110 @@ All three determinants come from **one** matrix, $\sigma_Q'$: the full matrix an
 
 ## The Torontonian
 
-Quesada, Arrazola and Killoran <a href="#ref-quesada2018">[2]</a> package this calculation for any number of threshold detectors. In their notation, $\Sigma$ is the covariance matrix of the $Q$ function, i.e. our $\sigma_Q'$. The probability that exactly the detectors in a set $S$ click and all others stay dark is their Eqs. (11)–(12):
+Quesada, Arrazola and Killoran <a href="#ref-quesada2018">[2]</a> package this calculation for any number of threshold detectors. Their result is a formula for the probability of any **click pattern**. It is stated first, then each object in it is defined, and then it is evaluated for two click patterns of our two detectors.
+
+**The formula.** [2, Eqs. (11)–(12)]:
 
 $$
 p(S)=\frac{\operatorname{Tor}\big[O_{(S)}\big]}{\sqrt{\det\Sigma}},
 \qquad
 O_{(S)}=\mathbb{1}-\big(\Sigma^{-1}\big)_{(S)},
 \qquad
-\operatorname{Tor}(A)=\sum_{Z\in P([N])}(-1)^{|Z|}\frac{1}{\sqrt{\det\big(\mathbb{1}-A_{(Z)}\big)}} .
+\operatorname{Tor}(A)=\sum_{Z\in P([N])}(-1)^{N-|Z|}\frac{1}{\sqrt{\det\big(\mathbb{1}-A_{(Z)}\big)}} .
 $$
 
-Here $(\cdot)_{(S)}$ keeps only the rows and columns belonging to the modes in $S$, in each of the four blocks of the matrix. $N$ is the number of modes in $S$, and $P([N])$ is the set of all subsets $Z$ of these modes. The sum is called the **Torontonian**.
+**The objects in it.**
 
-**It is the same as (50).** For a coincidence both detectors click, $S=\{H,V\}$, so $O=\mathbb{1}-\sigma_Q'^{-1}$ and $Z$ runs over $\emptyset$, $\{H\}$, $\{V\}$ and $\{H,V\}$. In each term, $\mathbb{1}-O_{(Z)}=(\sigma_Q'^{-1})_{(Z)}$ is a part of the *inverse* matrix. Jacobi's complementary-minor identity (equation (3) of [Block-matrix identities](../concepts_and_foundations/block_matrices.md#block:jacobi)) relates a part of the inverse to the complementary part of the matrix itself:
+- **Modes and detectors.** There is one detector per mode. Here there are two modes, $H$ and $V$.
+- **$\Sigma$** is the covariance matrix of the $Q$ function, i.e. our $\sigma_Q'$ of [(35a)](detector_efficiency.md#eq35a). Its rows and columns belong to $\alpha_H,\alpha_V,\alpha_H^{*},\alpha_V^{*}$, in this order. So mode $H$ owns rows and columns $1$ and $3$, and mode $V$ owns rows and columns $2$ and $4$.
+- **$S$** is the click pattern: the set of detectors that click. All detectors not in $S$ stay dark. For two detectors there are four patterns: $\emptyset$ (no click), $\{H\}$ (only $H$ clicks), $\{V\}$ (only $V$ clicks) and $\{H,V\}$ (coincidence). $p(S)$ is the probability of exactly this pattern.
+- **$(\cdot)_{(S)}$** keeps the rows and columns owned by the modes in $S$ and deletes the others. For example, $\big(\Sigma^{-1}\big)_{(\{H\})}$ is the $2\times2$ matrix of the entries of $\Sigma^{-1}$ in rows and columns $1,3$, and $\big(\Sigma^{-1}\big)_{(\{H,V\})}=\Sigma^{-1}$.
+- **$O_{(S)}$** is therefore a $2N\times2N$ matrix, with $\mathbb{1}$ the identity of that size.
+- **$N=\lvert S\rvert$** is the number of detectors that click, i.e. the number of modes that $O_{(S)}$ still contains.
+- **$[N]$** is shorthand for those $N$ modes, and **$P([N])$** is its *power set*, the set of all its subsets (see below).
+- **$Z$** runs over these subsets, and $\lvert Z\rvert$ is the number of modes in $Z$. $A_{(Z)}$ keeps the rows and columns of $A=O_{(S)}$ that belong to the modes in $Z$. For $Z=\emptyset$ nothing is kept, and the determinant of this empty matrix is $1$.
+
+**How the power set is built, and why it appears.** A subset $Z$ of the $N$ clicking modes is specified by one yes/no decision per mode: "is this mode in $Z$?". Going through the modes one at a time and making each decision both ways produces every subset exactly once. For the clicking modes $H$ and $V$:
+
+| $H$ in $Z$? | $V$ in $Z$? | $Z$ |
+|---|---|---|
+| no | no | $\emptyset$ |
+| yes | no | $\{H\}$ |
+| no | yes | $\{V\}$ |
+| yes | yes | $\{H,V\}$ |
+
+so $P(\{H,V\})=\big\{\emptyset,\{H\},\{V\},\{H,V\}\big\}$. With $N$ independent yes/no decisions there are $2\cdot2\cdots2=2^N$ subsets. For one clicking mode $H$ there are two, $P(\{H\})=\big\{\emptyset,\{H\}\big\}$.
+
+These are exactly the choices made in step (e). There, each clicking detector contributed the weight $P_1=\frac{1}{\pi}-\delta^{(2)}$, and multiplying out the product meant picking, for every clicking detector, one of the two pieces: $\frac1\pi$ (the mode is integrated out: "yes, in $Z$") or $-\delta^{(2)}$ (the mode is set to vacuum: "no, not in $Z$"). The four terms (i)–(iv) are the four rows of the table above: (i) is $Z=\{H,V\}$, (ii) is $Z=\{H\}$, (iii) is $Z=\{V\}$ and (iv) is $Z=\emptyset$. Each $-\delta^{(2)}$ contributes a factor $-1$, so the sign of a term is $(-1)^{\text{number of modes not in }Z}=(-1)^{N-\lvert Z\rvert}$. A dark detector contributes only $P_0=\delta^{(2)}$, with no choice, which is why $Z$ runs over subsets of the clicking modes only.
+
+The sign: [2, Eq. (12)] prints $(-1)^{\lvert Z\rvert}$. That agrees with $(-1)^{N-\lvert Z\rvert}$ for an even number $N$ of clicks, including the coincidence $N=2$. For odd $N$ only $(-1)^{N-\lvert Z\rvert}$ gives a nonnegative probability, as the one-click example below shows. This is also the sign used by `thewalrus` <a href="#ref-gupt2019">[4]</a>.
+
+**The one step every term needs.** Because $(\mathbb{1})_{(Z)}=\mathbb{1}$ and keeping rows and columns of $\mathbb{1}-(\Sigma^{-1})_{(S)}$ is the same as keeping them of $\mathbb{1}$ and of $(\Sigma^{-1})_{(S)}$ separately,
 
 $$
-\det\big(\sigma_Q'^{-1}\big)_{(Z)}=\frac{\det\sigma_Q'^{(\text{modes not in }Z)}}{\det\sigma_Q'} .
+\mathbb{1}-\big(O_{(S)}\big)_{(Z)}=\mathbb{1}-\Big(\mathbb{1}-\big(\Sigma^{-1}\big)_{(Z)}\Big)=\big(\Sigma^{-1}\big)_{(Z)} .
 $$
 
-Dividing each term of the Torontonian by $\sqrt{\det\sigma_Q'}$ therefore gives:
+Its determinant follows from Jacobi's complementary-minor identity (equation (3) of [Block-matrix identities](../concepts_and_foundations/block_matrices.md#block:jacobi)), with $\bar Z$ the modes *not* in $Z$:
 
-| $Z$ | sign $(-1)^{\lvert Z\rvert}$ | term $\dfrac{1}{\sqrt{\det\sigma_Q'}\sqrt{\det(\sigma_Q'^{-1})_{(Z)}}}$ | meaning |
-|---|---|---|---|
-| $\emptyset$ | $+$ | $\dfrac{1}{\sqrt{\det\sigma_Q'}}$ | $P^{(\eta_H,\eta_V)}(0,0)$ |
-| $\{H\}$ | $-$ | $\dfrac{1}{\sqrt{\det\sigma_Q'^{(V)}}}$ | $P_V^{(\eta_V)}(0)$ |
-| $\{V\}$ | $-$ | $\dfrac{1}{\sqrt{\det\sigma_Q'^{(H)}}}$ | $P_H^{(\eta_H)}(0)$ |
-| $\{H,V\}$ | $+$ | $1$ | total probability |
+$$
+\det\big(\Sigma^{-1}\big)_{(Z)}=\frac{\det\Sigma_{(\bar Z)}}{\det\Sigma} .
+$$
 
-For $\emptyset$ the determinant of an empty matrix is $1$. For $\{H,V\}$, $\det\sigma_Q'^{-1}\cdot\det\sigma_Q'=1$. Summing the four rows gives exactly (50). So the Torontonian is the inclusion–exclusion sum (48), written with the inverse matrix $\sigma_Q'^{-1}$ so that one matrix $O$ serves every click pattern. For $N$ detectors it has $2^N$ terms, one per subset of dark detectors. (The paper also relates the Torontonian to the hafnians that give photon-*number* probabilities, its Eqs. (13)–(14). That connection is not needed here.)
+So each term of the Torontonian, divided by $\sqrt{\det\Sigma}$, is
+
+$$
+\frac{1}{\sqrt{\det\Sigma}}\cdot\frac{1}{\sqrt{\det\Sigma_{(\bar Z)}/\det\Sigma}}
+=\frac{1}{\sqrt{\det\Sigma_{(\bar Z)}}} .
+$$
+
+By [(12)](covariance_matrix.md#eq12) and (49), this is the probability that all modes in $\bar Z$ are empty. The three cases are $\Sigma_{(\{H,V\})}=\sigma_Q'$, $\Sigma_{(\{H\})}=\sigma_Q'^{(H)}$ (rows and columns $1,3$) and $\Sigma_{(\{V\})}=\sigma_Q'^{(V)}$ (rows and columns $2,4$), plus $\det\Sigma_{(\emptyset)}=1$.
+
+**Coincidence, $S=\{H,V\}$.** Both detectors click, so $N=2$, $O_{(S)}=\mathbb{1}_4-\sigma_Q'^{-1}$, and
+
+$$
+P([2])=\big\{\emptyset,\ \{H\},\ \{V\},\ \{H,V\}\big\}.
+$$
+
+The four terms are:
+
+| $Z$ | $\bar Z$ | sign $(-1)^{2-\lvert Z\rvert}$ | $\big(\sigma_Q'^{-1}\big)_{(Z)}$ | $\det\big(\sigma_Q'^{-1}\big)_{(Z)}$ | term $\dfrac{1}{\sqrt{\det\sigma_Q'}\sqrt{\det(\sigma_Q'^{-1})_{(Z)}}}$ |
+|---|---|---|---|---|---|
+| $\emptyset$ | $\{H,V\}$ | $+$ | empty | $1$ | $\dfrac{1}{\sqrt{\det\sigma_Q'}}=P^{(\eta_H,\eta_V)}(0,0)$ |
+| $\{H\}$ | $\{V\}$ | $-$ | rows, columns $1,3$ | $\dfrac{\det\sigma_Q'^{(V)}}{\det\sigma_Q'}$ | $\dfrac{1}{\sqrt{\det\sigma_Q'^{(V)}}}=P_V^{(\eta_V)}(0)$ |
+| $\{V\}$ | $\{H\}$ | $-$ | rows, columns $2,4$ | $\dfrac{\det\sigma_Q'^{(H)}}{\det\sigma_Q'}$ | $\dfrac{1}{\sqrt{\det\sigma_Q'^{(H)}}}=P_H^{(\eta_H)}(0)$ |
+| $\{H,V\}$ | $\emptyset$ | $+$ | $\sigma_Q'^{-1}$ | $\dfrac{1}{\det\sigma_Q'}$ | $1$ |
+
+Adding the four rows with their signs:
+
+$$
+p(\{H,V\})=\frac{1}{\sqrt{\det\sigma_Q'}}-\frac{1}{\sqrt{\det\sigma_Q'^{(V)}}}-\frac{1}{\sqrt{\det\sigma_Q'^{(H)}}}+1,
+$$
+
+which is exactly (50).
+
+**Only $H$ clicks, $S=\{H\}$.** This example shows the reduction $(\cdot)_{(S)}$ actually deleting something. Now $N=1$ and
+
+$$
+O_{(\{H\})}=\mathbb{1}_2-\begin{pmatrix}\big(\sigma_Q'^{-1}\big)_{11}&\big(\sigma_Q'^{-1}\big)_{13}\\\big(\sigma_Q'^{-1}\big)_{31}&\big(\sigma_Q'^{-1}\big)_{33}\end{pmatrix},
+\qquad
+P([1])=\big\{\emptyset,\ \{H\}\big\}.
+$$
+
+| $Z$ | $\bar Z$ | sign $(-1)^{1-\lvert Z\rvert}$ | $\det\big(\sigma_Q'^{-1}\big)_{(Z)}$ | term divided by $\sqrt{\det\sigma_Q'}$ |
+|---|---|---|---|---|
+| $\emptyset$ | $\{H,V\}$ | $-$ | $1$ | $P^{(\eta_H,\eta_V)}(0,0)$ |
+| $\{H\}$ | $\{V\}$ | $+$ | $\dfrac{\det\sigma_Q'^{(V)}}{\det\sigma_Q'}$ | $P_V^{(\eta_V)}(0)$ |
+
+So
+
+$$
+p(\{H\})=P_V^{(\eta_V)}(0)-P^{(\eta_H,\eta_V)}(0,0):
+$$
+
+the probability that $V$ is dark, minus the probability that both are dark, i.e. the probability that $V$ is dark and $H$ clicks. With the sign $(-1)^{\lvert Z\rvert}$ printed in [2] this would come out as $P^{(\eta_H,\eta_V)}(0,0)-P_V^{(\eta_V)}(0)\le0$.
+
+**Summary.** The Torontonian is the inclusion–exclusion sum (48), written with the inverse matrix $\Sigma^{-1}$ so that one matrix serves every click pattern. Each subset $Z$ of the clicking modes contributes the probability that all modes outside $Z$ are dark. For $N$ clicks there are $2^N$ terms. (The paper also relates the Torontonian to the hafnians that give photon-*number* probabilities, its Eqs. (13)–(14). That connection is not needed here.)
 
 The [numerical check](../dashboard/comparison.md#numerical-check) confirms (50) against `thewalrus`'s Torontonian <a href="#ref-gupt2019">[4]</a> at five random parameter sets.
 
