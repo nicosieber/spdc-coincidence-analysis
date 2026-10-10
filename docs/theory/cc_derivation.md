@@ -1,5 +1,5 @@
 # Derivation of the coincidence probability
-To derive the analytical expression for the coincidence probability, equation (16) of [POVM](povm.md#formula_P_cc_loss) will be evaluated using the TMSV of the form depicted in equation (18) of [TMSV](tmsv.md#formula:tmsv_as_exp_2). For now, the focus now shall only be the evaluation of the term
+To derive the analytical expression for the coincidence probability, equation (16) of [POVM](povm.md#formula_P_cc_loss) will be evaluated using the TMSV of the form depicted in equation (19) of [TMSV](tmsv.md#formula:tmsv_as_exp_2). For now, the focus is only on the evaluation of the term
 
 \begin{equation}
 \label{formula:last_term1}
@@ -16,10 +16,10 @@ where the abbreviations
     t_{H,V}=1-\eta_{H,V}
 \end{equation}
 
-are used and the $\otimes$ was omitted for readability. Further,
+are used and the $\otimes$ was omitted for readability. Further, the transmission operator
 
 \begin{equation}
-S=t_H^{\hat{n}_H} t_V^{\hat{n}_V}
+\hat T=t_H^{\hat{n}_H} t_V^{\hat{n}_V}
 \end{equation}
 
 and
@@ -41,7 +41,7 @@ are introduced. It follows that
 
 \begin{equation}
 \label{formula:SaS_Da}
-S\mathbf{\hat a^{\dagger}}S^{-1}=D\mathbf{\hat a^{\dagger}},
+\hat T\mathbf{\hat a^{\dagger}}\hat T^{-1}=D\mathbf{\hat a^{\dagger}},
 \end{equation}
 
 and since $D$ is diagonal:
@@ -50,10 +50,10 @@ and since $D$ is diagonal:
 \left(D\mathbf{\hat a^{\dagger}}\right)^T=(\mathbf{\hat a^{\dagger}})^T D
 \end{equation}
 
-Due to the relations in equations (6) and (7) of [Conjugation of creation of operators](../concepts_and_foundations/conjugation_operators.md#eq:xpownadagger1) we get:
+Due to the relations in equations (6) and (7) of [Conjugation of creation operators](../concepts_and_foundations/conjugation_operators.md#eq:xpownadagger1) we get:
 
 \begin{equation}
-S\hat a_{H,V}^{\dagger}S^{-1}=t_{H,V}\hat a_{H,V}^{\dagger}.
+\hat T\hat a_{H,V}^{\dagger}\hat T^{-1}=t_{H,V}\hat a_{H,V}^{\dagger}.
 \end{equation}
 
 Then \(\eqref{formula:last_term1}\) becomes
@@ -61,21 +61,21 @@ Then \(\eqref{formula:last_term1}\) becomes
 \begin{equation}
 \begin{aligned}
 &\Lambda^2 \langle 0 \rvert e^{\frac{\lambda}{2} \mathbf{\hat a}^T M\mathbf{\hat a}} t_H^{\hat{n}_H} t_V^{\hat{n}_V} e^{\frac{\lambda}{2} (\mathbf{\hat a^{\dagger}})^T M \mathbf{\hat a^{\dagger}}} \lvert 0 \rangle\\
-=&\Lambda^2 \langle 0 \rvert e^{\frac{\lambda}{2} \mathbf{\hat a}^T M\mathbf{\hat a}} S e^{\frac{\lambda}{2} (\mathbf{\hat a^{\dagger}})^T M \mathbf{\hat a^{\dagger}}} \lvert 0 \rangle\\
-=&\Lambda^2 \langle 0 \rvert e^{\frac{\lambda}{2} \mathbf{\hat a}^T M\mathbf{\hat a}} S e^{\frac{\lambda}{2} (\mathbf{\hat a^{\dagger}})^T M \mathbf{\hat a^{\dagger}}}S^{-1}S \lvert 0 \rangle\\
-=&\Lambda^2 \langle 0 \rvert e^{\frac{\lambda}{2} \mathbf{\hat a}^T M\mathbf{\hat a}} e^{\frac{\lambda}{2} S (\mathbf{\hat a^{\dagger}})^T M \mathbf{\hat a^{\dagger}}S^{-1}}S \lvert 0 \rangle,
+=&\Lambda^2 \langle 0 \rvert e^{\frac{\lambda}{2} \mathbf{\hat a}^T M\mathbf{\hat a}} \hat T e^{\frac{\lambda}{2} (\mathbf{\hat a^{\dagger}})^T M \mathbf{\hat a^{\dagger}}} \lvert 0 \rangle\\
+=&\Lambda^2 \langle 0 \rvert e^{\frac{\lambda}{2} \mathbf{\hat a}^T M\mathbf{\hat a}} \hat T e^{\frac{\lambda}{2} (\mathbf{\hat a^{\dagger}})^T M \mathbf{\hat a^{\dagger}}}\hat T^{-1}\hat T \lvert 0 \rangle\\
+=&\Lambda^2 \langle 0 \rvert e^{\frac{\lambda}{2} \mathbf{\hat a}^T M\mathbf{\hat a}} e^{\frac{\lambda}{2} \hat T (\mathbf{\hat a^{\dagger}})^T M \mathbf{\hat a^{\dagger}}\hat T^{-1}}\hat T \lvert 0 \rangle,
 \end{aligned}
 \end{equation}
 
-which is achieved by inserting $S^{-1}S=\mathbf{1}$ and usage of the relation (9) of [Operator relations](../concepts_and_foundations/operator_relations.md#appendix:powerseries_final). By inserting $S^{-1}S=\mathbf{1}$ into the exponent and using \(\eqref{formula:SaS_Da}\), the following can be obtained:
+which is achieved by inserting $\hat T^{-1}\hat T=\mathbf{1}$ and usage of the relation (9) of [Operator relations](../concepts_and_foundations/operator_relations.md#appendix:powerseries_final). By inserting $\hat T^{-1}\hat T=\mathbf{1}$ into the exponent and using \(\eqref{formula:SaS_Da}\), the following can be obtained:
 
 \begin{equation}
 \label{formula:tmsv_DaMDa}
 \begin{aligned}
-&\Lambda^2 \langle 0 \rvert e^{\frac{\lambda}{2} \mathbf{\hat a}^T M\mathbf{\hat a}} e^{\frac{\lambda}{2} S (\mathbf{\hat a^{\dagger}})^T M \mathbf{\hat a^{\dagger}}S^{-1}}S \lvert 0 \rangle\\
-=&\Lambda^2\langle 0 \rvert e^{\frac{\lambda}{2} \mathbf{\hat a}^T M\mathbf{\hat a}} e^{\frac{\lambda}{2} (S (\mathbf{\hat a^{\dagger}})^T S^{-1}) M (S \mathbf{\hat a^{\dagger}}S^{-1})}S \lvert 0 \rangle\\
-=&\Lambda^2\langle 0 \rvert e^{\frac{\lambda}{2} \mathbf{\hat a}^T M\mathbf{\hat a}} e^{\frac{\lambda}{2} (D\mathbf{\hat a^{\dagger}})^T M D\mathbf{\hat a^{\dagger}}}S \lvert 0 \rangle\\
-=&\Lambda^2\langle 0 \rvert e^{\frac{\lambda}{2} \mathbf{\hat a}^T M\mathbf{\hat a}} e^{\frac{\lambda}{2} (\mathbf{\hat a^{\dagger}})^T D M D\mathbf{\hat a^{\dagger}}}S \lvert 0 \rangle
+&\Lambda^2 \langle 0 \rvert e^{\frac{\lambda}{2} \mathbf{\hat a}^T M\mathbf{\hat a}} e^{\frac{\lambda}{2} \hat T (\mathbf{\hat a^{\dagger}})^T M \mathbf{\hat a^{\dagger}}\hat T^{-1}}\hat T \lvert 0 \rangle\\
+=&\Lambda^2\langle 0 \rvert e^{\frac{\lambda}{2} \mathbf{\hat a}^T M\mathbf{\hat a}} e^{\frac{\lambda}{2} (\hat T (\mathbf{\hat a^{\dagger}})^T \hat T^{-1}) M (\hat T \mathbf{\hat a^{\dagger}}\hat T^{-1})}\hat T \lvert 0 \rangle\\
+=&\Lambda^2\langle 0 \rvert e^{\frac{\lambda}{2} \mathbf{\hat a}^T M\mathbf{\hat a}} e^{\frac{\lambda}{2} (D\mathbf{\hat a^{\dagger}})^T M D\mathbf{\hat a^{\dagger}}}\hat T \lvert 0 \rangle\\
+=&\Lambda^2\langle 0 \rvert e^{\frac{\lambda}{2} \mathbf{\hat a}^T M\mathbf{\hat a}} e^{\frac{\lambda}{2} (\mathbf{\hat a^{\dagger}})^T D M D\mathbf{\hat a^{\dagger}}}\hat T \lvert 0 \rangle
 \end{aligned}
 \end{equation}
 
@@ -83,17 +83,17 @@ Here, the expansion of the indices of $(\mathbf{\hat a^{\dagger}})^T M \mathbf{\
 
 \begin{equation}
 \begin{aligned}
-&S\left((\mathbf{\hat a^{\dagger}})^T M \mathbf{\hat a^{\dagger}}\right)S^{-1}\\=&S\left(\sum_{i,j}M_{i,j}\hat a_i^{\dagger}\hat a_j^{\dagger}\right)S^{-1}\\
-=&\sum_{i,j}M_{i,j}S\hat a_i^{\dagger}\hat a_j^{\dagger}S^{-1}\\
-=&\sum_{i,j}M_{i,j}\left(S\hat a_i^{\dagger}S^{-1}\right)\left(S\hat a_j^{\dagger}S^{-1}\right)\\
-=&\left(S(\mathbf{\hat a^{\dagger}})^TS^{-1}\right)M\left(S\mathbf{\hat a^{\dagger}}S^{-1}\right)
+&\hat T\left((\mathbf{\hat a^{\dagger}})^T M \mathbf{\hat a^{\dagger}}\right)\hat T^{-1}\\=&\hat T\left(\sum_{i,j}M_{i,j}\hat a_i^{\dagger}\hat a_j^{\dagger}\right)\hat T^{-1}\\
+=&\sum_{i,j}M_{i,j}\hat T\hat a_i^{\dagger}\hat a_j^{\dagger}\hat T^{-1}\\
+=&\sum_{i,j}M_{i,j}\left(\hat T\hat a_i^{\dagger}\hat T^{-1}\right)\left(\hat T\hat a_j^{\dagger}\hat T^{-1}\right)\\
+=&\left(\hat T(\mathbf{\hat a^{\dagger}})^T\hat T^{-1}\right)M\left(\hat T\mathbf{\hat a^{\dagger}}\hat T^{-1}\right)
 \end{aligned}
 \end{equation}
 
 By further using equation (2) of [Conjugation of creation operators](../concepts_and_foundations/conjugation_operators.md#eq:xpownm), it follows that
 
 \begin{equation}
-S \lvert 0 \rangle =\lvert 0 \rangle,
+\hat T \lvert 0 \rangle =\lvert 0 \rangle,
 \end{equation}
 
 which results in
@@ -136,14 +136,14 @@ In order to evaluate the expression \(\eqref{eq:tmsv_coherent_identity}\), the a
 \end{aligned}
 \end{equation}
 
-$\mathbf{\hat a}^T M\mathbf{\hat a}$ can be written as
+With $M$ from equation (18) of [TMSV](tmsv.md#eq:alpha_vec), written in terms of $S_4=\sin(4\vartheta)$ and $C_4=\cos(4\vartheta)$, $\mathbf{\hat a}^T M\mathbf{\hat a}$ can be written as
 
 \begin{equation}
 \label{eq:ama_1}
 \begin{aligned}
 &\mathbf{\hat a}^T M\mathbf{\hat a}\\
 &=\sum_{i,j}\hat a_i M_{i,j}\hat a_j\\
-&=2cs\hat a_H^2+(s^2-c^2)\hat a_H\hat a_V+(s^2-c^2)\hat a_V\hat a_H-2cs\hat a_V^2.
+&=S_4\hat a_H^2-C_4\hat a_H\hat a_V-C_4\hat a_V\hat a_H-S_4\hat a_V^2.
 \end{aligned}
 \end{equation}
 
@@ -158,7 +158,7 @@ the expression \(\eqref{eq:ama_1}\) can be shortened a little bit:
 \begin{equation}
 \begin{aligned}
 &\dfrac{1}{2}\mathbf{\hat a}^T M\mathbf{\hat a}\\
-=&cs\hat a_H^2+(s^2-c^2)\hat a_H\hat a_V-cs\hat a_V^2
+=&\frac{S_4}{2}\hat a_H^2-C_4\hat a_H\hat a_V-\frac{S_4}{2}\hat a_V^2
 \end{aligned}
 \end{equation}
 
@@ -167,13 +167,13 @@ Consequently, one can write
 \begin{equation}
 \begin{aligned}
 &\dfrac{1}{2}\mathbf{\hat a}^T M\mathbf{\hat a}\lvert \alpha \rangle\\
-=&\dfrac{1}{2}\left(2cs\hat a_H^2+2(s^2-c^2)\hat a_H\hat a_V-2cs\hat a_V^2\right)\lvert \alpha_H,\alpha_V \rangle\\
-=&\dfrac{1}{2}\left(2cs\alpha_H^2+2(s^2-c^2)\alpha_H\alpha_V-2cs\alpha_V^2\right)\lvert \alpha_H,\alpha_V \rangle\\
+=&\dfrac{1}{2}\left(S_4\hat a_H^2-2C_4\hat a_H\hat a_V-S_4\hat a_V^2\right)\lvert \alpha_H,\alpha_V \rangle\\
+=&\dfrac{1}{2}\left(S_4\alpha_H^2-2C_4\alpha_H\alpha_V-S_4\alpha_V^2\right)\lvert \alpha_H,\alpha_V \rangle\\
 =&\dfrac{1}{2}\alpha^TM\alpha \lvert \alpha \rangle
 \end{aligned}
 \end{equation}
 
-Following that, the exponential of \(\eqref{eq:tmsv_coherent_identity}\) can be written it as an infinite sum:
+Following that, the exponential of \(\eqref{eq:tmsv_coherent_identity}\) can be written as an infinite sum:
 
 \begin{equation}
 \begin{aligned}
@@ -183,7 +183,7 @@ Following that, the exponential of \(\eqref{eq:tmsv_coherent_identity}\) can be 
 \end{aligned}
 \end{equation}
 
-For a normalized two-mode coherent state we can evaluate $\langle 0 \rvert \alpha \rangle$ (with the help of the equation (2) of [Coherent states](../concepts_and_foundations/coherent_states.md#formula:coherent_state_matrix)  and equation (17) of [TMSV](tmsv.md#eq:alpha_vec) to
+For a normalized two-mode coherent state we can evaluate $\langle 0 \rvert \alpha \rangle$ (with the help of the equation (2) of [Coherent states](../concepts_and_foundations/coherent_states.md#formula:coherent_state_matrix)  and equation (18) of [TMSV](tmsv.md#eq:alpha_vec) to
 
 \begin{equation}
 \langle 0 \rvert \alpha \rangle=e^{-\frac{|\alpha_H|^2}{2}}e^{-\frac{|\alpha_V|^2}{2}}=e^{-\frac{\alpha^{\dagger}\alpha}{2}}.
@@ -379,6 +379,8 @@ i\begin{pmatrix}
 \end{equation}
 
 !!! success "Machine-checked in Lean 4"
+    [![Lean proofs](https://github.com/nicosieber/spdccc/actions/workflows/lean.yml/badge.svg)](https://github.com/nicosieber/spdccc/actions/workflows/lean.yml)
+
     The explicit form of $A=W^TQW$ above, with $W$ and $Q$ as defined in this section, is verified in [`lean/CcProofs/Chain.lean`](https://github.com/nicosieber/spdccc/blob/main/lean/CcProofs/Chain.lean) (`Amat_eq`), together with $A^T=A$ (`Amat_transpose`):
 
     ```lean4
@@ -501,9 +503,9 @@ I
 Since $K$ is real symmetric, it can be diagonalized by an orthogonal matrix. Thus, there exists (see <a href="#ref-axler2024">[1]</a>) an orthogonal matrix $O$ such that
 
 \begin{equation}
-K=O^T\Lambda O,
+K=O^T\Gamma O,
 \qquad
-\Lambda=\mathrm{diag}(\kappa_1,\kappa_2,\kappa_3,\kappa_4),
+\Gamma=\mathrm{diag}(\kappa_1,\kappa_2,\kappa_3,\kappa_4),
 \end{equation}
 
 with real eigenvalues $\kappa_j$. We now define
@@ -528,7 +530,7 @@ y^T\left(\mathbb{1}+iK\right)y
 &=
 y^Ty+i\,y^TKy\\
 &=
-z^Tz+i\,z^T\Lambda z\\
+z^Tz+i\,z^T\Gamma z\\
 &=
 \sum_{j=1}^4 (1+i\kappa_j)z_j^2.
 \end{aligned}
@@ -663,7 +665,7 @@ While this connection provides useful conceptual insight, the following calculat
 \end{aligned}
 \end{equation}
 
-with $\det(W)^2=\mathbb 1$. Using equation [(2)](../concepts_and_foundations/determinant_relations.md#appendix:det_of_blockmatrix) and equation \(\eqref{eq:Q}\), $\det A$ can be rewritten as:
+with $\det(W)^2=1$. Using equation [(2)](../concepts_and_foundations/determinant_relations.md#appendix:det_of_blockmatrix) and equation \(\eqref{eq:Q}\), $\det A$ can be rewritten as:
 
 \begin{equation}
 \begin{aligned}
@@ -674,6 +676,8 @@ with $\det(W)^2=\mathbb 1$. Using equation [(2)](../concepts_and_foundations/det
 \end{equation}
 
 !!! success "Machine-checked in Lean 4"
+    [![Lean proofs](https://github.com/nicosieber/spdccc/actions/workflows/lean.yml/badge.svg)](https://github.com/nicosieber/spdccc/actions/workflows/lean.yml)
+
     The chain $\det A=\det(W)^2\det Q=\det(\mathbb 1-\lambda^2MDMD)$ is verified in [`lean/CcProofs/Chain.lean`](https://github.com/nicosieber/spdccc/blob/main/lean/CcProofs/Chain.lean), including $\det W=-1$ (`det_Wmat`) and the block-determinant step (`det_Qmat`):
 
     ```lean4
@@ -683,14 +687,14 @@ with $\det(W)^2=\mathbb 1$. Using equation [(2)](../concepts_and_foundations/det
     ```
 
 ## Evaluation of the determinant
-The calculation of $MD$ results in
+With $M$ written in terms of $S_4=\sin(4\vartheta)$ and $C_4=\cos(4\vartheta)$, see equation (18) of [TMSV](tmsv.md#eq:alpha_vec), the calculation of $MD$ results in
 
 \begin{equation}
 \begin{aligned}
 MD&=
 \begin{pmatrix}
-2cs\,t_H & (s^2-c^2)t_V\\
-(s^2-c^2)t_H & -2cs\,t_V
+S_4\,t_H & -C_4\,t_V\\
+-C_4\,t_H & -S_4\,t_V
 \end{pmatrix},
 \end{aligned}
 \end{equation}
@@ -702,11 +706,11 @@ and therefore $MDMD$ can be calculated as
 \begin{aligned}
 MDMD=
 \begin{pmatrix}
-a &
-b
+m_{11} &
+m_{12}
 \\
-c &
-d
+m_{21} &
+m_{22}
 \end{pmatrix},
 \end{aligned}
 \end{equation}
@@ -715,10 +719,10 @@ with
 
 \begin{equation}
 \begin{aligned}
-a&=(2cs)^2t_H^2+(s^2-c^2)^2t_Ht_V\\
-b&=2cs(s^2-c^2)t_V(t_H-t_V)\\
-c&=2cs(s^2-c^2)t_H(t_H-t_V)\\
-d&=(s^2-c^2)^2t_Ht_V+(2cs)^2t_V^2.
+m_{11}&=S_4^2\,t_H^2+C_4^2\,t_Ht_V\\
+m_{12}&=-S_4C_4\,t_V(t_H-t_V)\\
+m_{21}&=-S_4C_4\,t_H(t_H-t_V)\\
+m_{22}&=C_4^2\,t_Ht_V+S_4^2\,t_V^2.
 \end{aligned}
 \end{equation}
 
@@ -734,30 +738,22 @@ Using equation (9) of [Determinant relations](../concepts_and_foundations/determ
 \end{aligned}
 \end{equation}
 
-Using
-
-\begin{equation}
-2cs=\sin(4\vartheta),
-\qquad
-s^2-c^2=-\cos(4\vartheta),
-\end{equation}
-
-this becomes
+With $\mathrm{Tr}(MDMD)=m_{11}+m_{22}$ and $\det(MDMD)=\det(MD)^2=\left(-(S_4^2+C_4^2)\,t_Ht_V\right)^2=t_H^2t_V^2$, this becomes
 
 \begin{equation}
 \begin{aligned}
 \det Q
-=1-\lambda^2\left((t_H^2+t_V^2)\sin^2(4\vartheta)+2t_Ht_V\cos^2(4\vartheta)\right)+\lambda^4 t_H^2t_V^2.
+=1-\lambda^2\left((t_H^2+t_V^2)S_4^2+2t_Ht_V\,C_4^2\right)+\lambda^4 t_H^2t_V^2.
 \end{aligned}
 \end{equation}
 
-Equivalently,
+Using $C_4^2=1-S_4^2$, this is equivalent to
 
 \begin{equation}
 \det Q
 =
 (1-\lambda^2 t_Ht_V)^2
--\lambda^2(t_H-t_V)^2\sin^2(4\vartheta),
+-\lambda^2(t_H-t_V)^2S_4^2,
 \end{equation}
 
 or with \(\eqref{eq:t_eta}\)
@@ -765,11 +761,13 @@ or with \(\eqref{eq:t_eta}\)
 \begin{equation}
 \begin{aligned}
 \det Q=
-\left(1-\lambda^2(1-\eta_H)(1-\eta_V)\right)^2-\lambda^2(\eta_H-\eta_V)^2\sin^2(4\vartheta).
+\left(1-\lambda^2(1-\eta_H)(1-\eta_V)\right)^2-\lambda^2(\eta_H-\eta_V)^2S_4^2.
 \end{aligned}
 \end{equation}
 
 !!! success "Machine-checked in Lean 4"
+    [![Lean proofs](https://github.com/nicosieber/spdccc/actions/workflows/lean.yml/badge.svg)](https://github.com/nicosieber/spdccc/actions/workflows/lean.yml)
+
     The evaluation of the determinant is verified in [`lean/CcProofs/Determinant.lean`](https://github.com/nicosieber/spdccc/blob/main/lean/CcProofs/Determinant.lean) for all real $\vartheta$, $\lambda$, $\eta_H$, $\eta_V$:
 
     ```lean4
@@ -784,9 +782,11 @@ Finally, $P^{(\eta_H,\eta_V)}(0,0)$ from equation \(\eqref{formula:last_term1}\)
 \begin{equation}
 \begin{aligned}
 &P^{(\eta_H,\eta_V)}(0,0)=\langle \Psi \rvert \left(1-\eta_H\right)^{\hat{n}_H}\otimes \left(1-\eta_V\right)^{\hat{n}_V}\lvert \Psi \rangle\\
-=&\dfrac{(1-\lambda^2)}{\sqrt{\left(1-\lambda^2(1-\eta_H)(1-\eta_V)\right)^2-\lambda^2(\eta_H-\eta_V)^2\sin^2(4\vartheta)}}.
+=&\dfrac{(1-\lambda^2)}{\sqrt{\left(1-\lambda^2(1-\eta_H)(1-\eta_V)\right)^2-\lambda^2(\eta_H-\eta_V)^2S_4^2}},
 \end{aligned}
 \end{equation}
+
+with $S_4=\sin(4\vartheta)$.
 
 <span id="P00_lean"></span>
 
@@ -819,7 +819,7 @@ In order to calculate $P^{(\eta_{H})}_{H}(0)$ or $P^{(\eta_{V})}_{V}(0)$, one ca
 
 \begin{equation}
 \begin{aligned}
-P^{(\eta_{H})}_{H}(0)=P^{(\eta_H,\eta_V=0)}(0,0)=\dfrac{(1-\lambda^2)}{\sqrt{\left(1-\lambda^2(1-\eta_H)\right)^2-\lambda^2\eta_H^2\sin^2(4\vartheta)}}
+P^{(\eta_{H})}_{H}(0)=P^{(\eta_H,\eta_V=0)}(0,0)=\dfrac{(1-\lambda^2)}{\sqrt{\left(1-\lambda^2(1-\eta_H)\right)^2-\lambda^2\eta_H^2S_4^2}}
 \end{aligned}
 \end{equation}
 
@@ -827,7 +827,7 @@ Similarly, the expression for $P^{(\eta_{V})}_{V}(0)$ can be calculated to:
 
 \begin{equation}
 \begin{aligned}
-P^{(\eta_{V})}_{V}(0)=P^{(\eta_H=0,\eta_V)}(0,0)=\dfrac{(1-\lambda^2)}{\sqrt{\left(1-\lambda^2(1-\eta_V)\right)^2-\lambda^2\eta_V^2\sin^2(4\vartheta)}}
+P^{(\eta_{V})}_{V}(0)=P^{(\eta_H=0,\eta_V)}(0,0)=\dfrac{(1-\lambda^2)}{\sqrt{\left(1-\lambda^2(1-\eta_V)\right)^2-\lambda^2\eta_V^2S_4^2}}
 \end{aligned}
 \end{equation}
 
@@ -935,7 +935,7 @@ which for $R_d\,\Delta t \ll 1$ simplifies to $d \approx R_d\,\Delta t$. The coi
 \sigma_{\text{ch}} = \sqrt{\sigma_{\text{det}}^2 + \sigma_{\text{tag}}^2}
 \end{equation}
 
-from the detector and time tagger in quadrature <a href="#ref-you2013">[4]</a>, the jitter of the time difference is $\sigma_{\Delta t} = \sqrt{2}\,\sigma_{\text{ch}}$, and the window is typically chosen as $\Delta t \approx 3 \times \text{FWHM}_{\Delta t}$ with $\text{FWHM} = 2\sqrt{2\ln 2}\,\sigma$. The factor of $3$ is an engineering convention: for a Gaussian timing distribution, a window of $3 \times \text{FWHM}$ captures approximately $99.7\%$ of all true coincidence events while keeping the window narrow enough to suppress accidental coincidences.
+from the detector and time tagger in quadrature <a href="#ref-you2013">[4]</a>, the jitter of the time difference is $\sigma_{\Delta t} = \sqrt{2}\,\sigma_{\text{ch}}$, and the window is typically chosen as $\Delta t \approx 3 \times \text{FWHM}_{\Delta t}$ with $\text{FWHM} = 2\sqrt{2\ln 2}\,\sigma$. The factor of $3$ is an engineering convention: for a Gaussian timing distribution, a window of $3 \times \text{FWHM} = 6\sqrt{2\ln 2}\,\sigma_{\Delta t}\approx 7.06\,\sigma_{\Delta t}$, i.e. $\pm 3.53\,\sigma_{\Delta t}$ around the peak, captures approximately $99.96\%$ of all true coincidence events while keeping the window narrow enough to suppress accidental coincidences.
 
 ### Modified single-mode POVM element
 
@@ -996,7 +996,7 @@ In every term, $(1-d)$ commutes with all operators, and therefore factors straig
 \end{aligned}
 \end{equation}
 
-The entire derivation — the conjugation $S\mathbf{\hat a}^{\dagger}S^{-1} = D\mathbf{\hat a}^{\dagger}$, the coherent-state resolution, the Gaussian integral, and the determinant evaluation — acts exclusively on the operator $t_H^{\hat{n}_H}\,t_V^{\hat{n}_V}$, which is unchanged. Dark counts therefore do not enter the core calculation at any stage.
+The entire derivation — the conjugation $\hat T\mathbf{\hat a}^{\dagger}\hat T^{-1} = D\mathbf{\hat a}^{\dagger}$, the coherent-state resolution, the Gaussian integral, and the determinant evaluation — acts exclusively on the operator $t_H^{\hat{n}_H}\,t_V^{\hat{n}_V}$, which is unchanged. Dark counts therefore do not enter the core calculation at any stage.
 
 ### Modified coincidence probability
 
@@ -1017,7 +1017,16 @@ where $P_H^{(\eta_H)}(0)$, $P_V^{(\eta_V)}(0)$, and $P^{(\eta_H,\eta_V)}(0,0)$ a
 
 ### Physical interpretation
 
-Dark counts can only increase the coincidence probability: since $(1-d) \leq 1$, each no-click probability is suppressed, meaning the detector reports more clicks than the photon field alone would produce. In the extreme case $d_H = d_V = 1$, both detectors click on every trial regardless of the quantum state, and $P_{\mathrm{coinc}}^{(d)} = 1$.
+Dark counts can only increase the coincidence probability. Differentiating \(\eqref{eq:Pcoinc_dark}\) with respect to $d_H$ and using \(\eqref{eq:PH_meaning}\) gives
+
+\begin{equation}
+\frac{\partial P_{\mathrm{coinc}}^{(d)}}{\partial d_H}
+= P_H^{(\eta_H)}(0)-(1-d_V)\,P^{(\eta_H,\eta_V)}(0,0)
+= P_{V\text{-only}} + d_V\,P_{00}
+\geq 0,
+\end{equation}
+
+since $P_{00}=P^{(\eta_H,\eta_V)}(0,0)$. The same holds for $d_V$ with $H$ and $V$ exchanged. Physically, a dark count can only turn a "no click" of a detector into a "click", so the event "both detectors click" can only grow. In the extreme case $d_H = d_V = 1$, both detectors click on every trial regardless of the quantum state, and $P_{\mathrm{coinc}}^{(d)} = 1$.
 
 For modern SNSPDs <a href="#ref-natarajan2012">[5]</a> with $R_d \sim 1\text{-}50\,\text{Hz}$ and coincidence windows $\Delta t \sim 200\,\text{ps}$, the dark count probability is $d \sim 10^{-8}$, so that $(1-d_H)(1-d_V) \approx 1$.
 

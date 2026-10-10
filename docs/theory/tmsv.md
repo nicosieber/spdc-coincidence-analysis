@@ -172,25 +172,34 @@ cs\,(\hat a_H^\dagger)^2
 \end{aligned}
 \end{equation}
 
-Using
+The coefficients simplify with the double-angle identities
 
 \begin{equation}
 \begin{aligned}
-2cs=\sin(4\vartheta),
+2cs=2\sin(2\vartheta)\cos(2\vartheta)=\sin(4\vartheta),
 \qquad
-s^2-c^2=-\cos(4\vartheta),
+s^2-c^2=\sin^2(2\vartheta)-\cos^2(2\vartheta)=-\cos(4\vartheta).
 \end{aligned}
 \end{equation}
 
-one may write
+Since $\sin(4\vartheta)$ and $\cos(4\vartheta)$ appear throughout the rest of the derivation, the following shorthand is used from here on:
+
+<span id="eq:S4C4"></span>
+
+\begin{equation}
+\label{eq:S4C4}
+\boxed{\;S_4:=\sin(4\vartheta),\qquad C_4:=\cos(4\vartheta).\;}
+\end{equation}
+
+The subscript $4$ refers to the angle $4\vartheta$. With this shorthand,
 
 \begin{equation}
 \begin{aligned}
 \hat K^\dagger
 =
-\frac{\sin(4\vartheta)}{2}(\hat a_H^\dagger)^2
--\cos(4\vartheta)\,\hat a_H^\dagger \hat a_V^\dagger
--\frac{\sin(4\vartheta)}{2}(\hat a_V^\dagger)^2.
+\frac{S_4}{2}(\hat a_H^\dagger)^2
+-C_4\,\hat a_H^\dagger \hat a_V^\dagger
+-\frac{S_4}{2}(\hat a_V^\dagger)^2.
 \end{aligned}
 \end{equation}
 
@@ -210,6 +219,11 @@ With
     \begin{pmatrix}
     2cs & s^2-c^2 \\
     s^2-c^2 & -2cs
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+    S_4 & -C_4 \\
+    -C_4 & -S_4
     \end{pmatrix},
 \end{aligned}
 \end{equation}

@@ -34,30 +34,31 @@ The matrix $M$ has the explicit form
 \begin{equation}
 M =
 \begin{pmatrix}
-2cs & s^2 - c^2 \\
-s^2 - c^2 & -2cs
+S_4 & -C_4 \\
+-C_4 & -S_4
 \end{pmatrix},
 \end{equation}
 
-where $c = \cos(2\vartheta)$ and $s = \sin(2\vartheta)$. A direct computation shows that
+where $S_4 = \sin(4\vartheta)$ and $C_4 = \cos(4\vartheta)$, see [TMSV](../theory/tmsv.md#eq:S4C4). Squaring gives
 
 \begin{equation}
-(2cs)^2 + (s^2 - c^2)^2 = 1,
+M^2 =
+\begin{pmatrix}
+S_4^2+C_4^2 & -S_4C_4+C_4S_4\\
+-C_4S_4+S_4C_4 & C_4^2+S_4^2
+\end{pmatrix}
+= \mathbb{1},
 \end{equation}
 
-which implies
+since $S_4^2+C_4^2=\sin^2(4\vartheta)+\cos^2(4\vartheta)=1$.
+
+This relation has an important consequence for the spectrum of $M$. If $v$ is an eigenvector of $M$ with eigenvalue $\epsilon$, then
 
 \begin{equation}
-M^2 = \mathbb{1}.
+M^2 v = \epsilon^2 v.
 \end{equation}
 
-This relation has an important consequence for the spectrum of $M$. If $v$ is an eigenvector of $M$ with eigenvalue $\lambda$, then
-
-\begin{equation}
-M^2 v = \lambda^2 v.
-\end{equation}
-
-Since $M^2 = \mathbb{1}$, it follows that $\lambda^2 = 1$, and therefore $\lambda = \pm 1$. Thus, all eigenvalues of $M$ lie in the set $\{-1,1\}$.
+Since $M^2 = \mathbb{1}$, it follows that $\epsilon^2 = 1$, and therefore $\epsilon = \pm 1$. Thus, all eigenvalues of $M$ lie in the set $\{-1,1\}$.
 
 Because $M$ is real symmetric, its operator norm is equal to the largest absolute value of its eigenvalues (see <a href="#GilbertIntroductionToLinearAlgebra2016">[1]</a>). Hence,
 
@@ -123,19 +124,19 @@ Applying the block matrices to $v$ yields
 Thus, the eigenvalues of $B$ are
 
 \begin{equation}
-\lambda_\pm = 1 \pm \frac{\lambda}{2}\mu.
+\beta_\pm = 1 \pm \frac{\lambda}{2}\mu.
 \end{equation}
 
-Since $\mu \in [-2,2]$, the smallest possible value of $\lambda_\pm$ occurs for $\mu = \pm 2$, yielding
+Since $\mu \in [-2,2]$, the smallest possible value of $\beta_\pm$ occurs for $\mu = \pm 2$, yielding
 
 \begin{equation}
-\lambda_\pm \ge 1 - \lambda.
+\beta_\pm \ge 1 - \lambda.
 \end{equation}
 
 For finite squeezing parameter $r$, we have $\lambda = \tanh(r)$ with $0 \le \lambda < 1$, and therefore
 
 \begin{equation}
-\lambda_\pm > 0.
+\beta_\pm > 0.
 \end{equation}
 
 Hence, all eigenvalues of $B$ are strictly positive, and we conclude that $B$ is positive definite.
@@ -145,27 +146,27 @@ Hence, all eigenvalues of $B$ are strictly positive, and we conclude that $B$ is
 Since $B$ is real symmetric, the spectral theorem guarantees an orthogonal diagonalization
 
 \begin{equation}
-B = Q \Lambda Q^T,
+B = Q \Gamma Q^T,
 \end{equation}
 
-where $Q$ is orthogonal and $\Lambda = \mathrm{diag}(\lambda_1,\dots,\lambda_n)$ contains the eigenvalues of $B$ (see <a href="#GilbertIntroductionToLinearAlgebra2016">[1]</a>). Since $B$ is positive definite, all eigenvalues satisfy $\lambda_i > 0$.
+where $Q$ is orthogonal and $\Gamma = \mathrm{diag}(\beta_1,\dots,\beta_n)$ contains the eigenvalues of $B$ (see <a href="#GilbertIntroductionToLinearAlgebra2016">[1]</a>). Since $B$ is positive definite, all eigenvalues satisfy $\beta_i > 0$.
 
 We define
 
 \begin{equation}
-B^{1/2} := Q \Lambda^{1/2} Q^T,
+B^{1/2} := Q \Gamma^{1/2} Q^T,
 \end{equation}
 
-where $\Lambda^{1/2} = \mathrm{diag}(\sqrt{\lambda_1},\dots,\sqrt{\lambda_n})$. By construction,
+where $\Gamma^{1/2} = \mathrm{diag}(\sqrt{\beta_1},\dots,\sqrt{\beta_n})$. By construction,
 
 \begin{equation}
 B^{1/2} B^{1/2} = B.
 \end{equation}
 
-Since all eigenvalues $\lambda_i$ are strictly positive, their square roots are well-defined and nonzero, implying that $B^{1/2}$ is invertible. The inverse is given by
+Since all eigenvalues $\beta_i$ are strictly positive, their square roots are well-defined and nonzero, implying that $B^{1/2}$ is invertible. The inverse is given by
 
 \begin{equation}
-B^{-1/2} = Q \Lambda^{-1/2} Q^T.
+B^{-1/2} = Q \Gamma^{-1/2} Q^T.
 \end{equation}
 
 The square root constructed in this way is the unique real symmetric positive definite square root of $B$ (see <a href="#GilbertIntroductionToLinearAlgebra2016">[1]</a>).
@@ -175,6 +176,8 @@ The square root constructed in this way is the unique real symmetric positive de
 We have shown that $B$ is real symmetric and positive definite for all physically relevant parameters ($0 \le \eta_{H,V} \le 1$, finite squeezing $r$). This ensures both the convergence of the Gaussian integral and the validity of the factorization used in equation (43) of [Derivation of the coincidence probability](../theory/cc_derivation.md#A_factorization).
 
 !!! success "Machine-checked in Lean 4"
+    [![Lean proofs](https://github.com/nicosieber/spdccc/actions/workflows/lean.yml/badge.svg)](https://github.com/nicosieber/spdccc/actions/workflows/lean.yml)
+
     The positive definiteness of $B$ is verified in [`lean/CcProofs/Chain.lean`](https://github.com/nicosieber/spdccc/blob/main/lean/CcProofs/Chain.lean), following the argument above: $|u^TMu|\le|u|^2$ (`abs_qM`), $|u^T(L+M)u|\le 2|u|^2$ (`abs_qLM`), and hence $\xi^TB\xi\ge(1-\lambda)|\xi|^2>0$:
 
     ```lean4

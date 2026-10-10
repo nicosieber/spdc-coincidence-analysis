@@ -1,6 +1,6 @@
 # Notation
 
-As in equation (18) of [TMSV](../theory/tmsv.md#formula:tmsv_as_exp_2):
+As in equation (19) of [TMSV](../theory/tmsv.md#formula:tmsv_as_exp_2):
 
 <span id="eq2"></span>
 
@@ -13,21 +13,13 @@ $$
 \tag{2}
 $$
 
-with real $\lambda=\tanh r$ and squeezing parameter $r$ <a href="#ref-lvovsky2014">[12]</a>. The matrix $M$ was defined in [TMSV](../theory/tmsv.md) through $c=\cos(2\vartheta)$ and $s=\sin(2\vartheta)$, where $\vartheta$ is the HWP angle. Its entries simplify with the double-angle identities
+with real $\lambda=\tanh r$ and squeezing parameter $r$ <a href="#ref-lvovsky2014">[12]</a>. The matrix $M$ was defined in [TMSV](../theory/tmsv.md#eq:alpha_vec) through $c=\cos(2\vartheta)$ and $s=\sin(2\vartheta)$, where $\vartheta$ is the HWP angle. With the double-angle identities $2cs=\sin(4\vartheta)$ and $s^2-c^2=-\cos(4\vartheta)$, its entries are written with the same shorthand as in the [main derivation](../theory/tmsv.md#eq:S4C4),
 
 $$
-2cs=2\sin(2\vartheta)\cos(2\vartheta)=\sin(4\vartheta),
-\qquad
-s^2-c^2=\sin^2(2\vartheta)-\cos^2(2\vartheta)=-\cos(4\vartheta),
+S_4:=\sin(4\vartheta),\qquad C_4:=\cos(4\vartheta).
 $$
 
-the same identities the main derivation uses for $\det Q$. Since $\sin(4\vartheta)$ and $\cos(4\vartheta)$ appear in almost every matrix of this section, the following **shorthand** is used:
-
-$$
-\boxed{\;S_4:=\sin(4\vartheta),\qquad C_4:=\cos(4\vartheta)\;}
-$$
-
-The subscript $4$ refers to the angle $4\vartheta$. $S_4$ has nothing to do with the operator $S=t_H^{\hat n_H}t_V^{\hat n_V}$ of the main derivation. With this shorthand,
+The subscript $4$ refers to the angle $4\vartheta$. With this shorthand,
 
 <span id="eq3"></span>
 

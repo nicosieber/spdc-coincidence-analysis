@@ -23,10 +23,15 @@ M=
 \begin{pmatrix}
  2cs & s^2-c^2 \\
  s^2-c^2 & -2cs
+\end{pmatrix}
+=
+\begin{pmatrix}
+ S_4 & -C_4 \\
+ -C_4 & -S_4
 \end{pmatrix},
 \end{equation}\]
 
-with \(c=\cos(2\vartheta)\), \(s=\sin(2\vartheta)\) and \(\Lambda=\sqrt{1-|\lambda|^2}\).
+with \(c=\cos(2\vartheta)\), \(s=\sin(2\vartheta)\), \(S_4=\sin(4\vartheta)\), \(C_4=\cos(4\vartheta)\) and \(\Lambda=\sqrt{1-|\lambda|^2}\).
 It is worth seeing where this particular \(M\) comes from, because that is the
 step that is going to be generalized.
 
@@ -93,6 +98,7 @@ U^T M_0 U
 \begin{pmatrix} c & s\\ s & -c\end{pmatrix}
 =
 \begin{pmatrix} 2cs & s^2-c^2\\ s^2-c^2 & -2cs\end{pmatrix}
+=\begin{pmatrix} S_4 & -C_4\\ -C_4 & -S_4\end{pmatrix}
 =M .
 \end{aligned}
 \end{equation}\]
@@ -209,18 +215,18 @@ Insert the HWP matrix \(M\) of \(\eqref{eq:state_M}\). With
 \[\begin{equation}
 MD=
 \begin{pmatrix}
-2cs\,t_H & (s^2-c^2)t_V\\
-(s^2-c^2)t_H & -2cs\,t_V
+S_4\,t_H & -C_4\,t_V\\
+-C_4\,t_H & -S_4\,t_V
 \end{pmatrix},
 \end{equation}\]
 
-and squaring gives \(MDMD=\big(\begin{smallmatrix}a&b\\c&d\end{smallmatrix}\big)\)
+and squaring gives \(MDMD=\big(\begin{smallmatrix}m_{11}&m_{12}\\m_{21}&m_{22}\end{smallmatrix}\big)\)
 with diagonal entries
 
 \[\begin{equation}
 \begin{aligned}
-a&=(2cs)^2t_H^2+(s^2-c^2)^2t_Ht_V,\\
-d&=(s^2-c^2)^2t_Ht_V+(2cs)^2t_V^2,
+m_{11}&=S_4^2\,t_H^2+C_4^2\,t_Ht_V,\\
+m_{22}&=C_4^2\,t_Ht_V+S_4^2\,t_V^2,
 \end{aligned}
 \end{equation}\]
 
@@ -229,32 +235,31 @@ exactly as on the main page. The trace is their sum,
 \[\begin{equation}
 \begin{aligned}
 \mathrm{Tr}(MDMD)
-&=a+d
-=(2cs)^2(t_H^2+t_V^2)+2(s^2-c^2)^2\,t_Ht_V\\
-&=(t_H^2+t_V^2)\sin^2(4\vartheta)+2t_Ht_V\cos^2(4\vartheta),
+&=m_{11}+m_{22}
+=(t_H^2+t_V^2)S_4^2+2t_Ht_V\,C_4^2.
 \end{aligned}
 \end{equation}\]
 
-using \(2cs=\sin(4\vartheta)\) and \(s^2-c^2=-\cos(4\vartheta)\). Substituting
+Substituting
 this and \(\det(MDMD)=t_H^2t_V^2\) into \(\eqref{eq:detQ_general}\),
 
 \[\begin{equation}
 \det Q
-=1-\lambda^2\big[(t_H^2+t_V^2)\sin^2(4\vartheta)+2t_Ht_V\cos^2(4\vartheta)\big]
+=1-\lambda^2\big[(t_H^2+t_V^2)S_4^2+2t_Ht_V\,C_4^2\big]
 +\lambda^4 t_H^2t_V^2 .
 \end{equation}\]
 
 The bracket collects into a perfect square plus a remainder,
 
 \[\begin{equation}
-(t_H^2+t_V^2)\sin^2(4\vartheta)+2t_Ht_V\cos^2(4\vartheta)
-=2t_Ht_V+(t_H-t_V)^2\sin^2(4\vartheta),
+(t_H^2+t_V^2)S_4^2+2t_Ht_V\,C_4^2
+=2t_Ht_V+(t_H-t_V)^2S_4^2,
 \end{equation}\]
 
-(using \(\cos^2=1-\sin^2\) and \(t_H^2+t_V^2-2t_Ht_V=(t_H-t_V)^2\)), so that
+(using \(C_4^2=1-S_4^2\) and \(t_H^2+t_V^2-2t_Ht_V=(t_H-t_V)^2\)), so that
 
 \[\begin{equation}
-\det Q=(1-\lambda^2 t_Ht_V)^2-\lambda^2(t_H-t_V)^2\sin^2(4\vartheta),
+\det Q=(1-\lambda^2 t_Ht_V)^2-\lambda^2(t_H-t_V)^2S_4^2,
 \end{equation}\]
 
 and with \(t_{H,V}=1-\eta_{H,V}\) and \(\Lambda^2=1-\lambda^2\) one can recover
@@ -265,7 +270,7 @@ equation (1) of the main page:
 \boxed{\;
 P^{(\eta_H,\eta_V)}(0,0)
 =\dfrac{1-\lambda^2}
-{\sqrt{\big(1-\lambda^2(1-\eta_H)(1-\eta_V)\big)^2-\lambda^2(\eta_H-\eta_V)^2\sin^2(4\vartheta)}}\; .}
+{\sqrt{\big(1-\lambda^2(1-\eta_H)(1-\eta_V)\big)^2-\lambda^2(\eta_H-\eta_V)^2S_4^2}}\; .}
 \end{equation}\]
 
 The generalization has therefore cost nothing: the closed form for *any* passive
@@ -325,12 +330,12 @@ M=U^T M_0 U
 \end{equation}\]
 
 which is the HWP matrix \(\eqref{eq:state_M}\) under
-\(\sin 4\vartheta\to\sin 2\theta_b\), \(\cos 4\vartheta\to\cos 2\theta_b\) (up to
+\(S_4\to\sin 2\theta_b\), \(C_4\to\cos 2\theta_b\) (up to
 signs that square away in \(MDMD\)). Every formula on the main page therefore
 holds for a variable beam splitter after the single replacement
 
 \[\begin{equation}
-\sin^2(4\vartheta)\;\longrightarrow\;\sin^2(2\theta_b).
+S_4^2=\sin^2(4\vartheta)\;\longrightarrow\;\sin^2(2\theta_b).
 \end{equation}\]
 
 This also explains the location of the coincidence dip: \(\vartheta=\pi/8\)
